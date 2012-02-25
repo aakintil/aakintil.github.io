@@ -7,12 +7,12 @@ body
 
 #header
 {
-  padding-top: 25px;
-			  padding-bottom: 25px;
-				width: 300px;
-				margin: 30px auto;
-				background-color: #eee;
-				border: 10px solid #ccc;
-				border-radius: 5px;
+  padding-top: 2em;
+			  padding-bottom: 2em;
+				width: 4em;
+				margin: 3em auto;
+				background-color: gray;
+				border: 1em solid white;
+				border-radius: 2em;
 				text-align: center;
 }
