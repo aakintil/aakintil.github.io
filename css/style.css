@@ -22,3 +22,12 @@ h1
 	color:black;
 	z-index:1;
 }
+#header ul
+{
+	float: right;
+}
+
+#header ul li
+{
+	display: inline;
+}
