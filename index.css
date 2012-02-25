@@ -2,3 +2,10 @@ body
 {
 		background-image:url(images/background.png);
 }
+
+h1
+{
+	color:white;
+	position:relative;
+	text-align:center;
+}
