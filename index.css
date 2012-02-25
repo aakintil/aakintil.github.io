@@ -1,18 +1,23 @@
 body 
 {
-		font-family: sans-serif;
-		background-image:url(images/background.png);
-		background-repeat: repeat-x repeat-y;
+	font-family: sans-serif;
+	background-image:url(images/background.png);
+	background-repeat: repeat-x repeat-y;
 }
 
 #header
 {
-  padding-top: 2em;
-			  padding-bottom: 2em;
-				width: 4em;
-				margin: 3em auto;
-				background-color: gray;
-				border: 1em solid white;
-				border-radius: 2em;
-				text-align: center;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	width: 15em;
+	margin: 3em auto;
+	background-color: gray;
+	border: 1em solid white;
+	border-radius: 2em;
+	text-align: center;
+	opacity:0.5;
+}
+h1
+{
+	color:white;
 }
