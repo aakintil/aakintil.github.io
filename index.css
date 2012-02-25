@@ -7,7 +7,12 @@ body
 
 #header
 {
-	color:white;
-	position:relative;
-	text-align:center;
+  padding-top: 25px;
+			  padding-bottom: 25px;
+				width: 300px;
+				margin: 30px auto;
+				background-color: #eee;
+				border: 10px solid #ccc;
+				border-radius: 5px;
+				text-align: center;
 }
