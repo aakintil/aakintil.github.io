@@ -20,6 +20,5 @@ body
 h1
 {
 	color:white;
-	opacity:1;
-	z:1;
+	z-index:1;
 }
