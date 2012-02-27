@@ -15,16 +15,72 @@ body
 	border: 1em solid white;
 	border-radius: 2em;
 	text-align: center;
+
+}
+
+#main ul
+{
+	color: black;
+	float: right;
+	position:relative;
+	margin-top:1.5em;
+}
+
+#main ul li
+{
+	display: inline;
+	padding-right:1em;
+	padding-left:1em;
+}
+
+li:hover
+{
+	color:white;
+	background-color:black;
+	text-align:center;
+	border-radius:2em;
+}
+#main 
+{
+	background-color:gray;
+	position:relative;
+	left:10%;
+	width: 60em;
+	height:60em;
+	margin:2em;
+	margin-top:10em;
+	border: 0.5em solid white;
+	border-radius:2em;
+}
+
+#bigImage img
+{
+	float:left;
+	width:98%;
+	margin-left:0.8em;
+	height:20em;
+	background-color: gray;
+	opacity:0.8;
+}
+
+#projects div
+{
+	background-color:white;
+	float:left;
+	border:0.3em solid black;
+	width:10em;
+	height:10em;
+	margin-top:3em;
+	margin-left:2.5em;
+	margin-right:0.2em;
+	margin-bottom:2em;
 	opacity:0.5;
 }
 
-#header ul
+#projects div:hover
 {
-	color:white;
-	float: right;
-}
-
-#header ul li
-{
-	display: inline;
+	opacity:1;
+	border:0.3em solid white;
+	background-color:gray;
+	 
 }
