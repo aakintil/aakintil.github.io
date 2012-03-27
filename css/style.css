@@ -1,6 +1,6 @@
 body 
 {
-	font-family: "Luna Bar";
+font-family: "league-gothic";
 	background-image:url('../images/background.png');
 	background-repeat: repeat-x repeat-y;
 }
@@ -27,7 +27,7 @@ body
 
 #header p
 {
-	font-family:"Verdana" sans-serif;
+font-family: "league-gothic";
 	font-size:4em;
 }
 
