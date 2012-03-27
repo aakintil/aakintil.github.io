@@ -28,7 +28,9 @@ font-family: "league-gothic";
 #header p
 {
 font-family: "league-gothic";
+font-family:"league-gothic" sans-serif;
 	font-size:4em;
+	
 }
 
 #main ul
