@@ -30,6 +30,14 @@ font-family: "league-gothic";
 font-family: "league-gothic";
 font-family:"league-gothic" sans-serif;
 	font-size:4em;
+	background-color: rgba(255, 255, 255, .2); 
+	border-color: rgba(255, 255, 255, 0.4); 
+	text-shadow: 5px 5px 5px black;
+	width: 85%; 
+	top: 6em;
+	text-align: center; 
+	margin: 0 auto; 
+	box-shadow: 1px 1px 0 0 #555, 2px 2px 0 0 #555, 2px 3px 0 0 #555, 3px 4px 0 0 #555, 3px 5px 0 0 #555, 3px 6px 10px 0 #111;
 	
 }
 
