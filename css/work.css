@@ -130,6 +130,11 @@ div.work-container
 {
 /*    font-size:10px;*/
     font-size:80%;
+    padding-bottom:20px;
+    padding-top:20px;
+    margin:0;
+    border-top:1px dashed grey;
+    border-bottom:1px dashed grey;
 }
 
 .columns .one-third.column.alpha p a
@@ -147,4 +152,15 @@ div.work-container
     -moz-transition:all 0.5s ease-out;  
     transition:all 0.5s ease-out;
     color:rgba(0, 178, 220, 1);
+}
+
+.skills span
+{
+    display:block;
+    font-style:italic;
+}
+
+.skills.first
+{
+    border-bottom:none;
 }
