@@ -227,14 +227,6 @@ h1, h2, h3, p
     font-family:"Raleway";
 }
 
-/*p
-{
-    font-family:"Linden Hill" !important;
-    font-weight:italic;
-    font-family:"calluna";
-}
-*/
-
 h1.page_headers
 {
     border-bottom: 1px dashed grey;
