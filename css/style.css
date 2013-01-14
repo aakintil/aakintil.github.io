@@ -361,9 +361,9 @@ transform: skew(5deg) rotate(5deg);
 {
     width:100%;
     position:relative;
-    border: 0;
-    color: #fff;
-    background-color: #fff;
+    border: 1px solid white;
+    color: #fff !important;
+    background-color: #fff !important;
     height: 1px;
     margin-top:10em;
     top:0px;
