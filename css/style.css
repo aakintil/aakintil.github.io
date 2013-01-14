@@ -1,7 +1,11 @@
 /*Aderinsola Akintilo CSS*/
 /*Adobe Dreamweaver CS5 Assistance*/
 @charset "UTF-8";
-
+@font-face
+{
+    font-family:league;
+    src: url("fonts/leaguegothic-regular.ttf");
+}
 
 body {
     /*font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;*/
@@ -12,7 +16,8 @@ body {
     zoom: 0.8; 
     -moz-transform: scale(1); 
     -moz-transform-origin: 0 0;
-    font-family: "league-gothic";
+/*    font-family: "league-gothic";*/
+    font-family:"Raleway";
     font-size:80%;
     background-image:url('../images/bg.gif');
     background-repeat: repeat;
@@ -126,7 +131,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 /*------- The Logo -------*/
 #name
 {
-    font-family: "league gothic";
+    font-family: league;
     font-size: 8.5em;
     min-width:535px;
     letter-spacing:-2px;
@@ -175,7 +180,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 #nav_bar li a
 {
-    font-family: "league gothic";
+    font-family: league;
     font-size:3em;
     color:white;
     padding:10px;
