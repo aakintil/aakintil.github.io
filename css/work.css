@@ -111,6 +111,7 @@ div.work-container
 {
     width:800px;
     height:700px;
+    position:relative;
 }
 
 .individual.work-container.omega
@@ -164,3 +165,22 @@ div.work-container
 {
     border-bottom:none;
 }
+
+.bottom
+{
+    position:absolute;
+    top:100px;
+}
+
+.columns.main
+{
+    height:900px;
+}
+
+.columns.works
+{
+    height:1700px;
+    margin-bottom:0px;
+    padding-bottom:100px;
+}
+
