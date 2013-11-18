@@ -10,7 +10,19 @@ $(document).ready(function() {
   for (var i = 0; i < 3; i++) {
     centerElements(elements[i]); 
   }
+  
+  centerElements($(".nav"))
 
+  // var workCont = new Transition(work.parent()); 
+ 
+  work.parent().on("vmouseover", function() {
+    work.parent().parent().animate({ backgroundColor: "blue" }, 800); 
+  })
+  // 
+  // work.parent().on("vmouseout", function() {
+  //   work.parent().animate({ opacity: 1 }, 800); 
+  // })
+  
 }); 
 
 

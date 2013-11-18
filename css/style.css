@@ -2,6 +2,9 @@
 {
   color: red;
   top: 400px;
+  height: 500px;
+  width: 150px;
+  background-color: transparent;
 }
 
 #home .nav > div {
@@ -12,7 +15,26 @@
   width: 200px;
   height: 200px;
   text-align: center;
+  
+  opacity: 1;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
+
+#home .nav > div:hover {
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  
+  opacity: 0.5;
+}
+
+
 
 #home .nav p {
   font-size: 40px;
