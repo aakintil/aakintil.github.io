@@ -11,17 +11,15 @@ $(document).ready(function() {
     centerElements(elements[i]); 
   }
   
-  centerElements($(".nav"))
+  centerElements($(".nav div")); 
 
-  // var workCont = new Transition(work.parent()); 
- 
-  work.parent().on("vmouseover", function() {
-    work.parent().parent().animate({ backgroundColor: "blue" }, 800); 
-  })
-  // 
-  // work.parent().on("vmouseout", function() {
-  //   work.parent().animate({ opacity: 1 }, 800); 
-  // })
+  
+  $(".nav").hover(function(){
+    $(this).animate({"background-color" : "red", opacity : 1 }, 1000);
+    },function() {
+    $(this).animate({ "background-color" : "transparent", opacity : 0.2 }, 1000);
+  });
+
   
 }); 
 

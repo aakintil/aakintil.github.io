@@ -1,37 +1,34 @@
+body {
+
+}
+
 .nav
 {
   color: red;
-  top: 400px;
+  top: 200px;
   height: 500px;
-  width: 150px;
-  background-color: transparent;
+  opacity: 0.2;
 }
+
+
 
 #home .nav > div {
   margin: 0 auto;
-/*  background-color: red;*/
   border-radius: 50%;
-  border: 10px solid rgba(0,0,0,0.2);
+  border: 10px solid rgba(0, 0, 0, 0.6);
   width: 200px;
   height: 200px;
   text-align: center;
-  
-  opacity: 1;
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -ms-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
 }
 
 #home .nav > div:hover {
-  -webkit-transition: opacity 1s ease-in-out;
+/*  -webkit-transition: opacity 1s ease-in-out;
   -moz-transition: opacity 1s ease-in-out;
   -ms-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;*/
   
-  opacity: 0.5;
+/*  opacity: 0.5;*/
 }
 
 
