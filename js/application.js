@@ -15,9 +15,11 @@ $(document).ready(function() {
 
   
   $(".nav").hover(function(){
-    $(this).animate({"background-color" : "red", opacity : 1 }, 1000);
+    $(this).animate({"background-color" : "red", 
+    opacity : 1,
+    "box-shadow" : "1px solid black" }, 500);
     },function() {
-    $(this).animate({ "background-color" : "transparent", opacity : 0.2 }, 1000);
+    $(this).animate({ "background-color" : "transparent", opacity : 0.2 }, 500);
   });
 
   
