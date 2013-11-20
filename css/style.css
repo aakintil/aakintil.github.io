@@ -30,6 +30,23 @@ body {
   width: 200px;
   height: 200px;
   text-align: center;
+  
+  -webkit-transition: border 0.5s ease-in-out;
+  -moz-transition: border 0.5s ease-in-out;
+  -ms-transition: border 0.5s ease-in-out;
+  -o-transition: border 0.5s ease-in-out;
+  transition: border 0.5s ease-in-out;
+}
+
+#home .nav:hover > div {
+  border: 10px solid #33ccff;
+  
+  -webkit-transition: border 0.5s ease-in-out;
+  -moz-transition: border 0.5s ease-in-out;
+  -ms-transition: border 0.5s ease-in-out;
+  -o-transition: border 0.5s ease-in-out;
+  transition: border 0.5s ease-in-out;
+    
 }
 
 #home .nav > div:hover {

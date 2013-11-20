@@ -15,11 +15,16 @@ $(document).ready(function() {
 
   
   $(".nav").hover(function(){
-    $(this).animate({"background-color" : "red", 
+    // animating the main div
+    $(this).animate({"background-color" : "hsl(180,100%,79%)", 
     opacity : 1,
     "box-shadow" : "1px solid black" }, 500);
     },function() {
     $(this).animate({ "background-color" : "transparent", opacity : 0.2 }, 500);
+    
+    // animating the circular border
+  
+    console.log($(this).find("div")); 
   });
 
   
