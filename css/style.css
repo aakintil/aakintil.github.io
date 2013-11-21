@@ -1,3 +1,14 @@
+@font-face {
+  font-family: canterLight;
+  src: url('../fonts/Canter Light.otf')
+}
+
+@font-face {
+  font-family: canterBold;
+  src: url('../fonts/Canter Bold.otf')
+}
+
+
 body {
 
 }
@@ -68,16 +79,30 @@ transition: opacity 1s ease-in-out;*/
 
 
 #home {
-/*  display: none;*/
+  display: none;
 }
 
 #main {
-  display: none;
+/*  display: none;*/
+width: 100%;
 }
 
 
 #header {
-  height: 40%;
+  height: 400px;
   background-color: #363638; 
+  text-align: center;
+}
+
+#header > #logo {
+  font-size: 100px;
+}
+
+#header > #title {
+  font-family: canterLight;
+  margin-top: 0;
+  font-size: 50px;
+  color: white;
+  font-weight: normal;
 }
 
