@@ -94,11 +94,11 @@ width: 100%;
 }
 
 #main .circle {
-  width: 100px;
+  width: 150px;
   margin: 0 auto;
-  height: 100px;
+  height: 150px;
   border-radius: 50%;
-  background-color: red;
+  border: 5px solid blue;
   text-align: center;
   margin-bottom: 100px;
 }
