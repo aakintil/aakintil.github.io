@@ -88,7 +88,7 @@ width: 100%;
 }
 
 #main #content {
-  background-color: grey;
+/*  background-color: rgba(0, 0, 0, 0.3);*/
   height: 100%;
   padding-top: 60px;
 }
@@ -123,6 +123,10 @@ width: 100%;
   font-size: 100px;
 }
 
+#top-nav {
+  text-align: center;
+}
+
 #header > #title {
   font-family: canterLight;
   margin-top: 0;
@@ -133,4 +137,8 @@ width: 100%;
 
 #main #sidebar {
   height: 600px;
+}
+
+.active {
+  color: red;
 }
