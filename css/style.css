@@ -89,8 +89,8 @@ width: 100%;
 
 #main #content {
 /*  background-color: rgba(0, 0, 0, 0.3);*/
-  height: 100%;
-  padding-top: 60px;
+height: 100%;
+padding-top: 60px;
 }
 
 #main .circle {
@@ -141,4 +141,24 @@ width: 100%;
 
 .active {
   color: red;
+}
+
+
+/* Project Pages */
+
+#blurb, #skills {
+  border: 1px solid red;
+  color: blue;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  text-align: center;
+  padding: 0px 300px;
+  text-align: justify;
+  text-justify: inter-cluster;
+}
+
+.col-md-3, .col-md-4 {
+  border: 1px solid red;
+  margin-bottom: 50px;
+  text-align: center;
 }
