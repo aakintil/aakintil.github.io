@@ -116,8 +116,8 @@ img {
 
 .gallery {
 /*  background-image: url("../images/pptv/pptv.png");*/
-  background-position: left top;
-  background-size: 152px 221px;
+  background-position: center top;
+/*  background-size: 152px 221px;*/
   background-repeat: no-repeat;
 }
 
