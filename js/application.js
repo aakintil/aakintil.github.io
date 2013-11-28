@@ -16,9 +16,9 @@ $(document).ready(function() {
   var images = [ a = { src : "images/pptv/pptv.png", name : "pptv" }, 
   b = { src : "images/apartment-reviews/ar.png", name : "ar" }, 
   c = { src : "images/cdf/tea.png", name : "tea" }, 
-  d = { src : "images/pptv/pptv.png", name : "d" }, 
-  e = { src : "images/pptv/pptv.png", name : "d" }, 
-  f = { src : "images/pptv/pptv.png", name : "d" }
+  d = { src : "images/ixdf/avant-garde/ag.png", name : "ag" }, 
+  e = { src : "images/ixdf/ipad/ipad.png", name : "ipad" }, 
+  f = { src : "images/biologic/biologic.png", name : "biologic" }
   ];
 
     $(".gallery").each(function(i) {
