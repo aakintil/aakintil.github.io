@@ -1,13 +1,39 @@
 @font-face {
-  font-family: canterLight;
-  src: url('../fonts/Canter Light.otf')
+  font-family: "Canter Light";
+  src: url('../fonts/Canter Light.otf'); 
+  font-style: normal;
 }
 
 @font-face {
-  font-family: canterBold;
-  src: url('../fonts/Canter Bold.otf')
+  font-family: "Canter Bold";
+  src: url('../fonts/Canter Bold.otf'); 
+  font-style: bold;
 }
 
+@font-face {
+  font-family: jura;
+  src: url('../fonts/Jura-Regular.ttf');
+}
+
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Body
+2. Home Navigation / #header
+3. Main Navigation / #main 
+
+4. Content / #content
+5. Left column / #leftcolumn
+6. Right column / #rightcolumn
+7. Sidebar / #sidebar
+8. RSS / #rss
+9. Search / #search
+10. Boxes / .box
+11. Sideblog / #sideblog
+12. Advertisements / .ads
+13. Footer / #footer
+-------------------------------------------------------------------*/
 
 body {
 
@@ -121,15 +147,7 @@ img {
   background-repeat: no-repeat;
 }
 
-#main .col-sm-4 {
 
-/*  border: 1px solid blue;*/
-}
-
-
-#main .col-sm-2 {
-  border: 1px solid blue;
-}
 
 #header {
   height: 400px;
@@ -141,14 +159,27 @@ img {
   font-size: 100px;
 }
 
+
+/*---------------------------
+Content Page Navigation 
+---------------------------*/
+
 #top-nav {
   position: absolute;
   bottom: 0;
+  font-family: "Lato";
+  font-weight: 200;
+  font-size: 25px;
   text-align: center;
 }
 
+#top-nav span {
+  color: white;
+  margin: 0px 10px;
+}
+
 #header > #title {
-  font-family: canterLight;
+  font-family: "Canter Light";
   margin-top: 0;
   font-size: 50px;
   color: white;
@@ -157,6 +188,16 @@ img {
 
 #main #sidebar {
   height: 600px;
+  border: 1px solid blue;
+}
+
+#side-nav {
+  font-family: "Lato";
+  font-weight: 400;
+}
+
+#side-nav li {
+  font-size: 30px;
 }
 
 .active {
