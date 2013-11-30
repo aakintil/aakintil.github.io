@@ -211,7 +211,7 @@ Content Page Images
 }
 
 #footer {
-  position: relative;
+/*  position: relative;*/
   border-radius: 0;
   margin-bottom: 0;
   min-height: 250px;
@@ -221,6 +221,12 @@ Content Page Images
 
 #footer a {
   margin: 0px 20px;
+  opacity: 0.5;
+}
+
+#footer a > img {
+  width: 40px;
+  height: 40px;
 }
 
 

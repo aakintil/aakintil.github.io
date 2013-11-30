@@ -15,6 +15,18 @@ $(document).ready(function() {
   centerElements($(".circle")); 
   centerElements($(".gallery")); 
   // centerElements($(".pieces img"));
+  
+  
+  
+  
+  // icon hover
+  // might have to change
+  var social = $("#footer a"); 
+  $(".social-fade").hover(function() {
+    $(this).find("a:last").fadeToggle(500);
+  }); 
+
+
   var images = [ a = { src : "images/pptv/pptv.png", name : "pptv" }, 
   b = { src : "images/apartment-reviews/ar.png", name : "ar" }, 
   c = { src : "images/cdf/tea.png", name : "tea" }, 
@@ -23,10 +35,16 @@ $(document).ready(function() {
   f = { src : "images/biologic/biologic.png", name : "biologic" }
   ];
 
+
+
+
   $(".gallery").each(function(i) {
     if ($(this).attr("id") === images[i].name)
     $(this).css({ "background-image" : "url("+ images[i].src +")"})
   })
+
+
+
 
   $(".nav").hover(function(){
     // animating the main div
@@ -36,11 +54,18 @@ $(document).ready(function() {
   },function() {
     $(this).animate({ "background-color" : "transparent", opacity : 0.2 }, 1000);
   });
+  
+  
+  
+  
 
   // animating the click
   $(".nav").on("click", function() {
     $("#home").animate({ height: 0 }, 1000, function() {  $(this).hide(); $("#main").show("slow") }); 
   }); 
+
+
+
 
 
   $("#first").on("click", function() {
@@ -58,6 +83,15 @@ $(document).ready(function() {
 
   // end of on load
 }); 
+
+// Icon information 
+var icons = {
+  email : { color : "images/icons/email-color.png", org : "images/icons/email.png" }, 
+  facebook : { color : "images/icons/facebook-color.png", org : "images/icons/facebook.png"}, 
+  google : { color : "images/icons/google-color.png", org : "images/icons/google.png"}, 
+  pinterest : { color : "images/icons/pinterest-color.png", org : "images/icons/pinterest.png"}, 
+  soundcloud : { color : "images/icons/soundcloud-color.png", org : "images/icons/soundcloud.png"}
+}
 
 
 function centerElements(el) {
