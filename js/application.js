@@ -13,6 +13,8 @@ $(document).ready(function() {
 
   centerElements($(".nav div")); 
   centerElements($(".circle")); 
+  centerElements($(".gallery")); 
+  // centerElements($(".pieces img"));
   var images = [ a = { src : "images/pptv/pptv.png", name : "pptv" }, 
   b = { src : "images/apartment-reviews/ar.png", name : "ar" }, 
   c = { src : "images/cdf/tea.png", name : "tea" }, 
@@ -21,10 +23,10 @@ $(document).ready(function() {
   f = { src : "images/biologic/biologic.png", name : "biologic" }
   ];
 
-    $(".gallery").each(function(i) {
-      if ($(this).attr("id") === images[i].name)
-      $(this).css({ "background-image" : "url("+ images[i].src +")"})
-    })
+  $(".gallery").each(function(i) {
+    if ($(this).attr("id") === images[i].name)
+    $(this).css({ "background-image" : "url("+ images[i].src +")"})
+  })
 
   $(".nav").hover(function(){
     // animating the main div
@@ -42,18 +44,17 @@ $(document).ready(function() {
 
 
   $("#first").on("click", function() {
-    
+
     $("#content").children().hide("slow"); 
-    
+
     $("#title").html(pages.project1.title); 
     $("#header").css({ "background-image" : "url("+pages.project1.img_src+")"}); 
     $("#content").append(pages.project1.content.synopsis); 
-    $("#content").append(pages.project1.content.skills); 
     $("#content").append(pages.project1.images); 
 
   })
-  
-  
+
+
 
   // end of on load
 }); 
@@ -70,10 +71,10 @@ var pages = {
   project1 : {
     title : "PPTV", 
     img_src : "images/bg.gif", 
-    images : "<div class='col-md-3 col-md-offset-3'> d</div> <div class='col-md-3'> d</div> <div class='col-md-4 col-md-offset-2'> d</div> <div class='col-md-4'> d</div>", 
+    images : "<div class='col-md-4 col-md-offset-4'> d</div> <div class='col-md-4'> d</div>", 
     content : {
-      synopsis : "<div><p id='blurb'>This is a project I worked on during parts of my junior and senior years under Scott Davidoff and John Zimmerman. The main design for PPTV had already been produced, so I was tasked with the interaction design and information architecture of system. I created a prototype for manual data entry that looked into the information architecture of the system and a prototype for exhibiting the interaction that would occur if a user were to use the system's menu. Full documentation for the interaction design can be viewed here. Full documentation for the information architecture can be viewed here</p> </div>", 
-      skills : "<div id='skills' class='col-md-12'> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6, paper prototypes, Balsamiq, HTML, CSS</div>",  
+      synopsis : 
+      "<div class='col-md-8'><p id='blurb'>   This is a project I worked on during parts of my junior and senior years under Scott Davidoff and John Zimmerman. The main design for PPTV had already been produced, so I was tasked with the interaction design and information architecture of system. I created a prototype for manual data entry that looked into the information architecture of the system and a prototype for exhibiting the interaction that would occur if a user were to use the system's menu. Full documentation for the interaction design can be viewed here. Full documentation for the information architecture can be viewed here </p></div>      <div class='col-md-4'><p id=''> Project Details </br> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6, paper prototypes, Balsamiq, HTML, CSS</p> </div>"
     }
   }, 
 
