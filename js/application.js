@@ -15,10 +15,10 @@ $(document).ready(function() {
   centerElements($(".circle")); 
   centerElements($(".gallery")); 
   // centerElements($(".pieces img"));
-  
-  
-  
-  
+
+
+
+
   // icon hover
   // might have to change
   var social = $("#footer a"); 
@@ -54,10 +54,10 @@ $(document).ready(function() {
   },function() {
     $(this).animate({ "background-color" : "transparent", opacity : 0.2 }, 1000);
   });
-  
-  
-  
-  
+
+
+
+
 
   // animating the click
   $(".nav").on("click", function() {
@@ -68,14 +68,16 @@ $(document).ready(function() {
 
 
 
-  $("#first").on("click", function() {
-
-    $("#content").children().hide("slow"); 
-
-    $("#title").html(pages.project1.title); 
-    $("#header").css({ "background-image" : "url("+pages.project1.img_src+")"}); 
-    $("#content").append(pages.project1.content.synopsis); 
-    $("#content").append(pages.project1.images); 
+  $("#top-nav a").on("click", function() {
+    if (findPage(pages, $(this).attr("title")) !== null) {
+      // console.log(findPage(pages, $(this).attr("title")), " found it"); 
+      var page = findPage(pages, $(this).attr("title")); 
+      $("#content").children().hide("slow"); 
+      $("#title").html(page.title); 
+      $("#header").css({ "background-image" : "url("+page.img_src+")"}); 
+      $("#content").append(page.content); 
+      $("#content").append(page.images); 
+    }
 
   })
 
@@ -103,7 +105,7 @@ function centerElements(el) {
 // might make a pages js file later
 var pages = {
   project1 : {
-    title : "PPTV", 
+    title : "Apartment Reviews", 
     img_src : "images/bg.gif", 
     images : "<div class='col-md-4 col-md-offset-4'> d</div> <div class='col-md-4'> d</div>", 
     content : {
@@ -113,14 +115,24 @@ var pages = {
   }, 
 
   project2 : {
-    title : "SnakeValance", 
-    img_src : ""
+    title : "Tea", 
+    img_src : "", 
+    content : "<div class='col-md-8' id='pieces-container'><p id='description'>This was my Communication Design Fundamentals final project. Our assignment was to create a booklet about anything we want. I decided to create a couple spreads about different teas from different areas. Some of the teas were borrowed from my roommate, while the others were given to me by the owners of Margaret's Fine Imports</p><div class='col-sm-6 col-md-12 pieces'><img src='images/cdf/img1.png'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/write1.png'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/img2.jpg'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/end.jpg'/></div></div><div class='col-md-4' id='details-container'><h4> Project Details </h4><div><p class='title'> Context </p><p> Summer Research</p></div><div><p class='title'>Dates</p><p>October - December 2011 & June - August 2012</p></div><div><p class='title'> Methods Used </p><p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6, Photography</p></div><div><a class='btn btn-primary'> Download </a></div></div></div>"
   }, 
 
   project3 : {
-    title : "Tea", 
+    title : "Avant-Garde", 
     img_src : ""
   }
+}
 
 
+function findPage(obj, input) {
+  var i = 0; 
+  for (i in obj) {
+    if (obj[i].title.toLowerCase() === input)
+    return obj[i]; 
+  }
+  
+  return null; 
 }

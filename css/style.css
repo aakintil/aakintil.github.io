@@ -22,6 +22,11 @@
 1. Body
 2. Home Navigation / #header
 3. Main Navigation / #main 
+4. Project Page
+
+
+10. Media Queries 
+
 
 4. Content / #content
 5. Left column / #leftcolumn
@@ -132,7 +137,7 @@ padding-top: 60px;
 Content Page 
 ---------------------------*/
 #content {
-  
+
 }
 
 #header {
@@ -201,7 +206,9 @@ Content Page Images
 
 
 
-/* Project Pages */
+/*---------------------------
+Project Page 
+---------------------------*/
 
 #description {
   margin-bottom: 60px;
@@ -210,13 +217,84 @@ Content Page Images
   text-justify: inter-cluster;
 }
 
+#detail-header {
+  margin-top: 0;
+}
+
+#content {
+  border: 1px solid grey;
+}
+
+/* on small screen change padding to like 10 on BOTH SIDES*/
+#pieces-container {
+  padding-left: 100px;
+  margin-bottom: 100px;
+}
+
+#details-container {
+  color: #34495E;
+  padding-right: 100px;
+}
+
+
+
+#description {
+  font-size: 15px;
+}
+
+
+#details-container h4 {
+  font-size: 25px;
+  margin-top: 0;
+}
+
+#details-container p {
+  font-size: 15px;
+  margin: 0;
+}
+
+#details-container > div {
+  margin-bottom: 40px;
+}
+
+#details-container .title {
+  font-weight: 600;
+}
+
+.pieces {
+  height: 400px;
+  margin-bottom: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.pieces img {
+  width:100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.btn {
+  border-radius: 0 !important;
+  background-color: #81d3f3 !important;
+}
+
+.btn:hover {
+  background-color: #3bbaec !important;
+}
+
+
+
+/*---------------------------
+Footer 
+---------------------------*/
 #footer {
-/*  position: relative;*/
-  border-radius: 0;
-  margin-bottom: 0;
-  min-height: 250px;
-  padding: 100px;
-  text-align: center;
+border-radius: 0;
+margin-bottom: 0;
+min-height: 250px;
+padding: 100px;
+text-align: center;
 }
 
 #footer a {
@@ -233,13 +311,23 @@ Content Page Images
 
 
 /*@media (max-width: 768px) {
-  #blurb {
-    padding: 0px 100px;
-  }
+#blurb {
+padding: 0px 100px;
+}
 }
 
 @media (max-width: 928px) {
-  #blurb {
-    padding: 0px 200px;
-  }
+#blurb {
+padding: 0px 200px;
+}
 }*/
+
+
+@media (max-width: 992px) {
+  
+  /* Project Page */
+  #details-container, #pieces-container {
+    padding: 0px 15px;
+  }
+  
+}
