@@ -108,10 +108,40 @@ var pages = {
     title : "Apartment Reviews", 
     img_src : "images/bg.gif", 
     images : "<div class='col-md-4 col-md-offset-4'> d</div> <div class='col-md-4'> d</div>", 
-    content : {
-      synopsis : 
-      "<div class='col-md-8'><p id='blurb'>   This is a project I worked on during parts of my junior and senior years under Scott Davidoff and John Zimmerman. The main design for PPTV had already been produced, so I was tasked with the interaction design and information architecture of system. I created a prototype for manual data entry that looked into the information architecture of the system and a prototype for exhibiting the interaction that would occur if a user were to use the system's menu. Full documentation for the interaction design can be viewed here. Full documentation for the information architecture can be viewed here </p></div>      <div class='col-md-4'><p id=''> Project Details </br> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6, paper prototypes, Balsamiq, HTML, CSS</p> </div>"
-    }
+    content :
+      "<div class='col-md-8' id='pieces-container'>\
+         <p id='description'>\
+           I worked for <a class='project-links' target='_blank' href='http://clickbrands.com/'>ClickBrands</a> as a Front-End Developer. It was my first real front-end gig and I bloody loved it! Initially, I got my feet wet with a project called <a class='project-links' target='_blank' href='http://www.apartmentlinks.com/'>Apartment Links</a>, but the bulk of our time and effort was spent revamping their old apartment ratings site to Apartment Reviews. The best part was that because we had a small team, I not only did front-end tasks, but I designed mockups, helped with rails logic, and migrated the working front-end prototypes into the rails application.\
+         </p>\
+           <div class='col-sm-6 col-md-12 pieces'><img src='images/apartment-reviews/property-page2.png'/></div> \
+           <div class='col-sm-6 col-md-12 pieces'> <img src='images/apartment-reviews/city-page2.png'/></div>\
+           <div class='col-sm-6 col-md-12 pieces'> <img src='images/apartment-reviews/dashboard.png'/></div> \
+           <div class='col-sm-6 col-md-12 pieces'> <img src='images/apartment-reviews/apartment-cards.png'/></div>\
+         </div>\
+         <div class='col-md-4' id='details-container'>\
+           <h4> Project Details </h4>\
+           <div>\
+             <p class='title'> Context </p>\
+             <p> Summer Job </p>\
+           </div>\
+           <div>\
+             <p class='title'>Dates</p>\
+             <p>June 2013 - N/A </p>\
+           </div>\
+           <div>\
+             <p class='title'> Methods Used </p>\
+             <p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6, Ruby on Rails, HTML, CSS, Javascript</p>\
+           </div>\
+           <div>\
+             <p class='title'> Collaborators </p>\
+             <p>\
+               Jonathan Miller, Joshua Gerbasi, Daniel Muller, Justin Edwards, Rebecca Chen\
+             </p>\
+           </div>\
+           <div>\
+             <a class='btn btn-primary' href='http://www.apartmentreviews.net/' target='_blank'> Visit Site </a>\
+           </div>\
+         </div>"
   }, 
 
   project2 : {
@@ -122,7 +152,35 @@ var pages = {
 // '/downloads/tea-booklet.pdf'
   project3 : {
     title : "Avant-Garde", 
-    img_src : ""
+    img_src : "", 
+    content :
+      "<div class='col-md-8' id='pieces-container'>\
+         <p id='description'>\
+           This was a course project where we were tasked with designing a poster for an upcoming Avant Garde Colloqium. We had to create a poster for a lecture series that will be displayed in a University Union Building kiosk. We used text and images to communicate informational and emotional content. We produced at least ten sketches of different designs using grid, content, and images. We also employed a variety of typefaces and sizes to explore hierarchy.\
+         </p>\
+           <div class='col-sm-6 col-md-12 pieces'><img src='images/apartment-reviews/property-page2.png'/></div> \
+           <div class='col-sm-6 col-md-12 pieces'> <img src='images/apartment-reviews/city-page2.png'/></div>\
+           <div class='col-sm-6 col-md-12 pieces'> <img src='images/apartment-reviews/dashboard.png'/></div> \
+           <div class='col-sm-6 col-md-12 pieces'> <img src='images/apartment-reviews/apartment-cards.png'/></div>\
+         </div>\
+         <div class='col-md-4' id='details-container'>\
+           <h4> Project Details </h4>\
+           <div>\
+             <p class='title'> Context </p>\
+             <p> Interaction Design Fundamentals (05-651) </p>\
+           </div>\
+           <div>\
+             <p class='title'>Dates</p>\
+             <p> September 2013 </p>\
+           </div>\
+           <div>\
+             <p class='title'> Methods Used </p>\
+             <p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6</p>\
+           </div>\
+           <div>\
+             <a class='btn btn-primary' href='downloads/poster.pdf' download='poster.pdf 'target='_blank'> Download </a>\
+           </div>\
+         </div>"
   }
 }
 

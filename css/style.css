@@ -105,6 +105,10 @@ transition: opacity 1s ease-in-out;*/
 /*  opacity: 0.5;*/
 }
 
+#logo img {
+  width: 150px; 
+}
+
 
 
 #home .nav p {
@@ -158,11 +162,13 @@ Content Page Navigation
 ---------------------------*/
 
 #top-nav {
+  background-color: white;
   position: absolute;
   bottom: 0;
   font-family: "Lato";
-  font-weight: 200;
-  font-size: 25px;
+  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: -2px;
   text-align: center;
 }
 
@@ -173,8 +179,8 @@ Content Page Navigation
 
 #header > #title {
   font-family: "Canter Light";
-  margin-top: 0;
-  font-size: 50px;
+  margin-top: 20px;
+  font-size: 70px;
   color: white;
   font-weight: normal;
 }
