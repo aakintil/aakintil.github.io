@@ -740,7 +740,7 @@ fieldset[disabled] .btn-default.active {
 .open .dropdown-toggle.btn-primary {
   color: #ffffff;
   background-color: #48c9b0;
-  border-color: #48c9b0;
+/*  border-color: #48c9b0;*/
 }
 .btn-primary:active,
 .btn-primary.active,
