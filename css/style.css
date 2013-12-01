@@ -20,9 +20,10 @@
 [Table of contents]
 
 1. Body
-2. Home Navigation / #header
-3. Main Navigation / #main 
-4. Project Page
+2. General
+3. Home Navigation / #header
+4. Main Navigation / #main 
+5. Project Page
 
 
 10. Media Queries 
@@ -44,6 +45,7 @@ body {
 /*  padding-bottom: 100px;*/
 /*background-color: #ECEEF0;*/
 }
+
 
 .nav
 {
@@ -284,6 +286,9 @@ Project Page
   background-color: #3bbaec !important;
 }
 
+.project-links {
+  color: rgb(59, 186, 236) !important;
+}
 
 
 /*---------------------------
