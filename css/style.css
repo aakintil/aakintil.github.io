@@ -252,6 +252,8 @@ Content Page Images
   background-position: center top;
   background-repeat: no-repeat;
   margin: 0 auto;
+  display: block;
+  position: relative;
   height: 265px;
   text-align: center;
   margin-bottom: 100px;

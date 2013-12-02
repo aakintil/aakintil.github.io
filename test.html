@@ -20,9 +20,6 @@
 
   <!-- Loading Flat UI -->
   <link rel="stylesheet" href="css/flat-ui.css">
-  
-  <!-- Loading My Stylesheet -->
-  <link rel="stylesheet" href="css/transitions.css">
 
   <!-- Loading My Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
@@ -127,15 +124,15 @@
 
           <!-- Content Area -->
           <div id="content" class="row">
-
-            <!-- <div class="et-wrapper et-rotate col-md-4" et-in="rotateSlideIn" et-out="rotateSlideOut">
-              <div class="et-page">
-                <h2>Page 1</h2>
-              </div>
-              <div class="et-page">
-                <h2>Page 2</h2>
-              </div>
+            <!-- sidebar -->
+            <!-- <div id="sidebar" class="col-sm-2 col-sm-offset-1">
+            <ul id="side-nav">
+            <li>Projects</li>
+            <li>Resume</li>
+            <li>Contact</li>
+            </ul>
             </div> -->
+
             <div class="col-md-4 col-sm-6 grid">
               <div id="pptv" class="gallery">
               </div>
@@ -170,10 +167,10 @@
 
               </div>
             </div>
-            <!-- <a id="" class="gallery">
+            <a id="" class="gallery">
               <img src="images/apartment-reviews/test.png">
-            </a> -->
-            
+            </a>
+
           </div>
 
           <div class="row">
@@ -205,7 +202,6 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 <!-- <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script> -->
 
 <!-- Loading Personal Library -->
@@ -215,23 +211,23 @@
 
 <script>
 $(window).load(function(){
-  // $(".gallery").BlackAndWhite({
-  //   hoverEffect : true, // default true
-  //   // set the path to BnWWorker.js for a superfast implementation
-  //   webworkerPath : false,
-  //   // for the images with a fluid width and height 
-  //   responsive:true,
-  //   // to invert the hover effect
-  //   invertHoverEffect: false,
-  //   // this option works only on the modern browsers ( on IE lower than 9 it remains always 1)
-  //   intensity:1,
-  //   speed: { //this property could also be just speed: value for both fadeIn and fadeOut
-  //     fadeIn: 200, // 200ms for fadeIn animations
-  //     fadeOut: 800 // 800ms for fadeOut animations
-  //   },
-  //   onImageReady:function(img) {
-  //     // this callback gets executed anytime an image is converted
-  //     }});
+  $(".gallery").BlackAndWhite({
+    hoverEffect : true, // default true
+    // set the path to BnWWorker.js for a superfast implementation
+    webworkerPath : false,
+    // for the images with a fluid width and height 
+    responsive:true,
+    // to invert the hover effect
+    invertHoverEffect: false,
+    // this option works only on the modern browsers ( on IE lower than 9 it remains always 1)
+    intensity:1,
+    speed: { //this property could also be just speed: value for both fadeIn and fadeOut
+      fadeIn: 200, // 200ms for fadeIn animations
+      fadeOut: 800 // 800ms for fadeOut animations
+    },
+    onImageReady:function(img) {
+      // this callback gets executed anytime an image is converted
+      }});
     });
     </script>
     

@@ -41,11 +41,16 @@ $(document).ready(function() {
 
 
 
-  $(".gallery").each(function(i) {
-    if ($(this).attr("id") === images[i].name)
-    $(this).css({ "background-image" : "url("+ images[i].src +")"})
-  })
-
+  // $(".gallery").each(function(i) {
+  //   if ($(this).attr("id") === images[i].name) 
+  //   $(this).css({ "background-image" : "url("+ images[i].src +")"})
+  // })
+  // $(".gallery").each(function(i) {
+  //   if ($(this).attr("id") === "apartment reviews") {
+  //     $(this).append("<img src=" + images[i].src + "/>")
+  //   }
+  // })
+  
 
   // $(".grid").hover( function() { 
   //   console.log("hovering")
