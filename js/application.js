@@ -28,7 +28,7 @@ $(document).ready(function() {
 
 
   var images = [ a = { src : "images/pptv/pptv2.png", name : "pptv" }, 
-  b = { src : "images/apartment-reviews/ar2.png", name : "ar" }, 
+  b = { src : "images/apartment-reviews/test.png", name : "ar" }, 
   c = { src : "images/cdf/tea2.png", name : "tea" }, 
   d = { src : "images/ixdf/avant-garde/ag2.png", name : "ag" }, 
   e = { src : "images/ixdf/ipad/ipad2.png", name : "ipad" }, 
@@ -44,12 +44,31 @@ $(document).ready(function() {
   })
 
 
-  $(".grid").hover( function() {
-    $(this).animate({ "backgroundColor" : "red"}, 1000); 
-  }); 
-   
+  // $(".grid").hover( function() {
+  //   $(this).animate({ "backgroundColor" : "rgba(24, 223, 123, 0.5)", opacity : 1}, 1000); 
+  // }, function() {
+  //    $(this).animate({ "backgroundColor" : "rgba(255, 255, 255, 1)", opacity : 0.5}, 1000);
+  // }); 
+  //  
+  // 
   
   
+  
+  $(function() {
+      // fade in the grayscaled images to avoid visual jump
+      $('.gallery').hide().fadeIn(1000);
+    });
+    // user window.load to ensure images have been loaded
+    $(window).load(function () {
+      $('.gallery').greyScale({
+        // call the plugin with non-defult fadeTime (default: 400ms)
+        fadeTime: 500,
+        reverse: false
+      });
+    });
+    
+    
+    
 
 
   $(".nav").hover(function(){
