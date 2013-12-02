@@ -30,8 +30,8 @@ $(document).ready(function() {
   var images = [ a = { src : "images/pptv/pptv2.png", name : "pptv" }, 
   b = { src : "images/apartment-reviews/ar2.png", name : "ar" }, 
   c = { src : "images/cdf/tea2.png", name : "tea" }, 
-  d = { src : "images/ixdf/avant-garde/ag.png", name : "ag" }, 
-  e = { src : "images/ixdf/ipad/ipad.png", name : "ipad" }, 
+  d = { src : "images/ixdf/avant-garde/ag2.png", name : "ag" }, 
+  e = { src : "images/ixdf/ipad/ipad2.png", name : "ipad" }, 
   f = { src : "images/biologic/biologic2.png", name : "biologic" }
   ];
 
@@ -44,6 +44,12 @@ $(document).ready(function() {
   })
 
 
+  $(".grid").hover( function() {
+    $(this).animate({ "backgroundColor" : "red"}, 1000); 
+  }); 
+   
+  
+  
 
 
   $(".nav").hover(function(){
