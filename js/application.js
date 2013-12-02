@@ -77,6 +77,10 @@ $(document).ready(function() {
       $("#header").css({ "background-image" : "url("+page.img_src+")"}); 
       $("#content").append(page.content); 
       $("#content").append(page.images); 
+      
+      // set link to active
+      $("#top-nav a").removeClass("active"); 
+      $(this).addClass("active")
     }
 
   })
@@ -149,7 +153,6 @@ var pages = {
     img_src : "", 
     content : "<div class='col-md-8' id='pieces-container'><p id='description'>This was my Communication Design Fundamentals final project. Our assignment was to create a booklet about anything we want. I decided to create a couple spreads about different teas from different areas. Some of the teas were borrowed from my roommate, while the others were given to me by the owners of Margaret's Fine Imports</p><div class='col-sm-6 col-md-12 pieces'><img src='images/cdf/img1.png'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/write1.png'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/img2.jpg'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/end.jpg'/></div></div><div class='col-md-4' id='details-container'><h4> Project Details </h4><div><p class='title'> Context </p><p> Summer Research</p></div><div><p class='title'>Dates</p><p>October - December 2011 & June - August 2012</p></div><div><p class='title'> Methods Used </p><p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6, Photography</p></div><div><a class='btn btn-primary' target='_blank' href='downloads/tea-booklet.pdf' download='tea.pdf'> Download </a></div></div></div>"
   }, 
-// '/downloads/tea-booklet.pdf'
   project3 : {
     title : "Avant-Garde", 
     img_src : "", 
@@ -181,7 +184,38 @@ var pages = {
              <a class='btn btn-primary' href='downloads/poster.pdf' download='poster.pdf 'target='_blank'> Download </a>\
            </div>\
          </div>"
-  }
+  }, 
+  
+  project3 : {
+     title : "iPad Mag", 
+     img_src : "", 
+     content :
+       "<div class='col-md-8' id='pieces-container'>\
+          <p id='description'>\
+            This was a course project where we were tasked with designing a poster for an upcoming Avant Garde Colloqium. We had to create a poster for a lecture series that will be displayed in a University Union Building kiosk. We used text and images to communicate informational and emotional content. We produced at least ten sketches of different designs using grid, content, and images. We also employed a variety of typefaces and sizes to explore hierarchy.\
+          </p>\
+            <div class='col-sm-6 col-md-12 pieces'><img src='images/ixdf/ipad/coming-soon.png'/></div> \
+            <div class='col-sm-6 col-md-12 pieces'> <img src='images/ixdf/ipad/coming-soon2.png'/></div>\
+          </div>\
+          <div class='col-md-4' id='details-container'>\
+            <h4> Project Details </h4>\
+            <div>\
+              <p class='title'> Context </p>\
+              <p> Interaction Design Fundamentals (05-651) </p>\
+            </div>\
+            <div>\
+              <p class='title'>Dates</p>\
+              <p> September 2013 </p>\
+            </div>\
+            <div>\
+              <p class='title'> Methods Used </p>\
+              <p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6</p>\
+            </div>\
+            <div>\
+              <a class='btn btn-primary' href='downloads/poster.pdf' download='poster.pdf 'target='_blank'> Download </a>\
+            </div>\
+          </div>"
+   }
 }
 
 
