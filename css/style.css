@@ -196,6 +196,7 @@ Content Page Navigation
   font-size: 18px;
   margin-bottom: -2px;
   text-align: center;
+  width: 100%;
 }
 
 #top-nav span {
@@ -245,18 +246,25 @@ Content Page Navigation
 /*---------------------------
 Content Page Images 
 ---------------------------*/
-#main .grid {
-  border: 1px solid blue;
-}
+
 
 #main .gallery {
   background-position: center top;
   background-repeat: no-repeat;
   margin: 0 auto;
-  height: 250px;
+  height: 265px;
   text-align: center;
   margin-bottom: 100px;
 }
+
+#main .grid {
+  
+}
+
+#main .grid:hover {
+  background-color: blue;
+}
+
 
 
 
@@ -277,9 +285,6 @@ Project Page
   margin-top: 0;
 }
 
-#content {
-  border: 1px solid grey;
-}
 
 /* on small screen change padding to like 10 on BOTH SIDES*/
 #pieces-container {
