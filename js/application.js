@@ -1,3 +1,6 @@
+
+
+
 $(document).ready(function() {
 
   // vertically centering the home navigation elements
@@ -44,28 +47,35 @@ $(document).ready(function() {
   })
 
 
-  // $(".grid").hover( function() {
-  //   $(this).animate({ "backgroundColor" : "rgba(24, 223, 123, 0.5)", opacity : 1}, 1000); 
-  // }, function() {
-  //    $(this).animate({ "backgroundColor" : "rgba(255, 255, 255, 1)", opacity : 0.5}, 1000);
-  // }); 
-  //  
-  // 
+  // $(".grid").hover( function() { 
+  //   console.log("hovering")
+  //   $(this).addClass("hover", 500);
+  // }, function(){
+  //   console.log("not hovering")
+  //    $(this).removeClass("hover", 500);
+  // })
   
-  
-  
-  $(function() {
-      // fade in the grayscaled images to avoid visual jump
-      $('.gallery').hide().fadeIn(1000);
-    });
-    // user window.load to ensure images have been loaded
-    $(window).load(function () {
-      $('.gallery').greyScale({
-        // call the plugin with non-defult fadeTime (default: 400ms)
-        fadeTime: 500,
-        reverse: false
-      });
-    });
+  // $(".grid").hover(
+  // function() {
+  // $(this).stop().addClass("hover");
+  // },
+  // function() {
+  // $(this).stop().removeClass("hover");
+  // });
+
+
+  // $(function() {
+  //     // fade in the grayscaled images to avoid visual jump
+  //     $('.gallery').hide().fadeIn(1000);
+  //   });
+  //   // user window.load to ensure images have been loaded
+  //   $(window).load(function () {
+  //     $('.gallery').greyScale({
+  //       // call the plugin with non-defult fadeTime (default: 400ms)
+  //       fadeTime: 500,
+  //       reverse: false
+  //     });
+  //   });
     
     
     
@@ -347,3 +357,4 @@ function findPage(obj, input) {
   
   return null; 
 }
+
