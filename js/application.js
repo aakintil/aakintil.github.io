@@ -31,7 +31,7 @@ $(document).ready(function() {
 
 
   var images = [ a = { src : "images/pptv/pptv2.png", name : "pptv" }, 
-  b = { src : "images/apartment-reviews/test.png", name : "ar" }, 
+  b = { src : "images/apartment-reviews/ar2.png", name : "ar" }, 
   c = { src : "images/cdf/tea2.png", name : "tea" }, 
   d = { src : "images/ixdf/avant-garde/ag2.png", name : "ag" }, 
   e = { src : "images/ixdf/ipad/ipad2.png", name : "ipad" }, 
@@ -41,10 +41,43 @@ $(document).ready(function() {
 
 
 
-  // $(".gallery").each(function(i) {
-  //   if ($(this).attr("id") === images[i].name) 
-  //   $(this).css({ "background-image" : "url("+ images[i].src +")"})
-  // })
+  $(".gallery").each(function(i) {
+    if ($(this).attr("id") === images[i].name) 
+    $(this).css({ "background-image" : "url("+ images[i].src +")"})
+  })
+
+
+  $(".grid").hover(function () {
+    $(this).css({ "backgroundColor": "#34495E" }, 10);
+  }, function () {
+    $(this).css({ "backgroundColor" : "white"}, 10)
+  }
+);
+
+$(".grid").on("click", function () {
+  var w = $("#content").width(); 
+  var h = $("#content").height(); 
+  var page = $(this); 
+  
+  
+  
+  $(".grid").each(function() {
+    $(this).animate({ left: '-'+w },  1000, function () {
+    })
+  }, function () { alert("fuck off")}); 
+  $(".grid").hide(2000)
+  $("#content").hide(2000); 
+  $("#content").append(pages.project1.content); 
+  $("#content").slideDown(3000);
+  // $("#content").children().css({display : "none"});
+  // $("#content").append(pages.project1.content); 
+  // $("#content").slideDown(3000);
+  // $(".grid").effect("drop")
+  // cool but not good enough
+  // $(".grid").not($(this)).hide("fast", function() {
+  //   page.animate({ height : h, width : w }, 1000);
+  // });
+});
   // $(".gallery").each(function(i) {
   //   if ($(this).attr("id") === "apartment reviews") {
   //     $(this).append("<img src=" + images[i].src + "/>")
@@ -363,3 +396,8 @@ function findPage(obj, input) {
   return null; 
 }
 
+
+function callback(){
+  console.log("please")
+  // $(".grid").hide()
+}
