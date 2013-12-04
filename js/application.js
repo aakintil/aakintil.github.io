@@ -60,7 +60,7 @@ $(document).ready(function() {
   }
 );
 
-var b = false; 
+var b = $.Deferred(); 
 
 $(".grid").on("click", function () { 
 
@@ -71,10 +71,13 @@ $(".grid").on("click", function () {
   $(this).addClass("pt-page-scaleDownUp pt-page-delay200"); 
   // hide the other elements
   $(".grid").not($(this)).each(function() {
-    $(this).addClass('tr-scale-down'); 
+    $(this).addClass('tr-scale-down', 1000); 
   }); 
 
-  func(); 
+  setTimeout(function () {
+     // and call `resolve` on the deferred object, once you're done
+     func(); 
+   }, 900);
 });
 
 function func(){
