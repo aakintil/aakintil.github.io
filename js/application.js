@@ -25,8 +25,10 @@ $(document).ready(function() {
   // icon hover
   // might have to change
   var social = $("#footer a"); 
-  $(".social-fade").hover(function() {
-    $(this).find("a:last").fadeToggle(500);
+  social.hover(function() {
+    $(this).animate({ opacity : 1}); 
+  }, function() {
+    $(this).animate({ opacity : 0.5}); 
   }); 
 
 
@@ -60,14 +62,26 @@ $(".grid").on("click", function () {
   var page = $(this); 
   
   
-  
-  
+
   $(".grid").each(function() {
     $(this).addClass('tr-scale-down'); 
+    $("#content").data("open", false); 
   }); 
   
   $("#content").fadeOut(1000, function(){
-      $(this).empty().append(pages.project1.content).addClass("tr-expand").fadeIn(1000);
+      $(this).empty().append(pages.project1.content);//.addClass("tr-expand").show();
+      // $(this).children().addClass("tr-down-scaled"); 
+      if ( ! $(this).data("open")) {
+        // $(this).data("open", true); 
+        $(this).show( function() {
+          // $(this).children().data( 'open', true ).addClass( 'bl-expand bl-expand-top' );
+        }); 
+      }
+      // $
+      // works kinda well
+      // $("#pieces-container").animate({  "opacity" : 1 }) 
+      // $("#pieces-container").removeClass("tr-down-scaled").addClass("tr-scale-up"); 
+      // $(this).children().css({ "opacity" :  "0.2"} ).addClass("tr-scale-up").show();
   });
     // $("#content").empty(2000)
     // $("#content").hide(2000); 
@@ -93,29 +107,29 @@ $(".grid").on("click", function () {
 
 
   // animating the click
-  $(".nav").on("click", function() {
-    $("#home").animate({ height: 0 }, 1000, function() {  $(this).hide(); $("#main").show("slow") }); 
-  }); 
+  // $(".nav").on("click", function() {
+  //   $("#home").animate({ height: 0 }, 1000, function() {  $(this).hide(); $("#main").show("slow") }); 
+  // }); 
 
 
 
 
 
-  $("#top-nav a").on("click", function() {
-    if (findPage(pages, $(this).attr("title")) !== null) {
-      // console.log(findPage(pages, $(this).attr("title")), " found it"); 
-      var page = findPage(pages, $(this).attr("title")); 
-      $("#content").children().hide("slow"); 
-      $("#title").html(page.title); 
-      $("#header").css({ "background-image" : "url("+page.img_src+")"}); 
-      $("#content").append(page.content); 
-      
-      // set link to active
-      $("#top-nav a").removeClass("active"); 
-      $(this).addClass("active")
-    }
-
-  })
+  // $("#top-nav a").on("click", function() {
+  //   if (findPage(pages, $(this).attr("title")) !== null) {
+  //     // console.log(findPage(pages, $(this).attr("title")), " found it"); 
+  //     var page = findPage(pages, $(this).attr("title")); 
+  //     $("#content").children().hide("slow"); 
+  //     $("#title").html(page.title); 
+  //     $("#header").css({ "background-image" : "url("+page.img_src+")"}); 
+  //     $("#content").append(page.content); 
+  //     
+  //     // set link to active
+  //     $("#top-nav a").removeClass("active"); 
+  //     $(this).addClass("active")
+  //   }
+  // 
+  // })
 
 
 

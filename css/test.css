@@ -1,9 +1,49 @@
+.bl-expand {
+/*  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);*/
+	
+/*  -webkit-transition: scale 4.3s linear 0.5s;
+  -moz-transition: scale 4.3s linear 0.5s;
+  transition: scale 4.3s linear 0.5s;*/
+	
+}
+
+.bl-expand-top {
+	z-index: 100;
+}
+
+.bl-main.bl-expand-item > section:not(.bl-expand),
+.bl-main.bl-expand-item > section.bl-scale-down {
+	-webkit-transform: scale(0.5);
+	-moz-transform: scale(0.5);
+	-ms-transform: scale(0.5);
+	transform: scale(0.5);
+	opacity: 0;
+}
+
 .tr-scale-down {
 	-webkit-transform: scale(0.5);
 	-moz-transform: scale(0.5);
 	-ms-transform: scale(0.5);
 	transform: scale(0.5);
 	opacity: 0;
+}
+
+.tr-down-scaled {
+  -webkit-transform: scale(0.5);
+	-moz-transform: scale(0.5);
+	-ms-transform: scale(0.5);
+	transform: scale(0.5);
+}
+
+.tr-scale-up {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
 }
 
 
@@ -13,4 +53,16 @@
 	-webkit-transition: opacity 0.3s linear 0.5s;
 	-moz-transition: opacity 0.3s linear 0.5s;
 	transition: opacity 0.3s linear 0.5s;
+}
+
+.hide-work {
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+	-webkit-transform: translateY(-100%) scale(0.5);
+	-moz-transition: -moz-transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+	-moz-transform: translateY(-100%) scale(0.5);
+	transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+	transform: translateY(-100%) scale(0.5);
+	-ms-transform: translateY(-100%) scale(0.5);
+	z-index: 0;
 }
