@@ -1,6 +1,7 @@
 var _page = ""; 
-
-
+var _timer = 900; // so far the general time that works for animations/transitions
+var _nav_transitions = "";
+var _grid_showing = true;  
 $(document).ready(function() {
 
   // vertically centering the home navigation elements
@@ -35,8 +36,8 @@ $(document).ready(function() {
   var images = [ a = { src : "images/pptv/pptv2.png", name : "pptv" }, 
   b = { src : "images/apartment-reviews/ar2.png", name : "ar", title : "apartment reviews" }, 
   c = { src : "images/cdf/tea2.png", name : "tea" }, 
-  d = { src : "images/ixdf/avant-garde/ag2.png", name : "ag", title : "avant-garde" }, 
-  e = { src : "images/ixdf/ipad/ipad2.png", name : "ipad" }, 
+  d = { src : "images/ixdf/avant-garde/ag2.png", name : "ag", title : "avant garde" }, 
+  e = { src : "images/ixdf/ipad/ipad2.png", name : "ipad", title : "ipad mag" }, 
   f = { src : "images/biologic/biologic2.png", name : "biologic" }
   ];
 
@@ -63,85 +64,40 @@ $(document).ready(function() {
 var b = $.Deferred(); 
 
 $(".grid").on("click", function () { 
-
+  _grid_showing = false; 
+  
   var title = $(this).find(".gallery").attr("title"); 
   _page = findPage(pages, title); 
-  
+
   // special effect on the clicked element
   $(this).addClass("pt-page-scaleDownUp pt-page-delay200"); 
   // hide the other elements
   $(".grid").not($(this)).each(function() {
     $(this).addClass('tr-scale-down', 1000); 
   }); 
-
-  setTimeout(function () {
-     // and call `resolve` on the deferred object, once you're done
-     func(); 
-   }, 900);
+  
+  _nav_transitions = "pt-page-scaleUp"; 
+  delay_page(_nav_transitions, _timer); 
 });
 
-function func(){
-  $("#content").addClass("pt-page-scaleUp").html(_page.content);
+function delay_page(trans, timer) {
+  setTimeout(function () {  load_project_page(trans);  }, timer);
 }
 
-  // $("#content").children().fadeTo(1000, 0, function() {
-  //   // $("#content").empty(50); 
-  //   $("#content").html(pages.project1.content).children().addClass("pt-page-scaleUpCenter"); 
-  // }); 
-    // $("#content").html(pages.project1.content); 
-    
-    // $("#content").children().fadeTo("slow", 1, function() {
-      // $(this).addClass("pt-page-moveFromRight", 1000)
-    // }); 
-
-    //addClass("tr-expand").animate("opacity", 1); 
-  // });
- 
-  
-  // $("#content").css('visibility','hidden')
-  
-  // $("#content").fadeOut(1000, function(){
-  //     // $(this).empty().append(pages.project1.content);//.addClass("tr-expand").show();
-  //     $(this).addClass("tr-scale-down"); 
-  //     $(this).html(pages.project1.content); 
-  //     
-  //     
-  //     
-  //     
-  //     // $(this).children().addClass("tr-down-scaled"); 
-  //     // if ( ! $(this).data("open")) {
-  //     //   // $(this).data("open", true); 
-  //     //   $(this).show( function() {
-  //     //     // $(this).children().data( 'open', true ).addClass( 'bl-expand bl-expand-top' );
-  //     //   }); 
-  //     // }
-  //     // $
-  //     // works kinda well
-  //     // $("#pieces-container").animate({  "opacity" : 1 }) 
-  //     // $("#pieces-container").removeClass("tr-down-scaled").addClass("tr-scale-up"); 
-  //     // $(this).children().css({ "opacity" :  "0.2"} ).addClass("tr-scale-up").show();
-  // });
-    // $("#content").empty(2000)
-    // $("#content").hide(2000); 
-    // $("#content").append(pages.project1.content); 
-    // $("#content").addClass("tr-expand").show(1000);
+function load_project_page(transition) {
+  $("#content").addClass(transition).html(_page.content);
+}
 
 
 
-    
-
-
-  $(".nav").hover(function(){
-    // animating the main div
-    $(this).animate({"background-color" : "#b7e3f9",  //rgb: 117, 224, 249  rgba(150, 209, 252, 0.8)", 
-    opacity : 1,
-    "box-shadow" : "1px solid black" }, 1000);
-  },function() {
-    $(this).animate({ "background-color" : "transparent", opacity : 0.2 }, 1000);
-  });
-
-
-
+// $(".nav").hover(function(){
+//   // animating the main div
+//   $(this).animate({"background-color" : "#b7e3f9",  //rgb: 117, 224, 249  rgba(150, 209, 252, 0.8)", 
+//   opacity : 1,
+//   "box-shadow" : "1px solid black" }, 1000);
+// },function() {
+//   $(this).animate({ "background-color" : "transparent", opacity : 0.2 }, 1000);
+// });
 
 
   // animating the click
@@ -153,21 +109,24 @@ function func(){
 
 
 
-  // $("#top-nav a").on("click", function() {
-  //   if (findPage(pages, $(this).attr("title")) !== null) {
-  //     // console.log(findPage(pages, $(this).attr("title")), " found it"); 
-  //     var page = findPage(pages, $(this).attr("title")); 
-  //     $("#content").children().hide("slow"); 
-  //     $("#title").html(page.title); 
-  //     $("#header").css({ "background-image" : "url("+page.img_src+")"}); 
-  //     $("#content").append(page.content); 
-  //     
-  //     // set link to active
-  //     $("#top-nav a").removeClass("active"); 
-  //     $(this).addClass("active")
-  //   }
-  // 
-  // })
+  $("#top-nav a").on("click", function() {
+    var title = $(this).attr("title"); 
+     _page = findPage(pages, title);
+
+     if (_grid_showing) {
+       $(".grid").each(function() {
+         $(this).removeClass("tr-scale-down").addClass("pt-page-rotateSlideOut")//addClass('pt-page-rotatePushLeft'); 
+       _grid_showing = false; 
+       });
+     }
+     else {
+       console.log("no grid so do this")
+       var old = _nav_transitions; 
+       _nav_transitions = "pt-page-moveFromRight"; 
+       $("#content").removeClass(old);
+     }
+     // setTimeout(function (_nav_transitions) {  load_project_page(_nav_transitions);  }, _timer);
+  })
 
 
 
