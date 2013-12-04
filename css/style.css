@@ -243,7 +243,7 @@ Content Page Navigation
   background-color: white;
   font-family: "Lato";
   font-weight: 200;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
   width: 100%;
   overflow: hidden;
@@ -256,54 +256,58 @@ Content Page Navigation
   text-align: center;
   background-color: rgba(52, 73, 94, 0.86) !important;
   border-top: 2px solid rgba(52, 73, 94, 0.6);
-   border-bottom: 2px solid rgba(52, 73, 94, 0.6);
+  border-bottom: 2px solid rgba(52, 73, 94, 0.6);
 }
 
 #nav-dropdown button {
   width: 100%;
 }
+
 #nav-dropdown .dropdown-menu {
   border-radius: 0;
 }
 
-#nav-dropdown .dropdown-menu span {
-  display: none;
+#menu .menu-icon {
+  font-size: 30px;
+  font-weight: 400;
 }
 
-/*#nav-dropdown {
-  width: 100%;
-  font-size: 20px;
-  text-align: center;
-  background-color: rgba(52, 73, 94, 0.86) !important;
-  border-top: 2px solid rgba(52, 73, 94, 0.6);
-   border-bottom: 2px solid rgba(52, 73, 94, 0.6);
+#menu {
+  padding: 0;
 }
+
+
 
 .open > .dropdown-menu {
   margin-top: 0 !important;
 }
 .dropdown-menu {
-  background-clip: padding-box;
-  border-radius: 0;
-  display: none;
   font-size: 14px;
   list-style: none outside none;
   min-width: 160px;
   position: relative;
+/*  height: 100%;*/
   z-index: 1000;
 }
-*/
+
 
 #menu {
   color: white;
-  font-weight: 100 !important;
-  margin: 0px 10px;
+}
+
+#menu .caret {
+  margin: 0;
 }
 
 #top-nav a {
     opacity: 0.6;
     text-transform: lowercase;
 /*    font-size: 30px;*/
+}
+
+#top-nav span {
+  margin: 0px 10px;
+  opacity: 0.2;
 }
 
 #top-nav a:hover {
@@ -542,7 +546,7 @@ padding: 0px 200px;
 
 @media (max-width: 992px) {
   #top-nav {
-      font-size: 20px;
+      font-size: 15px;
   }
   
   #top-nav {
@@ -552,7 +556,7 @@ padding: 0px 200px;
   }
   
   
-  
+/*  
   #top-nav a {
     padding: 10px;
     margin: 0;
@@ -567,17 +571,31 @@ padding: 0px 200px;
   #top-nav a:hover {
     background-color: rgba(52, 73, 94, 1);
     color: white;
-  }
+  }*/
 }
 
-@media (min-width: 993px) {
-/*  #nav-dropdown {
+@media (min-width: 768px) {
+  #nav-dropdown {
     display: none;
   }
   
   #top-nav {
-    display: block !important;
-  }*/
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  #nav-dropdown {
+    display: block;
+  }
+  
+  #nav-dropdown li span {
+    display: none;
+  }
+  
+  #top-nav {
+    display: none;
+  }
 }
 
 

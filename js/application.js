@@ -133,8 +133,12 @@ function load_project_page(transition) {
 
 
 
+$("#menu").on("click", function() {
+  var icon = $("#menu .menu-icon")
+  $("#nav-dropdown").hasClass("open") ?  icon.html("+") : icon.html("-"); 
+})
 
-  $(".dropdown-menu a").on("click", function() {
+  $("#top-nav a").on("click", function() {
     var title = $(this).attr("title"); 
      _page = findPage(pages, title);
 
@@ -404,3 +408,14 @@ function callback(){
   console.log("please")
   // $(".grid").hide()
 }
+
+function rotate(degree, el) {
+  el.animate({
+    '-webkit-transform': 'rotate(' + degree + 'deg)',
+    '-moz-transform': 'rotate(' + degree + 'deg)',
+    '-ms-transform': 'rotate(' + degree + 'deg)',
+    '-o-transform': 'rotate(' + degree + 'deg)',
+    'transform': 'rotate(' + degree + 'deg)',
+    'zoom': 1
+    }, 1000);
+  }
