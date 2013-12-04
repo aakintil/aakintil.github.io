@@ -242,7 +242,7 @@ Content Page Navigation
 #top-nav {
   background-color: white;
   font-family: "Lato";
-  font-weight: 200;
+  font-weight: 400;
   font-size: 20px;
   text-align: center;
   width: 100%;
@@ -271,8 +271,23 @@ Content Page Navigation
   -o-transition: all 1.2s;
 }
 
+.dropdown-menu > li > a {
+  font-weight: 200;
+  
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
 .dropdown-menu > li > a:hover {
   background-color: rgba(52, 73, 94, 1); 
+  box-shadow:inset 0px 0px 10px rgba(0,0,0, 0.05);
+  
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
 }
 
 #menu .menu-icon {
@@ -569,7 +584,12 @@ padding: 0px 200px;
     padding: 0;
     margin: 0;
   }
-  
+}
+
+@media (min-width: 993px) {
+  #top-nav {
+    font-weight: 200;
+  }
   
 }
 

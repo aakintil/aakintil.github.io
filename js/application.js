@@ -93,7 +93,7 @@ function delay_page(trans, timer) {
 }
 
 function load_project_page(transition) {
-  var top = $('#top-nav').offset().top-150; 
+  var top = $('#nav-dropdown a').offset().top-150; 
   // add animation to content
   $("#content").addClass(transition).html(_page.content);
   $("#title").html(_page.title); 
