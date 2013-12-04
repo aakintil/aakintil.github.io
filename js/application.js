@@ -33,9 +33,9 @@ $(document).ready(function() {
 
 
   var images = [ a = { src : "images/pptv/pptv2.png", name : "pptv" }, 
-  b = { src : "images/apartment-reviews/ar2.png", name : "ar" }, 
+  b = { src : "images/apartment-reviews/ar2.png", name : "apartment reviews" }, 
   c = { src : "images/cdf/tea2.png", name : "tea" }, 
-  d = { src : "images/ixdf/avant-garde/ag2.png", name : "ag" }, 
+  d = { src : "images/ixdf/avant-garde/ag2.png", name : "avant-garde" }, 
   e = { src : "images/ixdf/ipad/ipad2.png", name : "ipad" }, 
   f = { src : "images/biologic/biologic2.png", name : "biologic" }
   ];
@@ -45,7 +45,8 @@ $(document).ready(function() {
 
   $(".gallery").each(function(i) {
     if ($(this).attr("id") === images[i].name) 
-    $(this).css({ "background-image" : "url("+ images[i].src +")"})
+    $(this).css({ "background-image" : "url("+ images[i].src +")"}); 
+    $(this).attr("title", images[i].name); 
   })
 
 
@@ -57,32 +58,50 @@ $(document).ready(function() {
 );
 
 $(".grid").on("click", function () {
-  var w = $("#content").width(); 
-  var h = $("#content").height(); 
   var page = $(this); 
-  
-  
+  var title = $(this)
 
   $(".grid").each(function() {
     $(this).addClass('tr-scale-down'); 
-    $("#content").data("open", false); 
   }); 
   
-  $("#content").fadeOut(1000, function(){
-      $(this).empty().append(pages.project1.content);//.addClass("tr-expand").show();
-      // $(this).children().addClass("tr-down-scaled"); 
-      if ( ! $(this).data("open")) {
-        // $(this).data("open", true); 
-        $(this).show( function() {
-          // $(this).children().data( 'open', true ).addClass( 'bl-expand bl-expand-top' );
-        }); 
-      }
-      // $
-      // works kinda well
-      // $("#pieces-container").animate({  "opacity" : 1 }) 
-      // $("#pieces-container").removeClass("tr-down-scaled").addClass("tr-scale-up"); 
-      // $(this).children().css({ "opacity" :  "0.2"} ).addClass("tr-scale-up").show();
-  });
+  $("#content").children().fadeTo(1000, 0, function() {
+    // $("#content").empty(50); 
+    $("#content").html(pages.project1.content).children().addClass("pt-page-scaleUpCenter"); 
+  }); 
+    // $("#content").html(pages.project1.content); 
+    
+    // $("#content").children().fadeTo("slow", 1, function() {
+      // $(this).addClass("pt-page-moveFromRight", 1000)
+    // }); 
+
+    //addClass("tr-expand").animate("opacity", 1); 
+  // });
+ 
+  
+  // $("#content").css('visibility','hidden')
+  
+  // $("#content").fadeOut(1000, function(){
+  //     // $(this).empty().append(pages.project1.content);//.addClass("tr-expand").show();
+  //     $(this).addClass("tr-scale-down"); 
+  //     $(this).html(pages.project1.content); 
+  //     
+  //     
+  //     
+  //     
+  //     // $(this).children().addClass("tr-down-scaled"); 
+  //     // if ( ! $(this).data("open")) {
+  //     //   // $(this).data("open", true); 
+  //     //   $(this).show( function() {
+  //     //     // $(this).children().data( 'open', true ).addClass( 'bl-expand bl-expand-top' );
+  //     //   }); 
+  //     // }
+  //     // $
+  //     // works kinda well
+  //     // $("#pieces-container").animate({  "opacity" : 1 }) 
+  //     // $("#pieces-container").removeClass("tr-down-scaled").addClass("tr-scale-up"); 
+  //     // $(this).children().css({ "opacity" :  "0.2"} ).addClass("tr-scale-up").show();
+  // });
     // $("#content").empty(2000)
     // $("#content").hide(2000); 
     // $("#content").append(pages.project1.content); 

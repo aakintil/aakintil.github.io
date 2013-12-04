@@ -367,9 +367,9 @@
 }
 
 .pt-page-scaleUp {
-	-webkit-animation: scaleUp .7s ease both;
-	-moz-animation: scaleUp .7s ease both;
-	animation: scaleUp .7s ease both;
+	-webkit-animation: scaleUp 1s ease both;
+	-moz-animation: scaleUp 1s ease both;
+	animation: scaleUp 1s ease both;
 }
 
 .pt-page-scaleUpDown {
