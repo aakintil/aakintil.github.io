@@ -114,6 +114,8 @@ function load_project_page(transition) {
   var top = $('#top-nav').offset().top-150; 
   // add animation to content
   $("#content").addClass(transition).html(_page.content);
+  $("#title").html(_page.title); 
+  $("#header").css({ "backgroundImage" : "url("+ _page.img_src +")" })
   // move focus back to top if it's not there already
   $('html, body').animate({ scrollTop: top }, _timer+300);
 }
@@ -192,17 +194,17 @@ var pages = {
   
   project1 : {
     title : "PPTV", 
-    img_src : "images/bg.gif", 
+    img_src : "images/pptv/pptv-main.gif", 
     images : "<div class='col-md-4 col-md-offset-4'> d</div> <div class='col-md-4'> d</div>", 
     content :
       "<div class='col-md-8' id='pieces-container'>\
          <p id='description'>\
-           I worked for <This is a project I worked on during parts of my junior and senior years under Scott Davidoff and John Zimmerman. The main design for PPTV had already been produced, so I was tasked with the interaction design and information architecture of system. I created a prototype for manual data entry that looked into the information architecture of the system and a prototype for exhibiting the interaction that would occur if a user were to use the system's menu.\
+           This is a project I worked on during parts of my junior and senior years under Scott Davidoff and John Zimmerman. The main design for PPTV had already been produced, so I was tasked with the interaction design and information architecture of system. I created a prototype for manual data entry that looked into the information architecture of the system and a prototype for exhibiting the interaction that would occur if a user were to use the system's menu.\
          </p>\
-           <div class='col-sm-6 col-md-12 pieces'><img src='images/apartment-reviews/property-page2.png'/></div> \
-           <div class='col-sm-6 col-md-12 pieces'> <img src='images/apartment-reviews/city-page2.png'/></div>\
-           <div class='col-sm-6 col-md-12 pieces'> <img src='images/apartment-reviews/dashboard.png'/></div> \
-           <div class='col-sm-6 col-md-12 pieces'> <img src='images/apartment-reviews/apartment-cards.png'/></div>\
+           <div class='col-sm-6 col-md-12 pieces'><img src='images/pptv/event-summary.png'/></div> \
+           <div class='col-sm-6 col-md-12 pieces'> <img src='images/pptv/event-type.png'/></div>\
+           <div class='col-sm-6 col-md-12 pieces'> <img src='images/pptv/calendar-view.png'/></div> \
+           <div class='col-sm-6 col-md-12 pieces'> <img src='images/pptv/stickies.png'/></div>\
          </div>\
          <div class='col-md-4' id='details-container'>\
            <h4> Project Details </h4>\
@@ -212,11 +214,11 @@ var pages = {
            </div>\
            <div>\
              <p class='title'>Dates</p>\
-             <p>June 2013 - N/A </p>\
+             <p>October - December 2011 & June - August 2012</p>\
            </div>\
            <div>\
              <p class='title'> Methods Used </p>\
-             <p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6, Ruby on Rails, HTML, CSS, Javascript</p>\
+             <p> Sticky Notes, Rapid Prototyping, Balsamiq, User Testing, Adobe Illustrator </p>\
            </div>\
            <div>\
              <a class='btn btn-primary' href='downloads/pptv.zip' target='_blank'> Download </a>\
@@ -225,7 +227,7 @@ var pages = {
   }, 
   project2 : {
     title : "Apartment Reviews", 
-    img_src : "images/bg.gif", 
+    img_src : "images/apartment-reviews/ar-main.gif", 
     images : "<div class='col-md-4 col-md-offset-4'> d</div> <div class='col-md-4'> d</div>", 
     content :
       "<div class='col-md-8' id='pieces-container'>\
@@ -345,15 +347,15 @@ var pages = {
              <h4> Project Details </h4>\
              <div>\
                <p class='title'> Context </p>\
-               <p> Interaction Design Fundamentals (05-651) </p>\
+               <p> Biologic </p>\
              </div>\
              <div>\
                <p class='title'>Dates</p>\
-               <p> October - December 2013 </p>\
+               <p> August - December 2013 </p>\
              </div>\
              <div>\
                <p class='title'> Methods Used </p>\
-               <p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6</p>\
+               <p> Laser Cutting, Adobe Illustrator, Arduino</p>\
              </div>\
              <div>\
                <a class='btn btn-primary disabled' href='downloads/biologic.pdf' download='biologic.pdf 'target='_blank'> Unavailable </a>\

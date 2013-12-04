@@ -224,6 +224,11 @@ Content Page
   font-size: 100px;
 }
 
+#header {
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
 
 /*---------------------------
 Content Page Navigation 
