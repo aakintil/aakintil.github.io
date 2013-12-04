@@ -75,30 +75,53 @@ body {
 
 .nav
 {
-  color: red;
-  top: 200px;
-  height: 300px;
-  opacity: 0.2;
-
+  font-family: "Canter Bold";
+  height: 500px;
+  opacity: 0.3;
+  margin: 50px 0px;
   -webkit-transition: -webkit-box-shadow 0.5s ease-out;
   -moz-transition: -moz-box-shadow 0.5s ease-out;
   transition: box-shadow 0.5s ease-out;
+
+  -webkit-transition: background-color 0.5s linear;
+  -moz-transition: background-color 0.5s linear;
+  -o-transition: background-color 0.5s linear;
+  -ms-transition: background-color 0.5s linear;
+  transition: background-color 0.5s linear;
+  
+  background-color: white;
+  
 }
 
 .nav:hover {
+  opacity: 1;
   cursor: pointer;
   -webkit-box-shadow: 0px 0px 15px #444;
   -moz-box-shadow: 0px 0px 15px #444;
   transition: box-shadow 0.5s ease-out;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+
+  -webkit-transition: background-color 0.5s linear;
+  -moz-transition: background-color 0.5s linear;
+  -o-transition: background-color 0.5s linear;
+  -ms-transition: background-color 0.5s linear;
+  transition: background-color 0.5s linear;
+  
+    -webkit-transition: opacity 1s ease-in-out;
+   -moz-transition: opacity 1s ease-in-out;
+   -ms-transition: opacity 1s ease-in-out;
+   -o-transition: opacity 1s ease-in-out;
+   transition: opacity 1s ease-in-out;
+  background-color: rgba(117, 224, 249, 0.7);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
 }
+
 
 
 
 #home .nav > div:not(.row) {
   margin: 0 auto;
   border-radius: 50%;
-  border: 4px solid rgba(0, 0, 0, 0.6);
+  border: 10px solid rgba(10, 198, 242, 1);
   width: 200px;
   height: 200px;
   text-align: center;
@@ -111,7 +134,6 @@ body {
 }
 
 #home .nav:hover > div:not(.row) {
-  border: 10px solid #3BBAEC;
 
   -webkit-transition: border 0.5s ease-in-out;
   -moz-transition: border 0.5s ease-in-out;
@@ -137,18 +159,33 @@ transition: opacity 1s ease-in-out;*/
 
 
 
-#home .nav p {
-  font-size: 40px;
+#home p {
+  font-size: 60px;
+  margin-top: 10px !important;
 }
 
 
 #home {
-  display: none;
+  display:none;
+  position: absolute;
+  top:0;
+  bottom:0;
+  text-align: center;
+  right:0;
+  left:0;
+  overflow:auto;
+  width: 100%;
+  height: 100%;
+/*  background-color: rgba(52, 73, 94, 1);*/
+}
+
+#home #logo {
+  margin-top: 50px;
 }
 
 #main {
 /*  display: none;*/
-width: 100%;
+  width: 100%;
 }
 
 #main #content {
@@ -198,7 +235,7 @@ Content Page Navigation
   bottom: 0;
   font-family: "Lato";
   font-weight: 400;
-  font-size: 18px;
+  font-size: 12px;
   margin-bottom: -2px;
   text-align: center;
   width: 100%;
@@ -421,4 +458,38 @@ padding: 0px 200px;
     padding: 0px 15px;
   }
   
+  #details-container {
+    text-align: center;
+  }
+  
 }
+
+@media (max-width: 560px) {
+
+}
+
+@media (max-width: 770px) {
+  #footer {
+    padding: 30px;
+  }
+  
+  #footer div {
+    margin-bottom: 10px;
+  }
+  
+  /* Project Page */
+  #main .grid {
+    margin: 0;
+    padding: 10px;
+  }
+  
+}
+
+@media (min-width: 992px) {
+  #top-nav {
+      font-size: 16px;
+  }
+  
+}
+
+

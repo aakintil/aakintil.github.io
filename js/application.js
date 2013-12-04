@@ -1,9 +1,35 @@
 var _page = ""; 
 var _timer = 900; // so far the general time that works for animations/transitions
 var _nav_transitions = "";
-var _grid_showing = true;  
+var _grid_showing = true; 
+
+// $(window).resize(function() {
+//   if( $('#top-nav').is(':visible') ) {
+//       // it's visible, do something
+//       console.log("yea")
+//   }
+//   else {
+//       // it's not visible so do something else
+//       alert("better")
+//   }
+// })
+
+if( $('#top-nav').is(':visible') ) {
+    // it's visible, do something
+    console.log("yea")
+}
+else {
+    // it's not visible so do something else
+    alert("better")
+}
+ 
 $(document).ready(function() {
 
+  // if (Modernizr.mq('all and (max-width: 770pz)')) {
+  //     alert("yea")
+  // }
+
+  
   // vertically centering the home navigation elements
   var work = $("#work"), 
   resume = $("#resume"), 

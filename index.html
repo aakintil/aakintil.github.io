@@ -20,13 +20,13 @@
 
   <!-- Loading Flat UI -->
   <link rel="stylesheet" href="css/flat-ui.css">
-  
+
   <!-- Loading My Stylesheet -->
   <!-- <link rel="stylesheet" href="css/transitions.css"> -->
 
   <!-- Loading My Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
-  
+
   <link rel="stylesheet" href="css/test.css">
 
 
@@ -46,6 +46,9 @@
   <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
   <![endif]-->
 
+  <!-- Loading jQuery libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
   <!-- Analytics -->
   <script type="text/javascript">
@@ -59,136 +62,146 @@
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
   })();
-
   </script>	
-  
+
   <script src="js/modernizr.custom.js"></script>
+  <script src="http://cdn.jsdelivr.net/modernizr/2.7.0/modernizr.min.js"></script>
 
-      </head> 
-      <!-- end of head -->
+</head> 
+<!-- end of head -->
 
-      <body>
+<body>
 
-        <!-- Main Home Page -->
-        <div id="home" class="container">
-          <!-- end of nav container -->
-
-          <!-- Content -->
-          <div id="home" class="container">
-
-            <div class="row">
-              <div class="nav col-xs-4">
-                <div>
-                  <p id = "work"> d </p>
-                </div>
-              </div>
-
-              <div class="nav col-xs-4">
-                <div>
-                  <p id = "resume"> e </p>
-                </div>
-              </div>
-
-              <div class="nav col-xs-4">
-                <div>
-                  <p id = "contact"> f </p>
-                </div>
-              </div>
-            </div>
+  <!-- Main Home Page -->
+  <div id="home" class="container">
+    <!-- end of nav container -->
+    <div class="row">
+      <div id="logo"> <a href="index.html"><img src="images/logo.png" /></a> </div>
 
 
+      <div class="nav col-sm-4">
+        <div>
+          
+        </div>
+        <p id = "work"> Work </p>
+      </div>
 
+      <div class="nav col-sm-4">
+        <div>
+          
+        </div>
+        <p id = "resume"> Resume </p>
+      </div>
+
+      <div class="nav col-sm-4">
+        <div>
+          
+        </div>
+        <p id = "contact"> Contact </p>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <!-- end of content -->
+
+
+  <!-- end of home page -->
+
+  <!--  Content Page -->
+  <div id="main" class="container">
+    <div class="row">
+      <div id="header" class="col-sm-12 col-md-12"> 
+
+        <div id="logo"> <a href="index.html"><img src="images/logo.png" /></a> </div>
+        <h1 id="title"> Aderinsola Akintilo  </h1>   
+
+        <div class="row">
+          <div id="top-nav" class="col-sm-12 col-md-12">
+            <!-- <a id="first">PPTV</a> <span> / </span> -->
+            <a title="pptv"> PPTV </a> <span> / </span>
+            <a title="apartment reviews"> APARTMENT REVIEWS </a> <span> / </span>
+            <a title="tea"> TEA </a> <span> / </span>
+            <a title="avant-garde"> AVANT-GARDE </a> <span> / </span>
+            <a title="ipad mag"> IPAD MAG </a> <span> / </span>
+            <a title="biologic"> BIOLOGIC </a> <span> / </span>
+            <a title="me" id="me"> ME </a>
           </div>
+        </div>        
+      </div>
+    </div>
 
-          <!-- end of content -->
+    <!-- Content Area -->
+    <div id="content" class="row">
+      <div class="col-md-4 col-sm-6 grid">
+        <div id="pptv" class="gallery">
+        </div>
+      </div>
 
+      <div class="col-md-4 col-sm-6 grid">
+        <div id="ar" class="gallery">
 
         </div>
-        <!-- end of home page -->
+      </div>
 
-        <!--  Content Page -->
-        <div id="main" class="container">
-          <div class="row">
-            <div id="header" class="col-sm-12 col-md-12"> 
+      <div class="col-md-4 col-sm-6 grid">
+        <div id="tea" class="gallery">
 
-              <div id="logo"> <a href="index.html"><img src="images/logo.png" /></a> </div>
-              <h1 id="title"> Aderinsola Akintilo  </h1>   
-
-              <div class="row">
-                <div id="top-nav" class="col-sm-12 col-md-12">
-                  <!-- <a id="first">PPTV</a> <span> / </span> -->
-                  <a title="pptv"> PPTV </a> <span> / </span>
-                  <a title="apartment reviews"> Apartment Reviews </a> <span> / </span>
-                  <a title="tea"> Tea </a> <span> / </span>
-                  <a title="avant-garde"> Avant-Garde </a> <span> / </span>
-                  <a title="ipad mag"> iPad Mag </a> <span> / </span>
-                  <a title="biologic"> Biologic </a> <span> / </span>
-                  <a title="me" id="me"> Me </a>
-                </div>
-              </div>        
-            </div>
-          </div>
-
-          <!-- Content Area -->
-          <div id="content" class="row">
-            <div class="col-md-4 col-sm-6 grid">
-              <div id="pptv" class="gallery">
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6 grid">
-              <div id="ar" class="gallery">
-
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6 grid">
-              <div id="tea" class="gallery">
-
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6 grid">
-              <div id="ag" class="gallery">
-
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6 grid">
-              <div id="ipad" class="gallery">
-
-              </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6 grid">
-              <div id="biologic" class="gallery">
-
-              </div>
-            </div>
-            <!-- <a id="" class="gallery">
-              <img src="images/apartment-reviews/test.png">
-            </a> -->
-            
-          </div>
-
-          <div class="row">
-            <nav id="footer" class="navbar navbar-default navbar-static-bottom" role="navigation">
-              <div class="col-sm-12">
-
-                <a title="email" href=""><img src="images/icons/email-color.png"></a>
-
-                <a title="facebook" href=""><img src="images/icons/facebook-color.png"/></a>
-
-                <a title="google" href=""><img src="images/icons/google-color.png"/></a>
-
-                <a title="pinterest" href=""><img src="images/icons/pinterest-color.png"/></a>
-
-                <a title="soundcloud" href=""><img src="images/icons/soundcloud-color.png"/></a>
-              </div>
-            </nav>      
-          </div>
         </div>
-        <!-- end of content page -->
+      </div>
+
+      <div class="col-md-4 col-sm-6 grid">
+        <div id="ag" class="gallery">
+
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 grid">
+        <div id="ipad" class="gallery">
+
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 grid">
+        <div id="biologic" class="gallery">
+
+        </div>
+      </div>
+      <!-- <a id="" class="gallery">
+      <img src="images/apartment-reviews/test.png">
+      </a> -->
+
+    </div>
+
+    <div class="row">
+      <nav id="footer" class="navbar navbar-default navbar-static-bottom" role="navigation">
+
+        <div class="col-sm-2 col-sm-offset-1">
+          <a title="email" href=""><img src="images/icons/email-color.png"></a>
+        </div>
+
+        <div class="col-sm-2">
+          <a title="facebook" href=""><img src="images/icons/facebook-color.png"/></a>
+        </div>
+
+        <div class="col-sm-2">
+          <a title="google" href=""><img src="images/icons/google-color.png"/></a>
+        </div>
+        <div class="col-sm-2">
+          <a title="pinterest" href=""><img src="images/icons/pinterest-color.png"/></a>
+        </div>
+
+        <div class="col-sm-2">
+          <a title="soundcloud" href=""><img src="images/icons/soundcloud-color.png"/></a>
+        </div>
+     
+      </div>
+    </nav>      
+  </div>
+</div>
+  <!-- end of content page -->
 
 
 <!-- TYPEKIT FONTS -->
@@ -196,9 +209,7 @@
 <!-- <script type="text/javascript" src="http://use.typekit.com/fun6bdu.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
 
-<!-- Loading jQuery libraries -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 <!-- <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script> -->
@@ -208,28 +219,7 @@
 <script type="text/javascript" src="js/grayscale.js"></script>
 <script type="text/javascript" src="js/application.js"></script>
 
-<script>
-$(window).load(function(){
-  // $(".gallery").BlackAndWhite({
-  //   hoverEffect : true, // default true
-  //   // set the path to BnWWorker.js for a superfast implementation
-  //   webworkerPath : false,
-  //   // for the images with a fluid width and height 
-  //   responsive:true,
-  //   // to invert the hover effect
-  //   invertHoverEffect: false,
-  //   // this option works only on the modern browsers ( on IE lower than 9 it remains always 1)
-  //   intensity:1,
-  //   speed: { //this property could also be just speed: value for both fadeIn and fadeOut
-  //     fadeIn: 200, // 200ms for fadeIn animations
-  //     fadeOut: 800 // 800ms for fadeOut animations
-  //   },
-  //   onImageReady:function(img) {
-  //     // this callback gets executed anytime an image is converted
-  //     }});
-    });
-    </script>
-    
+
 </body>
 <!-- end of body -->
 </html>
