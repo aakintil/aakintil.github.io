@@ -1,4 +1,4 @@
-
+var _page = ""; 
 
 
 $(document).ready(function() {
@@ -60,17 +60,27 @@ $(document).ready(function() {
   }
 );
 
-$(".grid").on("click", function () {
-  var page = $(this); 
-  var title = $(this).find(".gallery").attr("title"); 
+var b = false; 
 
+$(".grid").on("click", function () { 
+
+  var title = $(this).find(".gallery").attr("title"); 
+  _page = findPage(pages, title); 
+  
+  // special effect on the clicked element
   $(this).addClass("pt-page-scaleDownUp pt-page-delay200"); 
+  // hide the other elements
   $(".grid").not($(this)).each(function() {
     $(this).addClass('tr-scale-down'); 
   }); 
-  
-  console.log(title);
-  });
+
+  func(); 
+});
+
+function func(){
+  $("#content").addClass("pt-page-scaleUp").html(_page.content);
+}
+
   // $("#content").children().fadeTo(1000, 0, function() {
   //   // $("#content").empty(50); 
   //   $("#content").html(pages.project1.content).children().addClass("pt-page-scaleUpCenter"); 
