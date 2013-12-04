@@ -1531,7 +1531,7 @@ fieldset[disabled] .btn-link:focus {
   border-bottom-color: #34495e;
 }
 .navbar .nav li.dropdown .dropdown-menu > li > a {
-  border-radius: 3px;
+/*  border-radius: 3px;*/
   color: #ffffff;
   padding: 6px 8px 8px;
 }
@@ -3760,7 +3760,7 @@ fieldset[disabled] .input-group .input-group-btn:first-child .btn-default.active
 .dropdown-menu {
   background-color: #f3f4f5;
   border: none;
-  display: block;
+  display: none;
   margin-top: 8px;
   opacity: 0;
   padding: 0;
@@ -3780,7 +3780,6 @@ fieldset[disabled] .input-group .input-group-btn:first-child .btn-default.active
   border: 2px solid #1abc9c;
   padding: 5px 0;
   background-color: #ffffff;
-  border-radius: 6px;
 }
 .dropdown-menu.typeahead li a {
   padding: 6px 14px;
@@ -3799,11 +3798,9 @@ fieldset[disabled] .input-group .input-group-btn:first-child .btn-default.active
   border-radius: 0;
 }
 .dropdown-menu li:first-child > a {
-  border-radius: 6px 6px 0 0;
   padding-top: 8px;
 }
 .dropdown-menu li:last-child > a {
-  border-radius: 0 0 6px 6px;
   padding-bottom: 10px;
 }
 .dropdown-menu li.active > a,
@@ -3869,11 +3866,7 @@ fieldset[disabled] .input-group .input-group-btn:first-child .btn-default.active
   margin-top: 12px;
   padding: 0 15px;
 }
-@media (max-width: 480px) {
-  .dropdown-menu {
-    border-radius: 0 0 6px 6px !important;
-  }
-}
+
 .dropup .dropdown-menu,
 .navbar-fixed-bottom .dropdown .dropdown-menu {
   margin-bottom: 8px;
@@ -3930,13 +3923,11 @@ fieldset[disabled] .input-group .input-group-btn:first-child .btn-default.active
 }
 .dropdown-inverse li:first-child > a,
 .dropdown-inverse li:last-child > a {
-  border-radius: 2px;
   padding-bottom: 7px;
   padding-top: 5px;
 }
 .dropdown-inverse li:first-child dt + a,
 .dropdown-inverse li:last-child dt + a {
-  border-radius: 2px;
 }
 .dropdown-inverse li.active > a,
 .dropdown-inverse li.selected > a {
@@ -3954,7 +3945,6 @@ fieldset[disabled] .input-group .input-group-btn:first-child .btn-default.active
   margin-right: 11px;
 }
 .dropdown-inverse li > a {
-  border-radius: 2px;
   color: #ffffff;
   padding: 5px 11px 7px;
 }

@@ -1,26 +1,16 @@
+// Global variables
 var _page = ""; 
 var _timer = 900; // so far the general time that works for animations/transitions
 var _nav_transitions = "";
 var _grid_showing = true; 
 
-// $(window).resize(function() {
-//   if( $('#top-nav').is(':visible') ) {
-//       // it's visible, do something
-//       console.log("yea")
-//   }
-//   else {
-//       // it's not visible so do something else
-//       alert("better")
-//   }
-// })
 
- 
- 
+$(".dropdown-menu").css({ 
+  height: 0, 
+  display: "none", 
+  opacity: 0}); 
+  
 $(document).ready(function() {
-
-  // if (Modernizr.mq('all and (max-width: 770pz)')) {
-  //     alert("yea")
-  // }
 
   
   // vertically centering the home navigation elements
@@ -37,7 +27,6 @@ $(document).ready(function() {
   centerElements($(".nav div")); 
   centerElements($(".circle")); 
   centerElements($(".gallery")); 
-  // centerElements($(".pieces img"));
 
 
 
@@ -80,7 +69,7 @@ $(document).ready(function() {
 //   }
 // );
 
-var b = $.Deferred(); 
+
 
 $(".grid").on("click", function () { 
   _grid_showing = false; 
@@ -129,35 +118,54 @@ function load_project_page(transition) {
   // $(".nav").on("click", function() {
   //   $("#home").animate({ height: 0 }, 1000, function() {  $(this).hide(); $("#main").show("slow") }); 
   // }); 
+  
+  // Menu fading effect
+  $("#menu").on("click", function() {
+    var icon = $("#menu .menu-icon")
+    if (!$("#nav-dropdown").hasClass("open")) {
+      $(".dropdown-menu")
+      .animate({ height: "300px" })
+      .animate({opacity : 1})
+      .css({display: "block"});
+      //  then switch icon
+      icon.html("-"); 
+    }
+    else {
+      $(".dropdown-menu").animate({ opacity: 0 })
+      .animate({  height: 0,  display: "none"})
+      // then switch icon back
+      icon.html("+")
+    }
+  })
 
 
 
+$("#nav-dropdown a").on("click", function() {
+  
+  $(".dropdown-menu").animate({ opacity: 0 })
+  .animate({  height: 0,  display: "none"})
+  // then switch icon back
+  $("#menu .menu-icon").html("+")
+  
+  var title = $(this).attr("title"); 
+  _page = findPage(pages, title);
 
-$("#menu").on("click", function() {
-  var icon = $("#menu .menu-icon")
-  $("#nav-dropdown").hasClass("open") ?  icon.html("+") : icon.html("-"); 
+  if (_grid_showing) {
+    $(".grid").each(function() {
+      $(this).removeClass("tr-scaleDown").addClass("tr-rotateSlideOut")//addClass('pt-page-rotatePushLeft'); 
+    });
+    _grid_showing = false; 
+    _nav_transitions = "tr-scale-up"; 
+    delay_page(_nav_transitions, 1500); 
+  }
+  else {
+    var out = "tr-scale-down"; 
+    console.log("are we not here?")
+    _nav_transitions = "tr-scale-up"; 
+    nav_page_delay(_nav_transitions, out, _timer);
+  }
+
 })
-
-  $("#top-nav a").on("click", function() {
-    var title = $(this).attr("title"); 
-     _page = findPage(pages, title);
-
-     if (_grid_showing) {
-       $(".grid").each(function() {
-         $(this).removeClass("tr-scaleDown").addClass("tr-rotateSlideOut")//addClass('pt-page-rotatePushLeft'); 
-       });
-       _grid_showing = false; 
-       _nav_transitions = "tr-scale-up"; 
-       delay_page(_nav_transitions, 1500); 
-     }
-     else {
-       var out = "tr-scale-down"; 
-       console.log("are we not here?")
-       _nav_transitions = "tr-scale-up"; 
-       nav_page_delay(_nav_transitions, out, _timer);
-     }
-
-   })
 
 
    function nav_page_delay(_in, out, timer) {
@@ -409,13 +417,3 @@ function callback(){
   // $(".grid").hide()
 }
 
-function rotate(degree, el) {
-  el.animate({
-    '-webkit-transform': 'rotate(' + degree + 'deg)',
-    '-moz-transform': 'rotate(' + degree + 'deg)',
-    '-ms-transform': 'rotate(' + degree + 'deg)',
-    '-o-transform': 'rotate(' + degree + 'deg)',
-    'transform': 'rotate(' + degree + 'deg)',
-    'zoom': 1
-    }, 1000);
-  }
