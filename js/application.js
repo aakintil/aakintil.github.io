@@ -85,7 +85,11 @@ function delay_page(trans, timer) {
 }
 
 function load_project_page(transition) {
+  var top = $('#top-nav').offset().top-150; 
+  // add animation to content
   $("#content").addClass(transition).html(_page.content);
+  // move focus back to top if it's not there already
+  $('html, body').animate({ scrollTop: top }, _timer+300);
 }
 
 
@@ -137,10 +141,6 @@ function load_project_page(transition) {
      setTimeout(function () {  load_project_page(_in);  }, timer);
    }
 
-  // function load_project_page1(_in, out) {
-  //   $("#content").addClass(_in).html(_page.content);
-  // }
-  
 
   // end of on load
 }); 
