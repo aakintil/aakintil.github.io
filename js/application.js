@@ -61,61 +61,21 @@ $(".grid").on("click", function () {
   
   
   
+  
   $(".grid").each(function() {
-    $(this).animate({ left: '-'+w },  1000, function () {
-    })
-  }, function () { alert("fuck off")}); 
-  $(".grid").hide(2000)
-  $("#content").hide(2000); 
-  $("#content").append(pages.project1.content); 
-  $("#content").slideDown(3000);
-  // $("#content").children().css({display : "none"});
-  // $("#content").append(pages.project1.content); 
-  // $("#content").slideDown(3000);
-  // $(".grid").effect("drop")
-  // cool but not good enough
-  // $(".grid").not($(this)).hide("fast", function() {
-  //   page.animate({ height : h, width : w }, 1000);
-  // });
-});
-  // $(".gallery").each(function(i) {
-  //   if ($(this).attr("id") === "apartment reviews") {
-  //     $(this).append("<img src=" + images[i].src + "/>")
-  //   }
-  // })
+    $(this).addClass('tr-scale-down'); 
+  }); 
   
+  $("#content").fadeOut(1000, function(){
+      $(this).empty().append(pages.project1.content).addClass("tr-expand").fadeIn(1000);
+  });
+    // $("#content").empty(2000)
+    // $("#content").hide(2000); 
+    // $("#content").append(pages.project1.content); 
+    // $("#content").addClass("tr-expand").show(1000);
 
-  // $(".grid").hover( function() { 
-  //   console.log("hovering")
-  //   $(this).addClass("hover", 500);
-  // }, function(){
-  //   console.log("not hovering")
-  //    $(this).removeClass("hover", 500);
-  // })
-  
-  // $(".grid").hover(
-  // function() {
-  // $(this).stop().addClass("hover");
-  // },
-  // function() {
-  // $(this).stop().removeClass("hover");
-  // });
+  });
 
-
-  // $(function() {
-  //     // fade in the grayscaled images to avoid visual jump
-  //     $('.gallery').hide().fadeIn(1000);
-  //   });
-  //   // user window.load to ensure images have been loaded
-  //   $(window).load(function () {
-  //     $('.gallery').greyScale({
-  //       // call the plugin with non-defult fadeTime (default: 400ms)
-  //       fadeTime: 500,
-  //       reverse: false
-  //     });
-  //   });
-    
-    
     
 
 
