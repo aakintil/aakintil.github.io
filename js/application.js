@@ -70,13 +70,13 @@ $(".grid").on("click", function () {
   _page = findPage(pages, title); 
 
   // special effect on the clicked element
-  $(this).addClass("pt-page-scaleDownUp pt-page-delay200"); 
+  $(this).addClass("tr-scale-downUp"); 
   // hide the other elements
   $(".grid").not($(this)).each(function() {
-    $(this).addClass('tr-scale-down', 1000); 
+    $(this).addClass('tr-scale-down'); 
   }); 
   
-  _nav_transitions = "pt-page-scaleUp"; 
+  _nav_transitions = "tr-scale-up"; 
   delay_page(_nav_transitions, _timer); 
 });
 
@@ -115,25 +115,25 @@ function load_project_page(transition) {
 
      if (_grid_showing) {
        $(".grid").each(function() {
-         $(this).removeClass("tr-scale-down").addClass("tr-rotateSlideOut")//addClass('pt-page-rotatePushLeft'); 
+         $(this).removeClass("tr-scaleDown").addClass("tr-rotateSlideOut")//addClass('pt-page-rotatePushLeft'); 
        });
        _grid_showing = false; 
-       _nav_transitions = "pt-page-scaleUp"; 
+       _nav_transitions = "tr-scale-up"; 
        delay_page(_nav_transitions, 1500); 
      }
      else {
-       var old = _nav_transitions; 
+       var out = "tr-scale-down"; 
        console.log("are we not here?")
-       _nav_transitions = "pt-page-scaleUp"; 
-       nav_page_delay(_nav_transitions, _timer, old);
+       _nav_transitions = "tr-scale-up"; 
+       nav_page_delay(_nav_transitions, out, _timer);
      }
 
    })
 
 
-   function nav_page_delay(_in, timer, out) {
+   function nav_page_delay(_in, out, timer) {
      $("#content").attr("class", "row"); 
-     $("#content").addClass(out, 1200); 
+     $("#content").addClass(out); 
      setTimeout(function () {  load_project_page(_in);  }, timer);
    }
 
