@@ -33,9 +33,9 @@ $(document).ready(function() {
 
 
   var images = [ a = { src : "images/pptv/pptv2.png", name : "pptv" }, 
-  b = { src : "images/apartment-reviews/ar2.png", name : "apartment reviews" }, 
+  b = { src : "images/apartment-reviews/ar2.png", name : "ar", title : "apartment reviews" }, 
   c = { src : "images/cdf/tea2.png", name : "tea" }, 
-  d = { src : "images/ixdf/avant-garde/ag2.png", name : "avant-garde" }, 
+  d = { src : "images/ixdf/avant-garde/ag2.png", name : "ag", title : "avant-garde" }, 
   e = { src : "images/ixdf/ipad/ipad2.png", name : "ipad" }, 
   f = { src : "images/biologic/biologic2.png", name : "biologic" }
   ];
@@ -46,7 +46,10 @@ $(document).ready(function() {
   $(".gallery").each(function(i) {
     if ($(this).attr("id") === images[i].name) 
     $(this).css({ "background-image" : "url("+ images[i].src +")"}); 
-    $(this).attr("title", images[i].name); 
+    if (images[i].title !== undefined)
+    $(this).attr("title", images[i].title);
+    else
+     $(this).attr("title", images[i].name);
   })
 
 
@@ -59,16 +62,19 @@ $(document).ready(function() {
 
 $(".grid").on("click", function () {
   var page = $(this); 
-  var title = $(this)
+  var title = $(this).find(".gallery").attr("title"); 
 
-  $(".grid").each(function() {
+  $(this).addClass("pt-page-scaleDownUp pt-page-delay200"); 
+  $(".grid").not($(this)).each(function() {
     $(this).addClass('tr-scale-down'); 
   }); 
   
-  $("#content").children().fadeTo(1000, 0, function() {
-    // $("#content").empty(50); 
-    $("#content").html(pages.project1.content).children().addClass("pt-page-scaleUpCenter"); 
-  }); 
+  console.log(title);
+  });
+  // $("#content").children().fadeTo(1000, 0, function() {
+  //   // $("#content").empty(50); 
+  //   $("#content").html(pages.project1.content).children().addClass("pt-page-scaleUpCenter"); 
+  // }); 
     // $("#content").html(pages.project1.content); 
     
     // $("#content").children().fadeTo("slow", 1, function() {
@@ -107,7 +113,7 @@ $(".grid").on("click", function () {
     // $("#content").append(pages.project1.content); 
     // $("#content").addClass("tr-expand").show(1000);
 
-  });
+
 
     
 
