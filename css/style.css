@@ -226,7 +226,7 @@ Content Page
 
 #header {
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 
 
@@ -469,9 +469,25 @@ padding: 0px 200px;
   
 }
 
-@media (max-width: 560px) {
-
+@media (max-width: 480px) {
+  #header {
+    height: 250px;
+  }
+  
+  #logo {
+    margin-top: -20px;
+  }
+  
+  #header > #title {
+    font-size: 30px;
+    margin-top: -30px;
+  }
+  
+   #logo img {
+    width: 70px;
+  }
 }
+
 
 @media (max-width: 770px) {
   #footer {
