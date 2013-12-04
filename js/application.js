@@ -14,14 +14,7 @@ var _grid_showing = true;
 //   }
 // })
 
-// if( $('#top-nav').is(':visible') ) {
-//     // it's visible, do something
-//     console.log("yea")
-// }
-// else {
-//     // it's not visible so do something else
-//     alert("better")
-// }
+ 
  
 $(document).ready(function() {
 
@@ -141,7 +134,7 @@ function load_project_page(transition) {
 
 
 
-  $("#top-nav a").on("click", function() {
+  $(".dropdown-menu a").on("click", function() {
     var title = $(this).attr("title"); 
      _page = findPage(pages, title);
 
