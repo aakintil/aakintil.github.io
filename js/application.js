@@ -115,20 +115,32 @@ function load_project_page(transition) {
 
      if (_grid_showing) {
        $(".grid").each(function() {
-         $(this).removeClass("tr-scale-down").addClass("pt-page-rotateSlideOut")//addClass('pt-page-rotatePushLeft'); 
-       _grid_showing = false; 
+         $(this).removeClass("tr-scale-down").addClass("tr-rotateSlideOut")//addClass('pt-page-rotatePushLeft'); 
        });
+       _grid_showing = false; 
+       _nav_transitions = "pt-page-scaleUp"; 
+       delay_page(_nav_transitions, 1500); 
      }
      else {
-       console.log("no grid so do this")
        var old = _nav_transitions; 
-       _nav_transitions = "pt-page-moveFromRight"; 
-       $("#content").removeClass(old);
+       console.log("are we not here?")
+       _nav_transitions = "pt-page-scaleUp"; 
+       nav_page_delay(_nav_transitions, _timer, old);
      }
-     // setTimeout(function (_nav_transitions) {  load_project_page(_nav_transitions);  }, _timer);
-  })
+
+   })
 
 
+   function nav_page_delay(_in, timer, out) {
+     $("#content").attr("class", "row"); 
+     $("#content").addClass(out, 1200); 
+     setTimeout(function () {  load_project_page(_in);  }, timer);
+   }
+
+  // function load_project_page1(_in, out) {
+  //   $("#content").addClass(_in).html(_page.content);
+  // }
+  
 
   // end of on load
 }); 
