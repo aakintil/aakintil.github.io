@@ -14,14 +14,14 @@ var _grid_showing = true;
 //   }
 // })
 
-if( $('#top-nav').is(':visible') ) {
-    // it's visible, do something
-    console.log("yea")
-}
-else {
-    // it's not visible so do something else
-    alert("better")
-}
+// if( $('#top-nav').is(':visible') ) {
+//     // it's visible, do something
+//     console.log("yea")
+// }
+// else {
+//     // it's not visible so do something else
+//     alert("better")
+// }
  
 $(document).ready(function() {
 
@@ -80,12 +80,12 @@ $(document).ready(function() {
   })
 
 
-  $(".grid").hover(function () {
-    $(this).css({ "backgroundColor": "rgba(52, 73, 94, 1)" }, 10);
-  }, function () {
-    $(this).css({ "backgroundColor" : "white"}, 10)
-  }
-);
+//   $(".grid").hover(function () {
+//     $(this).css({ "backgroundColor": "rgba(52, 73, 94, 1)" }, 10);
+//   }, function () {
+//     $(this).css({ "backgroundColor" : "white"}, 10)
+//   }
+// );
 
 var b = $.Deferred(); 
 
