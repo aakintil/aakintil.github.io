@@ -48,7 +48,7 @@ $(document).ready(function() {
 
 
   $(".grid").hover(function () {
-    $(this).css({ "backgroundColor": "#34495E" }, 10);
+    $(this).css({ "backgroundColor": "rgba(52, 73, 94, 1)" }, 10);
   }, function () {
     $(this).css({ "backgroundColor" : "white"}, 10)
   }
@@ -121,7 +121,7 @@ $(".grid").on("click", function () {
 
   $(".nav").hover(function(){
     // animating the main div
-    $(this).animate({"background-color" : "#b7e3f9",  //rgba(150, 209, 252, 0.8)", 
+    $(this).animate({"background-color" : "#b7e3f9",  //rgb: 117, 224, 249  rgba(150, 209, 252, 0.8)", 
     opacity : 1,
     "box-shadow" : "1px solid black" }, 1000);
   },function() {
@@ -149,7 +149,6 @@ $(".grid").on("click", function () {
       $("#title").html(page.title); 
       $("#header").css({ "background-image" : "url("+page.img_src+")"}); 
       $("#content").append(page.content); 
-      $("#content").append(page.images); 
       
       // set link to active
       $("#top-nav a").removeClass("active"); 

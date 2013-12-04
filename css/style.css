@@ -157,6 +157,11 @@ height: 100%;
 padding-top: 60px;
 }
 
+#main > .row:first-child {
+  background-color: rgba(52, 73, 94, 0.86);
+/*  rgba( 117, 224, 249, 0.2);*/
+}
+
 
 .major {
   position: relative;
@@ -174,7 +179,7 @@ Content Page
 
 #header {
   height: 400px;
-  background-color: #363638; 
+/*  background-color: #363638; */
   text-align: center;
 }
 
