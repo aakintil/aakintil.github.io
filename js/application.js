@@ -93,7 +93,9 @@ function delay_page(trans, timer) {
 }
 
 function load_project_page(transition) {
-  var top = $('#nav-dropdown a').offset().top-150; 
+  var top = "";
+  $("#top-nav").is(":visible") ? $("#top-nav").offset().top-150 : $('#nav-dropdown').offset().top-150;; 
+ 
   // add animation to content
   $("#content").addClass(transition).html(_page.content);
   $("#title").html(_page.title); 
@@ -140,7 +142,7 @@ function load_project_page(transition) {
 
 
 
-$("#nav-dropdown a").on("click", function() {
+$("#nav-dropdown a, #top-nav a").on("click", function() {
   
   $(".dropdown-menu").animate({ opacity: 0 })
   .animate({  height: 0,  display: "none"})
