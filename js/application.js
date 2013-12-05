@@ -274,12 +274,12 @@ var pages = {
 
   project3 : {
     title : "Tea", 
-    img_src : "", 
+    img_src : "images/cdf/tea-main.gif", 
     content : "<div class='col-md-8' id='pieces-container'><p id='description'>This was my Communication Design Fundamentals final project. Our assignment was to create a booklet about anything we want. I decided to create a couple spreads about different teas from different areas. Some of the teas were borrowed from my roommate, while the others were given to me by the owners of Margaret's Fine Imports</p><div class='col-sm-6 col-md-12 pieces'><img src='images/cdf/img1.png'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/write1.png'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/img2.jpg'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/end.jpg'/></div></div><div class='col-md-4' id='details-container'><h4> Project Details </h4><div><p class='title'> Context </p><p> Summer Research</p></div><div><p class='title'>Dates</p><p>October - December 2011 & June - August 2012</p></div><div><p class='title'> Methods Used </p><p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6, Photography</p></div><div><a class='btn btn-primary' target='_blank' href='downloads/tea-booklet.pdf' download='tea.pdf'> Download </a></div></div></div>"
   }, 
   project4 : {
     title : "Avant-Garde", 
-    img_src : "", 
+    img_src : "images/ixdf/avant-garde/ag-main.gif", 
     content :
       "<div class='col-md-8' id='pieces-container'>\
          <p id='description'>\
@@ -312,7 +312,7 @@ var pages = {
   
   project5 : {
      title : "iPad Mag", 
-     img_src : "", 
+     img_src : "images/ixdf/ipad/ipad-main.gif", 
      content :"<div class='col-md-8' id='pieces-container'>\
           <p id='description'>\
             This was a course project where we were tasked with designing an iPad Magazine within a given four categories: Travel, Personal Finance, Desserts, and Gardening. We you selected a target audience, developed personas, created a mood board for inspiration, generated concepts, developed a design language and color palette, and designed simple navigation. Our design layouts had to be 768 by 1024 pixels (iPad screen size).\
@@ -342,7 +342,7 @@ var pages = {
    
    project6 : {
       title : "Biologic", 
-      img_src : "", 
+      img_src : "images/biologic/biologic-main2.gif", 
       content :"<div class='col-md-8' id='pieces-container'>\
            <p id='description'>\
              This was a course project where we were tasked with designing an iPad Magazine within a given four categories: Travel, Personal Finance, Desserts, and Gardening. We you selected a target audience, developed personas, created a mood board for inspiration, generated concepts, developed a design language and color palette, and designed simple navigation. Our design layouts had to be 768 by 1024 pixels (iPad screen size).\
