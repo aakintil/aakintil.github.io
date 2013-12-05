@@ -1,0 +1,17 @@
+Hey!
+  So this is basically just my portfolio site. The interesthing
+  i did was customized page transitions. I spent more time on the
+  design and little interactions though. I have wireframes and logo
+  sketches and if you want them just let me know and i'll email them. 
+  You should be able to run this on any browser, however i did not
+  have time to test, but i coded with firefox
+  For this i used the following libraries for reference: 
+  
+  PageTransitions.js https://github.com/codrops/PageTransitions
+  
+  I used code from this:
+  ElementTransitions.js http://dan-silver.github.io/ElementTransitions.js/
+  
+  Design Inspirations: 
+  http://www.awwwards.com/
+  http://www.1stwebdesigner.com/inspiration/flat-web-design-inspiration/
