@@ -76,6 +76,24 @@ body {
 /*background-color: #ECEEF0;*/
 }
 
+#resume, #mail-me {
+  color: #75e0f9;
+}
+
+#personal-page h5 {
+  margin-top: 60px;
+}
+
+#personal-page p {
+  text-align: justify;
+  text-justify: inter-cluster;
+}
+
+
+#resume:hover, #mail-me:hover {
+  color: #0AC6F2;
+}
+
 
 .nav
 {
@@ -548,12 +566,12 @@ padding: 0px 200px;
   }
 
   #header > #title {
-    font-size: 30px;
-    margin-top: -30px;
+    font-size: 40px;
+    margin-top: -10px;
   }
 
   #logo img {
-    width: 70px;
+    width: 100px;
   }
 }
 
