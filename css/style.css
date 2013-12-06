@@ -148,15 +148,7 @@ transition: border 0.5s ease-in-out;
 
 }
 
-#home .nav > div:not(.row):hover {
-/*  -webkit-transition: opacity 1s ease-in-out;
--moz-transition: opacity 1s ease-in-out;
--ms-transition: opacity 1s ease-in-out;
--o-transition: opacity 1s ease-in-out;
-transition: opacity 1s ease-in-out;*/
 
-/*  opacity: 0.5;*/
-}
 
 #logo img {
   width: 180px; 
@@ -181,7 +173,6 @@ transition: opacity 1s ease-in-out;*/
   overflow:auto;
   width: 100%;
   height: 100%;
-  /*  background-color: rgba(52, 73, 94, 1);*/
 }
 
 #home #logo {
@@ -221,8 +212,8 @@ Content Page
 
 #header {
   height: 400px;
-  /*  background-color: #363638; */
   text-align: center;
+  transition: background 2.5s linear;
 }
 
 #header > #logo {
@@ -405,6 +396,9 @@ Content Page Images
 
 
 
+#personal-page {
+  
+}
 
 
 
@@ -417,6 +411,12 @@ Project Page
   text-align: center;
   text-align: justify;
   text-justify: inter-cluster;
+}
+
+#personal-page h1 {
+  font-size: 50px;
+  font-weight: 200;
+/*  font-family: "Canter Light";*/
 }
 
 #detail-header {

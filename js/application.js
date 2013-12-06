@@ -107,20 +107,20 @@ $(".dropdown-menu").css({
       var top = "";
       $("#top-nav").is(":visible") ? top = $("#top-nav").offset().top : top = $('#nav-dropdown').offset().top;
 
-      // add animation to content
+      // add animation to page
       $("#content").addClass(transition).html(_page.content);
+      $("#title").attr("class", " "); 
+      $("#title").html(_page.title).fadeTo(1000, 1);
+      $("#header").css({ "backgroundImage" : "url("+ _page.img_src +")" }).fadeTo(1000, 1); 
       
       // for jjquery appear ... later implementation 
       // $(".pieces").css({ opacity : 0 }); 
       // $(".pieces").each(function() {
       //   $(this).data("data-appear-top-offset", 500)
       // }); 
-      
-      $("#title").addClass(transition).html(_page.title);
        
-      $("#header").css({ "backgroundImage" : "url("+ _page.img_src +")" }); 
       // move focus back to top if it's not there already
-      $('html, body').animate({ scrollTop: top }, _timer+300);
+      // $('html, body').animate({ scrollTop: top }, _timer+300);
 
        // console.log($(".pieces").is(':appeared')); 
        //  if ($(".pieces").is(":appeared")) {
@@ -132,7 +132,6 @@ $(".dropdown-menu").css({
 
      
     }
-    console.log($(".pieces").is(':appeared')); 
 
 
 
@@ -158,7 +157,7 @@ $(".dropdown-menu").css({
 
 
     $("#nav-dropdown a, #top-nav a").on("click", function() {
-
+      $("#title").fadeTo(500, 0); 
       $(".dropdown-menu").animate({ opacity: 0 })
       .animate({  height: 0,  display: "none"})
       // then switch icon back
@@ -178,7 +177,6 @@ $(".dropdown-menu").css({
       }
       else {
         var out = "tr-scale-down"; 
-        console.log("are we not here?")
         _nav_transitions = "tr-scale-up"; 
         nav_page_delay(_nav_transitions, out, _timer);
       }
@@ -393,34 +391,37 @@ $(".dropdown-menu").css({
     project7 : {
       title : "Me", 
       img_src : "", 
-      content :"<div class='col-md-8' id='pieces-container'>\
-      <p id='description'>\
-      This was a course project where we were tasked with designing an iPad Magazine within a given four categories: Travel, Personal Finance, Desserts, and Gardening. We you selected a target audience, developed personas, created a mood board for inspiration, generated concepts, developed a design language and color palette, and designed simple navigation. Our design layouts had to be 768 by 1024 pixels (iPad screen size).\
+      content :"<div class='col-md-12' id='personal-page'>\
+      <p id='description'> \
+      <h1> Design. Code. Build </h1> \
+      <p> I'm currently a graduate student studying Human Computer Interaction at Carnegie Mellon University. I love design, music, sports, and food. I have this problem where I can't sit still, and although i've dabbled a little with Arduino, dFab, and shop, I would love to get more experience. Ideally an interaction design gig would be awesome, but as long as I am in a situation where I am tasked with helping users in whatever fashion i'm happy! </p> \
       </p>\
-      <div class='col-sm-6 col-md-12 pieces'><img src='images/biologic/coming-soon.png'/></div> \
-      <div class='col-sm-6 col-md-12 pieces'> <img src='images/biologic/coming-soon2.png'/></div>\
-      </div>\
-      <div class='col-md-4' id='details-container'>\
-      <h4> Project Details </h4>\
-      <div>\
-      <p class='title'> Context </p>\
-      <p> Interaction Design Fundamentals (05-651) </p>\
-      </div>\
-      <div>\
-      <p class='title'>Dates</p>\
-      <p> October - December 2013 </p>\
-      </div>\
-      <div>\
-      <p class='title'> Methods Used </p>\
-      <p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6</p>\
-      </div>\
-      <div>\
-      <a class='btn btn-primary disabled' href='downloads/iPad.pdf' download='iPadMag.pdf 'target='_blank'> Unavailable </a>\
-      </div>\
+      <h5> Wanna see more? </h5> \
+      <p> Checkout my <a href='download/resume.pdf'>resume</a> </p> \
+      <div class='col-sm-6 col-md-6 pieces'><img src='images/biologic/coming-soon.png'/></div> \
+      <div class='col-sm-6 col-md-6 pieces'> <img src='images/biologic/coming-soon2.png'/></div>\
       </div>"
     }
   }
 
+  // <div class='col-md-4' id='details-container'>\
+  // <h4> Project Details </h4>\
+  // <div>\
+  // <p class='title'> Context </p>\
+  // <p> Interaction Design Fundamentals (05-651) </p>\
+  // </div>\
+  // <div>\
+  // <p class='title'>Dates</p>\
+  // <p> October - December 2013 </p>\
+  // </div>\
+  // <div>\
+  // <p class='title'> Methods Used </p>\
+  // <p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6</p>\
+  // </div>\
+  // <div>\
+  // <a class='btn btn-primary disabled' href='downloads/iPad.pdf' download='iPadMag.pdf 'target='_blank'> Unavailable </a>\
+  // </div>\
+  // </div>
 
   function findPage(obj, input) {
     var i = 0; 
