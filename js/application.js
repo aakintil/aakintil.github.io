@@ -16,7 +16,6 @@ $(".dropdown-menu").css({
   $(document).ready(function() {
     // Mini animation
     // hide the body, and have the logo bounce in
-    $("body").css({opacity:0}); 
     $("#logo a img").css({  opacity: "0", "margin-top" : "-=100px"}); 
     $("body").fadeTo(1500, 1, function() {
       $("#logo a img").animate({  opacity: "1", "margin-top" : "+=100px"}, 1000, "easeInOutBack"); 
