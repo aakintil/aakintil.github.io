@@ -9,15 +9,16 @@ var _grid_showing = true;
 $(".dropdown-menu").css({ 
   height: 0, 
   display: "none", 
-  opacity: 0}); 
+  opacity: 0
+}); 
 
-
+  
   $(document).ready(function() {
     // Mini animation
     // hide the body, and have the logo bounce in
     $("body").css({opacity:0}); 
     $("#logo a img").css({  opacity: "0", "margin-top" : "-=100px"}); 
-    $("body").fadeTo(2000, 1, function() {
+    $("body").fadeTo(1500, 1, function() {
       $("#logo a img").animate({  opacity: "1", "margin-top" : "+=100px"}, 1000, "easeInOutBack"); 
     });
 
@@ -56,7 +57,7 @@ $(".dropdown-menu").css({
     var images = [ a = { src : "images/pptv/pptv2.png", name : "pptv" }, 
     b = { src : "images/apartment-reviews/ar2.png", name : "ar", title : "apartment reviews" }, 
     c = { src : "images/cdf/tea2.png", name : "tea" }, 
-    d = { src : "images/ixdf/avant-garde/ag2.png", name : "ag", title : "avant garde" }, 
+    d = { src : "images/ixdf/avant-garde/ag2.png", name : "ag", title : "avant-garde" }, 
     e = { src : "images/ixdf/ipad/ipad2.png", name : "ipad", title : "ipad mag" }, 
     f = { src : "images/biologic/biologic2.png", name : "biologic" }
     ];
@@ -78,6 +79,14 @@ $(".dropdown-menu").css({
 
       var title = $(this).find(".gallery").attr("title"); 
       _page = findPage(pages, title); 
+      
+      $("#nav-dropdown a, #top-nav a").attr("class", ""); 
+      $("#nav-dropdown a, #top-nav a").each(function() {
+        if ($(this).attr("title") === title) {
+          $(this).addClass("active"); 
+        }
+      })
+      // $("#nav-dropdown a, #top-nav a").attr("title", title).addClass("active").css({ opacity: 1});
 
       // special effect on the clicked element
       $(this).addClass("tr-scale-downUp"); 
@@ -96,16 +105,34 @@ $(".dropdown-menu").css({
 
     function load_project_page(transition) {
       var top = "";
-      $("#top-nav").is(":visible") ? $("#top-nav").offset().top-150 : $('#nav-dropdown').offset().top-150;; 
+      $("#top-nav").is(":visible") ? top = $("#top-nav").offset().top : top = $('#nav-dropdown').offset().top;
 
       // add animation to content
       $("#content").addClass(transition).html(_page.content);
-      $("#title").html(_page.title); 
-      $("#header").css({ "backgroundImage" : "url("+ _page.img_src +")" })
+      
+      // for jjquery appear ... later implementation 
+      // $(".pieces").css({ opacity : 0 }); 
+      // $(".pieces").each(function() {
+      //   $(this).data("data-appear-top-offset", 500)
+      // }); 
+      
+      $("#title").addClass(transition).html(_page.title);
+       
+      $("#header").css({ "backgroundImage" : "url("+ _page.img_src +")" }); 
       // move focus back to top if it's not there already
       $('html, body').animate({ scrollTop: top }, _timer+300);
-    }
 
+       // console.log($(".pieces").is(':appeared')); 
+       //  if ($(".pieces").is(":appeared")) {
+       //    $(".pieces").each(function(i) {
+       //      // .addClass("tr-rotateSidesIn")
+       //      setTimeout(function () {  $(this).delay(8000*i).addClass("tr-rotateSidesIn"); ;  }, 5000); 
+       //    })
+       //  }
+
+     
+    }
+    console.log($(".pieces").is(':appeared')); 
 
 
 
@@ -135,8 +162,9 @@ $(".dropdown-menu").css({
       $(".dropdown-menu").animate({ opacity: 0 })
       .animate({  height: 0,  display: "none"})
       // then switch icon back
-      $("#menu .menu-icon").html("+")
-
+      $("#menu .menu-icon").html("+"); 
+      $("#nav-dropdown a, #top-nav a").attr("class", ""); 
+      $(this).addClass("active")
       var title = $(this).attr("title"); 
       _page = findPage(pages, title);
 
@@ -180,7 +208,6 @@ $(".dropdown-menu").css({
 
   function centerElements(el) {
     var parent = $(el).parent(); 
-
     $(el).css({ marginTop: (parent.height() - $(el).outerHeight()) / 2 });
   }
 
@@ -273,10 +300,8 @@ $(".dropdown-menu").css({
       <p id='description'>\
       This was a course project where we were tasked with designing a poster for an upcoming Avant Garde Colloqium. We had to create a poster for a lecture series that will be displayed in a University Union Building kiosk. We used text and images to communicate informational and emotional content. We produced at least ten sketches of different designs using grid, content, and images. We also employed a variety of typefaces and sizes to explore hierarchy.\
       </p>\
-      <div class='col-sm-6 col-md-12 pieces'><img src='images/apartment-reviews/property-page2.png'/></div> \
-      <div class='col-sm-6 col-md-12 pieces'> <img src='images/apartment-reviews/city-page2.png'/></div>\
-      <div class='col-sm-6 col-md-12 pieces'> <img src='images/apartment-reviews/dashboard.png'/></div> \
-      <div class='col-sm-6 col-md-12 pieces'> <img src='images/apartment-reviews/apartment-cards.png'/></div>\
+      <div class='col-sm-6 col-md-12 pieces'> <img src='images/ixdf/avant-garde/img3.png'/></div> \
+      <div class='col-sm-6 col-md-12 pieces'> <img src='images/ixdf/avant-garde/img4.png'/></div>\
       </div>\
       <div class='col-md-4' id='details-container'>\
       <h4> Project Details </h4>\
@@ -333,7 +358,7 @@ $(".dropdown-menu").css({
       img_src : "images/biologic/biologic-main2.gif", 
       content :"<div class='col-md-8' id='pieces-container'>\
       <p id='description'>\
-      This was a course project where we were tasked with designing an iPad Magazine within a given four categories: Travel, Personal Finance, Desserts, and Gardening. We you selected a target audience, developed personas, created a mood board for inspiration, generated concepts, developed a design language and color palette, and designed simple navigation. Our design layouts had to be 768 by 1024 pixels (iPad screen size).\
+      This was a course project where we were tasked with choosing an organism, researching various aspects about the organism, and through many iterating, ideating, and failing, design a responsive building technology based on the initial organism. My group decided to choose the pufferfish.\
       </p>\
       <div class='col-sm-6 col-md-12 pieces'><img src='images/biologic/coming-soon.png'/></div> \
       <div class='col-sm-6 col-md-12 pieces'> <img src='images/biologic/coming-soon2.png'/></div>\
@@ -342,7 +367,7 @@ $(".dropdown-menu").css({
       <h4> Project Details </h4>\
       <div>\
       <p class='title'> Context </p>\
-      <p> Biologic </p>\
+      <p> Biologic (48-632)</p>\
       </div>\
       <div>\
       <p class='title'>Dates</p>\
@@ -353,7 +378,13 @@ $(".dropdown-menu").css({
       <p> Laser Cutting, Adobe Illustrator, Arduino</p>\
       </div>\
       <div>\
-      <a class='btn btn-primary disabled' href='downloads/biologic.pdf' download='biologic.pdf 'target='_blank'> Unavailable </a>\
+      <p class='title'> Collaborators </p>\
+      <p>\
+      Suzy Li, Fereshteh Shahmiri\
+      </p>\
+      </div>\
+      <div>\
+      <a class='btn btn-primary disabled' href='downloads/biologic.pdf' download='biologic.pdf 'target='_blank'> Coming Soon </a>\
       </div>\
       </div>"
     }, 

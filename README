@@ -10,8 +10,13 @@ Hey!
   PageTransitions.js https://github.com/codrops/PageTransitions
   
   I used code from these:
+  Bootstrap (base framework) http://getbootstrap.com/
+  Flat-UI (one or two components, not too much) http://designmodo.github.io/Flat-UI/
   ElementTransitions.js http://dan-silver.github.io/ElementTransitions.js/
   BoxLayout.js http://tympanus.net/codrops/2013/04/23/fullscreen-layout-with-page-transitions/
+  jQuery http://jquery.com/
+  jQuery UI http://jqueryui.com/
+  jQuery Appear http://plugins.jquery.com/appear/
   
   Design Inspirations: 
   http://www.awwwards.com/

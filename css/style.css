@@ -281,6 +281,7 @@ Content Page Navigation
 }
 
 .dropdown-menu > li > a:hover {
+  cursor: pointer;
   background-color: rgba(52, 73, 94, 1); 
   box-shadow:inset 0px 0px 10px rgba(0,0,0, 0.05);
 
@@ -332,7 +333,6 @@ Content Page Navigation
 #top-nav a {
   opacity: 0.6;
   text-transform: lowercase;
-  /*    font-size: 30px;*/
 }
 
 #top-nav span {
@@ -361,7 +361,8 @@ Content Page Navigation
 }
 
 .active {
-  color: red;
+  opacity: 1;
+  color: #75E0F9 !important;
 }
 
 /*---------------------------
