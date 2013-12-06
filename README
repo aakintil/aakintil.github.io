@@ -1,0 +1,25 @@
+Hey!
+  So this is basically just my portfolio site. The interesting
+  i did was customized page transitions. I spent more time on the
+  design and little interactions though. I have wireframes and logo
+  sketches and if you want them just let me know and i'll email them. 
+  You should be able to run this on any browser, however i did not
+  have time to test, so to be safe i would use firefox. 
+  
+  For this i used the following libraries for reference: 
+  PageTransitions.js https://github.com/codrops/PageTransitions
+  
+  I used code from these:
+  Bootstrap (base framework) http://getbootstrap.com/
+  Flat-UI (one or two components, not too much) http://designmodo.github.io/Flat-UI/
+  ElementTransitions.js http://dan-silver.github.io/ElementTransitions.js/
+  BoxLayout.js http://tympanus.net/codrops/2013/04/23/fullscreen-layout-with-page-transitions/
+  jQuery http://jquery.com/
+  jQuery UI http://jqueryui.com/
+  jQuery Appear http://plugins.jquery.com/appear/
+  
+  Design Inspirations: 
+  http://www.awwwards.com/
+  http://www.1stwebdesigner.com/inspiration/flat-web-design-inspiration/
+  
+Thanks!
