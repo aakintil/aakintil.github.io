@@ -395,7 +395,7 @@ $(".dropdown-menu").css({
       <p> I'm currently a graduate student studying Human Computer Interaction at Carnegie Mellon University. I love design, music, sports, and food. I have this problem where I can't sit still, and although i've dabbled a little with Arduino, dFab, and shop, I would love to get more experience. Ideally an interaction design gig would be awesome, but as long as I am in a situation where I am tasked with helping users in whatever fashion i'm happy! </p> \
       </p>\
       <h5> Wanna learn more? </h5> \
-      <p> Checkout my <a id='resume' href='download/resume.pdf'>resume</a>! </p> \
+      <p> Checkout my <a id='resume' href='downloads/resume.pdf'>resume</a>! </p> \
       <h5> Get in touch...Or hire me! </h5> \
       <p> <a id='mail-me' href='mailto:akintilo@cmu.com'>akintilo@cmu.edu</a> | 240-821-3135 </p> \
       </div>"
