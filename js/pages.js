@@ -1,21 +1,35 @@
 // Pages API
-var Mixin = function() {};
-Mixin.prototype = {
-  serialize: function() {
-    var output = [];
-    console.log("supposed to output ", this); 
-    for(key in this) {
-      output.push(key + ': ' + this[key]);
-    }
-    return output.join(', ');
-  }
-};
 
-var m = new Mixin; 
-m.serialize(); 
+var Pages = function(num_of_pages) {
+  this.num_of_pages = num_of_pages; 
+  this.index = 0; 
+  this.children = {};
+  
+}
+
+Pages.prototype = {
+  
+  add : function( Page ) {
+    if (this.find( Page.title )) {
+      
+    }
+    else {
+     this.children[ Page.title ] = Page; 
+    }
+  },
+  
+  find : function( page_title ) {
+    for ( i in this.children ) {
+      if ( i.title === page_title ) {
+        return i; 
+      }
+    }
+  }
+}
 
 
 var Page = function(title, img_src, images, content) {
+  
   this.title = title; 
   this.img_src = img_src; 
   this.images = images; 
@@ -58,14 +72,6 @@ Page.prototype = {
       this.entering = false; 
     
       this.element.attr( "class", this.out_transition );
-    },
-    
-    find : function(page) {
-      for ( i in this ) {
-        if ( i.title === page ) {
-          return i; 
-        }
-      }
     }, 
     
     loadPage : function( page ) {
@@ -88,21 +94,11 @@ Page.prototype = {
 }
 
 
-// var Site = (function() {
-  //   var pages = {}; 
-  // 
-  //   return {
-    //     createPage: function(title, img_src, images, content) {
-      //       // Check to see if this particular combination has been created before.
-      //       if( createPage[title] ) {
-        //         return createPage[title];
-        //       }
-        //       // Otherwise create a new instance and save it.
-        //       else {
-          //         var page = new Page(title, img_src, images, content);
-          //         createPage[title] = page;
-          //         return page;
-          //       }
-          //     }
-          //   };
-          //   })(); 
+var p = new Pages( 5 ); 
+console.log( p ); 
+var page = new Page( "Mr", "Anderson", "Shot", "Me"); 
+var page2 = new Page( "Fuckyou", "Anderson", "Shot", "Me"); 
+p.add( page ); 
+p.add( page2 ); 
+
+console.log( p.children );
