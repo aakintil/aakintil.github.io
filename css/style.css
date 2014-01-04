@@ -76,6 +76,10 @@ body {
   background-color: #000;
 }
 
+#main-container {
+  
+}
+
 
 
 /*---------------------------
@@ -116,7 +120,7 @@ Content
 /* image containers */
 #content div {
   /* change to < 70 when in screen size small*/
-  margin-bottom: 70px;
+  margin-top: 70px;
 }
 
 #content div > div {
@@ -124,6 +128,12 @@ Content
   width: 90%;
   height: 150px;
   border: 1px solid #918E8C;
+}
+
+#content {
+  padding-bottom: 40px;
+  position: relative;
+  top: 120px;
 }
 
 
