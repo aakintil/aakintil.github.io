@@ -76,11 +76,56 @@ body {
   background-color: #000;
 }
 
+
+
+/*---------------------------
+Navigation
+---------------------------*/
+
 #header {
-  background-color: white;
   height: 150px;
-  color: black;
+  color: #918E8C;
 }
+
+#header div {
+    margin-top: 20px;
+}
+
+
+#logo {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #918E8C;
+  text-align: center;
+  position: relative;
+}
+
+#logo h1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+
+/*---------------------------
+Content
+---------------------------*/
+/* image containers */
+#content div {
+  /* change to < 70 when in screen size small*/
+  margin-bottom: 70px;
+}
+
+#content div > div {
+  margin: 0 auto;
+  width: 90%;
+  height: 150px;
+  border: 1px solid #918E8C;
+}
+
 
 
 /*---------------------------
