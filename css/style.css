@@ -97,12 +97,17 @@ Navigation
 
 
 #logo {
-  border-radius: 50%;
+  background-image: url("../images/logo-v2.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+/*  border-radius: 50%;
   width: 100px;
   height: 100px;
   border: 1px solid #918E8C;
   text-align: center;
-  position: relative;
+  position: relative;*/
 }
 
 #logo h1 {
@@ -118,16 +123,18 @@ Navigation
 Content
 ---------------------------*/
 /* image containers */
-#content div {
+#content > div {
+  /* or add col class to it */
   /* change to < 70 when in screen size small*/
-  margin-top: 70px;
+  margin-top: 60px;
 }
 
-#content div > div {
+#content .project-containers {
+  position: relative;
   margin: 0 auto;
   width: 90%;
   height: 150px;
-  border: 1px solid #918E8C;
+  border: 2px solid #918E8C;
 }
 
 #content {
@@ -136,8 +143,55 @@ Content
   top: 120px;
 }
 
+.project-containers > div {
+  position: relative;
+  border: 1px solid blue;
+  height: 100%;
+  float: left;
+  width: 33.3%;
+  text-align: center;
+  padding: 0px 5px;
+}
 
+.project-containers > div > p {
 
+}
+
+/*.project-containers .type, 
+.project-containers .more {
+  display: none;
+}
+
+.project-containers .name {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.project-containers .name p, 
+.project-containers .more p {
+  font-size: 80px;
+}
+
+.project-containers:hover .name {
+  float: left;
+  width: 75px;
+  height: 75px;
+}
+
+.project-containers:hover .name p {
+  margin-top: -30px;
+}
+
+.project-containers:hover .type, 
+.project-containers:hover .more {
+  display: block;
+}
+
+*/
 /*---------------------------
 Media Queries
 ---------------------------*/
