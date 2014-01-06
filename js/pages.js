@@ -41,8 +41,6 @@ var Page = function(title, img_src, images, content) {
   this.leaving = false; 
   this.current_page = ""; 
   this.container = $("#content"); 
-  console.log(this.container); 
-
   this.element = $("<div></div>"); 
   this.element.html(this.content); 
 

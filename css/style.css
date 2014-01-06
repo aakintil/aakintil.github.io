@@ -123,7 +123,7 @@ Navigation
 Content
 ---------------------------*/
 /* image containers */
-#content > div {
+#content > .gallery {
   /* or add col class to it */
   /* change to < 70 when in screen size small*/
   margin-top: 60px;
@@ -183,12 +183,12 @@ position: absolute;
 
 /* hover */
 
-.project-containers:hover > div {
+/*.project-containers:hover > div {
   position: relative;
   border: 1px solid blue;
-  height: 33.33333333333333%;
-  /* height: 50px */
-  padding: 0px 5px;
+  height: 33.33333333333333%;*/
+  /* height: 50px; */
+/*  padding: 0px 5px;
 }
 
 .project-containers:hover > div {
@@ -200,7 +200,7 @@ position: absolute;
   left: 0;
   margin-top: -30px;
 }
-
+*/
 
 
 /*.project-containers:hover .name {
@@ -213,10 +213,10 @@ height: 75px;
 /*  margin-top: -30px;*/
 }
 
-.project-containers:hover .type, 
+/*.project-containers:hover .type, 
 .project-containers:hover .more {
   display: block;
-}
+}*/
 
 /*---------------------------
 Media Queries
