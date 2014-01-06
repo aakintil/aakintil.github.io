@@ -45,6 +45,12 @@
 
 #description {
   color: #918E8C;
+  text-align: justify;
+  text-justify: inter-cluster;
+}
+
+#description > p {
+  padding-right: 20px;
 }
 
 
