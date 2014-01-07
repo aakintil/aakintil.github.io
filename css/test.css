@@ -1,5 +1,13 @@
+body {
+/*opacity: 0;*/
+font-family: "Univers Bold";
+background-color: #000;
+}
+
 #content {
+  font-family: "Cantarell";
   top: 0;
+  color: #918E8C;
   padding: 0px 10px;
 }
 
@@ -14,7 +22,7 @@
 }
 
 
-#top-row h1 {
+#top-row h1, #top-row h4 {
   margin-top: 0;
   position: absolute;
   display: inline-block;
@@ -24,13 +32,34 @@
   left: 0;
 }
 
+#type {
+  font-size: 25px;
+  left: 0;
+  top: 70px;
+}
+
 #close {
   right: 0;
+  
+  /* Safari */
+  -webkit-transform: rotate(-45deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-45deg);
+
+  /* IE */
+  -ms-transform: rotate(-45deg);
+
+  /* Opera */
+  -o-transform: rotate(-45deg);
+
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
 
 #top-row {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   height: 100px;
 }
 
@@ -44,7 +73,6 @@
 }
 
 #description {
-  color: #918E8C;
   text-align: justify;
   text-justify: inter-cluster;
 }
@@ -58,20 +86,63 @@
 
 #images {
   text-align: center;
-  border: 4px solid #918E8C;
-  height: 400px;
   overflow: scroll;
   /*  overflow: visible/hidden/scroll/auto;*/
 }
 
 #images img {
-  width: 90%;
-}
-
-#images img {
+  border: 2px solid #918E8C;
+  width: 80%;
   margin-bottom: 50px;
 }
 
+#images img:hover {
+  width: 90%;
+}
+
+
 #images img:last-child {
   margin-bottom: 0;
+}
+
+
+/* button */
+.btn.btn-primary {
+  border-radius: 0;
+}
+
+.btn:focus {
+    outline: 0px;
+}
+
+.btn-primary {
+    background-color: #4ad6de;
+    color: #FFFFFF;
+}
+
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.open .dropdown-toggle.btn-primary {
+    background-color: #428cff;
+    color: #FFFFFF;
+}
+
+/* details container */
+
+#details-container {
+  margin-top: 100px;
+}
+
+#details-container div {
+  margin-bottom: 40px;
+}
+
+#details-container div p {
+  margin: 0;
+}
+
+#details-container .emphasis {
+  color: #4ad6de;
 }

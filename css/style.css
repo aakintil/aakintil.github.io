@@ -1,20 +1,21 @@
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
 @font-face {
-  font-family: "Canter Light";
-  src: url('../fonts/Canter Light.otf'); 
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Canter Bold";
-  src: url('../fonts/Canter Bold.otf'); 
+  font-family: "Univers Bold";
+  src: url('../fonts/UniversBoldCn.otf'); 
   font-style: bold;
 }
 
 @font-face {
-  font-family: jura;
-  src: url('../fonts/Jura-Regular.ttf');
+  font-family: "Cantarell";
+  src: url('../fonts/CantarellRegular.ttf'); 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cantarell Bold";
+  src: url('../fonts/CantarellBold.ttf');
+  font-style: bold;
 }
 
 
@@ -50,18 +51,20 @@ General Colors
 
 Triadic Logo
 
-asphault: {
-hex: #34495E, 
+purple: {
+hex: #613db5, 
 rgb: 52, 73, 94
 }
 
 light blue: {
-hex: #75E0F9, 
+hex: #4ad6de,
+change 
 rgb: 117, 224, 249
 }
 
-blue: {
-hex: #0AC6F2, 
+darker blue: {
+hex: #428cff, 
+change
 rgb: 10, 198, 242
 }
 
@@ -73,6 +76,7 @@ General
 ---------------------------*/
 body {
 /*opacity: 0;*/
+font-family: "Univers Bold";
 background-color: #000;
 }
 
@@ -184,21 +188,21 @@ position: absolute;
 /* hover */
 
 /*.project-containers:hover > div {
-  position: relative;
-  border: 1px solid blue;
-  height: 33.33333333333333%;*/
-  /* height: 50px; */
+position: relative;
+border: 1px solid blue;
+height: 33.33333333333333%;*/
+/* height: 50px; */
 /*  padding: 0px 5px;
 }
 
 .project-containers:hover > div {
-  
+
 }
 
 .project-containers:hover .name p {
-  position: absolute;
-  left: 0;
-  margin-top: -30px;
+position: absolute;
+left: 0;
+margin-top: -30px;
 }
 */
 
@@ -215,7 +219,7 @@ height: 75px;
 
 /*.project-containers:hover .type, 
 .project-containers:hover .more {
-  display: block;
+display: block;
 }*/
 
 /*---------------------------
