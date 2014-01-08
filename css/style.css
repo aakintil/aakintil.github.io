@@ -98,10 +98,15 @@ change
 rgb: 117, 224, 249
 }
 
-darker blue: {
+dark blue: {
 hex: #428cff, 
 change
 rgb: 10, 198, 242
+
+}
+
+darker blue: {
+hex: #0060f5, 
 }
 
 -------------------------------------------------------------------*/
@@ -217,9 +222,21 @@ position: absolute;
 
 .project-containers .type, 
 .project-containers .more {
-  display: none;
+  -webkit-transition: opacity 2s ease-out;
+  transition: opacity 2s ease-out;
+  opacity: 0; 
+  height: 0;
+  overflow: hidden;
 }
 
+.project-containers:hover .type, 
+.project-containers:hover .more {
+/*  opacity: 1; 
+  -webkit-transition: opacity 2s ease-out;
+  transition: opacity 2s ease-out;
+  height: auto; 
+  overflow:visible;*/
+}
 
 /* hover */
 

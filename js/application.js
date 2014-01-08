@@ -29,9 +29,57 @@ $(document).ready( function() {
   plus_icon_containers = projects.find(".more"); 
   var plus_icons = plus_icon_containers.children(); 
 
+
+  $.fn.an = function(direction) {
+    var view_more_container = $(this).find(".more"); 
+    var type_container      = $(this).find(".type"); 
+    var name_container      = $(this).find(".name"); 
+      if (direction === "in") {
+        console.log("hovering");
+        $(this).children().css(    { position: "relative", 
+        border: "1px solid blue", 
+        height: "33.33333333333333%"  }   ); 
+
+        view_more_container.css(  { opacity: 1, height: "auto", overflow: "visible" } ); 
+        type_container.css(  { opacity: 1, height: "auto", overflow: "visible" } );
+      }
+      else if (direction === "out") {
+        view_more_container.css(  { opacity: 0, height: 0, overflow: "hidden" } ); 
+        type_container.css(  { opacity: 0, height: 0, overflow: "hidden" } ); 
+      } 
+  }  
+  
+  $.fn.animate_children = function () {
+    this.hover ( function () {
+      var view_more_container = $(this).find(".more"); 
+      var type_container      = $(this).find(".type"); 
+      var name_container      = $(this).find(".name");
+      // mouseenter function
+      var $this = $(this); 
+      
+      $this.children().css(    { position: "relative", 
+      border: "1px solid blue", 
+      height: "33.33333333333333%"  }   ); 
+
+      view_more_container.css(  { opacity: 1, height: "auto", overflow: "visible" } ); 
+      type_container.css(  { opacity: 1, height: "auto", overflow: "visible" } );
+      
+      
+    }, function () {
+      var view_more_container = $(this).find(".more"); 
+      var type_container      = $(this).find(".type"); 
+      var name_container      = $(this).find(".name");
+      // mouseleave function
+    }
+       );
+  };
+
+
   // home page project container hover event listener
-  // projects.hover( animate_content, reset_project_elements );
   projects.on( "click", show_page ); 
+  
+  projects.animate_children(); 
+  
 }); 
 
 
