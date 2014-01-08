@@ -50,10 +50,11 @@ $(document).ready( function() {
   }  
   
   $.fn.animate_children = function () {
+     var view_more_container, type_container, name_container = "";     
     this.hover ( function () {
-      var view_more_container = $(this).find(".more"); 
-      var type_container      = $(this).find(".type"); 
-      var name_container      = $(this).find(".name");
+      view_more_container = $(this).find(".more"); 
+      type_container      = $(this).find(".type"); 
+      name_container      = $(this).find(".name");
       // mouseenter function
       var $this = $(this); 
       
@@ -61,15 +62,16 @@ $(document).ready( function() {
       border: "1px solid blue", 
       height: "33.33333333333333%"  }   ); 
 
+      name_container.find("p").css( { "font-size": "40px", "text-align": "left", "margin-top": "-10px" } )
       view_more_container.css(  { opacity: 1, height: "auto", overflow: "visible" } ); 
       type_container.css(  { opacity: 1, height: "auto", overflow: "visible" } );
       
       
     }, function () {
-      var view_more_container = $(this).find(".more"); 
-      var type_container      = $(this).find(".type"); 
-      var name_container      = $(this).find(".name");
       // mouseleave function
+      name_container.find("p").css( { "font-size": "80px", "text-align": "center" } )
+      view_more_container.css(  { opacity: 0, height: 0, overflow: "hidden" } ); 
+      type_container.css(  { opacity: 0, height: 0, overflow: "hidden" } );
     }
        );
   };
