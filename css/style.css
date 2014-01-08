@@ -18,9 +18,45 @@
   font-style: bold;
 }
 
+@font-face {
+  font-family: "League Gothic";
+  src: url('../fonts/leaguegothic-regular.ttf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Jura";
+  src: url('../fonts/Jura-Regular.ttf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Canter";
+  src: url('../fonts/Canter Bold.otf');
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Futura Medium";
+  src: url('../fonts/Futura-Medium.otf');
+  font-style: medium;
+}
 
 
+@font-face {
+  font-family: "Futura";
+  src: url('../fonts/FuturaStd-Book.otf');
+  font-style: normal;
+}
 
+@font-face {
+  font-family: "Futura Bold";
+  src: url('../fonts/FuturaStd-Heavy.otf');
+  font-style: bold;
+}
+
+
+/*FuturaStd-Book*/
 /*------------------------------------------------------------------
 [Table of contents]
 
@@ -76,7 +112,7 @@ General
 ---------------------------*/
 body {
 /*opacity: 0;*/
-font-family: "Univers Bold";
+font-family: "Futura Bold";
 background-color: #000;
 }
 

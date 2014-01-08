@@ -1,8 +1,3 @@
-body {
-/*opacity: 0;*/
-font-family: "Univers Bold";
-background-color: #000;
-}
 
 #content {
   font-family: "Cantarell";
@@ -22,20 +17,40 @@ background-color: #000;
 }
 
 
-#top-row h1, #top-row h4 {
+#top-row h1, 
+#top-row h4 {
+  font-weight: 100;
   margin-top: 0;
   position: absolute;
   display: inline-block;
 }
 
+
+#top-row h1, 
+#top-row h4, 
+#details-container h4 {
+  font-family: "Futura";
+}
+
+#top-row {
+  font-family: "Univers Bold";
+}
+
+
 #title {
+  font-size: 100px;
   left: 0;
+}
+
+#title,
+#details-container h4 {
+    color: #428cff;
 }
 
 #type {
   font-size: 25px;
   left: 0;
-  top: 70px;
+  top: 120px;
 }
 
 #close {
@@ -64,9 +79,15 @@ background-color: #000;
 }
 
 #info-row {
+  top: 150px;
   padding: 0;
-  height: 100px;
+/*  height: 500px;*/
 }
+
+#info-row p {
+  font-size: 15px;
+}
+
 
 #description, #images {
   padding: 0;
@@ -116,7 +137,7 @@ background-color: #000;
 }
 
 .btn-primary {
-    background-color: #4ad6de;
+    background-color: #428cff;
     color: #FFFFFF;
 }
 
@@ -125,7 +146,7 @@ background-color: #000;
 .btn-primary:active, 
 .btn-primary.active, 
 .open .dropdown-toggle.btn-primary {
-    background-color: #428cff;
+    background-color: #4ad6de;
     color: #FFFFFF;
 }
 
@@ -144,5 +165,5 @@ background-color: #000;
 }
 
 #details-container .emphasis {
-  color: #4ad6de;
+    color: #428cff;
 }
