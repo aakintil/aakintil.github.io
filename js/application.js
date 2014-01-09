@@ -30,25 +30,6 @@ $(document).ready( function() {
   var plus_icons = plus_icon_containers.children(); 
 
 
-  $.fn.an = function(direction) {
-    var view_more_container = $(this).find(".more"); 
-    var type_container      = $(this).find(".type"); 
-    var name_container      = $(this).find(".name"); 
-      if (direction === "in") {
-        console.log("hovering");
-        $(this).children().css(    { position: "relative", 
-        border: "1px solid blue", 
-        height: "33.33333333333333%"  }   ); 
-
-        view_more_container.css(  { opacity: 1, height: "auto", overflow: "visible" } ); 
-        type_container.css(  { opacity: 1, height: "auto", overflow: "visible" } );
-      }
-      else if (direction === "out") {
-        view_more_container.css(  { opacity: 0, height: 0, overflow: "hidden" } ); 
-        type_container.css(  { opacity: 0, height: 0, overflow: "hidden" } ); 
-      } 
-  }  
-  
   $.fn.animate_children = function () {
      var view_more_container, type_container, name_container = "";     
     this.hover ( function () {
@@ -58,20 +39,17 @@ $(document).ready( function() {
       // mouseenter function
       var $this = $(this); 
       
-      $this.children().css(    { position: "relative", 
-      border: "1px solid blue", 
-      height: "33.33333333333333%"  }   ); 
-
-      name_container.find("p").css( { "font-size": "40px", "text-align": "left", "margin-top": "-10px" } )
-      view_more_container.css(  { opacity: 1, height: "auto", overflow: "visible" } ); 
-      type_container.css(  { opacity: 1, height: "auto", overflow: "visible" } );
+      name_container.find("p").addClass("align-left"); 
+      // name_container.find("p").animate( { "font-size": "40px", "margin-top": "-10px" } )
+      // view_more_container.add(type_container).css(  { opacity: 1, height: "auto", overflow: "visible" } ); 
+      // type_container.css(  { opacity: 1, height: "auto", overflow: "visible" } );
       
       
     }, function () {
       // mouseleave function
-      name_container.find("p").css( { "font-size": "80px", "text-align": "center" } )
-      view_more_container.css(  { opacity: 0, height: 0, overflow: "hidden" } ); 
-      type_container.css(  { opacity: 0, height: 0, overflow: "hidden" } );
+      // name_container.find("p").animate( { "font-size": "80px", "margin-top" : 0, "left" : 0, "right" : 0 } ) 
+      // view_more_container.add(type_container).css(  { opacity: 0, height: 0, overflow: "hidden" } ); 
+      // type_container.css(  { opacity: 0, height: 0, overflow: "hidden" } );
     }
        );
   };

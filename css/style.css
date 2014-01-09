@@ -175,7 +175,6 @@ Content
 }
 
 #content .project-containers {
-  position: relative;
   margin: 0 auto;
   width: 90%;
   height: 150px;
@@ -188,36 +187,16 @@ Content
   top: 120px;
 }
 
-.project-containers .name {
-  position: relative;
-  border: 1px solid blue;
-  width: 100%;
-  height: 100%;
-  text-align: center;
+.project-containers {
+      position: relative;
 }
 
-.project-containers .name p {
-  position: relative;
-  font-size: 80px;
+.project-containers > div {
+    border: 1px solid red;
+    height: 33.33333333333333%;
 }
-
 .project-containers > div > p {
-/*  font-size: 50px;*/
-position: absolute;
-}
-
-
-.project-containers .type p {
-  position: relative;
-}
-
-.project-containers .type  {
-  text-align: center;
-}
-
-
-.project-containers .more p {
-  right: 0;
+/*  position: absolute;*/
 }
 
 .project-containers .type, 
@@ -227,6 +206,27 @@ position: absolute;
   opacity: 0; 
   height: 0;
   overflow: hidden;
+}
+
+.align-left {
+  text-align: left;
+  -webkit-transition-property: all;
+   -webkit-transition-duration: 20s;
+}
+
+.project-containers .name {
+  width: 20%;
+  left: 0;
+  right: 0;
+/*  margin: 0 auto;*/
+  text-align: center;
+}
+
+.project-containers .name p {
+  -webkit-transition-property: all;
+   -webkit-transition-duration: 20s;
+  font-size: 80px;
+  line-height: 150px;
 }
 
 .project-containers:hover .type, 
