@@ -54,9 +54,9 @@ $(document).ready( function() {
       });                                                                                                                                                                                                                                                                                                                                                                   
     });
   }
-  
-  
-  
+
+
+
   $.fn.animate_children = function () {
     var view_more_container, type_container, name_container = "";     
     this.hover ( function () {
@@ -65,16 +65,24 @@ $(document).ready( function() {
       name_container      = $(this).find(".name");
       // mouseenter function
       var $this = $(this); 
-      TweenLite.to( name_container, 1, {  fontSize: "200px", opacity: 0.4, ease:Power2.easeInOut, onComplete: show_others(1) } );
+
+      $this.animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
+      TweenLite.to( $this, 1, { top: "-20px"} ); 
+      TweenLite.to( name_container, 1, {  fontSize: "200px", opacity: 0.1, ease:Power2.easeInOut, onComplete: show_others(1) } );
     }, function () {
-      TweenLite.to( name_container, 1, {  fontSize: "80px", opacity: 1, ease:Power2.easeInOut, onComplete: show_others(0)  } );
+      TweenLite.to( name_container, 1, {  fontSize: "80px", opacity: 1, ease:Power2.easeInOut, onComplete: callback(this) } );
+
     }); 
 
 
+    function callback(t) {
+      show_others( 0 ); 
+      TweenLite.to( t, 1, { top: "0" } ); 
+      $(t).animate({ borderWidth: "2px", borderColor: "#918E8C" }, 2000, "easeOutCirc"); 
+    }
     function show_others( o ) {
-      var timeline = new TimelineLite(); 
-      
-      timeline.to( [type_container, view_more_container ], 1, {  opacity: o, ease: o === 0 ? "Power2.easeOut" : "Power1.easeIn"  } ); 
+      var timeline = new TimelineLite();  
+      timeline.to( [type_container, view_more_container ], 1, {  opacity: o, ease: o === 0 ? "Power2.easeOut" : "Power1.easeIn", color: o === 0 ? "#918E8C" : "#4ad6de"  } ); 
     }                                                                                                                                                                                                                                                                                                                                                                  
   }
 
@@ -136,21 +144,3 @@ function create_pages() {
 }
 
 
-// 
-// .project-containers:hover > div {
-  //   
-  // }
-  // 
-  // .project-containers:hover .name p {
-    //   position: absolute;
-    //   left: 0;
-    //   margin-top: -30px;
-    // }
-    // */
-    // 
-    // 
-    // /*.project-containers:hover .name {
-      // float: left;
-      // width: 75px;
-      // height: 75px;
-      // }*/

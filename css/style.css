@@ -198,6 +198,7 @@ Content
 
 .project-containers > div {
   position: absolute;
+  color: #918E8C;
 }
 
 .project-containers .name {
@@ -214,6 +215,7 @@ Content
 
 .project-containers .type {
   font-size: 30px;
+  font-family: "Futura";
 }
 
 
