@@ -39,17 +39,13 @@ $(document).ready( function() {
       // mouseenter function
       var $this = $(this); 
       
-      name_container.find("p").addClass("align-left"); 
-      // name_container.find("p").animate( { "font-size": "40px", "margin-top": "-10px" } )
-      // view_more_container.add(type_container).css(  { opacity: 1, height: "auto", overflow: "visible" } ); 
-      // type_container.css(  { opacity: 1, height: "auto", overflow: "visible" } );
+      type_container.animate( { opacity: 1 }, 1000 ); 
+      name_container.animate( { opacity: 0.3, "font-size": "150px" }, 1000);
+      view_more_container.animate( { opacity: 1 }, 1000); 
       
       
     }, function () {
-      // mouseleave function
-      // name_container.find("p").animate( { "font-size": "80px", "margin-top" : 0, "left" : 0, "right" : 0 } ) 
-      // view_more_container.add(type_container).css(  { opacity: 0, height: 0, overflow: "hidden" } ); 
-      // type_container.css(  { opacity: 0, height: 0, overflow: "hidden" } );
+
     }
        );
   };

@@ -119,6 +119,7 @@ body {
 /*opacity: 0;*/
 font-family: "Futura Bold";
 background-color: #000;
+position: relative;
 }
 
 #main-container {
@@ -179,6 +180,7 @@ Content
   width: 90%;
   height: 150px;
   border: 2px solid #918E8C;
+  position: relative;
 }
 
 #content {
@@ -187,93 +189,60 @@ Content
   top: 120px;
 }
 
+
+
 .project-containers {
-      position: relative;
-}
-
-.project-containers > div {
-    border: 1px solid red;
-    height: 33.33333333333333%;
-}
-.project-containers > div > p {
-/*  position: absolute;*/
-}
-
-.project-containers .type, 
-.project-containers .more {
-  -webkit-transition: opacity 2s ease-out;
-  transition: opacity 2s ease-out;
-  opacity: 0; 
-  height: 0;
-  overflow: hidden;
-}
-
-.align-left {
-  text-align: left;
-  -webkit-transition-property: all;
-   -webkit-transition-duration: 20s;
-}
-
-.project-containers .name {
-  width: 20%;
-  left: 0;
-  right: 0;
-/*  margin: 0 auto;*/
   text-align: center;
 }
 
-.project-containers .name p {
+.project-containers > div {
+  position: absolute;
+}
+
+.project-containers .name {
+  font-size: 80px;
+}
+
+.project-containers .name, 
+.project-containers .type {
+  left: 0;
+  right: 0;
+  line-height: 150px;
+} 
+
+
+.project-containers .type {
+  font-size: 30px;
+}
+
+
+
+.project-containers .more {
+  font-size: 80px;
+  right: 0;
+  bottom: 0;
+  line-height: 60px;
+}
+
+
+.project-containers .type, 
+.project-containers .more {
+  opacity: 0;
+}
+
+
+
+
+.project-containers .name {
+/*  background-color: grey;*/
   -webkit-transition-property: all;
    -webkit-transition-duration: 20s;
-  font-size: 80px;
-  line-height: 150px;
+/*  font-size: 80px;*/
+/*  line-height: 150px;*/
 }
 
-.project-containers:hover .type, 
-.project-containers:hover .more {
-/*  opacity: 1; 
-  -webkit-transition: opacity 2s ease-out;
-  transition: opacity 2s ease-out;
-  height: auto; 
-  overflow:visible;*/
-}
-
-/* hover */
-
-/*.project-containers:hover > div {
-position: relative;
-border: 1px solid blue;
-height: 33.33333333333333%;*/
-/* height: 50px; */
-/*  padding: 0px 5px;
-}
-
-.project-containers:hover > div {
-
-}
-
-.project-containers:hover .name p {
-position: absolute;
-left: 0;
-margin-top: -30px;
-}
-*/
 
 
-/*.project-containers:hover .name {
-float: left;
-width: 75px;
-height: 75px;
-}*/
-
-.project-containers:hover .name p {
-/*  margin-top: -30px;*/
-}
-
-/*.project-containers:hover .type, 
-.project-containers:hover .more {
-display: block;
-}*/
 
 /*---------------------------
 Media Queries
