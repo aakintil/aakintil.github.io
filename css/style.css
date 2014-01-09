@@ -192,6 +192,7 @@ Content
 
 
 .project-containers {
+  overflow: hidden;
   text-align: center;
 }
 

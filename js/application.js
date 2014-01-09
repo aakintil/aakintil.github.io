@@ -31,32 +31,37 @@ $(document).ready( function() {
 
 
   $.fn.animate_children = function () {
-     var view_more_container, type_container, name_container = "";     
+    var view_more_container, type_container, name_container = "";     
     this.hover ( function () {
       view_more_container = $(this).find(".more"); 
       type_container      = $(this).find(".type"); 
       name_container      = $(this).find(".name");
       // mouseenter function
       var $this = $(this); 
-      
-      type_container.animate( { opacity: 1 }, 1000 ); 
-      name_container.animate( { opacity: 0.3, "font-size": "150px" }, 1000);
-      view_more_container.animate( { opacity: 1 }, 1000); 
-      
-      
+
+      name_container.animate( { opacity: 0.3, "font-size": "200px" }, 1000, "easeOutBounce" );
+
+      type_container.add(view_more_container).animate( { opacity: 1 }, 1000 ); 
+
+
     }, function () {
+      type_container.add(view_more_container).animate( { opacity: 0.4 }, 900, function() {
+        // alert("complete")
+        var $this = $(this); 
+        console.log($this)
+        name_container.animate( { opacity: 1, "font-size": "80px" }, 2000, "easeOutElastic" ); 
+        type_container.add(view_more_container).animate( { opacity: 0 }, 900 )
+      });                                                                                                                                                                                                                                                                                                                                                                   
+    });
+  }
 
-    }
-       );
-  };
 
+    // home page project container hover event listener
+    projects.on( "click", show_page ); 
 
-  // home page project container hover event listener
-  projects.on( "click", show_page ); 
-  
-  projects.animate_children(); 
-  
-}); 
+    projects.animate_children(); 
+
+  }); 
 
 
 
