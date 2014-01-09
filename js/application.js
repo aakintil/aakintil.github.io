@@ -30,7 +30,7 @@ $(document).ready( function() {
   var plus_icons = plus_icon_containers.children(); 
 
 
-  $.fn.animate_children = function () {
+  $.fn.animate_children_second = function () {
     var view_more_container, type_container, name_container = "";     
     this.hover ( function () {
       view_more_container = $(this).find(".more"); 
@@ -54,14 +54,37 @@ $(document).ready( function() {
       });                                                                                                                                                                                                                                                                                                                                                                   
     });
   }
+  
+  
+  
+  $.fn.animate_children = function () {
+    var view_more_container, type_container, name_container = "";     
+    this.hover ( function () {
+      view_more_container = $(this).find(".more"); 
+      type_container      = $(this).find(".type"); 
+      name_container      = $(this).find(".name");
+      // mouseenter function
+      var $this = $(this); 
+      TweenLite.to( name_container, 1, {  fontSize: "200px", opacity: 0.4, ease:Power2.easeInOut, onComplete: show_others(1) } );
+    }, function () {
+      TweenLite.to( name_container, 1, {  fontSize: "80px", opacity: 1, ease:Power2.easeInOut, onComplete: show_others(0)  } );
+    }); 
 
 
-    // home page project container hover event listener
-    projects.on( "click", show_page ); 
+    function show_others( o ) {
+      var timeline = new TimelineLite(); 
+      
+      timeline.to( [type_container, view_more_container ], 1, {  opacity: o, ease: o === 0 ? "Power2.easeOut" : "Power1.easeIn"  } ); 
+    }                                                                                                                                                                                                                                                                                                                                                                  
+  }
 
-    projects.animate_children(); 
 
-  }); 
+  // home page project container hover event listener
+  projects.on( "click", show_page ); 
+
+  projects.animate_children(); 
+
+}); 
 
 
 
