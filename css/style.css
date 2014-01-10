@@ -117,7 +117,7 @@ General
 ---------------------------*/
 body {
 /*opacity: 0;*/
-font-family: "Futura Bold";
+font-family: "Futura";
 background-color: #000;
 position: relative;
 }
@@ -212,6 +212,10 @@ Content
   line-height: 150px;
 } 
 
+.project-containers .type.smaller {
+  font-size: 20px;
+}
+
 
 .project-containers .type {
   font-size: 30px;
@@ -231,6 +235,10 @@ Content
 .project-containers .type, 
 .project-containers .more {
   opacity: 0;
+}
+
+.project-containers .more:hover {
+  cursor: pointer;
 }
 
 

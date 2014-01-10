@@ -20,41 +20,15 @@ $(document).ready( function() {
   // set necessary variables 
   projects = $(".project-containers"); 
 
-  name_containers = projects.find(".name"); 
-  var names = name_containers.children(); 
-
-  type_containers = projects.find(".type"); 
-  var types = type_containers.children(); 
-
-  plus_icon_containers = projects.find(".more"); 
-  var plus_icons = plus_icon_containers.children(); 
-
-
-  $.fn.animate_children_second = function () {
-    var view_more_container, type_container, name_container = "";     
-    this.hover ( function () {
-      view_more_container = $(this).find(".more"); 
-      type_container      = $(this).find(".type"); 
-      name_container      = $(this).find(".name");
-      // mouseenter function
-      var $this = $(this); 
-
-      name_container.animate( { opacity: 0.3, "font-size": "200px" }, 1000, "easeOutBounce" );
-
-      type_container.add(view_more_container).animate( { opacity: 1 }, 1000 ); 
-
-
-    }, function () {
-      type_container.add(view_more_container).animate( { opacity: 0.4 }, 900, function() {
-        // alert("complete")
-        var $this = $(this); 
-        console.log($this)
-        name_container.animate( { opacity: 1, "font-size": "80px" }, 2000, "easeOutElastic" ); 
-        type_container.add(view_more_container).animate( { opacity: 0 }, 900 )
-      });                                                                                                                                                                                                                                                                                                                                                                   
-    });
-  }
-
+  // name_containers = projects.find(".name"); 
+  // var names = name_containers.children(); 
+  // 
+  // type_containers = projects.find(".type"); 
+  // var types = type_containers.children(); 
+  // 
+  // plus_icon_containers = projects.find(".more"); 
+  // var plus_icons = plus_icon_containers.children(); 
+  // 
 
 
   $.fn.animate_children = function () {
@@ -68,7 +42,7 @@ $(document).ready( function() {
 
       $this.animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
       TweenLite.to( $this, 1, { top: "-20px"} ); 
-      TweenLite.to( name_container, 1, {  fontSize: "200px", opacity: 0.1, ease:Power2.easeInOut, onComplete: show_others(1) } );
+      TweenLite.to( name_container, 1, {  fontSize: "120px", opacity: 0.07, ease:Power2.easeInOut, onComplete: show_others(0.8) } );
     }, function () {
       TweenLite.to( name_container, 1, {  fontSize: "80px", opacity: 1, ease:Power2.easeInOut, onComplete: callback(this) } );
 
@@ -77,18 +51,28 @@ $(document).ready( function() {
 
     function callback(t) {
       show_others( 0 ); 
-      TweenLite.to( t, 1, { top: "0" } ); 
+      TweenLite.to( t, 1, { top: "0", ease: "Bounce.easeOut" } ); 
       $(t).animate({ borderWidth: "2px", borderColor: "#918E8C" }, 2000, "easeOutCirc"); 
     }
     function show_others( o ) {
       var timeline = new TimelineLite();  
-      timeline.to( [type_container, view_more_container ], 1, {  opacity: o, ease: o === 0 ? "Power2.easeOut" : "Power1.easeIn", color: o === 0 ? "#918E8C" : "#4ad6de"  } ); 
+      timeline.to( [type_container, view_more_container ], 1, {  opacity: o, ease: o === 0 ? "Power2.easeOut" : "Power1.easeIn", color: o === 0 ? "#918E8C" : "#22b1ba"  } ); 
     }                                                                                                                                                                                                                                                                                                                                                                  
   }
 
-
+  
   // home page project container hover event listener
   projects.on( "click", show_page ); 
+  
+  //   TweenLite.to( this, 1, { fontSize: "80px", ease:Power2.easeInOut } ); 
+  // }, function() {
+  //   TweenLite.to( this, 1, { fontSize: "60px", ease:Power2.easeInOut } )
+  
+  $(".project-containers .more").hover( function() {
+    TweenLite.to( this, 1, { bottom: "10px", color: "#fff", ease: "SlowMo.easeIn" } ); 
+  }, function() {
+    TweenLite.to( this, 1, { bottom: "0", color: "#22b1ba", ease: "Bounce.easeOut" } ) 
+  })
 
   projects.animate_children(); 
 
