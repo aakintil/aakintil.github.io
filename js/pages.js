@@ -9,30 +9,46 @@ var Pages = function(num_of_pages) {
 
 Pages.prototype = {
 
-  add : function( Page ) {
-    if (this.find( Page.title )) {
-
+  add : function( name, obj ) {
+    if ( this.findTitle( obj.title ) ) {
+      
     }
     else {
-      this.children[ Page.title ] = Page; 
+      this.children[ name ] = obj; 
     }
   },
 
-  find : function( page_title ) {
+  findTag : function( page_tag ) {
     for ( i in this.children ) {
-      if ( i.title === page_title ) {
-        return i; 
+      var obj = this.children[i]; 
+      console.log( obj.tag, "    ",  page_tag )
+      if ( obj.tag.toLowerCase() === page_tag.toLowerCase() ) {
+        return obj; 
+      }
+    }
+    return "none"
+  },
+
+  findTitle : function( page_title ) {
+    for ( i in this.children ) {
+      var obj = this.children[i]; 
+      if ( obj.title === page_title ) {
+        return obj; 
       }
     }
   }
+
 }
 
-
-var Page = function(title, img_src, images, content) {
+// original 
+// var Page = function(title, tag, img_src, images, content) {
+  
+var Page = function(title, tag, content) {
 
   this.title = title; 
-  this.img_src = img_src; 
-  this.images = images; 
+  this.tag = tag; 
+  // this.img_src = img_src; 
+  // this.images = images; 
   this.content = content; 
   this.in_transition = ""; 
   this.out_transition = ""; 

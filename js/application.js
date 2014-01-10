@@ -29,13 +29,13 @@ $(document).ready( function() {
      var timeline = new TimelineLite();  
 
      if ( $this.hasClass("open") ) {
-       timeline.to( [resume, contact ], 1, {  marginLeft: 0, ease: "Power.easeInOut",  onComplete: rotate($this, true)  });
+       timeline.to( [resume, contact ], 1, {  marginLeft: 0, ease: "Power.easeInOut",  onComplete: rotate45($this, true)  });
        timeline.to( [resume, contact ], 0.5, { opacity: 1 }); 
      }
      else {
        $this.find("h1").removeClass("rotate");
        timeline.to( [resume, contact ], 0.5, { opacity: 0 }); 
-       timeline.to( [resume, contact ], 2, {  marginLeft: "-500px", ease: "Power.easeInOut",  onComplete: rotate($this, false)  });
+       timeline.to( [resume, contact ], 2, {  marginLeft: "-500px", ease: "Power.easeInOut",  onComplete: rotate45($this, false)  });
      }
 
    } ); 
@@ -43,8 +43,8 @@ $(document).ready( function() {
  }; 
 
 
- function rotate(t, r) {
-   r === true ? t.find("h1").addClass("rotate") : t.find("h1").removeClass("rotate"); 
+ function rotate45(t, r) {
+   r === true ? t.find("h1").addClass("rotate45") : t.find("h1").removeClass("rotate45"); 
  }
   
   // animate childrend widget / function 
@@ -85,7 +85,25 @@ $(document).ready( function() {
     TweenLite.to( this, 1, { bottom: "10px", color: "#fff", ease: "SlowMo.easeIn" } ); 
   }, function() {
     TweenLite.to( this, 1, { bottom: "0", color: "#22b1ba", ease: "Bounce.easeOut" } ) 
+  } ); 
+  
+  
+  
+  // the plus icon click page animation / transitions
+  $(".project-containers .more").on("click", function() {
+    // console.log( $(this).parent().find("name") ); 
+    // var page_tag = $(this).siblings(".name").text(); 
+    var page_tag = $(this).attr("tag")
+    var page = _project_pages.findTag( page_tag ); 
+    page !== undefined ? drop_current_page() : show_page() ; 
   })
+  
+  
+  // logo animation...have to think of better ones
+  $("#logo").hover( function() {
+    $(this).toggleClass("rotate60"); 
+    
+  } ); 
 
   // animating the elements within the projects containers
   projects.animate_children(); 
@@ -101,6 +119,10 @@ $(document).ready( function() {
 //////////////
 // Functions
 //////////////
+
+function drop_current_page() {
+  $("#content").addClass("pt-page-rotatePushRight"); 
+}
 
 // show page function 
 function show_page() {
@@ -129,18 +151,24 @@ function reset_project_elements() {
 
 function create_pages() {
 
-  var avant_garde = new Page( "Avant-Garde", contents.avant_garde ); 
-  var ipad = new Page( "iPad Magazine", contents.ipad ); 
-  var biologic = new Page( "Biologic", contents.biologic ); 
-  var hri = new Page( "Human Robot Interaction", contents.hri );
-  var tea = new Page( "Tea", contents.tea );
-  var apartment_reviews = new Page( "Apartment Reviews", contents.apartment_reviews ); 
-  var hex = new Page( "Hex Tiles", contents.hex );
-  var waffle = new Page( "Waffle Canopy", contents.waffle );   
-  var contact_me = new Page( "Contact Me", contents.contact_me ); 
+  var obj = {
+  avant_garde : new Page( "Avant-Garde", "AG", contents.avant_garde ),
+  ipad : new Page( "iPad Magazine", "I", contents.ipad ),
+  biologic : new Page( "Biologic", "B", contents.biologic ), 
+  hri : new Page( "Human Robot Interaction", "HRI", contents.hri ),
+  tea : new Page( "Tea", "T",  contents.tea ),
+  apartment_reviews : new Page( "Apartment Reviews", "ar", contents.apartment_reviews ), 
+  hex : new Page( "Hex Tiles", "H", contents.hex ),
+  waffle : new Page( "Waffle Canopy", "W", contents.waffle ),   
+  contact_me : new Page( "Contact Me", "CM",  contents.contact_me ) 
+}
 
-  // add all the pages into the containing object 
-  // _project_pages.add(); 
+
+for (i in obj) {
+  _project_pages.add( i, obj[i] )
+}
+
+console.log( _project_pages ); 
 }
 
 

@@ -149,6 +149,12 @@ Navigation
   width: 150px;
   height: 150px;
   z-index: 10;
+  
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  
   /*  border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -179,18 +185,21 @@ Navigation
 }
 
 #menu h1 {
-    font-family: "Futura";
+    font-family: "Lato";
+    font-weight: 100;
+}
+
+#toggle-menu:hover h1 {
+  /* just a thought... */
+/*    font-weight: bold;*/
 }
 
 #toggle-menu h1 {
   width: 45px;
-/*  height: 40px;*/
-/*  line-height: 40px;*/
   -moz-transition: all 1s ease;
   -webkit-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  border: 1px solid red;
 }
 
 #toggle-menu {
@@ -202,7 +211,11 @@ Navigation
   -webkit-font-smoothing: antialiased;
 }
 
-.rotate {
+#toggle-menu:hover {
+ cursor: pointer; 
+}
+
+.rotate45 {
   -webkit-font-smoothing: antialiased;
   -moz-transition: all 1s ease;
   -webkit-transition: all 1s ease;
@@ -220,6 +233,30 @@ Navigation
 
   /* Opera */
   -o-transform: rotate(-45deg);
+
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  
+}
+
+.rotate60 {
+  -webkit-font-smoothing: antialiased;
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  
+  /* Safari */
+  -webkit-transform: rotate(-60deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-60deg);
+
+  /* IE */
+  -ms-transform: rotate(-60deg);
+
+  /* Opera */
+  -o-transform: rotate(-60deg);
 
   /* Internet Explorer */
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
