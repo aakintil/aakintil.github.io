@@ -148,6 +148,7 @@ Navigation
   background-repeat: no-repeat;
   width: 150px;
   height: 150px;
+  z-index: 10;
   /*  border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -161,6 +162,68 @@ Navigation
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+
+#resume, #contact {
+  position: relative;
+  margin-left: -500px;
+  opacity: 0;
+/*  height: 150px;*/
+}
+
+#resume h1, 
+#contact h1 {
+  font-size: 30px;
+  line-height: 85px;
+}
+
+#menu h1 {
+    font-family: "Futura";
+}
+
+#toggle-menu h1 {
+  width: 45px;
+/*  height: 40px;*/
+/*  line-height: 40px;*/
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  border: 1px solid red;
+}
+
+#toggle-menu {
+  text-align: center;
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+.rotate {
+  -webkit-font-smoothing: antialiased;
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  
+  /* Safari */
+  -webkit-transform: rotate(-45deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-45deg);
+
+  /* IE */
+  -ms-transform: rotate(-45deg);
+
+  /* Opera */
+  -o-transform: rotate(-45deg);
+
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  
 }
 
 
@@ -186,7 +249,7 @@ Content
 #content {
   padding-bottom: 40px;
   position: relative;
-  top: 120px;
+  top: 200px;
 }
 
 
@@ -246,8 +309,8 @@ Content
 
 .project-containers .name {
 /*  background-color: grey;*/
-  -webkit-transition-property: all;
-   -webkit-transition-duration: 20s;
+-webkit-transition-property: all;
+-webkit-transition-duration: 20s;
 /*  font-size: 80px;*/
 /*  line-height: 150px;*/
 }

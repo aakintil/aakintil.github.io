@@ -10,27 +10,45 @@ plus_icon_containers = "";
 
 // ** Important **
 var _project_pages = new Pages( 9 );
-
+  // $('#resume').css({ display: "none", opacity: 0 } );
 // Document ready 
 $(document).ready( function() {
-
+  var projects = $(".project-containers"); 
+  
   // create all my project pages
   create_pages(); 
 
-  // set necessary variables 
-  projects = $(".project-containers"); 
+  // $("#toggle-menu h1").css( { "background-color":  "red"}); 
+  // toggle menu widget / function 
+  $.fn.toggle_menu = function () {
+    
+    $(this).on("click", function () {
+      var $this = $(this); 
+      
+     $this.toggleClass("open"); 
+     var timeline = new TimelineLite();  
 
-  // name_containers = projects.find(".name"); 
-  // var names = name_containers.children(); 
-  // 
-  // type_containers = projects.find(".type"); 
-  // var types = type_containers.children(); 
-  // 
-  // plus_icon_containers = projects.find(".more"); 
-  // var plus_icons = plus_icon_containers.children(); 
-  // 
+     if ( $this.hasClass("open") ) {
+       timeline.to( [resume, contact ], 1, {  marginLeft: 0, ease: "Power.easeInOut",  onComplete: rotate($this, true)  });
+       timeline.to( [resume, contact ], 0.5, { opacity: 1 }); 
+     }
+     else {
+       $this.find("h1").removeClass("rotate");
+       timeline.to( [resume, contact ], 0.5, { opacity: 0 }); 
+       timeline.to( [resume, contact ], 2, {  marginLeft: "-500px", ease: "Power.easeInOut",  onComplete: rotate($this, false)  });
+     }
+
+   } ); 
+
+ }; 
 
 
+ function rotate(t, r) {
+   r === true ? t.find("h1").addClass("rotate") : t.find("h1").removeClass("rotate"); 
+ }
+  
+  // animate childrend widget / function 
+  // move to another js file later
   $.fn.animate_children = function () {
     var view_more_container, type_container, name_container = "";     
     this.hover ( function () {
@@ -61,21 +79,19 @@ $(document).ready( function() {
   }
 
   
-  // home page project container hover event listener
-  projects.on( "click", show_page ); 
   
-  //   TweenLite.to( this, 1, { fontSize: "80px", ease:Power2.easeInOut } ); 
-  // }, function() {
-  //   TweenLite.to( this, 1, { fontSize: "60px", ease:Power2.easeInOut } )
-  
+  // the plus icon hover in the project containers
   $(".project-containers .more").hover( function() {
     TweenLite.to( this, 1, { bottom: "10px", color: "#fff", ease: "SlowMo.easeIn" } ); 
   }, function() {
     TweenLite.to( this, 1, { bottom: "0", color: "#22b1ba", ease: "Bounce.easeOut" } ) 
   })
 
+  // animating the elements within the projects containers
   projects.animate_children(); 
 
+  // menu toggle functions and event listeners
+  $("#toggle-menu").toggle_menu(); 
 }); 
 
 
