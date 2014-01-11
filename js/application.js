@@ -10,43 +10,62 @@ plus_icon_containers = "";
 
 // ** Important **
 var _project_pages = new Pages( 9 );
-  // $('#resume').css({ display: "none", opacity: 0 } );
+// $('#resume').css({ display: "none", opacity: 0 } );
 // Document ready 
+
+$("#header").css( { top: "-50px", opacity: 0 } ); 
+$(".gallery").css( { opacity: 0 } ); 
+
 $(document).ready( function() {
-  var projects = $(".project-containers"); 
   
+  // on load animation
+  TweenLite.to( $("#header"), 2, { opacity: 1, top: 0,  ease: "Power2.easeInOut", onComplete: drop_gallery() } ); 
+  console.log( TweenLite.prototype)
+
+function drop_gallery() {
+    var obj = []; 
+    var $this = ""; 
+    $(".gallery").each( function(i) {
+      $this = $(this); 
+      obj[i] = $this; 
+    }); 
+    TweenMax.staggerTo( obj, 1,  { css: { opacity: 1 }, ease: "Power4.easeIn", delay: 1.5 }, 0.40 );  
+  }
+
+  var projects = $(".project-containers"); 
+
   // create all my project pages
   create_pages(); 
 
   // $("#toggle-menu h1").css( { "background-color":  "red"}); 
   // toggle menu widget / function 
   $.fn.toggle_menu = function () {
-    
+
     $(this).on("click", function () {
       var $this = $(this); 
-      
-     $this.toggleClass("open"); 
-     var timeline = new TimelineLite();  
 
-     if ( $this.hasClass("open") ) {
-       timeline.to( [resume, contact ], 1, {  marginLeft: 0, ease: "Power.easeInOut",  onComplete: rotate45($this, true)  });
-       timeline.to( [resume, contact ], 0.5, { opacity: 1 }); 
-     }
-     else {
-       $this.find("h1").removeClass("rotate");
-       timeline.to( [resume, contact ], 0.5, { opacity: 0 }); 
-       timeline.to( [resume, contact ], 2, {  marginLeft: "-500px", ease: "Power.easeInOut",  onComplete: rotate45($this, false)  });
-     }
+      $this.toggleClass("open"); 
+      var timeline = new TimelineLite();  
 
-   } ); 
+      if ( $this.hasClass("open") ) {
+        timeline.to( [resume, contact ], 1, {  marginLeft: 0, ease: "Power.easeInOut",  onComplete: rotate45($this, true)  });
+        timeline.to( [resume, contact ], 0.5, { opacity: 1 }); 
+      }
+      else {
+        $this.find("h1").removeClass("rotate");
+        timeline.to( [resume, contact ], 0.5, { opacity: 0 }); 
+        timeline.to( [resume, contact ], 2, {  marginLeft: "-500px", ease: "Power.easeInOut",  onComplete: rotate45($this, false)  });
+      }
 
- }; 
+    } ); 
+
+  }; 
 
 
- function rotate45(t, r) {
-   r === true ? t.find("h1").addClass("rotate45") : t.find("h1").removeClass("rotate45"); 
- }
-  
+  function rotate45(t, r) {
+    r === true ? t.find("h1").addClass("rotate45") : t.find("h1").removeClass("rotate45"); 
+  }
+
   // animate childrend widget / function 
   // move to another js file later
   $.fn.animate_children = function () {
@@ -62,7 +81,7 @@ $(document).ready( function() {
       TweenLite.to( $this, 1, { top: "-20px"} ); 
       TweenLite.to( name_container, 1, {  fontSize: "120px", opacity: 0.07, ease:Power2.easeInOut, onComplete: show_others(0.8) } );
     }, function () {
-      TweenLite.to( name_container, 1, {  fontSize: "80px", opacity: 1, ease:Power2.easeInOut, onComplete: callback(this) } );
+      TweenLite.to( name_container, 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback(this) } );
 
     }); 
 
@@ -78,31 +97,30 @@ $(document).ready( function() {
     }                                                                                                                                                                                                                                                                                                                                                                  
   }
 
-  
-  
+
+
   // the plus icon hover in the project containers
   $(".project-containers .more").hover( function() {
     TweenLite.to( this, 1, { bottom: "10px", color: "#fff", ease: "SlowMo.easeIn" } ); 
   }, function() {
     TweenLite.to( this, 1, { bottom: "0", color: "#22b1ba", ease: "Bounce.easeOut" } ) 
   } ); 
-  
-  
-  
+
+
+
   // the plus icon click page animation / transitions
   $(".project-containers .more").on("click", function() {
     // console.log( $(this).parent().find("name") ); 
     // var page_tag = $(this).siblings(".name").text(); 
     var page_tag = $(this).attr("tag")
     var page = _project_pages.findTag( page_tag ); 
-    page !== undefined ? drop_current_page() : show_page() ; 
+    page !== undefined ? drop_current_page( $(this).parent() ) : show_page() ; 
   })
-  
-  
+
+
   // logo animation...have to think of better ones
   $("#logo").hover( function() {
     $(this).toggleClass("rotate60"); 
-    
   } ); 
 
   // animating the elements within the projects containers
@@ -120,8 +138,21 @@ $(document).ready( function() {
 // Functions
 //////////////
 
-function drop_current_page() {
-  $("#content").addClass("pt-page-rotatePushRight"); 
+function drop_current_page( o ) {
+  // $("#content").addClass("pt-page-rotatePushRight"); 
+  var obj = []; 
+  var $this = ""; 
+  $(".gallery").each( function(i) {
+    $this = $(this); 
+    obj[i] = $this; 
+  }); 
+  TweenMax.staggerTo( obj, 1,  { css: { opacity: 0 }, ease: "Power4.easeIn", onComplete: hide() }, 0.20); 
+  // TweenMax.staggerTo( obj, 1,  { css: { left: "-1500px" }, ease: "Power4.easeIn", onComplete: hide() }, 0.1); 
+}
+
+
+function hide( t ) {
+  // $("#content").empty(); 
 }
 
 // show page function 
@@ -152,23 +183,22 @@ function reset_project_elements() {
 function create_pages() {
 
   var obj = {
-  avant_garde : new Page( "Avant-Garde", "AG", contents.avant_garde ),
-  ipad : new Page( "iPad Magazine", "I", contents.ipad ),
-  biologic : new Page( "Biologic", "B", contents.biologic ), 
-  hri : new Page( "Human Robot Interaction", "HRI", contents.hri ),
-  tea : new Page( "Tea", "T",  contents.tea ),
-  apartment_reviews : new Page( "Apartment Reviews", "ar", contents.apartment_reviews ), 
-  hex : new Page( "Hex Tiles", "H", contents.hex ),
-  waffle : new Page( "Waffle Canopy", "W", contents.waffle ),   
-  contact_me : new Page( "Contact Me", "CM",  contents.contact_me ) 
-}
+    avant_garde : new Page( "Avant-Garde", "AG", contents.avant_garde ),
+    ipad : new Page( "iPad Magazine", "I", contents.ipad ),
+    biologic : new Page( "Biologic", "B", contents.biologic ), 
+    hri : new Page( "Human Robot Interaction", "HRI", contents.hri ),
+    tea : new Page( "Tea", "T",  contents.tea ),
+    apartment_reviews : new Page( "Apartment Reviews", "ar", contents.apartment_reviews ), 
+    hex : new Page( "Hex Tiles", "H", contents.hex ),
+    waffle : new Page( "Waffle Canopy", "W", contents.waffle ),   
+    contact_me : new Page( "Contact Me", "CM",  contents.contact_me ) 
+  }
 
 
-for (i in obj) {
-  _project_pages.add( i, obj[i] )
-}
+  for (i in obj) {
+    _project_pages.add( i, obj[i] )
+  }
 
-console.log( _project_pages ); 
 }
 
 
