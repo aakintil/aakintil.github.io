@@ -14,7 +14,7 @@ function drop_gallery() {
 
 
 
-function drop_current_page( o ) {
+function hide_index_page( o, page ) {
   // $("#content").addClass("pt-page-rotatePushRight"); 
   var obj = []; 
   var $this = ""; 
@@ -22,7 +22,11 @@ function drop_current_page( o ) {
     $this = $(this); 
     obj[i] = $this; 
   }); 
-  TweenMax.staggerTo( obj, 1,  { css: { opacity: 0 }, ease: "Power4.easeIn", onComplete: hide() }, 0.20); 
+  
+  var timer = 5000; 
+  
+  TweenMax.staggerTo( obj, 1,  { css: { opacity: 0 }, ease: "Power4.easeIn", onComplete: delay5s( page ) }, 0.20); 
+  
   // TweenMax.staggerTo( obj, 1,  { css: { left: "-1500px" }, ease: "Power4.easeIn", onComplete: hide() }, 0.1); 
 }
 
@@ -32,8 +36,26 @@ function hide( t ) {
 }
 
 // show page function 
-function show_page() {
+function delay5s( page ) {
+  setTimeout( function() { show_new_page( page ) }, 2000) 
+}
 
+
+function callback() {
+
+}
+
+
+function show_new_page( page ) {
+  console.log( page )
+  $("#content").empty();
+  var content = page.content;  
+  // $("#content").css("opacity", 0); 
+  $("#content").append( content ); 
+  console.log( typeof $("#content").children()); 
+  $("#content").children().css({ "opacity" : 0, top: "100px"} ); 
+  var timeline = new TimelineLite();  
+  timeline.to( $("#content").children() , 2, { css: { opacity: 1, top: 0, ease: "Power2.easeInOut" } } ); 
 }
 
 // home page project container hover event function
@@ -75,4 +97,9 @@ function create_pages() {
     _project_pages.add( i, obj[i] )
   }
 
+}
+
+
+function rotate45(t, r) {
+  r === true ? t.find("h1").addClass("rotate45") : t.find("h1").removeClass("rotate45"); 
 }

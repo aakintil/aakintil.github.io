@@ -20,18 +20,12 @@ $(document).ready( function() {
   
   // on load animation
   TweenLite.to( $("#header"), 2, { opacity: 1, top: 0,  ease: "Power2.easeInOut", onComplete: drop_gallery() } ); 
-  console.log( TweenLite.prototype)
+  // console.log( TweenLite.prototype)
 
   var projects = $(".project-containers"); 
 
   // create all my project pages
   create_pages(); 
-
-
-  function rotate45(t, r) {
-    r === true ? t.find("h1").addClass("rotate45") : t.find("h1").removeClass("rotate45"); 
-  }
-
 
 
   // the plus icon hover in the project containers
@@ -49,7 +43,7 @@ $(document).ready( function() {
     // var page_tag = $(this).siblings(".name").text(); 
     var page_tag = $(this).attr("tag")
     var page = _project_pages.findTag( page_tag ); 
-    page !== undefined ? drop_current_page( $(this).parent() ) : show_page() ; 
+    page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page(); 
   })
 
 
@@ -64,9 +58,6 @@ $(document).ready( function() {
   // menu toggle functions and event listeners
   $("#toggle-menu").toggle_menu(); 
 }); 
-
-
-
 
 
 

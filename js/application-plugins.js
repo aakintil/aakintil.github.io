@@ -33,13 +33,14 @@ $.fn.animate_children = function () {
 
 // toggle menu widget / function 
 $.fn.toggle_menu = function () {
-
+var resume = $("#resume"); 
+var contact = $("#contact"); 
   $(this).on("click", function () {
     var $this = $(this); 
-
+    
     $this.toggleClass("open"); 
     var timeline = new TimelineLite();  
-
+    console.log( $this.attr("class"))
     if ( $this.hasClass("open") ) {
       timeline.to( [resume, contact ], 1, {  marginLeft: 0, ease: "Power.easeInOut",  onComplete: rotate45($this, true)  });
       timeline.to( [resume, contact ], 0.5, { opacity: 1 }); 
