@@ -1,20 +1,17 @@
 
-#content {
+#details-container,
+#pieces-container {
   font-family: "Cantarell";
   top: 0;
   color: #918E8C;
-  padding: 0px 10px;
 }
 
 /* dynamic */
-#logo {
+/*#logo {
   width: 90px;
   height: 90px;
-}
+}*/
 
-#header {
-  padding: 0;
-}
 
 
 #top-row h1, 
@@ -79,18 +76,19 @@
 }
 
 #info-row {
-  top: 150px;
   padding: 0;
 /*  height: 500px;*/
 }
 
 #info-row p {
+  color: #918E8C;
   font-size: 15px;
 }
 
 
 #description, #images {
   padding: 0;
+  margin-top: 100px;
 }
 
 #description {

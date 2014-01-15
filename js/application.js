@@ -19,7 +19,7 @@ $(".gallery").css( { opacity: 0 } );
 $(document).ready( function() {
   
   // on load animation
-  TweenLite.to( $("#header"), 2, { opacity: 1, top: 0,  ease: "Power2.easeInOut", onComplete: drop_gallery() } ); 
+  TweenLite.to( $("#header"), 2, { opacity: 1, top: 0,  ease: "Back.easeOut", onComplete: drop_gallery(), delay: 1.5 } ); 
   // console.log( TweenLite.prototype)
 
   var projects = $(".project-containers"); 

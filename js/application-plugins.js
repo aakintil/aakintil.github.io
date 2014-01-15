@@ -20,7 +20,7 @@ $.fn.animate_children = function () {
 
   function callback(t) {
     show_others( 0 ); 
-    TweenLite.to( t, 1, { top: "0", ease: "Bounce.easeOut" } ); 
+    TweenLite.to( t, 2, { top: "0", ease: "Bounce.easeOut" } ); 
     $(t).animate({ borderWidth: "2px", borderColor: "#918E8C" }, 2000, "easeOutCirc"); 
   }
   function show_others( o ) {

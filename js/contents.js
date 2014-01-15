@@ -35,31 +35,44 @@ contents = {
   </div>\
   </div>", 
   
-  avant_garde: "<div class='col-md-8' id='pieces-container'>\
-  <p id='description'>\
-  This was a course project where we were tasked with designing a poster for an upcoming Avant Garde Colloqium. We had to create a poster for a lecture series that will be displayed in a University Union Building kiosk. We used text and images to communicate informational and emotional content. We produced at least ten sketches of different designs using grid, content, and images. We also employed a variety of typefaces and sizes to explore hierarchy.\
-  </p>\
-  <div class='col-sm-6 col-md-12 pieces'> <img src='images/ixdf/avant-garde/img3.png'/></div> \
-  <div class='col-sm-6 col-md-12 pieces'> <img src='images/ixdf/avant-garde/img4.png'/></div>\
-  </div>\
-  <div class='col-md-4' id='details-container'>\
-  <h4> Project Details </h4>\
-  <div>\
-  <p class='title'> Context </p>\
-  <p> Interaction Design Fundamentals (05-651) </p>\
-  </div>\
-  <div>\
-  <p class='title'>Dates</p>\
-  <p> September 2013 </p>\
-  </div>\
-  <div>\
-  <p class='title'> Methods Used </p>\
-  <p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6</p>\
-  </div>\
-  <div>\
-  <a class='btn btn-primary' href='downloads/poster.pdf' download='poster.pdf 'target='_blank'> Download </a>\
-  </div>\
-  </div>", 
+  avant_garde: "<div id='top-row' class='col-sm-12'>   \
+  <h1 id='title'> Avant-Garde </h1>                         \
+  <h4 id='type'> poster design </h4>                      \
+  <h1 id='close'> + </h1>                            \
+  </div>                                               \
+  <div id='info-row' class='col-sm-12'>        \
+  <div id='description' class='col-sm-4'>      \
+  <p id=''>  This was a course project where we were tasked with designing a poster for an upcoming Avant Garde Colloqium. We had to create a poster for a lecture series that will be displayed in a University Union Building kiosk. We used text and images to communicate informational and emotional content. We produced at least ten sketches of different designs using grid, content, and images. We also employed a variety of typefaces and sizes to explore hierarchy. \
+  </p>                                                                             \
+                                                                                   \
+  <div id='details-container'>                                                     \
+  <h4> Project Details </h4>                                                       \
+  <div>                                                                            \
+  <p class='emphasis'> Context </p>                                                \
+  <p> Interaction Design Fundamentals (05-651) </p>                                \
+  </div>                                                                           \
+  <div>                                                                            \
+  <p class='emphasis'>Dates</p>                                                    \
+  <p> September 2013 </p>                                                          \
+  </div>                                                                           \
+  <div>                                                                            \
+  <p class='emphasis'> Methods Used </p>                                           \
+  <p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6 </p>          \
+  </div>                                                                           \
+  <div>                                                                            \
+  <a class='btn btn-primary' target='_blank' href='downloads/poster.pdf' download='poster.pdf'> Download </a> \
+  </div>                                         \
+  </div>                                         \
+                                                 \
+  </div>                                         \
+  <div id='images' class='col-sm-8'>             \
+  <img src='images/ixdf/avant-garde/img3.png'/>  \
+  <img src='images/ixdf/avant-garde/img4.png'/>  \
+  <img src='images/cdf/img2.jpg'/>               \
+  <img src='images/cdf/end.jpg'/>                \
+  </div>                                         \
+                                                 \
+          </div>", 
   
   ipad: "<div class='col-md-8' id='pieces-container'>\
   <p id='description'>\

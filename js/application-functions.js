@@ -9,7 +9,7 @@ function drop_gallery() {
     $this = $(this); 
     obj[i] = $this; 
   }); 
-  TweenMax.staggerTo( obj, 1,  { css: { opacity: 1 }, ease: "Power4.easeIn", delay: 1.5 }, 0.40 );  
+  TweenMax.staggerTo( obj, 1,  { css: { opacity: 1 }, ease: "Power4.easeIn", delay: 3 }, 0.40 );  
 }
 
 
@@ -37,7 +37,7 @@ function hide( t ) {
 
 // show page function 
 function delay5s( page ) {
-  setTimeout( function() { show_new_page( page ) }, 2000) 
+  setTimeout( function() { show_new_page( page ) }, 3000) 
 }
 
 
@@ -53,9 +53,9 @@ function show_new_page( page ) {
   // $("#content").css("opacity", 0); 
   $("#content").append( content ); 
   console.log( typeof $("#content").children()); 
-  $("#content").children().css({ "opacity" : 0, top: "100px"} ); 
+  $("#content").children().css({ "opacity" : 0, top: "200px"} ); 
   var timeline = new TimelineLite();  
-  timeline.to( $("#content").children() , 2, { css: { opacity: 1, top: 0, ease: "Power2.easeInOut" } } ); 
+  timeline.to( $("#content").children() , 3, { css: { opacity: 1, top: 0, ease: "Expo.easeIn" } } ); 
 }
 
 // home page project container hover event function
