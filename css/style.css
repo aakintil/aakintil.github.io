@@ -368,6 +368,28 @@ Media Queries
 
 
 @media (max-width: 770px) {
+  
+  body {
+
+  }
+  
+  #logo, #toggle-menu h1 {
+    margin: 0 auto;
+  }
+  
+  #menu h1 {
+    text-align: center;
+  }
+  
+  #toggle-menu {
+    top: -140px; 
+    /* top: -30px*/
+  }
+  
+  #resume, #contact {
+    margin-top: -40px !important;
+    height: 70px;
+  }
 
 }
 
