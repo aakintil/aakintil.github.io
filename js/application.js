@@ -16,7 +16,11 @@ var _project_pages = new Pages( 9 );
 $("#header").css( { top: "-50px", opacity: 0 } ); 
 $(".gallery").css( { opacity: 0 } ); 
 
+
 $(document).ready( function() {
+
+  
+  
   
   // on load animation
   TweenLite.to( $("#header"), 2, { opacity: 1, top: 0,  ease: "Back.easeOut", onComplete: drop_gallery(), delay: 1.5 } ); 
@@ -53,7 +57,20 @@ $(document).ready( function() {
   } ); 
 
   // animating the elements within the projects containers
-  projects.animate_children(); 
+  
+  enquire.register("screen and (max-width: 770px)", {
+      setup : function() {
+          // Load in content via AJAX (just the once)
+      },
+      match : function() {
+      
+          // Show sidebar
+      },
+      unmatch : function() {
+        projects.animate_children(); 
+          // Hide sidebar
+      }
+  });
 
   // menu toggle functions and event listeners
   $("#toggle-menu").toggle_menu(); 
