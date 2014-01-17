@@ -58,16 +58,15 @@ $(document).ready( function() {
 
   // animating the elements within the projects containers
   
-  enquire.register("screen and (max-width: 770px)", {
+  enquire.register("screen and (min-width: 770px)", {
       setup : function() {
           // Load in content via AJAX (just the once)
       },
       match : function() {
-      
+      console.log("match")
           // Show sidebar
       },
       unmatch : function() {
-        projects.animate_children(); 
           // Hide sidebar
       }
   });
