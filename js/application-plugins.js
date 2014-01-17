@@ -49,15 +49,15 @@ var contact = $("#contact");
     var timeline = new TimelineLite();  
     console.log( $this.attr("class"))
     if ( $this.hasClass("open") ) {
-      TweenMax.to( $(this), 1, { top: "-30px", ease: "Bounce.easeOut" } ); 
-      timeline.to( [resume, contact ], 1, {  marginLeft: 0, ease: "Power.easeInOut",  onComplete: rotate45($this, true)  });
+      TweenMax.to( $(this), 0.5, { top: "-30px", ease: "Bounce.easeOut" } ); 
+      timeline.to( [resume, contact ], 0.5, {  marginLeft: 0, ease: "Power.easeInOut",  onComplete: rotate45($this, true)  });
       timeline.to( [resume, contact ], 0.5, { opacity: 1, delay: 1 }); 
     }
     else {
       $this.find("h1").removeClass("rotate");
       timeline.to( [resume, contact ], 0.5, { opacity: 0 }); 
       timeline.to( [resume, contact ], 2, {  marginLeft: "-500px", ease: "Power.easeInOut",  onComplete: rotate45($this, false)  });
-       TweenMax.to( $(this), 1, { top: "-140px", ease: "Bounce.easeOut" } ); 
+       TweenMax.to( $(this), 0.5, { top: "-140px", ease: "Bounce.easeOut" } ); 
     }
 
   } ); 

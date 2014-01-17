@@ -370,7 +370,7 @@ Media Queries
 @media (max-width: 770px) {
   
   body {
-    background-color: blue;
+
   }
   
   #logo, #toggle-menu h1 {
