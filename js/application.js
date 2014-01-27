@@ -1,7 +1,7 @@
 /////////////////////////
 // Main Application File
 /////////////////////////
-
+console.log("is this a mobile device? ", _mobile)
 // Global variables
 var projects, 
 type_containers, 
@@ -16,12 +16,29 @@ var _project_pages = new Pages( 9 );
 $("#header").css( { top: "-50px", opacity: 0 } ); 
 $(".gallery").css( { opacity: 0 } ); 
 
+enquire.register("screen and (min-width: 770px)", {
+  setup : function() {
+    console.log("setup"); 
+    // console.log($(window).width())
+
+    ( $(window).width()  < 770 ) ? $("#toggle-menu").addClass("vertical") : $("#toggle-menu").removeClass("vertical")
+    // Load in content via AJAX (just the once)
+  },
+  match : function() {
+    $("#toggle-menu").removeClass("vertical")
+    // Show sidebar
+  },
+  unmatch : function() {
+    $("#toggle-menu").addClass("vertical")
+    // Hide sidebar
+  }
+});
+
+
+
 
 $(document).ready( function() {
 
-  
-  
-  
   // on load animation
   TweenLite.to( $("#header"), 2, { opacity: 1, top: 0,  ease: "Back.easeOut", onComplete: drop_gallery(), delay: 1.5 } ); 
   // console.log( TweenLite.prototype)
@@ -57,19 +74,7 @@ $(document).ready( function() {
   } ); 
 
   // animating the elements within the projects containers
-  
-  enquire.register("screen and (min-width: 770px)", {
-      setup : function() {
-          // Load in content via AJAX (just the once)
-      },
-      match : function() {
-      console.log("match")
-          // Show sidebar
-      },
-      unmatch : function() {
-          // Hide sidebar
-      }
-  });
+  projects.animate_children( _mobile );
 
   // menu toggle functions and event listeners
   $("#toggle-menu").toggle_menu(); 

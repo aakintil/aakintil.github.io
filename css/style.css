@@ -180,6 +180,7 @@ Navigation
 
 #resume h1, 
 #contact h1 {
+  font-family: "Lato" !important;
   font-size: 30px;
   line-height: 85px;
 }
@@ -370,7 +371,7 @@ Media Queries
 @media (max-width: 770px) {
   
   body {
-
+/*    background-color: blue;*/
   }
   
   #logo, #toggle-menu h1 {
@@ -410,4 +411,9 @@ Media Queries
 
 }
 
+
+
+/* Remove Jquery Mobile nonsense */
+.ui-loading .ui-loader { display: block; }
+.ui-loader { display: none; position: absolute; opacity: .85; z-index: 100; left: 50%; width: 200px; margin-left: -130px; margin-top: -35px; padding: 10px 30px; }
 
