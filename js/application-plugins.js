@@ -3,7 +3,7 @@
 $.fn.animate_children = function ( mobile ) {
   var view_more_container, type_container, name_container = "";  
 
-  if ( mobile === false ) {
+  // if ( mobile === false ) {
 
     this.hover ( function () {
       view_more_container = $(this).find(".more"); 
@@ -14,34 +14,40 @@ $.fn.animate_children = function ( mobile ) {
 
       $this.animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
       TweenLite.to( $this, 1, { top: "-20px"} ); 
+      if ( mobile ) 
+      name_container.transition({ opacity: 0.07, "font-size" : "120px" }, show_others(0.8)); 
+      else
       TweenLite.to( name_container, 1, {  fontSize: "120px", opacity: 0.07, ease:Power2.easeInOut, onComplete: show_others(0.8) } );
     }, function () {
+      if ( mobile )
+      name_container.transition({ opacity: 1, "font-size" : "80px" }, callback(this)); 
+      else
       TweenLite.to( name_container, 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback(this) } );
     }); 
 
-  }
-  else {
-
-    $(this).on("tapone", function () {
-
-      view_more_container = $(this).find(".more"); 
-      type_container      = $(this).find(".type"); 
-      name_container      = $(this).find(".name");
-
-      $("project-containers").each(function() {
-        $(this).find(".name").transition({ opacity: 1, "font-size" : "80px" }, 1000, callback($(this).parent()));
-        }); 
-        
-
-      $(this).animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
-      TweenLite.to( $(this), 1, { top: "-20px"} ); 
-      name_container.transition({ opacity: 0.07, "font-size" : "120px" }, 1000, show_others(0.8));
-
-
-      // TweenLite.to( name_container, 0.02, {  fontSize: "120px", opacity: 0.07, ease:Power2.easeInOut, onComplete: show_others(0.8) } );
-    })
-
-  }
+  // }
+  // else {
+  // 
+  //   $(this).on("tapone", function () {
+  // 
+  //     view_more_container = $(this).find(".more"); 
+  //     type_container      = $(this).find(".type"); 
+  //     name_container      = $(this).find(".name");
+  // 
+  //     $("project-containers").each(function() {
+  //       $(this).find(".name").transition({ opacity: 1, "font-size" : "80px" }, 1000, callback($(this).parent()));
+  //       }); 
+  //       
+  // 
+  //     $(this).animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
+  //     TweenLite.to( $(this), 1, { top: "-20px"} ); 
+  //     name_container.transition({ opacity: 0.07, "font-size" : "120px" }, 1000, show_others(0.8));
+  // 
+  // 
+  //     // TweenLite.to( name_container, 0.02, {  fontSize: "120px", opacity: 0.07, ease:Power2.easeInOut, onComplete: show_others(0.8) } );
+  //   })
+  // 
+  // }
 
 
 
