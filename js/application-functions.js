@@ -53,6 +53,7 @@ function show_new_page( page ) {
   // $("#content").css("opacity", 0); 
   $("#content").append( content ); 
   console.log( typeof $("#content").children()); 
+  $("#content").css("top", "50px"); 
   $("#content").children().css({ "opacity" : 0, top: "200px"} ); 
   var timeline = new TimelineLite();  
   timeline.to( $("#content").children() , 3, { css: { opacity: 1, top: 0, ease: "Expo.easeIn" } } ); 

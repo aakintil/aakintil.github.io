@@ -65,6 +65,8 @@ $(document).ready( function() {
     var page_tag = $(this).attr("tag")
     var page = _project_pages.findTag( page_tag ); 
     page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page(); 
+    TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px",  ease: "SlowMo.easeIn" }); 
+    // $("#content").css("top", "50px"); 
   })
 
 

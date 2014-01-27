@@ -104,19 +104,29 @@
 /* image container */
 
 #images {
-  text-align: center;
+  text-align: right;
   overflow: scroll;
   /*  overflow: visible/hidden/scroll/auto;*/
 }
 
 #images img {
   border: 2px solid #918E8C;
-  width: 80%;
+  width: 50%;
   margin-bottom: 50px;
+  
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 #images img:hover {
-  width: 90%;
+  width: 80%;
+  
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 
