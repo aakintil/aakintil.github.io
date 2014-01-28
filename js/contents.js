@@ -38,7 +38,7 @@ contents = {
   avant_garde: "<div id='top-row' class='col-sm-12'>   \
   <h1 id='title'> Avant-Garde </h1>                         \
   <h4 id='type'> poster design </h4>                      \
-  <h1 id='close'> + </h1>                            \
+  <h1 id='close-page'> + </h1>                            \
   </div>                                               \
   <div id='info-row' class='col-sm-12'>        \
   <div id='description' class='col-sm-4'>      \
@@ -66,10 +66,11 @@ contents = {
                                                  \
   </div>                                         \
   <div id='images' class='col-sm-8'>             \
-  <img src='images/ixdf/avant-garde/img3.png'/>  \
+  <img src='images/ixdf/avant-garde/sketch1.jpg'/>  \
+  <img src='images/ixdf/avant-garde/sketch2.jpg'/>  \
+  <img src='images/ixdf/avant-garde/img1.png'/>          \
+  <img src='images/ixdf/avant-garde/img3.png'/>              \
   <img src='images/ixdf/avant-garde/img4.png'/>  \
-  <img src='images/cdf/img2.jpg'/>               \
-  <img src='images/cdf/end.jpg'/>                \
   </div>                                         \
                                                  \
           </div>", 

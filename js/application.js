@@ -1,7 +1,7 @@
 /////////////////////////
 // Main Application File
 /////////////////////////
-console.log("is this a mobile device? ", _mobile)
+// console.log("is this a mobile device? ", _mobile)
 // Global variables
 var projects, 
 type_containers, 
@@ -10,6 +10,7 @@ plus_icon_containers = "";
 
 // ** Important **
 var _project_pages = new Pages( 9 );
+_gallery = []; 
 
 // Document ready 
 
@@ -44,10 +45,9 @@ $(document).ready( function() {
   // console.log( TweenLite.prototype)
 
   var projects = $(".project-containers"); 
-
+  
   // create all my project pages
   create_pages(); 
-
 
   // the plus icon hover in the project containers
   $(".project-containers .more").hover( function() {
@@ -60,15 +60,17 @@ $(document).ready( function() {
 
   // the plus icon click page animation / transitions
   $(".project-containers .more").on("click", function() {
-    // console.log( $(this).parent().find("name") ); 
-    // var page_tag = $(this).siblings(".name").text(); 
     var page_tag = $(this).attr("tag")
     var page = _project_pages.findTag( page_tag ); 
     page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page(); 
-    TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px",  ease: "SlowMo.easeIn" }); 
-    // $("#content").css("top", "50px"); 
+    TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px",  ease: "SlowMo.easeIn", delay: 1 }); 
+    TweenLite.to( $("#toggle-menu h1"), 2, { fontSize : "50px", ease: "SlowMo.easeIn", delay: 1 } );
   })
+  
+  // closing the project page
+  // the plus icon click page animation / transitions
 
+    // console.log(_gallery)
 
   // logo animation...have to think of better ones
   $("#logo").hover( function() {

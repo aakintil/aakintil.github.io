@@ -3,19 +3,29 @@
 //////////////
 
 function drop_gallery() {
-  var obj = []; 
   var $this = ""; 
   $(".gallery").each( function(i) {
     $this = $(this); 
-    obj[i] = $this; 
+    _gallery[i] = $this; 
   }); 
-  TweenMax.staggerTo( obj, 1,  { css: { opacity: 1 }, ease: "Power4.easeIn", delay: 3 }, 0.40 );  
+  TweenMax.staggerTo( _gallery, 1,  { css: { opacity: 1 }, ease: "Power4.easeIn", delay: 3 }, 0.40 );  
+}
+
+function recreate() {
+  var $this = ""; 
+  $(".gallery").each( function(i) {
+    $this = $(this); 
+    _gallery[i] = $this; 
+  }); 
+  console.log(_gallery)
+  return _gallery; 
+  // TweenMax.staggerTo( _gallery, 1,  { css: { opacity: 1 }, ease: "Power4.easeIn", delay: 3 }, 0.40 );  
 }
 
 
 
 function hide_index_page( o, page ) {
-  // $("#content").addClass("pt-page-rotatePushRight"); 
+   
   var obj = []; 
   var $this = ""; 
   $(".gallery").each( function(i) {
@@ -54,9 +64,21 @@ function show_new_page( page ) {
   $("#content").append( content ); 
   console.log( typeof $("#content").children()); 
   $("#content").css("top", "50px"); 
-  $("#content").children().css({ "opacity" : 0, top: "200px"} ); 
+  $("#content").children().css({ "opacity" : 0, top: "100px"} ); 
   var timeline = new TimelineLite();  
-  timeline.to( $("#content").children() , 3, { css: { opacity: 1, top: 0, ease: "Expo.easeIn" } } ); 
+  timeline.to( $("#content").children() , 2, { css: { opacity: 1, top: 0, ease: "Expo.easeIn" } } );
+  
+  $("#close-page").on("click", function() {
+     TweenLite.to( $("#content"), 2.5, { top: "-400px", opacity: 0, ease: "SlowMo.easeIn" });
+     
+     $("#content").empty();
+
+     for (var i = 0; i < _gallery.length; i++ ) {
+       $("#content").append(_gallery[i]); 
+     }
+
+     $("#content").transition({ opacity: 1, top: 0 })
+   })
 }
 
 // home page project container hover event function
@@ -103,4 +125,16 @@ function create_pages() {
 
 function rotate45(t, r) {
   r === true ? t.find("h1").addClass("rotate45") : t.find("h1").removeClass("rotate45"); 
+}
+
+
+function new_page() {
+  $("#content").empty();
+   
+  for (var i = 0; i < _gallery.length; i++ ) {
+    $("#content").append(_gallery[i]); 
+  }
+  
+  $("#content").transition({ opacity: 1, top: 0 })
+  // TweenMax.to( $("#content"), 2.5, { top: 0, opacity: 1, ease: "SlowMo.easeIn" });
 }
