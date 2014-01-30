@@ -44,8 +44,13 @@ $(document).ready( function() {
     TweenLite.to($(this), 1, { top: "20px" } ); 
   }, function() {
     $(this).attr("id") === "logo" ? TweenLite.to( $(this), 0.5, { top: "0" } ) : TweenLite.to( $(this), 1, { top: "-6px" } );  
-    
-    }); 
+  }); 
+  
+  $("#logo").on("tapone", function() {
+    window.location.href="https://aderinsola.com";
+  }); 
+
+
   
   
   // on load animation
