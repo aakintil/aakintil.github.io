@@ -40,6 +40,14 @@ enquire.register("screen and (min-width: 770px)", {
 
 $(document).ready( function() {
 
+  $("#logo").add($("#contact").add($("#resume"))).hover( function() {
+    TweenLite.to($(this), 1, { top: "20px" } ); 
+  }, function() {
+    $(this).attr("id") === "logo" ? TweenLite.to( $(this), 0.5, { top: "0" } ) : TweenLite.to( $(this), 1, { top: "-6px" } );  
+    
+    }); 
+  
+  
   // on load animation
   TweenLite.to( $("#header"), 2, { opacity: 1, top: 0,  ease: "Back.easeOut", onComplete: drop_gallery(), delay: 1.5 } ); 
   // console.log( TweenLite.prototype)
@@ -73,9 +81,9 @@ $(document).ready( function() {
     // console.log(_gallery)
 
   // logo animation...have to think of better ones
-  $("#logo").hover( function() {
-    $(this).toggleClass("rotate60"); 
-  } ); 
+  // $("#logo").hover( function() {
+  //   $(this).toggleClass("rotate60"); 
+  // } ); 
 
   // animating the elements within the projects containers
   projects.animate_children( _mobile );

@@ -61,11 +61,11 @@ $.fn.toggle_menu = function () {
       TweenMax.to( $(this), 1, { top: "-30px", ease: "Bounce.easeOut" } ); 
 
       timeline.to( [resume, contact ], 1, {  marginLeft: 0, ease: "Power.easeInOut",  onComplete: rotate45($this, true)  });
-      timeline.to( [resume, contact ], 0.5, { opacity: 1, delay: 1 }); 
+      timeline.to( [resume, contact ], 0.5, { opacity: 1, delay: 0.1 }); 
     }
     else {
       $this.find("h1").removeClass("rotate");
-      timeline.to( [resume, contact ], 0.5, { opacity: 0 }); 
+      timeline.to( [resume, contact ], 1, { opacity: 0 }); 
       timeline.to( [resume, contact ], 2, {  marginLeft: "-500px", ease: "Power.easeInOut",  onComplete: rotate45($this, false)  });
 
       if ( $this.hasClass("vertical") )
