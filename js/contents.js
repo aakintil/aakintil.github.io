@@ -41,7 +41,7 @@ contents = {
   <h1 id='close-page'> + </h1>                            \
   </div>                                               \
   <div id='info-row' class='col-sm-12'>        \
-  <div id='description' class='col-sm-4'>      \
+  <div id='description' class='col-md-4 col-sm-6'>      \
   <p id=''>  This was a course project where we were tasked with designing a poster for an upcoming Avant Garde Colloqium. We had to create a poster for a lecture series that will be displayed in a University Union Building kiosk. We used text and images to communicate informational and emotional content. We produced at least ten sketches of different designs using grid, content, and images. We also employed a variety of typefaces and sizes to explore hierarchy. \
   </p>                                                                             \
                                                                                    \
@@ -65,7 +65,7 @@ contents = {
   </div>                                         \
                                                  \
   </div>                                         \
-  <div id='images' class='col-sm-8'>             \
+  <div id='images' class='col-md-8 col-sm-6'>             \
   <img src='images/ixdf/avant-garde/sketch1.jpg'/>  \
   <img src='images/ixdf/avant-garde/sketch2.jpg'/>  \
   <img src='images/ixdf/avant-garde/img1.png'/>          \

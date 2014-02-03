@@ -67,16 +67,21 @@ function show_new_page( page ) {
   $("#content").children().css({ "opacity" : 0, top: "100px"} ); 
   var timeline = new TimelineLite();  
   timeline.to( $("#content").children() , 2, { css: { opacity: 1, top: 0, ease: "Expo.easeIn" } } );
+  $("#content").css("padding", "0px 30px"); 
+  
   
   $("#close-page").on("click", function() {
      TweenLite.to( $("#content"), 2.5, { top: "-400px", opacity: 0, ease: "SlowMo.easeIn" });
      
      $("#content").empty();
-
+     
      for (var i = 0; i < _gallery.length; i++ ) {
        $("#content").append(_gallery[i]); 
      }
-
+     
+     $("#content").css("padding", "0px 0px"); 
+     $("#content").css("padding-bottom", "40px");
+       
      $("#content").transition({ opacity: 1, top: 0 })
    })
 }

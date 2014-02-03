@@ -47,7 +47,7 @@ $(document).ready( function() {
   }); 
   
   $("#logo").on("tapone", function() {
-    window.location.href="https://aderinsola.com";
+    window.location.href="https://www.aderinsola.com";
   }); 
 
 
@@ -77,6 +77,9 @@ $(document).ready( function() {
     var page = _project_pages.findTag( page_tag ); 
     page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page(); 
     TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px",  ease: "SlowMo.easeIn", delay: 1 }); 
+    new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "60px", height: "68px", delay: 2 }); 
+    // TweenLite.to( $("#contact"), 2, { width: "60px", height: "68px",  ease: "SlowMo.easeIn", delay: 1 }); 
+    // TweenLite.to( $("#resume"), 2, { width: "60px", height: "68px",  ease: "SlowMo.easeIn", delay: 1 }); 
     TweenLite.to( $("#toggle-menu h1"), 2, { fontSize : "50px", ease: "SlowMo.easeIn", delay: 1 } );
   })
   

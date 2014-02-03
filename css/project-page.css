@@ -52,6 +52,7 @@
 
 #close-page {
   right: 0;
+  font-size: 100px;
   
   /* Safari */
   -webkit-transform: rotate(-45deg);
@@ -96,9 +97,9 @@
   text-justify: inter-cluster;
 }
 
-#description > p {
+/*#description > p {
   padding-right: 20px;
-}
+}*/
 
 
 /* image container */
@@ -166,6 +167,7 @@
 
 #details-container div {
   margin-bottom: 40px;
+  text-align: left;
 }
 
 #details-container div p {
