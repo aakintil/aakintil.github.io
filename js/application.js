@@ -65,23 +65,26 @@ $(document).ready( function() {
   // the plus icon hover in the project containers
   $(".project-containers .more").hover( function() {
     TweenLite.to( this, 1, { bottom: "10px", color: "#fff", ease: "SlowMo.easeIn" } ); 
+    
+    // have to hover above the element to click it
+    
+    // the plus icon click page animation / transitions
+    $(this).on("click", function() {
+      var page_tag = $(this).attr("tag")
+      var page = _project_pages.findTag( page_tag ); 
+      page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page(); 
+      TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px",  ease: "SlowMo.easeIn", delay: 1 }); 
+      new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "60px", height: "68px", delay: 2 }); 
+      TweenLite.to( $("#toggle-menu h1"), 2, { fontSize : "50px", ease: "SlowMo.easeIn", delay: 1 } );
+    })
+    
+    
   }, function() {
     TweenLite.to( this, 1, { bottom: "0", color: "#22b1ba", ease: "Bounce.easeOut" } ) 
   } ); 
 
 
 
-  // the plus icon click page animation / transitions
-  $(".project-containers .more").on("click", function() {
-    var page_tag = $(this).attr("tag")
-    var page = _project_pages.findTag( page_tag ); 
-    page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page(); 
-    TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px",  ease: "SlowMo.easeIn", delay: 1 }); 
-    new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "60px", height: "68px", delay: 2 }); 
-    // TweenLite.to( $("#contact"), 2, { width: "60px", height: "68px",  ease: "SlowMo.easeIn", delay: 1 }); 
-    // TweenLite.to( $("#resume"), 2, { width: "60px", height: "68px",  ease: "SlowMo.easeIn", delay: 1 }); 
-    TweenLite.to( $("#toggle-menu h1"), 2, { fontSize : "50px", ease: "SlowMo.easeIn", delay: 1 } );
-  })
   
   // closing the project page
   // the plus icon click page animation / transitions

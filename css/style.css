@@ -421,6 +421,14 @@ Media Queries
     margin-top: 50px;
   }
   
+  #images img {
+    width: 100%;
+  }
+  
+  #images img:hover {
+    width: 100%;
+  }
+  
   #title {
     font-size: 65px !important;
   }
@@ -442,18 +450,16 @@ Media Queries
 
 
 @media (max-width: 480px) {
-  #title {
-    font-size: 50px !important;
+  #title, 
+  #close-page {
+    font-size: 40px !important;
   }
   
   #type {
     font-size: 25px !important;
-    top: 55px;
+    top: 50px;
   }
   
-  #close-page {
-    font-size: 50px;
-  }
 }
 
 

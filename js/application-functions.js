@@ -35,7 +35,7 @@ function hide_index_page( o, page ) {
   
   var timer = 5000; 
   
-  TweenMax.staggerTo( obj, 1,  { css: { opacity: 0 }, ease: "Power4.easeIn", onComplete: delay5s( page ) }, 0.20); 
+  TweenMax.staggerTo( obj, 1,  { css: { opacity: 0 }, ease: "Power4.easeIn", onComplete: delay5s( show_new_page, page ) }, 0.20); 
   
   // TweenMax.staggerTo( obj, 1,  { css: { left: "-1500px" }, ease: "Power4.easeIn", onComplete: hide() }, 0.1); 
 }
@@ -46,8 +46,11 @@ function hide( t ) {
 }
 
 // show page function 
-function delay5s( page ) {
-  setTimeout( function() { show_new_page( page ) }, 3000) 
+function delay5s( fn, page ) {
+  if ( page )
+  setTimeout( function() { fn( page ) }, 3000); 
+  else
+  setTimeout( function() { fn() }, 700); 
 }
 
 
@@ -71,19 +74,65 @@ function show_new_page( page ) {
   
   
   $("#close-page").on("click", function() {
-     TweenLite.to( $("#content"), 2.5, { top: "-400px", opacity: 0, ease: "SlowMo.easeIn" });
+    
+    // var callback = function() {
+    // 
+    //   $("#content").empty();
+    // 
+    //   for (var i = 0; i < _gallery.length; i++ ) {
+    //     $("#content").append(_gallery[i]); 
+    //   }
+    //   
+    //   $("#content").css("padding", "0px 0px"); 
+    //   $("#content").css("padding-bottom", "40px");
+    //   
+    //   TweenLite.to( $(".gallery"), 3, { opacity: 1 }); 
+    // }
+    // 
+    
+     TweenLite.to( $("#content"), 2.5, { top: "-400px", opacity: 0, ease: "SlowMo.easeIn", onComplete: delay5s(t) });
+    
+
      
-     $("#content").empty();
-     
-     for (var i = 0; i < _gallery.length; i++ ) {
-       $("#content").append(_gallery[i]); 
-     }
-     
-     $("#content").css("padding", "0px 0px"); 
-     $("#content").css("padding-bottom", "40px");
-       
-     $("#content").transition({ opacity: 1, top: 0 })
+     // $("#content").empty();
+     //  
+     //  for (var i = 0; i < _gallery.length; i++ ) {
+     //    $("#content").append(_gallery[i]); 
+     //  }
+     //  
+     //  $("#content").css("padding", "0px 0px"); 
+     //  $("#content").css("padding-bottom", "40px");
+     //  
+     //  
+     //  
+     //  // TweenLite.to( $(".gallery"), 3, { opacity: 1 }); 
+     //  
+     //  TweenLite.to( $("#logo"), 2, { width: "150px", height: "150px",  ease: "SlowMo.easeIn", delay: 1 }); 
+     //  new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "87.5px", height: "100px", delay: 2, onComplete: t() });
    })
+   
+}
+
+
+function t() {
+  $("#content").empty();
+
+  for (var i = 0; i < _gallery.length; i++ ) {
+    $("#content").append(_gallery[i]); 
+  }
+
+  $("#content").css("padding", "0px 0px"); 
+  $("#content").css("padding-bottom", "40px");
+  
+
+  TweenLite.to( $("#content"), 2.5, { top: "150px", opacity: 1, ease: "SlowMo.easeIn" });
+  TweenLite.to( $("#logo"), 2, { width: "150px", height: "150px",  ease: "SlowMo.easeIn", delay: 1 }); 
+  new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "87.5px", height: "100px", delay: 2 } ); 
+
+  TweenMax.staggerTo( _gallery, 1,  { css: { opacity: 1 }, ease: "Power4.easeIn", delay: 3 }, 0.40 );  
+  $(".project-containers").focusout(); 
+  $(".project-containers").animate_children( _mobile );
+
 }
 
 // home page project container hover event function
