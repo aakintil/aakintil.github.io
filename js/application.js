@@ -54,7 +54,7 @@ $(document).ready( function() {
   
   
   // on load animation
-  TweenLite.to( $("#header"), 2, { opacity: 1, top: 0,  ease: "Back.easeOut", onComplete: drop_gallery(), delay: 1.5 } ); 
+  TweenLite.to( $("#header"), 1.8, { opacity: 1, top: 0,  ease: "Back.easeOut", onComplete: drop_gallery(), delay: 2 } ); 
   // console.log( TweenLite.prototype)
 
   var projects = $(".project-containers"); 

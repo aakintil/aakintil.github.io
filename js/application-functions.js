@@ -35,7 +35,7 @@ function hide_index_page( o, page ) {
   
   var timer = 5000; 
   
-  TweenMax.staggerTo( obj, 1,  { css: { opacity: 0 }, ease: "Power4.easeIn", onComplete: delay5s( show_new_page, page ) }, 0.20); 
+  TweenMax.staggerTo( obj, 1,  { css: { opacity: 0 }, ease: "Power4.easeIn", onComplete: delay5s( show_new_page, 3000, page ) }, 0.20); 
   
   // TweenMax.staggerTo( obj, 1,  { css: { left: "-1500px" }, ease: "Power4.easeIn", onComplete: hide() }, 0.1); 
 }
@@ -46,11 +46,11 @@ function hide( t ) {
 }
 
 // show page function 
-function delay5s( fn, page ) {
+function delay5s( fn, timer, page ) {
   if ( page )
-  setTimeout( function() { fn( page ) }, 3000); 
+  setTimeout( function() { fn( page ) }, timer); 
   else
-  setTimeout( function() { fn() }, 700); 
+  setTimeout( function() { fn() }, timer); 
 }
 
 
@@ -90,7 +90,7 @@ function show_new_page( page ) {
     // }
     // 
     
-     TweenLite.to( $("#content"), 2.5, { top: "-400px", opacity: 0, ease: "SlowMo.easeIn", onComplete: delay5s(t) });
+     TweenLite.to( $("#content"), 2.5, { top: "-400px", opacity: 0, ease: "SlowMo.easeIn", onComplete: delay5s(t, 1500) });
     
 
      
@@ -129,10 +129,10 @@ function t() {
   TweenLite.to( $("#logo"), 2, { width: "150px", height: "150px",  ease: "SlowMo.easeIn", delay: 1 }); 
   new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "87.5px", height: "100px", delay: 2 } ); 
 
-  TweenMax.staggerTo( _gallery, 1,  { css: { opacity: 1 }, ease: "Power4.easeIn", delay: 3 }, 0.40 );  
-  $(".project-containers").focusout(); 
+  TweenMax.staggerTo( _gallery, 1,  { css: { opacity: 1 }, ease: "Power4.easeIn", delay: 3 }, 0.40 );   
   $(".project-containers").animate_children( _mobile );
-
+  $(".project-containers").focusout();
+    $(".gallery").focusout();
 }
 
 // home page project container hover event function
