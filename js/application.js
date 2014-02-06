@@ -39,12 +39,18 @@ enquire.register("screen and (min-width: 770px)", {
 
 
 $(document).ready( function() {
-
-  $("#logo").add($("#contact").add($("#resume"))).hover( function() {
-    TweenLite.to($(this), 1, { top: "20px" } ); 
+  var ani_speed = 1;
+  $("#logo").add($("#contact").add($("#resume"))).hover( function() { 
+     $(this).attr("id") === "logo" ? ani_speed = 0.2 : ani_speed = 1;  
+     TweenMax.to($(this), ani_speed, { top: "20px" } ); 
+     
   }, function() {
-    $(this).attr("id") === "logo" ? TweenLite.to( $(this), 0.5, { top: "0" } ) : TweenLite.to( $(this), 1, { top: "-6px" } );  
+    $(this).attr("id") === "logo" ? 
+    TweenMax.to( $(this), ani_speed, { top: "0" } ) : 
+    TweenLite.to( $(this), ani_speed, { top: "-6px" } );  
   }); 
+  
+
   
   $("#logo").on("tapone", function() {
     window.location.href="https://www.aderinsola.com";
@@ -63,25 +69,7 @@ $(document).ready( function() {
   create_pages(); 
 
   // the plus icon hover in the project containers
-  $(".project-containers .more").hover( function() {
-    TweenLite.to( this, 1, { bottom: "10px", color: "#fff", ease: "SlowMo.easeIn" } ); 
-    
-    // have to hover above the element to click it
-    
-    // the plus icon click page animation / transitions
-    $(this).on("click", function() {
-      var page_tag = $(this).attr("tag")
-      var page = _project_pages.findTag( page_tag ); 
-      page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page(); 
-      TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px",  ease: "SlowMo.easeIn", delay: 1 }); 
-      new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "60px", height: "68px", delay: 2 }); 
-      TweenLite.to( $("#toggle-menu h1"), 2, { fontSize : "50px", ease: "SlowMo.easeIn", delay: 1 } );
-    })
-    
-    
-  }, function() {
-    TweenLite.to( this, 1, { bottom: "0", color: "#22b1ba", ease: "Bounce.easeOut" } ) 
-  } ); 
+  $(".project-containers .more").init_plus_buttons();
 
 
 

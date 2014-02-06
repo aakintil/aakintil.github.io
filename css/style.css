@@ -1,6 +1,17 @@
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
 @font-face {
+  font-family: "Crimson";
+  src: url("../fonts/Ovo-Regular.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
   font-family: "Univers Bold";
   src: url('../fonts/UniversBoldCn.otf'); 
   font-style: bold;
@@ -351,8 +362,8 @@ Content
 
 .project-containers .more {
   font-size: 60px;
-  right: 0;
-  bottom: 0;
+  right: 5px;
+  bottom: 5px;
   line-height: 50px;
 }
 
@@ -384,6 +395,12 @@ Content
 Media Queries
 ---------------------------*/
 @media (max-width: 992px) {
+  
+  .type.smaller {
+    font-size: 25px !important;
+  }
+  
+  
   #title {
     font-size: 80px !important;
   }
@@ -404,6 +421,15 @@ Media Queries
 
 
 @media (max-width: 770px) {
+  
+  .type.smaller {
+    font-size: 30px !important;
+  }
+  
+  .more {
+    font-size: 75px !important;
+  }
+  
   #content {
     top: 150px !important;
   }
