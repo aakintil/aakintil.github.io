@@ -39,6 +39,7 @@ enquire.register("screen and (min-width: 770px)", {
 
 
 $(document).ready( function() {
+  
   var ani_speed = 1;
   $("#logo").add($("#contact").add($("#resume"))).hover( function() { 
      $(this).attr("id") === "logo" ? ani_speed = 0.2 : ani_speed = 1;  
@@ -53,7 +54,7 @@ $(document).ready( function() {
 
   
   $("#logo").on("tapone", function() {
-    window.location.href="https://www.aderinsola.com";
+    window.location = "index.html";
   }); 
 
 

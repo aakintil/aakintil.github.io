@@ -1,7 +1,6 @@
 
-#details-container,
-#pieces-container {
-  font-family: "Cantarell";
+#details-container {
+  font-family: "Franklin Gothic";
   top: 0;
   color: #918E8C;
 }
@@ -96,7 +95,7 @@
 }
 
 #info-row p {
-  font-family: "Crimson";
+  font-family: "Franklin Gothic";
   color: #918E8C;
   font-size: 20px;
 }
@@ -108,13 +107,12 @@
 }
 
 #description {
-  text-align: justify;
-  text-justify: inter-cluster;
+
 }
 
-/*#description > p {
-  padding-right: 20px;
-}*/
+#description > p {
+
+}
 
 
 /* image container */
@@ -193,4 +191,8 @@
 /*  font-size: 20px;*/
   font-family: "Futura";
   color: #428cff;
+}
+
+#details-container .emphasis + p {
+  font-size: 17px;
 }

@@ -74,43 +74,8 @@ function show_new_page( page ) {
   
   
   $("#close-page").on("click", function() {
-    
-    // var callback = function() {
-    // 
-    //   $("#content").empty();
-    // 
-    //   for (var i = 0; i < _gallery.length; i++ ) {
-    //     $("#content").append(_gallery[i]); 
-    //   }
-    //   
-    //   $("#content").css("padding", "0px 0px"); 
-    //   $("#content").css("padding-bottom", "40px");
-    //   
-    //   TweenLite.to( $(".gallery"), 3, { opacity: 1 }); 
-    // }
-    // 
-    
-     TweenLite.to( $("#content"), 2.5, { top: "-400px", opacity: 0, ease: "SlowMo.easeIn", onComplete: delay5s(t, 1500) });
-    
-
-     
-     // $("#content").empty();
-     //  
-     //  for (var i = 0; i < _gallery.length; i++ ) {
-     //    $("#content").append(_gallery[i]); 
-     //  }
-     //  
-     //  $("#content").css("padding", "0px 0px"); 
-     //  $("#content").css("padding-bottom", "40px");
-     //  
-     //  
-     //  
-     //  // TweenLite.to( $(".gallery"), 3, { opacity: 1 }); 
-     //  
-     //  TweenLite.to( $("#logo"), 2, { width: "150px", height: "150px",  ease: "SlowMo.easeIn", delay: 1 }); 
-     //  new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "87.5px", height: "100px", delay: 2, onComplete: t() });
-   })
-   
+    TweenLite.to( $("#content"), 2, { top: "-400px", opacity: 0, ease: "SlowMo.easeIn", onComplete: delay5s(t, 700) });
+  })
 }
 
 
@@ -126,8 +91,8 @@ function t() {
   
 
   TweenLite.to( $("#content"), 2.5, { top: "150px", opacity: 1, ease: "SlowMo.easeIn" });
-  TweenLite.to( $("#logo"), 2, { width: "150px", height: "150px",  ease: "SlowMo.easeIn", delay: 1 }); 
-  new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "87.5px", height: "100px", delay: 2 } ); 
+  TweenLite.to( $("#logo"), 1, { width: "150px", height: "150px",  ease: "SlowMo.easeIn", delay: 1 }); 
+  new TimelineLite().to( [ $("#contact"), $("#resume") ], 1, { width: "87.5px", height: "100px", delay: 2 } ); 
 
   TweenMax.staggerTo( _gallery, 1,  { css: { opacity: 1 }, ease: "Power4.easeIn", delay: 3 }, 0.40 );   
   $(".project-containers .more").init_plus_buttons();
