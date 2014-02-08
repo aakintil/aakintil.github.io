@@ -4,9 +4,9 @@ $.fn.animate_children = function ( mobile ) {
   var view_more_container, type_container, name_container = "";  
 
   this.hover ( function () {
-    view_more_container = $(this).find(".more"); 
     type_container      = $(this).find(".type"); 
     name_container      = $(this).find(".name");
+    swipe_icon      = $(this).find(".swipe"); 
 
     var $this = $(this); 
 
@@ -17,7 +17,30 @@ $.fn.animate_children = function ( mobile ) {
     name_container.transition({ opacity: 0.07, "font-size" : "120px" }, show_others(0.8)); 
     else
     TweenLite.to( name_container, 1, {  fontSize: "120px", opacity: 0.07, ease:Power2.easeInOut, onComplete: show_others(0.8) } );
+    
+    
+    
+    if (mobile) {
+      // show swipe right icon
+      $(this).swipe( {
+        swipeLeft : function(event, target) {
+          var page_tag = $(this).attr("tag"); 
+          var page = _project_pages.findTag( page_tag ); 
+          page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page(); 
+          TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px",  ease: "SlowMo.easeIn", delay: 1 }); 
+          new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "60px", height: "68px", delay: 2 }); 
+          TweenLite.to( $("#toggle-menu h1"), 2, { fontSize : "50px", ease: "SlowMo.easeIn", delay: 1 } );
 
+          if ( mobile )
+          $(this).find(".name").transition({ opacity: 1, "font-size" : "80px" }, callback(this)); 
+          else
+          TweenLite.to( $(this).find(".name") , 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback(this)} );
+          }, threshold: 0
+        })
+
+      }
+    
+    
   }, function () {
 
     if ( mobile )
@@ -28,25 +51,10 @@ $.fn.animate_children = function ( mobile ) {
   }); 
 
 
-  function callback(t) {
-    show_others( 0 ); 
-    TweenLite.to( t, 2, { top: "0", ease: "Bounce.easeOut" } ); 
-    $(t).animate({ borderWidth: "2px", borderColor: "#918E8C" }, 2000, "easeOutCirc"); 
-  }
-  function show_others( o ) {
-    var timeline = new TimelineLite();  
-    timeline.to( [type_container, view_more_container ], 1, {  opacity: o, ease: o === 0 ? "Power2.easeOut" : "Power1.easeIn", color: o === 0 ? "#918E8C" : "#22b1ba"  } ); 
-  }                                                                                                                                                                                                                                                                                                                                                                  
-}
 
 
-$.fn.init_plus_buttons = function() {
-  $(this).hover( function() {
-    TweenLite.to( this, 1, { bottom: "15px", color: "#fff", ease: "SlowMo.easeIn" } ); 
-    
-    // have to hover above the element to click it
-    
-    // the plus icon click page animation / transitions
+
+  if (!mobile) {
     $(this).on("click", function() {
       var page_tag = $(this).attr("tag")
       var page = _project_pages.findTag( page_tag ); 
@@ -54,13 +62,26 @@ $.fn.init_plus_buttons = function() {
       TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px",  ease: "SlowMo.easeIn", delay: 1 }); 
       new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "60px", height: "68px", delay: 2 }); 
       TweenLite.to( $("#toggle-menu h1"), 2, { fontSize : "50px", ease: "SlowMo.easeIn", delay: 1 } );
+
+      if ( mobile )
+      $(this).find(".name").transition({ opacity: 1, "font-size" : "80px" }, callback(this)); 
+      else
+      TweenLite.to( $(this).find(".name") , 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback(this)} );
     })
-    
-    
-  }, function() {
-    TweenLite.to( this, 1, { bottom: "5px", color: "#22b1ba", ease: "Bounce.easeOut" } ) 
-  } );
+  }
+
+
+  function callback(t) {
+    show_others( 0 ); 
+    TweenLite.to( t, 2, { top: "0", ease: "Bounce.easeOut" } ); 
+    $(t).animate({ borderWidth: "2px", borderColor: "#918E8C" }, 2000, "easeOutCirc"); 
+  }
+  function show_others( o ) {
+    var timeline = new TimelineLite();  
+    timeline.to( [type_container, swipe_icon  ], 1, {  opacity: o, ease: o === 0 ? "Power2.easeOut" : "Power1.easeIn", color: o === 0 ? "#918E8C" : "#4ad6de"  } ); 
+  }                                                                                                                                                                                                                                                                                                                                                                  
 }
+
 
 $.fn.ignore_animation = function() {
   this.hover ( function () {

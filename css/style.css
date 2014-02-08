@@ -328,6 +328,10 @@ Content
   position: relative;
 }
 
+#content .project-containers:hover {
+  cursor: pointer;
+}
+
 #content {
   padding-bottom: 40px;
   position: relative;
@@ -354,8 +358,15 @@ Content
 .project-containers .type {
   left: 0;
   right: 0;
-  line-height: 150px;
 } 
+
+.project-containers .name {
+  line-height: 150px;
+}
+
+.project-containers .type {
+  line-height: 140px;
+}
 
 .project-containers .type.smaller {
   font-size: 20px;
@@ -369,22 +380,25 @@ Content
 
 
 
-.project-containers .more {
+.project-containers .swipe {
   font-size: 60px;
-  right: 5px;
-  bottom: 5px;
-  line-height: 50px;
+  left: 0;
+  right: 0;
+  line-height: 220px;
+}
+
+.swipe img {
+  width: 46.8px;
+  height: 36px;
 }
 
 
 .project-containers .type, 
-.project-containers .more {
+.project-containers .swipe {
   opacity: 0;
 }
 
-.project-containers .more:hover {
-  cursor: pointer;
-}
+
 
 
 
@@ -435,7 +449,7 @@ Media Queries
     font-size: 30px !important;
   }
   
-  .more {
+  .swipe {
     font-size: 75px !important;
   }
   

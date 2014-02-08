@@ -75,7 +75,7 @@ $(document).ready( function() {
   create_pages(); 
 
   // the plus icon hover in the project containers
-  $(".project-containers .more").init_plus_buttons();
+  // $(".project-containers").on_click(_mobile);
 
 
 
