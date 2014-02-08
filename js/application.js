@@ -1,7 +1,12 @@
 /////////////////////////
 // Main Application File
 /////////////////////////
-// console.log("is this a mobile device? ", _mobile)
+
+// REMOVE THE PLUS ICON AND MAKE ENTIRE CONTAINER CLICKABLE
+// MOBILE
+// ///// REMOVE CONTAINER HEIGHT INCREASE ANIMATION AND just make it a double tap ish thing 
+
+
 // Global variables
 var projects, 
 type_containers, 
