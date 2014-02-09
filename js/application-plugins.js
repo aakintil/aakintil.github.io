@@ -1,5 +1,6 @@
 // animate childrend widget / function 
 // move to another js file later
+_count = 0;
 $.fn.animate_children = function ( mobile ) {
   var view_more_container, type_container, name_container = "";  
 
@@ -13,32 +14,46 @@ $.fn.animate_children = function ( mobile ) {
     $this.animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
     TweenLite.to( $this, 1, { top: "-20px"} ); 
 
+    
     if ( mobile ) 
     name_container.transition({ opacity: 0.07, "font-size" : "120px" }, show_others(0.8)); 
     else
     TweenLite.to( name_container, 1, {  fontSize: "120px", opacity: 0.07, ease:Power2.easeInOut, onComplete: show_others(0.8) } );
     
-    
-    
-    if (mobile) {
-      // show swipe right icon
-      $(this).swipe( {
-        swipeLeft : function(event, target) {
-          var page_tag = $(this).attr("tag"); 
-          var page = _project_pages.findTag( page_tag ); 
-          page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page(); 
-          TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px",  ease: "SlowMo.easeIn", delay: 1 }); 
-          new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "60px", height: "68px", delay: 2 }); 
-          TweenLite.to( $("#toggle-menu h1"), 2, { fontSize : "50px", ease: "SlowMo.easeIn", delay: 1 } );
+  $(this).on("tapone", function() {
+      var page_tag = $(this).attr("tag"); 
+      var page = _project_pages.findTag( page_tag ); 
+      page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page(); 
+      TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px",  ease: "SlowMo.easeIn", delay: 1 }); 
+      new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "60px", height: "68px", delay: 2 }); 
+      TweenLite.to( $("#toggle-menu h1"), 2, { fontSize : "50px", ease: "SlowMo.easeIn", delay: 1 } );
 
-          if ( mobile )
-          $(this).find(".name").transition({ opacity: 1, "font-size" : "80px" }, callback(this)); 
-          else
-          TweenLite.to( $(this).find(".name") , 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback(this)} );
-          }, threshold: 0
-        })
-
-      }
+      if ( mobile )
+      $(this).find(".name").transition({ opacity: 1, "font-size" : "80px" }, callback(this)); 
+      else
+      TweenLite.to( $(this).find(".name") , 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback(this)} );
+  })
+    
+       //  
+       // if (mobile) {
+       //   // show swipe right icon
+       //   $(this).swipe( {
+       //     swipeLeft : function(event, target) {
+       //       var page_tag = $(this).attr("tag"); 
+       //       var page = _project_pages.findTag( page_tag ); 
+       //       page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page(); 
+       //       TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px",  ease: "SlowMo.easeIn", delay: 1 }); 
+       //       new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "60px", height: "68px", delay: 2 }); 
+       //       TweenLite.to( $("#toggle-menu h1"), 2, { fontSize : "50px", ease: "SlowMo.easeIn", delay: 1 } );
+       // 
+       //       if ( mobile )
+       //       $(this).find(".name").transition({ opacity: 1, "font-size" : "80px" }, callback(this)); 
+       //       else
+       //       TweenLite.to( $(this).find(".name") , 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback(this)} );
+       //       }, threshold: 0
+       //     })
+       // 
+       //   }
     
     
   }, function () {
