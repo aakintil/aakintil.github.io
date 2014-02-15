@@ -44,7 +44,7 @@ enquire.register("screen and (min-width: 770px)", {
 
 
 $(document).ready( function() {
-  TweenLite.to(window, 2, { scrollTo:{ y: 0 }, ease:Power2.easeOut });
+  // TweenLite.to(window, 2, { scrollTo:{ y: 0 }, ease:Power2.easeOut });
   
   
   if (_mobile) {

@@ -13,24 +13,52 @@ $.fn.animate_children = function ( mobile ) {
     
     tap_tracker.push($(this).attr("tag")); 
     var length = tap_tracker.length; 
-
-    if ( tap_tracker.length > 1 ) {
+    // $(".project-containers").not($(this)).focusout()
+    $(this).off("tapone", function() {
+      console.log("off tap")
+    })
+    if ( tap_tracker.length > 0 ) {
       curr = tap_tracker[ length - 1 ] 
       prev = tap_tracker[ length - 2 ]
     }
-    console.log("prev ", prev, "  curr ", curr)
+    // console.log("prev ", prev, "  curr ", curr)
     
-    $(this).on("tapone", function(e) {
+    
+    // type_container      = $(this).find(".type"); 
+    // name_container      = $(this).find(".name");
 
-      if (prev.constructor === String 
-        && curr.constructor === String 
-        && prev === curr) {
-          prev = 0; 
-          curr = 0; 
-          tap_tracker = []; 
-        // change the page here  
-      }   
-    })
+    var $this = $(this); 
+    var current = $(".gallery").find( $(".project-containers[tag="+curr+"]"));
+    var curr_name = current.find(".name")
+    current.animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
+    TweenLite.to( current, 1, { top: "-20px"} ); 
+    curr_name.transition({ opacity: 0.07, "font-size" : "120px" }, show_others(0.8)); 
+    
+    type_container      = current.find(".type"); 
+    name_container      = current.find(".name");
+    
+    if ( prev !== curr && prev !== undefined ) {
+      console.log("reset ", prev)
+      // name_container.transition({ opacity: 1, "font-size" : "80px" }, callback(this)); 
+      // console.log(this)
+      var p = $(".gallery").find( $(".project-containers[tag="+prev+"]"));
+      TweenLite.to( p.find(".name"), 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback( p ) })
+    }
+    
+    // $(this).on("tapone", function(e) {
+    // 
+    //   if (prev.constructor === String 
+    //     && curr.constructor === String 
+    //     && prev === curr) {
+    //       prev = 0; 
+    //       curr = 0; 
+    //       tap_tracker = []; 
+    //     // change the page here  
+    //   }
+    //     
+    // })
+    //  
+ 
   });
 
  // }
@@ -77,25 +105,25 @@ $.fn.animate_children = function ( mobile ) {
   // 
   // }); 
   // 
+// 
 
 
 
-
-  if (mobile === 20) {
-    $(this).on("click", function() {
-      var page_tag = $(this).attr("tag")
-      var page = _project_pages.findTag( page_tag ); 
-      page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page(); 
-      TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px",  ease: "SlowMo.easeIn", delay: 1 }); 
-      new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "60px", height: "68px", delay: 2 }); 
-      TweenLite.to( $("#toggle-menu h1"), 2, { fontSize : "50px", ease: "SlowMo.easeIn", delay: 1 } );
-
-      if ( mobile )
-      $(this).find(".name").transition({ opacity: 1, "font-size" : "80px" }, callback(this)); 
-      else
-      TweenLite.to( $(this).find(".name") , 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback(this)} );
-    })
-  }
+  // if (mobile === 20) {
+  //    $(this).on("click", function() {
+  //      var page_tag = $(this).attr("tag")
+  //      var page = _project_pages.findTag( page_tag ); 
+  //      page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page(); 
+  //      TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px",  ease: "SlowMo.easeIn", delay: 1 }); 
+  //      new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "60px", height: "68px", delay: 2 }); 
+  //      TweenLite.to( $("#toggle-menu h1"), 2, { fontSize : "50px", ease: "SlowMo.easeIn", delay: 1 } );
+  // 
+  //      if ( mobile )
+  //      $(this).find(".name").transition({ opacity: 1, "font-size" : "80px" }, callback(this)); 
+  //      else
+  //      TweenLite.to( $(this).find(".name") , 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback(this)} );
+  //    })
+  //  }
 
 
   function callback(t) {
@@ -103,6 +131,8 @@ $.fn.animate_children = function ( mobile ) {
     TweenLite.to( t, 2, { top: "0", ease: "Bounce.easeOut" } ); 
     $(t).animate({ borderWidth: "2px", borderColor: "#918E8C" }, 2000, "easeOutCirc"); 
   }
+ 
+ 
   function show_others( o ) {
     var timeline = new TimelineLite();  
     timeline.to( [type_container  ], 1, {  opacity: o, ease: o === 0 ? "Power2.easeOut" : "Power1.easeIn", color: o === 0 ? "#918E8C" : "#4ad6de"  } ); 
