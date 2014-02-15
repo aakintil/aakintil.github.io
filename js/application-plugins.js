@@ -11,54 +11,34 @@ $.fn.animate_children = function ( mobile ) {
   
   $(this).on("tapone", function(e) {
     
+    // push the selected element to the "stack" / array
     tap_tracker.push($(this).attr("tag")); 
     var length = tap_tracker.length; 
-    // $(".project-containers").not($(this)).focusout()
-    $(this).off("tapone", function() {
-      console.log("off tap")
-    })
+    
     if ( tap_tracker.length > 0 ) {
       curr = tap_tracker[ length - 1 ] 
       prev = tap_tracker[ length - 2 ]
     }
-    // console.log("prev ", prev, "  curr ", curr)
     
-    
-    // type_container      = $(this).find(".type"); 
-    // name_container      = $(this).find(".name");
-
-    var $this = $(this); 
     var current = $(".gallery").find( $(".project-containers[tag="+curr+"]"));
     var curr_name = current.find(".name")
-    current.animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
-    TweenLite.to( current, 1, { top: "-20px"} ); 
-    curr_name.transition({ opacity: 0.07, "font-size" : "120px" }, show_others(0.8)); 
-    
+  
     type_container      = current.find(".type"); 
     name_container      = current.find(".name");
-    
+
+    current.animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
+    TweenLite.to( current, 1, { top: "-20px"} ); 
+    name_container.transition({ opacity: 0.07, "font-size" : "120px" }, show_others(0.8, type_container )); 
+
+
     if ( prev !== curr && prev !== undefined ) {
+      // reset previously selected element
       console.log("reset ", prev)
-      // name_container.transition({ opacity: 1, "font-size" : "80px" }, callback(this)); 
-      // console.log(this)
-      var p = $(".gallery").find( $(".project-containers[tag="+prev+"]"));
-      TweenLite.to( p.find(".name"), 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback( p ) })
+      var previous = $(".gallery").find( $(".project-containers[tag="+prev+"]"));
+      var prev_type = previous.find(".type"); 
+      var prev_name = previous.find(".name")
+      TweenLite.to( prev_name, 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback( previous, prev_type ) })
     }
-    
-    // $(this).on("tapone", function(e) {
-    // 
-    //   if (prev.constructor === String 
-    //     && curr.constructor === String 
-    //     && prev === curr) {
-    //       prev = 0; 
-    //       curr = 0; 
-    //       tap_tracker = []; 
-    //     // change the page here  
-    //   }
-    //     
-    // })
-    //  
- 
   });
 
  // }
@@ -80,21 +60,6 @@ $.fn.animate_children = function ( mobile ) {
   //   name_container.transition({ opacity: 0.07, "font-size" : "120px" }, show_others(0.8)); 
   //   else
   //   TweenLite.to( name_container, 1, {  fontSize: "120px", opacity: 0.07, ease:Power2.easeInOut, onComplete: show_others(0.8) } );
-  //   
-  // $(this).on("tapone", function() {
-  //       alert("tap")
-  //     var page_tag = $(this).attr("tag"); 
-  //     var page = _project_pages.findTag( page_tag ); 
-  //     page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page(); 
-  //     TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px",  ease: "SlowMo.easeIn", delay: 1 }); 
-  //     new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "60px", height: "68px", delay: 2 }); 
-  //     TweenLite.to( $("#toggle-menu h1"), 2, { fontSize : "50px", ease: "SlowMo.easeIn", delay: 1 } );
-  // 
-  //     if ( mobile )
-  //     $(this).find(".name").transition({ opacity: 1, "font-size" : "80px" }, callback(this)); 
-  //     else
-  //     TweenLite.to( $(this).find(".name") , 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback(this)} );
-  // })
   //   
   // }, function () {
   // 
@@ -126,20 +91,30 @@ $.fn.animate_children = function ( mobile ) {
   //  }
 
 
-  function callback(t) {
-    show_others( 0 ); 
+  function callback(t, cont) {
+    show_others( 0, cont); 
     TweenLite.to( t, 2, { top: "0", ease: "Bounce.easeOut" } ); 
     $(t).animate({ borderWidth: "2px", borderColor: "#918E8C" }, 2000, "easeOutCirc"); 
   }
  
  
-  function show_others( o ) {
+  function show_others( o, c) {
     var timeline = new TimelineLite();  
-    timeline.to( [type_container  ], 1, {  opacity: o, ease: o === 0 ? "Power2.easeOut" : "Power1.easeIn", color: o === 0 ? "#918E8C" : "#4ad6de"  } ); 
+    timeline.to( [ c ], 1, {  opacity: o, ease: o === 0 ? "Power2.easeOut" : "Power1.easeIn", color: o === 0 ? "#918E8C" : "#4ad6de"  } ); 
   }                                                                                                                                                                                                                                                                                                                                                                  
 }
 
+$.fn.reset = function() {
 
+  if ( _mobile ) {
+    
+  }
+  else 
+  {
+
+  }
+  
+}
 
 // toggle menu widget / function 
 $.fn.toggle_menu = function () {
