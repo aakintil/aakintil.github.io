@@ -7,88 +7,70 @@ var curr = 0;
 $.fn.animate_children = function ( mobile ) {
   var view_more_container, type_container, name_container = "";  
 
-// if ( _mobile ) {
-  
-  $(this).on("tapone", function(e) {
-    
-    // push the selected element to the "stack" / array
-    tap_tracker.push($(this).attr("tag")); 
-    var length = tap_tracker.length; 
-    
-    if ( tap_tracker.length > 0 ) {
+  if ( _mobile ) {
+
+    $(this).on("tapone", function(e) {
+
+      // push the selected element to the "stack" / array
+      tap_tracker.push($(this).attr("tag")); 
+      var length = tap_tracker.length; 
+
+      // store pointers
       curr = tap_tracker[ length - 1 ] 
       prev = tap_tracker[ length - 2 ]
+
+
+      var current = $(".gallery").find( $(".project-containers[tag="+curr+"]"));
+      var curr_name = current.find(".name")
+
+      type_container      = current.find(".type"); 
+      name_container      = current.find(".name");
+
+      current.animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
+      TweenLite.to( current, 1, { top: "-20px"} ); 
+      name_container.transition({ opacity: 0.07, "font-size" : "120px" }, show_others(0.8, type_container )); 
+
+
+      if ( prev !== curr && prev !== undefined ) {
+        // reset previously selected element
+        console.log("reset ", prev)
+        var previous = $(".gallery").find( $(".project-containers[tag="+prev+"]"));
+        var prev_type = previous.find(".type"); 
+        var prev_name = previous.find(".name")
+        TweenLite.to( prev_name, 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback( previous, prev_type ) })
+      }
+
+      if ( prev === curr 
+        && prev.constructor === String 
+        && curr.constructor === String ) {
+          console.log("do something cool")
+        }
+      });
+
     }
     
-    var current = $(".gallery").find( $(".project-containers[tag="+curr+"]"));
-    var curr_name = current.find(".name")
-  
-    type_container      = current.find(".type"); 
-    name_container      = current.find(".name");
+    else {
+      $(this).hover ( function () {
 
-    current.animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
-    TweenLite.to( current, 1, { top: "-20px"} ); 
-    name_container.transition({ opacity: 0.07, "font-size" : "120px" }, show_others(0.8, type_container )); 
+        type_container      = $(this).find(".type"); 
+        name_container      = $(this).find(".name");
+        // swipe_icon      = $(this).find(".swipe"); 
+
+        var $this = $(this); 
+
+        $this.animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
+        TweenLite.to( $this, 1, { top: "-20px"} ); 
 
 
-    if ( prev !== curr && prev !== undefined ) {
-      // reset previously selected element
-      console.log("reset ", prev)
-      var previous = $(".gallery").find( $(".project-containers[tag="+prev+"]"));
-      var prev_type = previous.find(".type"); 
-      var prev_name = previous.find(".name")
-      TweenLite.to( prev_name, 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback( previous, prev_type ) })
+        if ( mobile ) 
+        name_container.transition({ opacity: 0.07, "font-size" : "120px" }, show_others(0.8)); 
+        else
+        TweenLite.to( name_container, 1, {  fontSize: "120px", opacity: 0.07, ease:Power2.easeInOut, onComplete: show_others(0.8, type_container) } );
+
+      }, function () {
+        TweenLite.to( name_container, 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback(this, type_container) } );
+      });
     }
-  });
-
- // }
- 
-  // 
-  // this.hover ( function () {
-  // 
-  //   type_container      = $(this).find(".type"); 
-  //   name_container      = $(this).find(".name");
-  //   // swipe_icon      = $(this).find(".swipe"); 
-  // 
-  //   var $this = $(this); 
-  // 
-  //   $this.animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
-  //   TweenLite.to( $this, 1, { top: "-20px"} ); 
-  // 
-  //   
-  //   if ( mobile ) 
-  //   name_container.transition({ opacity: 0.07, "font-size" : "120px" }, show_others(0.8)); 
-  //   else
-  //   TweenLite.to( name_container, 1, {  fontSize: "120px", opacity: 0.07, ease:Power2.easeInOut, onComplete: show_others(0.8) } );
-  //   
-  // }, function () {
-  // 
-  //   if ( mobile )
-  //   name_container.transition({ opacity: 1, "font-size" : "80px" }, callback(this)); 
-  //   else
-  //   TweenLite.to( name_container, 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback(this) } );
-  // 
-  // }); 
-  // 
-// 
-
-
-
-  // if (mobile === 20) {
-  //    $(this).on("click", function() {
-  //      var page_tag = $(this).attr("tag")
-  //      var page = _project_pages.findTag( page_tag ); 
-  //      page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page(); 
-  //      TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px",  ease: "SlowMo.easeIn", delay: 1 }); 
-  //      new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "60px", height: "68px", delay: 2 }); 
-  //      TweenLite.to( $("#toggle-menu h1"), 2, { fontSize : "50px", ease: "SlowMo.easeIn", delay: 1 } );
-  // 
-  //      if ( mobile )
-  //      $(this).find(".name").transition({ opacity: 1, "font-size" : "80px" }, callback(this)); 
-  //      else
-  //      TweenLite.to( $(this).find(".name") , 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback(this)} );
-  //    })
-  //  }
 
 
   function callback(t, cont) {
@@ -96,8 +78,8 @@ $.fn.animate_children = function ( mobile ) {
     TweenLite.to( t, 2, { top: "0", ease: "Bounce.easeOut" } ); 
     $(t).animate({ borderWidth: "2px", borderColor: "#918E8C" }, 2000, "easeOutCirc"); 
   }
- 
- 
+
+
   function show_others( o, c) {
     var timeline = new TimelineLite();  
     timeline.to( [ c ], 1, {  opacity: o, ease: o === 0 ? "Power2.easeOut" : "Power1.easeIn", color: o === 0 ? "#918E8C" : "#4ad6de"  } ); 
@@ -107,13 +89,13 @@ $.fn.animate_children = function ( mobile ) {
 $.fn.reset = function() {
 
   if ( _mobile ) {
-    
+
   }
   else 
   {
 
   }
-  
+
 }
 
 // toggle menu widget / function 
