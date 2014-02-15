@@ -44,6 +44,15 @@ enquire.register("screen and (min-width: 770px)", {
 
 
 $(document).ready( function() {
+  TweenLite.to(window, 2, { scrollTo:{ y: 0 }, ease:Power2.easeOut });
+  
+  
+  if (_mobile) {
+    
+    $("body").on("tapone", function() {
+      $(".project-containers").data('clicked_once', false);
+    });    
+  }
   
   var ani_speed = 1;
   $("#logo").add($("#contact").add($("#resume"))).hover( function() { 

@@ -95,9 +95,10 @@ function t() {
   new TimelineLite().to( [ $("#contact"), $("#resume") ], 1, { width: "87.5px", height: "100px", delay: 2 } ); 
 
   TweenMax.staggerTo( _gallery, 1,  { css: { opacity: 1 }, ease: "Power4.easeIn", delay: 3 }, 0.40 );   
+  console.log("mobile...", _mobile)
   $(".project-containers").animate_children( _mobile );
-  $(".project-containers").focusout();
-  $(".gallery").focusout(); 
+  $(".project-containers").blur();
+  $(".gallery").blur(); 
 }
 
 // home page project container hover event function
