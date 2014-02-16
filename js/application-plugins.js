@@ -44,6 +44,7 @@ $.fn.animate_children = function ( mobile ) {
         && prev.constructor === String 
         && curr.constructor === String ) {
           console.log("do something cool")
+
         }
       });
 
@@ -59,13 +60,17 @@ $.fn.animate_children = function ( mobile ) {
         var $this = $(this); 
 
         $this.animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
-        TweenLite.to( $this, 1, { top: "-20px"} ); 
-
-
-        if ( mobile ) 
-        name_container.transition({ opacity: 0.07, "font-size" : "120px" }, show_others(0.8)); 
-        else
+        TweenLite.to( $this, 1, { top: "-20px"} );
         TweenLite.to( name_container, 1, {  fontSize: "120px", opacity: 0.07, ease:Power2.easeInOut, onComplete: show_others(0.8, type_container) } );
+        
+        $(this).on("click", function() {
+          var page_tag = $(this).attr("tag");
+          var page = _project_pages.findTag( page_tag );
+          page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page();
+          TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px", ease: "SlowMo.easeIn", delay: 1 });
+          new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "60px", height: "68px", delay: 2 });
+          TweenLite.to( $("#toggle-menu h1"), 2, { fontSize : "50px", ease: "SlowMo.easeIn", delay: 1 } );
+        })
 
       }, function () {
         TweenLite.to( name_container, 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback(this, type_container) } );

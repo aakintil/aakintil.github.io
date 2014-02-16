@@ -8,6 +8,12 @@
 }
 
 
+@font-face {
+  font-family: "Avenir Light";
+  src: url("../fonts/AvenirLTStd-Light.otf");
+  font-style: normal;
+}
+
 
 @font-face {
   font-family: "Crimson";
