@@ -35,10 +35,15 @@
 
 #title {
   font-size: 100px;
-  left: 0;
+}
+
+#title-shrink, 
+#title {
+    left: 0;
 }
 
 #title,
+#title-shrink, 
 #details-container h4 {
     color: #428cff;
 }

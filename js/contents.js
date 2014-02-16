@@ -1,39 +1,47 @@
 contents = {
   tea : "<div class='col-md-8' id='pieces-container'><p id='description'>This was my Communication Design Fundamentals final project. Our assignment was to create a booklet about anything we want. I decided to create a couple spreads about different teas from different areas. Some of the teas were borrowed from my roommate, while the others were given to me by the owners of Margaret's Fine Imports</p><div class='col-sm-6 col-md-12 pieces'><img src='images/cdf/img1.png'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/write1.png'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/img2.jpg'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/end.jpg'/></div></div><div class='col-md-4' id='details-container'><h4> Project Details </h4><div><p class='title'> Context </p><p> Summer Research</p></div><div><p class='title'>Dates</p><p>October - December 2011 & June - August 2012</p></div><div><p class='title'> Methods Used </p><p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6, Photography</p></div><div><a class='btn btn-primary' target='_blank' href='downloads/tea-booklet.pdf' download='tea.pdf'> Download </a></div></div></div>", 
 
-  apartment_reviews : "<div class='col-md-8' id='pieces-container'>\
-  <p id='description'>\
-  I worked for <a class='project-links' target='_blank' href='http://clickbrands.com/'>ClickBrands</a> as a Front-End Developer. It was my first real front-end gig and I bloody loved it! Initially, I got my feet wet with a project called <a class='project-links' target='_blank' href='http://www.apartmentlinks.com/'>Apartment Links</a>, but the bulk of our time and effort was spent revamping their old apartment ratings site to Apartment Reviews. The best part was that because we had a small team, I not only did front-end tasks, but I designed mockups, helped with rails logic, and migrated the working front-end prototypes into the rails application.\
-  </p>\
-  <div class='col-sm-6 col-md-12 pieces'><img src='images/apartment-reviews/property-page2.png'/></div> \
-  <div class='col-sm-6 col-md-12 pieces'> <img src='images/apartment-reviews/city-page2.png'/></div>\
-  <div class='col-sm-6 col-md-12 pieces'> <img src='images/apartment-reviews/dashboard.png'/></div> \
-  <div class='col-sm-6 col-md-12 pieces'> <img src='images/apartment-reviews/apartment-cards.png'/></div>\
-  </div>\
-  <div class='col-md-4' id='details-container'>\
-  <h4> Project Details </h4>\
-  <div>\
-  <p class='title'> Context </p>\
-  <p> Summer Job </p>\
-  </div>\
-  <div>\
-  <p class='title'>Dates</p>\
-  <p>June 2013 - N/A </p>\
-  </div>\
-  <div>\
-  <p class='title'> Methods Used </p>\
-  <p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6, Ruby on Rails, HTML, CSS, Javascript</p>\
-  </div>\
-  <div>\
-  <p class='title'> Collaborators </p>\
-  <p>\
-  Jonathan Miller, Joshua Gerbasi, Daniel Muller, Justin Edwards, Rebecca Chen\
-  </p>\
-  </div>\
-  <div>\
-  <a class='btn btn-primary' href='http://www.apartmentreviews.net/' target='_blank'> Visit Site </a>\
-  </div>\
-  </div>", 
+  apartment_reviews : "<div id='top-row' class='col-sm-12'>   \
+  <h1 id='title-shrink'> Apartment Reviews </h1>                         \
+  <h4 id='type'> web development </h4>                      \
+  <h1 id='close-page'> + </h1>                            \
+  </div>                                               \
+  <div id='info-row' class='col-sm-12'>        \
+  <div id='description' class='col-md-4 col-sm-6'>      \
+  <p id=''> I worked for <a class='project-links' target='_blank' href='http://clickbrands.com/'>ClickBrands</a> as a Front-End Developer. It was my first real front-end gig and I bloody loved it! Initially, I got my feet wet with a project called <a class='project-links' target='_blank' href='http://www.apartmentlinks.com/'>Apartment Links</a>, but the bulk of our time and effort was spent revamping their old apartment ratings site to Apartment Reviews. The best part was that because we had a small team, I not only did front-end tasks, but I designed mockups, helped with rails logic, and migrated the working front-end prototypes into the rails application. \
+  </p> \
+  <div id='details-container'>                                                     \
+  <h4> Project Details </h4>                                                       \
+  <div>                                                                            \
+  <p class='emphasis'> Context </p>                                                \
+  <p> Summer Job </p>                                \
+  </div>                                                                           \
+  <div>                                                                            \
+  <p class='emphasis'>Dates</p>                                                    \
+  <p> June 2013 - N/A </p>                                                          \
+  </div> \
+  <div>                                                                            \
+  <p class='emphasis'> Methods Used </p>                                           \
+  <p> Wireframing, Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6, Ruby on Rails, HTML, CSS, Javascript </p>          \
+  </div>                                                                           \
+  <div> \
+  <p class='emphasis'>Collaborators</p>   \
+  <p> Jonathan Miller, Joshua Gerbasi, Daniel Muller, Justin Edwards, Rebecca Chen </p> \
+  </div> \
+  <div>                                                                            \
+  <a class='btn btn-primary' href='http://www.apartmentreviews.net/' target='_blank'> Visit Site </a> \
+  </div>                                         \
+  </div>                                         \
+  </div>                                         \
+  <div id='images' class='col-md-8 col-sm-6'>             \
+  <img src='images/apartment-reviews/property-page2.png'/>  \
+  <img src='images/apartment-reviews/city-page2.png'/>  \
+  <img src='images/apartment-reviews/dashboard.png'/>          \
+  <img src='images/apartment-reviews/apartment-cards.png'/>              \
+  </div>                                               \
+  </div> \
+  ", 
+  
   
   avant_garde: "<div id='top-row' class='col-sm-12'>   \
   <h1 id='title'> Avant-Garde </h1>                         \
