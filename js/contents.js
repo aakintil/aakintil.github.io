@@ -149,7 +149,7 @@ contents = {
   <p> Suzy Li, Fereshteh Shahmiri </p> \
   </div> \
   <div>                                                                            \
-  <a class='btn btn-primary' href='downloads/biologic.pdf' download='biologic.pdf 'target='_blank'> Coming Soon </a>\
+  <a class='btn btn-primary' href='downloads/biologic.pdf' download='biologic.pdf 'target='_blank'> Download </a>\
   </div>                                         \
   </div>                                         \
                                                  \
@@ -171,7 +171,52 @@ contents = {
   \
           </div>", 
   
-  hex: "", 
+  hex: "<div id='top-row' class='col-sm-12'>   \
+          <h1 id='title'> Hex Tiles </h1>                         \
+          <h4 id='type'> architecture </h4>                      \
+          <h1 id='close-page'> + </h1>                            \
+          </div>                                               \
+          <div id='info-row' class='col-sm-12'>        \
+          <div id='description' class='col-md-4 col-sm-6'>      \
+          <p id=''> This was a course project where we were tasked with designing a hexagonal wall pattern not unlike <a class='external-link' target=_blank href='http://matsysdesign.com/tag/wall/'> matsys's wall</a>. We started off designing one tile, however, the end goal was to create a design that when rotated and placed together with other tiles, would create a new form or pattern across the wall. \
+          </p>                                                                             \
+                                                                                           \
+          <div id='details-container'>                                                     \
+          <h4> Project Details </h4>                                                       \
+          <div>                                                                            \
+          <p class='emphasis'> Context </p>                                                \
+          <p> Introduction to Digital Media II (48-125) </p>                                \
+          </div>                                                                           \
+          <div>                                                                            \
+          <p class='emphasis'>Dates</p>                                                    \
+          <p> Spring 2013 </p>                                                          \
+          </div>                                                                           \
+          <div>                                                                            \
+          <p class='emphasis'> Methods Used </p>                                           \
+          <p> Rhino, V-Ray, Adobe Illustrator </p>          \
+          </div>                                                                           \
+          <div>                                                                            \
+          <a class='btn btn-primary' href='downloads/hex-tiles.pdf' download='hex-tiles.pdf 'target='_blank'> Download </a>\
+          </div>                                         \
+          </div>                                         \
+                                                         \
+          </div>                                         \
+          <div id='images' class='col-md-8 col-sm-6'>             \
+          <img src='images/idm/hex-tiles/topo.png'/>  \
+          <p class='caption'> One of the initial prototypes we made: a balloon and toothpicks attached to a coffee filter on its head   </p> \
+          <img src='images/idm/hex-tiles/hex1.gif'/>  \
+          <p class='caption'> One of the initial molds we made in order to test how the organisms 'spike' mechanism </p> \
+          <img src='images/idm/hex-tiles/hex2.gif'/>   \
+          <p class='caption'> We attached tubes and a pump to these early prototypes and studied how inflation was affected by shape  </p>             \
+          <img src='images/idm/hex-tiles/hex3.gif'/>   \
+          <p class='caption'> A 3D printed mold for our prototype which we later poured silicone into  </p>             \
+          <img src='images/idm/hex-tiles/section-render.png'/>          \
+          <p class='caption'> Schematic of how our final prototype was supposed to work </p> \
+          <img src='images/idm/hex-tiles/wall-render.png'/>  \
+          <p class='caption'> A close-up of our prototype during the exhibit </p> \
+          </div>                                         \
+          \
+                  </div>", 
   
   waffle: "", 
   
