@@ -486,7 +486,11 @@ Media Queries
   #images img {
     width: 100%;
   }
-  
+
+  #images .caption {
+    padding-left: 0;
+  }
+
   #title {
     font-size: 65px !important;
   }

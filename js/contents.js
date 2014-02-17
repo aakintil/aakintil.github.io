@@ -120,37 +120,56 @@ contents = {
   </div>\
   </div>", 
   
-  biologic: "<div class='col-md-8' id='pieces-container'>\
-  <p id='description'>\
-  This was a course project where we were tasked with choosing an organism, researching various aspects about the organism, and through many iterating, ideating, and failing, design a responsive building technology based on the initial organism. My group decided to choose the pufferfish.\
-  </p>\
-  <div class='col-sm-6 col-md-12 pieces'><img src='images/biologic/coming-soon.png'/></div> \
-  <div class='col-sm-6 col-md-12 pieces'> <img src='images/biologic/coming-soon2.png'/></div>\
-  </div>\
-  <div class='col-md-4' id='details-container'>\
-  <h4> Project Details </h4>\
-  <div>\
-  <p class='title'> Context </p>\
-  <p> Biologic (48-632)</p>\
-  </div>\
-  <div>\
-  <p class='title'>Dates</p>\
-  <p> August - December 2013 </p>\
-  </div>\
-  <div>\
-  <p class='title'> Methods Used </p>\
-  <p> Laser Cutting, Adobe Illustrator, Arduino</p>\
-  </div>\
-  <div>\
-  <p class='title'> Collaborators </p>\
-  <p>\
-  Suzy Li, Fereshteh Shahmiri\
-  </p>\
-  </div>\
-  <div>\
-  <a class='btn btn-primary disabled' href='downloads/biologic.pdf' download='biologic.pdf 'target='_blank'> Coming Soon </a>\
-  </div>\
-  </div>", 
+  biologic: "<div id='top-row' class='col-sm-12'>   \
+  <h1 id='title'> Biologic </h1>                         \
+  <h4 id='type'> research + design </h4>                      \
+  <h1 id='close-page'> + </h1>                            \
+  </div>                                               \
+  <div id='info-row' class='col-sm-12'>        \
+  <div id='description' class='col-md-4 col-sm-6'>      \
+  <p id=''> This was a course project where we were tasked with choosing an organism, researching various aspects about the organism, and then coming up with a way to apply features of said organism to architecture. Through lots of iterations, ideation, and failure, my team and I designed a responsive building technology based on our initial organism: a pufferfish. We began by reading numerous research documents about pufferfish and learning about the organism's anatomy. At the end of the semester our professor connected us with Nina Barbuto, who is the founder and director of Assemble, an interdisciplinary arts and creativity space in Pittsburgh’s East End. She graciously allowed students from my class and another taught by the same professor to exhibit the prototypes we had been working on during the semester. <br> <br> This was a difficult project for two reasons: it forced my team and myself out of our comfort zones, and our prototypes and designs failed...a lot. But failure is never bad unless you're unable to understand what you did wrong and learn from it. This course taught me to research, design, and build with no constraints. Most, if not all, of my previous projects have had some form of tangible end goal. This was my first time experiencing an truly open ended project: the only end goal was to have something by the end of the semester. I did not like it at the time, but I eventually realized that that is how industry is: a client is going to ask you to build or design 'something' for them, and it's up to you to find a scope and gradually narrow it as you proceed further. \
+  </p>                                                                             \
+                                                                                   \
+  <div id='details-container'>                                                     \
+  <h4> Project Details </h4>                                                       \
+  <div>                                                                            \
+  <p class='emphasis'> Context </p>                                                \
+  <p> Biologic (48-632) </p>                                \
+  </div>                                                                           \
+  <div>                                                                            \
+  <p class='emphasis'>Dates</p>                                                    \
+  <p> August - December 2013 </p>                                                          \
+  </div>                                                                           \
+  <div>                                                                            \
+  <p class='emphasis'> Methods Used </p>                                           \
+  <p> Adobe Illustrator, Arduino, Laser Cutting, Casting (epoxy & silicone), 3D Printing </p>          \
+  </div>                                                                           \
+  <div> \
+  <p class='emphasis'>Collaborators</p>   \
+  <p> Suzy Li, Fereshteh Shahmiri </p> \
+  </div> \
+  <div>                                                                            \
+  <a class='btn btn-primary' href='downloads/biologic.pdf' download='biologic.pdf 'target='_blank'> Coming Soon </a>\
+  </div>                                         \
+  </div>                                         \
+                                                 \
+  </div>                                         \
+  <div id='images' class='col-md-8 col-sm-6'>             \
+  <img src='images/biologic/initial.jpg'/>  \
+  <p class='caption'> One of the initial prototypes we made: a balloon and toothpicks attached to a coffee filter on its head   </p> \
+  <img src='images/biologic/initial.jpg'/>  \
+  <p class='caption'> One of the initial molds we made in order to test how the organisms 'spike' mechanism </p> \
+  <img src='images/biologic/mold2.jpg'/>   \
+  <p class='caption'> We attached tubes and a pump to these early prototypes and studied how inflation was affected by shape  </p>             \
+  <img src='images/biologic/print1.jpg'/>   \
+  <p class='caption'> A 3D printed mold for our prototype which we later poured silicone into  </p>             \
+  <img src='images/biologic/schematic.png'/>          \
+  <p class='caption'> Schematic of how our final prototype was supposed to work </p> \
+  <img src='images/biologic/presentation.jpg'/>  \
+  <p class='caption'> A close-up of our prototype during the exhibit </p> \
+  </div>                                         \
+  \
+          </div>", 
   
   hex: "", 
   
