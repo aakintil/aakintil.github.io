@@ -201,3 +201,11 @@
 #details-container .emphasis + p {
   font-size: 17px;
 }
+
+
+.caption {
+  font-size: 15px !important;
+  text-align: right;
+  top: -40px;
+  position: relative;
+}

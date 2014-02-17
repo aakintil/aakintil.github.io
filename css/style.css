@@ -487,10 +487,6 @@ Media Queries
     width: 100%;
   }
   
-  #images img:hover {
-    width: 100%;
-  }
-  
   #title {
     font-size: 65px !important;
   }

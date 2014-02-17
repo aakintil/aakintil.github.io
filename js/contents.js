@@ -1,3 +1,5 @@
+// for captions no more than 27 words
+
 contents = {
   tea : "<div class='col-md-8' id='pieces-container'><p id='description'>This was my Communication Design Fundamentals final project. Our assignment was to create a booklet about anything we want. I decided to create a couple spreads about different teas from different areas. Some of the teas were borrowed from my roommate, while the others were given to me by the owners of Margaret's Fine Imports</p><div class='col-sm-6 col-md-12 pieces'><img src='images/cdf/img1.png'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/write1.png'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/img2.jpg'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/end.jpg'/></div></div><div class='col-md-4' id='details-container'><h4> Project Details </h4><div><p class='title'> Context </p><p> Summer Research</p></div><div><p class='title'>Dates</p><p>October - December 2011 & June - August 2012</p></div><div><p class='title'> Methods Used </p><p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6, Photography</p></div><div><a class='btn btn-primary' target='_blank' href='downloads/tea-booklet.pdf' download='tea.pdf'> Download </a></div></div></div>", 
 
@@ -35,9 +37,13 @@ contents = {
   </div>                                         \
   <div id='images' class='col-md-8 col-sm-6'>             \
   <img src='images/apartment-reviews/property-page2.png'/>  \
+  <p class='caption'> A mockup for the apartment page </p> \
   <img src='images/apartment-reviews/city-page2.png'/>  \
+  <p class='caption'> Very lose mockup of the city page </p> \
   <img src='images/apartment-reviews/dashboard.png'/>          \
+  <p class='caption'> A mockup for the user personalization callout  </p> \
   <img src='images/apartment-reviews/apartment-cards.png'/>              \
+  <p class='caption'> Mockups for the 'apartment cards': the elements that popup after a search </p> \
   </div>                                               \
   </div> \
   ", 
@@ -75,12 +81,17 @@ contents = {
   </div>                                         \
   <div id='images' class='col-md-8 col-sm-6'>             \
   <img src='images/ixdf/avant-garde/sketch1.jpg'/>  \
+  <p class='caption'> Trying to sketch out the heirarchy </p> \
   <img src='images/ixdf/avant-garde/sketch2.jpg'/>  \
+  <p class='caption'> Figuring out the underlying grid layout </p> \
   <img src='images/ixdf/avant-garde/img1.png'/>          \
-  <img src='images/ixdf/avant-garde/img3.png'/>              \
+  <p class='caption'> 'Digital' sketches to see how an image and blocks of text fit together </p> \
+  <img src='images/ixdf/avant-garde/img3.png'/>   \
+  <p class='caption'> First go at laying out elements with background image </p>             \
   <img src='images/ixdf/avant-garde/img4.png'/>  \
+  <p class='caption'> Final poster design (top half) </p> \
   </div>                                         \
-                                                 \
+  \
           </div>", 
   
   ipad: "<div class='col-md-8' id='pieces-container'>\
