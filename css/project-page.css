@@ -37,13 +37,15 @@
   font-size: 100px;
 }
 
-#title-shrink, 
+#title-shrink,
+#title-long,  
 #title {
     left: 0;
 }
 
 #title,
 #title-shrink, 
+#title-long, 
 #details-container h4 {
     color: #428cff;
 }
@@ -213,5 +215,9 @@
 
 .external-link {
   color: #428CFF;
+}
+
+#title-long {
+  top: 20px;
 }
 

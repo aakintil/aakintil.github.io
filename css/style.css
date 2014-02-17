@@ -434,8 +434,15 @@ Media Queries
   
   
   #title {
+    color: red;
     font-size: 80px !important;
   }
+  
+  #title-long {
+     top: 22px !important;
+     font-size: 44px !important
+   }
+
   
   #title-shrink {
     font-size: 60px !important;
@@ -474,6 +481,7 @@ Media Queries
     top: 75px;
   }
   
+  
   #close-page {
     font-size: 70px;
   }
@@ -499,6 +507,11 @@ Media Queries
     font-size: 45px !important;
   }
   
+  #title-long {
+    top: 24px;
+    font-size: 33px !important
+  }
+  
   #logo, 
   #resume, 
   #contact {
@@ -521,8 +534,18 @@ Media Queries
     font-size: 40px !important;
   }
   
+  
   #title-shrink {
     font-size: 30px !important;
+  }
+  
+  #title-long {
+    top: 9px !important;
+    font-size: 25px !important
+  }
+  
+  #title-long + #type {
+    top: 75px;
   }
   
   #type {
