@@ -215,18 +215,18 @@ contents = {
   
   hri: "<div id='top-row' class='col-sm-12'>   \
           <h1 id='title-long'> Human Robotic Interaction </h1>                         \
-          <h4 id='type'> architecture </h4>                      \
+          <h4 id='type'> research + design </h4>                      \
           <h1 id='close-page'> + </h1>                            \
           </div>                                               \
           <div id='info-row' class='col-sm-12'>        \
           <div id='description' class='col-md-4 col-sm-6'>      \
-          <p id=''> This was a course project where we were tasked with designing a hexagonal wall pattern not unlike <a class='external-link' target=_blank href='http://matsysdesign.com/tag/wall/'> matsys's wall</a>. We started off designing one tile, however, the end goal was to create a design that when rotated and placed together with other tiles, would create a new form or pattern along a wall. \
+          <p id=''> This was an exceptional and though provoking course. Every project was team based and recorded onto a team website. Classes were split into lecture / discussions and then work sessions. The lectures were about 'underlying robotic technologies, as they relate to human-robot interaction, interaction methodologies and techniques, study design, ethics and the singularity, and man-machine coupling. Some classes were discussions of application domains that feature HRI. An example of a project we did was researching and designing interactions for automated cars. We had to take into consideration the variables that can occur at an intersection: children, people not paying attention to incoming traffic, visually impaired, etc. Then we brainstormed numerous ways a self-driving vehicle can communicate with pedestrians, and vice versa. In the end we broke our ideas up into three sense categories: audition, sight, and touch. Through our discussions and iterations, we designed an interactive eye around the bottom half of the self-driving vehicle, as well as a vibrating device that would be attached to a stop sign or object near the intersection.  \
           </p>                                                                             \
           <div id='details-container'>                                                     \
           <h4> Project Details </h4>                                                       \
           <div>                                                                            \
           <p class='emphasis'> Context </p>                                                \
-          <p> Introduction to Digital Media II (48-125) </p>                                \
+          <p> Human Robot Interaction (16-467) </p>                                \
           </div>                                                                           \
           <div>                                                                            \
           <p class='emphasis'>Dates</p>                                                    \
@@ -234,24 +234,28 @@ contents = {
           </div>                                                                           \
           <div>                                                                            \
           <p class='emphasis'> Methods Used </p>                                           \
-          <p> Rhino, V-Ray, Adobe Illustrator </p>          \
+          <p> Adobe Illustrator, Adobe InDesign </p>          \
           </div>                                                                           \
+          <div> \
+          <p class='emphasis'>Collaborators</p>   \
+          <p> Julie Eckstrom, Adam Bove </p> \
+          </div> \
           <div>                                                                            \
-          <a class='btn btn-primary' href='downloads/hex-tiles.pdf' download='hex-tiles.pdf 'target='_blank'> Download </a>  \
+          <a class='btn btn-primary' href='/HRI-Assignment01' 'target='_blank'> Visit Site </a>  \
           </div>                                         \
           </div>                                         \
           </div>                                         \
           <div id='images' class='col-md-8 col-sm-6'>             \
-          <img src='images/idm/hex-tiles/topo.png'/>       \
-          <p class='caption'> Topographic profile of the tile </p> \
-          <img src='images/idm/hex-tiles/hex1.gif'/>      \
-          <p class='caption'> 3D print of my Rhino model courtesy of shapeways.com </p> <img src='images/idm/hex-tiles/hex2.gif'/>         \
-          <img src='images/idm/hex-tiles/hex3.gif'/>           \
-          <img src='images/idm/hex-tiles/section-render.png'/>          \
-          <p class='caption'> Schematic of how our final prototype was supposed to work </p>   \
-          <img src='images/idm/hex-tiles/wall-render.png'/>     \
-          <p class='caption'> A close-up of our prototype during the exhibit </p>     \
-          </div>  </div>", 
+          <img src='images/hri/sketch1.png'/>  \
+          <p class='caption'> Sketches of a pedestrian misinterpreting the car's intention with and without our system </p> \
+          <img src='images/hri/sketch2.png'/>  \
+          <p class='caption'> Sketches of a blind pedestrian at an intersection with and without our system </p> \
+          <img src='images/hri/medusa.png'/>          \
+          <p class='caption'> A mockup of the 'all seeing eye'  </p> \
+          <img src='images/hri/device.png'/>              \
+          <p class='caption'> A mockup of the device that would attach to signs or objects near intersections </p> \
+          </div> \
+          </div>", 
   
   contact_me: "<div class='col-md-12' id='personal-page'>\
   <h1> Design. Code. Build. </h1> \
