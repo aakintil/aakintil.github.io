@@ -31,7 +31,7 @@ contents = {
   <p> Jonathan Miller, Joshua Gerbasi, Daniel Muller, Justin Edwards, Rebecca Chen </p> \
   </div> \
   <div>                                                                            \
-  <a class='btn btn-primary' href='http://www.apartmentreviews.net/' target='_blank'> Visit Site </a> \
+  <a class='btn btn-primary' target='_blank' href href='http://www.apartmentreviews.net/'> Visit Site </a> \
   </div>                                         \
   </div>                                         \
   </div>                                         \
@@ -101,7 +101,7 @@ contents = {
   </div>                                               \
   <div id='info-row' class='col-sm-12'>        \
   <div id='description' class='col-md-4 col-sm-6'>      \
-  <p id=''> This was a course project where we were tasked with designing an iPad Magazine within a given four categories: Travel, Personal Finance, Desserts, and Gardening. We you selected a target audience, developed personas, created a mood board for inspiration, generated concepts, developed a design language and color palette, and designed simple navigation. Our design layouts had to be 768 by 1024 pixels (iPad screen size). \
+  <p id=''> This was a course project where we were tasked with designing an iPad Magazine within four given categories: Travel, Personal Finance, Desserts, and Gardening. We selected a target audience, developed personas, created a mood board for inspiration, generated concepts, developed a design language and color palette, and designed simple navigation. Our design layouts had to be 768 by 1024 pixels (iPad screen size). You can download the magazine and the process document below, but keep in mind that the magazine is not actually interactive! \
   </p>                                                                             \
   \
   <div id='details-container'>                                                     \
@@ -116,27 +116,28 @@ contents = {
   </div>                                                                           \
   <div>                                                                            \
   <p class='emphasis'> Methods Used </p>                                           \
-  <p> Adobe Illustrator, Adobe InDesign, Adobe Photoshop, Personas,  </p>          \
+  <p> Adobe Illustrator, Adobe InDesign, Adobe Photoshop, Personas, Moodboards  </p>          \
   </div>                                                                           \
   <div>                                                                            \
-  <a class='btn btn-primary' href='downloads/iPad.pdf' download='iPadMag.pdf 'target='_blank'> Download </a>\
+  <a class='btn btn-primary margin' href='downloads/ipad-process.pdf' download='ipad-process.pdf 'target='_blank'> Download Process </a>\
+  <a class='btn btn-primary' 'target='_blank' href='downloads/iPad.pdf' download='iPadMag.pdf> Download Mag </a>\
   </div>                                         \
   </div>                                         \
   \
   </div>                                         \
   <div id='images' class='col-md-8 col-sm-6'>             \
-  <img src='images/biologic/initial.jpg'/>  \
-  <p class='caption'> One of the initial prototypes we made: a balloon and toothpicks attached to a coffee filter on its head   </p> \
-  <img src='images/biologic/initial.jpg'/>  \
-  <p class='caption'> One of the initial molds we made in order to test how the organisms 'spike' mechanism </p> \
-  <img src='images/biologic/mold2.jpg'/>   \
-  <p class='caption'> We attached tubes and a pump to these early prototypes and studied how inflation was affected by shape  </p>             \
-  <img src='images/biologic/print1.jpg'/>   \
-  <p class='caption'> A 3D printed mold for our prototype which we later poured silicone into  </p>             \
-  <img src='images/biologic/schematic.png'/>          \
-  <p class='caption'> Schematic of how our final prototype was supposed to work </p> \
-  <img src='images/biologic/presentation.jpg'/>  \
-  <p class='caption'> A close-up of our prototype during the exhibit </p> \
+  <img src='images/ixdf/ipad/moodboard-bottom.png'/>  \
+  <p class='caption'> This is the bottom half of my moodboard  </p> \
+  <img src='images/ixdf/ipad/angela.png'/>  \
+  <p class='caption'> This is Anglea Nhu, one of the three personas I created for my magazine </p> \
+  <img src='images/ixdf/ipad/process.png'/>   \
+  <p class='caption'> These are a few iterations I made on the magazine cover </p>             \
+  <img src='images/ixdf/ipad/japan.png'/>   \
+  <p class='caption'> The japanese section of my magazine  </p>             \
+  <img src='images/ixdf/ipad/food.png'/>          \
+  <p class='caption'> The food section about 'kaiseki:' the interaction here is that the image explodes out with a dark overlay when tapped </p> \
+  <img src='images/ixdf/ipad/cover-page.png'/>  \
+  <p class='caption'> The final iteration of my cover page </p> \
   </div>                                         \
   \
   </div>", 
@@ -170,7 +171,7 @@ contents = {
   <p> Suzy Li, Fereshteh Shahmiri </p> \
   </div> \
   <div>                                                                            \
-  <a class='btn btn-primary' href='downloads/biologic.pdf' download='biologic.pdf 'target='_blank'> Download </a>\
+  <a class='btn btn-primary' 'target='_blank' href='downloads/biologic.pdf' download='biologic.pdf' > Download </a>\
   </div>                                         \
   </div>                                         \
   \
@@ -216,7 +217,7 @@ contents = {
   <p> Rhino, V-Ray, Adobe Illustrator </p>          \
   </div>                                                                           \
   <div>                                                                            \
-  <a class='btn btn-primary' href='downloads/hex-tiles.pdf' download='hex-tiles.pdf 'target='_blank'> Download </a>  \
+  <a class='btn btn-primary' target='_blank' href='downloads/hex-tiles.pdf' download='hex-tiles.pdf'> Download </a>  \
   </div>                                         \
   </div>                                         \
   </div>                                         \
@@ -256,7 +257,7 @@ contents = {
   <p> Adobe Illustrator, Adobe InDesign, Laser Cutting, Rhino, Grasshoper </p>          \
   </div>                                                                           \
   <div>                                                                            \
-  <a class='btn btn-primary' href='downloads/waffle-canopy.pdf' 'target='_blank' download='waffle-canopy.pdf'> Download </a>  \
+  <a class='btn btn-primary' target='_blank' href='downloads/waffle-canopy.pdf' download='waffle-canopy.pdf'> Download </a>  \
   </div>                                         \
   </div>                                         \
   </div>                                         \
@@ -298,7 +299,7 @@ contents = {
   <p> Julie Eckstrom, Adam Bove </p> \
   </div> \
   <div>                                                                            \
-  <a class='btn btn-primary' href='http://www.aderinsola.com/HRI-Assignment01' 'target='_blank'> Visit Site </a>  \
+  <a class='btn btn-primary' target='_blank' href href='http://www.aderinsola.com/HRI-Assignment01' > Visit Site </a>  \
   </div>                                         \
   </div>                                         \
   </div>                                         \
@@ -321,7 +322,7 @@ contents = {
   </div>                                               \
   <div id='info-row' class='col-sm-12'>        \
   <div id='description' class='col-md-4 col-sm-6'>      \
-  <p id=''> UCRE is an acronym for user centered research & evaluation. It is a required course for Carnegie Mellon's Master of Human Computer Interaction program. UCRE taught us methods and tools to understand, improve, and create technology that harmonizes with and improves human capabilities, goals, and social environments. We learnt methods such as 'think aloud protocols, interviews, log analyses, competitive analyses, contextual design, and much more. We had a couple individual assignments but most were group based where we learnt and practiced research methods. Below are some pictures of the contextual design process my team and I learnt and applied to solving problems in the Computer Science department. You can download most of the documents I worked on (with and without teams).   \
+  <p id=''> UCRE is an acronym for user centered research & evaluation. It is a required course for Carnegie Mellon's Master of Human Computer Interaction program. UCRE taught us methods and tools to understand, improve, and create technology that harmonizes with and improves human capabilities, goals, and social environments. We learnt methods such as 'think aloud protocols, interviews, log analyses, competitive analyses, contextual design, and much more. We had a couple individual assignments but most were group based where we learnt and practiced research methods. Below are some pictures of the contextual design process my team and I learnt and applied to solving problems in the Computer Science department. You can download some of the documents I worked on (with and without teams) below. If you want more documents, names of team members, or more information about what we did in this course, don't hesitate to shoot me an email!   \
   </p>                                                                             \
   <div id='details-container'>                                                     \
   <h4> Project Details </h4>                                                       \
@@ -335,26 +336,26 @@ contents = {
   </div>                                                                           \
   <div>                                                                            \
   <p class='emphasis'> Methods Used </p>                                           \
-  <p> Adobe Illustrator, Adobe InDesign </p>          \
+  <p> Contextual Inquiry, Log Analysis, Competitive Analysis, and many more </p>          \
   </div>                                                                           \
   <div> \
   <p class='emphasis'>Collaborators</p>   \
-  <p>  </p> \
+  <p>  We had peer grading and had to keep our names anonymized </p> \
   </div> \
   <div>                                                                            \
-  <a class='btn btn-primary' href='http://www.aderinsola.com/HRI-Assignment01' 'target='_blank'> Visit Site </a>  \
+  <a class='btn btn-primary' target='_blank' href='https://www.dropbox.com/sh/1wa25dxdpssxs4v/ZhvfU9p56C'> View Documents </a>  \
   </div>                                         \
   </div>                                         \
   </div>                                         \
   <div id='images' class='col-md-8 col-sm-6'>             \
-  <img src='images/hri/sketch1.png'/>  \
-  <p class='caption'> Sketches of a pedestrian misinterpreting the car's intention with and without our system </p> \
-  <img src='images/hri/sketch2.png'/>  \
-  <p class='caption'> Sketches of a blind pedestrian at an intersection with and without our system </p> \
-  <img src='images/hri/medusa.png'/>          \
-  <p class='caption'> A mockup of the 'all seeing eye'  </p> \
-  <img src='images/hri/device.png'/>              \
-  <p class='caption'> A mockup of the device that would attach to signs or objects near intersections </p> \
+  <img src='images/ucre/venn.jpg'/>  \
+  <p class='caption'> A venn diagram I made during our competitive analysis assignment </p> \
+  <img src='images/ucre/affinity-full.jpg'/>  \
+  <p class='caption'> A shot of the affinity diagram we created during the contextual inquiry project </p> \
+  <img src='images/ucre/affinity-section.jpg'/>          \
+  <p class='caption'> A close-up of one of the branches in our affinity  </p> \
+  <img src='images/ucre/visioning.jpg'/>              \
+  <p class='caption'> A 'vision' I sketched while other members of the team brainstormed during the visioning half of the contextual inquiry project </p> \
   </div> \
   </div>"
 }

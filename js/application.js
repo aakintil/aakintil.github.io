@@ -17,9 +17,6 @@ plus_icon_containers = "";
 var _project_pages = new Pages( 9 );
 _gallery = []; 
 
-// Document ready 
-
-
 
 $("#header").css( { top: "-50px", opacity: 0 } ); 
 $(".gallery").css( { opacity: 0 } ); 
@@ -44,10 +41,10 @@ enquire.register("screen and (min-width: 770px)", {
 
 
 
-
+// Document ready 
 $(document).ready( function() {
-  // TweenLite.to(window, 2, { scrollTo:{ y: 0 }, ease:Power2.easeOut });
   
+TweenLite.to(window, 1, { scrollTo: { y:0 } });
   
   if (_mobile) {
     

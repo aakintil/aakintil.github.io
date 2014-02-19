@@ -125,7 +125,7 @@ function create_pages() {
 
   var obj = {
     avant_garde : new Page( "Avant-Garde", "AG", contents.avant_garde ),
-    ipad : new Page( "iPad Magazine", "I", contents.ipad ),
+    ipad : new Page( "iPad Magazine", "IM", contents.ipad ),
     biologic : new Page( "Biologic", "B", contents.biologic ), 
     hri : new Page( "Human Robot Interaction", "HRI", contents.hri ),
     tea : new Page( "Tea", "T",  contents.tea ), // not using
