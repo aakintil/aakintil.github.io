@@ -47,8 +47,8 @@ contents = {
   </div>                                               \
   </div> \
   ", 
-  
-  
+
+
   avant_garde: "<div id='top-row' class='col-sm-12'>   \
   <h1 id='title'> Avant-Garde </h1>                         \
   <h4 id='type'> poster design </h4>                      \
@@ -58,7 +58,7 @@ contents = {
   <div id='description' class='col-md-4 col-sm-6'>      \
   <p id=''>  This was a course project where we were tasked with designing a poster for an upcoming Avant Garde Colloqium. We had to create a poster for a lecture series that will be displayed in a University Union Building kiosk. We used text and images to communicate informational and emotional content. We produced at least ten sketches of different designs using grid, content, and images. We also employed a variety of typefaces and sizes to explore hierarchy. \
   </p>                                                                             \
-                                                                                   \
+  \
   <div id='details-container'>                                                     \
   <h4> Project Details </h4>                                                       \
   <div>                                                                            \
@@ -77,7 +77,7 @@ contents = {
   <a class='btn btn-primary' target='_blank' href='downloads/poster.pdf' download='poster.pdf'> Download </a> \
   </div>                                         \
   </div>                                         \
-                                                 \
+  \
   </div>                                         \
   <div id='images' class='col-md-8 col-sm-6'>             \
   <img src='images/ixdf/avant-garde/sketch1.jpg'/>  \
@@ -92,8 +92,8 @@ contents = {
   <p class='caption'> Final poster design (top half) </p> \
   </div>                                         \
   \
-          </div>", 
-  
+  </div>", 
+
   ipad: "<div class='col-md-8' id='pieces-container'>\
   <p id='description'>\
   This was a course project where we were tasked with designing an iPad Magazine within a given four categories: Travel, Personal Finance, Desserts, and Gardening. We you selected a target audience, developed personas, created a mood board for inspiration, generated concepts, developed a design language and color palette, and designed simple navigation. Our design layouts had to be 768 by 1024 pixels (iPad screen size).\
@@ -119,7 +119,7 @@ contents = {
   <a class='btn btn-primary disabled' href='downloads/iPad.pdf' download='iPadMag.pdf 'target='_blank'> Unavailable </a>\
   </div>\
   </div>", 
-  
+
   biologic: "<div id='top-row' class='col-sm-12'>   \
   <h1 id='title'> Biologic </h1>                         \
   <h4 id='type'> research + design </h4>                      \
@@ -129,7 +129,7 @@ contents = {
   <div id='description' class='col-md-4 col-sm-6'>      \
   <p id=''> This was a course project where we were tasked with choosing an organism, researching various aspects about the organism, and then coming up with a way to apply features of said organism to architecture. Through lots of iterations, ideation, and failure, my team and I designed a responsive building technology based on our initial organism: a pufferfish. We began by reading numerous research documents about pufferfish and learning about the organism's anatomy. At the end of the semester our professor connected us with Nina Barbuto, who is the founder and director of Assemble, an interdisciplinary arts and creativity space in Pittsburgh’s East End. She graciously allowed students from my class and another taught by the same professor to exhibit the prototypes we had been working on during the semester. <br> <br> This was a difficult project for two reasons: it forced my team and myself out of our comfort zones, and our prototypes and designs failed...a lot. But failure is never bad unless you're unable to understand what you did wrong and learn from it. This course taught me to research, design, and build with no constraints. Most, if not all, of my previous projects have had some form of tangible end goal. This was my first time experiencing an truly open ended project: the only end goal was to have something by the end of the semester. I did not like it at the time, but I eventually realized that that is how industry is: a client is going to ask you to build or design 'something' for them, and it's up to you to find a scope and gradually narrow it as you proceed further. \
   </p>                                                                             \
-                                                                                   \
+  \
   <div id='details-container'>                                                     \
   <h4> Project Details </h4>                                                       \
   <div>                                                                            \
@@ -152,7 +152,7 @@ contents = {
   <a class='btn btn-primary' href='downloads/biologic.pdf' download='biologic.pdf 'target='_blank'> Download </a>\
   </div>                                         \
   </div>                                         \
-                                                 \
+  \
   </div>                                         \
   <div id='images' class='col-md-8 col-sm-6'>             \
   <img src='images/biologic/initial.jpg'/>  \
@@ -169,94 +169,130 @@ contents = {
   <p class='caption'> A close-up of our prototype during the exhibit </p> \
   </div>                                         \
   \
-          </div>", 
-  
+  </div>", 
+
   hex: "<div id='top-row' class='col-sm-12'>   \
-          <h1 id='title'> Hex Tiles </h1>                         \
-          <h4 id='type'> architecture </h4>                      \
-          <h1 id='close-page'> + </h1>                            \
-          </div>                                               \
-          <div id='info-row' class='col-sm-12'>        \
-          <div id='description' class='col-md-4 col-sm-6'>      \
-          <p id=''> This was a course project where we were tasked with designing a hexagonal wall pattern not unlike <a class='external-link' target=_blank href='http://matsysdesign.com/tag/wall/'> matsys's wall</a>. We started off designing one tile, however, the end goal was to create a design that when rotated and placed together with other tiles, would create a new form or pattern along a wall. \
-          </p>                                                                             \
-          <div id='details-container'>                                                     \
-          <h4> Project Details </h4>                                                       \
-          <div>                                                                            \
-          <p class='emphasis'> Context </p>                                                \
-          <p> Introduction to Digital Media II (48-125) </p>                                \
-          </div>                                                                           \
-          <div>                                                                            \
-          <p class='emphasis'>Dates</p>                                                    \
-          <p> Spring 2013 </p>                                                          \
-          </div>                                                                           \
-          <div>                                                                            \
-          <p class='emphasis'> Methods Used </p>                                           \
-          <p> Rhino, V-Ray, Adobe Illustrator </p>          \
-          </div>                                                                           \
-          <div>                                                                            \
-          <a class='btn btn-primary' href='downloads/hex-tiles.pdf' download='hex-tiles.pdf 'target='_blank'> Download </a>  \
-          </div>                                         \
-          </div>                                         \
-          </div>                                         \
-          <div id='images' class='col-md-8 col-sm-6'>             \
-          <img src='images/idm/hex-tiles/topo.png'/>       \
-          <p class='caption'> Topographic profile of the tile </p> \
-          <img src='images/idm/hex-tiles/hex1.gif'/>      \
-          <p class='caption'> 3D print of my Rhino model courtesy of shapeways.com </p> <img src='images/idm/hex-tiles/hex2.gif'/>         \
-          <img src='images/idm/hex-tiles/hex3.gif'/>           \
-          <img src='images/idm/hex-tiles/section-render.png'/>          \
-          <p class='caption'> Schematic of how our final prototype was supposed to work </p>   \
-          <img src='images/idm/hex-tiles/wall-render.png'/>     \
-          <p class='caption'> A close-up of our prototype during the exhibit </p>     \
-          </div>  </div>", 
-  
-  waffle: "", 
-  
+  <h1 id='title'> Hex Tiles </h1>                         \
+  <h4 id='type'> architecture </h4>                      \
+  <h1 id='close-page'> + </h1>                            \
+  </div>                                               \
+  <div id='info-row' class='col-sm-12'>        \
+  <div id='description' class='col-md-4 col-sm-6'>      \
+  <p id=''> This was a course project where we were tasked with designing a hexagonal wall pattern not unlike <a class='external-link' target=_blank href='http://matsysdesign.com/tag/wall/'> matsys's wall</a>. We started off designing one tile, however, the end goal was to create a design that when rotated and placed together with other tiles, would create a new form or pattern along a wall. \
+  </p>                                                                             \
+  <div id='details-container'>                                                     \
+  <h4> Project Details </h4>                                                       \
+  <div>                                                                            \
+  <p class='emphasis'> Context </p>                                                \
+  <p> Introduction to Digital Media II (48-125) </p>                                \
+  </div>                                                                           \
+  <div>                                                                            \
+  <p class='emphasis'>Dates</p>                                                    \
+  <p> Spring 2013 </p>                                                          \
+  </div>                                                                           \
+  <div>                                                                            \
+  <p class='emphasis'> Methods Used </p>                                           \
+  <p> Rhino, V-Ray, Adobe Illustrator </p>          \
+  </div>                                                                           \
+  <div>                                                                            \
+  <a class='btn btn-primary' href='downloads/hex-tiles.pdf' download='hex-tiles.pdf 'target='_blank'> Download </a>  \
+  </div>                                         \
+  </div>                                         \
+  </div>                                         \
+  <div id='images' class='col-md-8 col-sm-6'>             \
+  <img src='images/idm/hex-tiles/topo.png'/>       \
+  <p class='caption'> Topographic profile of the tile </p> \
+  <img src='images/idm/hex-tiles/hex1.gif'/>      \
+  <p class='caption'> 3D print of my Rhino model courtesy of shapeways.com </p> <img src='images/idm/hex-tiles/hex2.gif'/>         \
+  <img src='images/idm/hex-tiles/hex3.gif'/>           \
+  <img src='images/idm/hex-tiles/section-render.png'/>          \
+  <p class='caption'> Schematic of how our final prototype was supposed to work </p>   \
+  <img src='images/idm/hex-tiles/wall-render.png'/>     \
+  <p class='caption'> A close-up of our prototype during the exhibit </p>     \
+  </div>  </div>", 
+
+  waffle: "<div id='top-row' class='col-sm-12'>   \
+  <h1 id='title'> Canopy </h1>                         \
+  <h4 id='type'> architecture </h4>                      \
+  <h1 id='close-page'> + </h1>                            \
+  </div>                                               \
+  <div id='info-row' class='col-sm-12'>        \
+  <div id='description' class='col-md-4 col-sm-6'>      \
+  <p id=''> Another project from my IDM II course. This was our main introduction to laser cutting and parametric modeling. The basic premise of this project was to design a canopy that fulfilled the dimension requirements for the class. Other than that, the model had to be able to assembled when printed. I chose a very simple canopy design: one without waves and drastic increase or decrease in its width. I was not as skilled with Rhino and Grasshopper as the other students, but that is one of the reasons I liked my design. We also had to create an assembly diagram: if someone were to have the waffle canopy pieces, they would be able to assemble it without our help.  \
+  </p>                                                                             \
+  <div id='details-container'>                                                     \
+  <h4> Project Details </h4>                                                       \
+  <div>                                                                            \
+  <p class='emphasis'> Context </p>                                                \
+  <p> Introduction to Digital Media II (48-125) </p>                                \
+  </div>                                                                           \
+  <div>                                                                            \
+  <p class='emphasis'>Dates</p>                                                    \
+  <p> Spring 2013 </p>                                                          \
+  </div>                                                                           \
+  <div>                                                                            \
+  <p class='emphasis'> Methods Used </p>                                           \
+  <p> Adobe Illustrator, Adobe InDesign, Laser Cutting, Rhino, Grasshoper </p>          \
+  </div>                                                                           \
+  <div>                                                                            \
+  <a class='btn btn-primary' href='downloads/waffle-canopy.pdf' download='waffle-canopy.pdf' 'target='_blank'> Download </a>  \
+  </div>                                         \
+  </div>                                         \
+  </div>                                         \
+  <div id='images' class='col-md-8 col-sm-6'>             \
+  <img src='images/idm/waffle-canopy/waffle-canopy.jpg'/>  \
+  <p class='caption'> The only (bad) picture I was able to find of the assembled waffle canopy </p> \
+  <img class='bg' src='images/idm/waffle-canopy/assembled-diagram.png'/>  \
+  <p class='caption'> Fully assembled diagram </p> \
+  <img class='bg' src='images/idm/waffle-canopy/assembly-top.png'/>          \
+  <p class='caption'> View of assembling the top half'  </p> \
+  </div> \
+  </div>", 
+
   hri: "<div id='top-row' class='col-sm-12'>   \
-          <h1 id='title-long'> Human Robotic Interaction </h1>                         \
-          <h4 id='type'> research + design </h4>                      \
-          <h1 id='close-page'> + </h1>                            \
-          </div>                                               \
-          <div id='info-row' class='col-sm-12'>        \
-          <div id='description' class='col-md-4 col-sm-6'>      \
-          <p id=''> This was an exceptional and though provoking course. Every project was team based and recorded onto a team website. Classes were split into lecture / discussions and then work sessions. The lectures were about 'underlying robotic technologies, as they relate to human-robot interaction, interaction methodologies and techniques, study design, ethics and the singularity, and man-machine coupling. Some classes were discussions of application domains that feature HRI. An example of a project we did was researching and designing interactions for automated cars. We had to take into consideration the variables that can occur at an intersection: children, people not paying attention to incoming traffic, visually impaired, etc. Then we brainstormed numerous ways a self-driving vehicle can communicate with pedestrians, and vice versa. In the end we broke our ideas up into three sense categories: audition, sight, and touch. Through our discussions and iterations, we designed an interactive eye around the bottom half of the self-driving vehicle, as well as a vibrating device that would be attached to a stop sign or object near the intersection.  \
-          </p>                                                                             \
-          <div id='details-container'>                                                     \
-          <h4> Project Details </h4>                                                       \
-          <div>                                                                            \
-          <p class='emphasis'> Context </p>                                                \
-          <p> Human Robot Interaction (16-467) </p>                                \
-          </div>                                                                           \
-          <div>                                                                            \
-          <p class='emphasis'>Dates</p>                                                    \
-          <p> Spring 2013 </p>                                                          \
-          </div>                                                                           \
-          <div>                                                                            \
-          <p class='emphasis'> Methods Used </p>                                           \
-          <p> Adobe Illustrator, Adobe InDesign </p>          \
-          </div>                                                                           \
-          <div> \
-          <p class='emphasis'>Collaborators</p>   \
-          <p> Julie Eckstrom, Adam Bove </p> \
-          </div> \
-          <div>                                                                            \
-          <a class='btn btn-primary' href='/HRI-Assignment01' 'target='_blank'> Visit Site </a>  \
-          </div>                                         \
-          </div>                                         \
-          </div>                                         \
-          <div id='images' class='col-md-8 col-sm-6'>             \
-          <img src='images/hri/sketch1.png'/>  \
-          <p class='caption'> Sketches of a pedestrian misinterpreting the car's intention with and without our system </p> \
-          <img src='images/hri/sketch2.png'/>  \
-          <p class='caption'> Sketches of a blind pedestrian at an intersection with and without our system </p> \
-          <img src='images/hri/medusa.png'/>          \
-          <p class='caption'> A mockup of the 'all seeing eye'  </p> \
-          <img src='images/hri/device.png'/>              \
-          <p class='caption'> A mockup of the device that would attach to signs or objects near intersections </p> \
-          </div> \
-          </div>", 
-  
+  <h1 id='title-long'> Human Robotic Interaction </h1>                         \
+  <h4 id='type'> research + design </h4>                      \
+  <h1 id='close-page'> + </h1>                            \
+  </div>                                               \
+  <div id='info-row' class='col-sm-12'>        \
+  <div id='description' class='col-md-4 col-sm-6'>      \
+  <p id=''> This was an exceptional and though provoking course. Every project was team based and recorded onto a team website. Classes were split into lecture / discussions and then work sessions. The lectures were about 'underlying robotic technologies, as they relate to human-robot interaction, interaction methodologies and techniques, study design, ethics and the singularity, and man-machine coupling. Some classes were discussions of application domains that feature HRI. An example of a project we did was researching and designing interactions for automated cars. We had to take into consideration the variables that can occur at an intersection: children, people not paying attention to incoming traffic, visually impaired, etc. Then we brainstormed numerous ways a self-driving vehicle can communicate with pedestrians, and vice versa. In the end we broke our ideas up into three sense categories: audition, sight, and touch. Through our discussions and iterations, we designed an interactive eye around the bottom half of the self-driving vehicle, as well as a vibrating device that would be attached to a stop sign or object near the intersection.  \
+  </p>                                                                             \
+  <div id='details-container'>                                                     \
+  <h4> Project Details </h4>                                                       \
+  <div>                                                                            \
+  <p class='emphasis'> Context </p>                                                \
+  <p> Human Robot Interaction (16-467) </p>                                \
+  </div>                                                                           \
+  <div>                                                                            \
+  <p class='emphasis'>Dates</p>                                                    \
+  <p> Spring 2013 </p>                                                          \
+  </div>                                                                           \
+  <div>                                                                            \
+  <p class='emphasis'> Methods Used </p>                                           \
+  <p> Adobe Illustrator, Adobe InDesign </p>          \
+  </div>                                                                           \
+  <div> \
+  <p class='emphasis'>Collaborators</p>   \
+  <p> Julie Eckstrom, Adam Bove </p> \
+  </div> \
+  <div>                                                                            \
+  <a class='btn btn-primary' href='http://www.aderinsola.com/HRI-Assignment01' 'target='_blank'> Visit Site </a>  \
+  </div>                                         \
+  </div>                                         \
+  </div>                                         \
+  <div id='images' class='col-md-8 col-sm-6'>             \
+  <img src='images/hri/sketch1.png'/>  \
+  <p class='caption'> Sketches of a pedestrian misinterpreting the car's intention with and without our system </p> \
+  <img src='images/hri/sketch2.png'/>  \
+  <p class='caption'> Sketches of a blind pedestrian at an intersection with and without our system </p> \
+  <img src='images/hri/medusa.png'/>          \
+  <p class='caption'> A mockup of the 'all seeing eye'  </p> \
+  <img src='images/hri/device.png'/>              \
+  <p class='caption'> A mockup of the device that would attach to signs or objects near intersections </p> \
+  </div> \
+  </div>", 
+
   contact_me: "<div class='col-md-12' id='personal-page'>\
   <h1> Design. Code. Build. </h1> \
   <p> I'm currently a graduate student studying Human Computer Interaction at Carnegie Mellon University. I love design, music, sports, and food. I have this problem where I can't sit still, and although i've dabbled a little with Arduino, dFab, and shop, I would love to get more experience. Ideally an interaction design gig would be awesome, but as long as I am in a situation where I am tasked with helping users in whatever fashion i'm happy! </p> \
@@ -266,12 +302,12 @@ contents = {
   <h5> Get in touch...Or hire me! </h5> \
   <p> <a id='mail-me' href='mailto:akintilo@cmu.com'>akintilo@cmu.edu</a> | 240-821-3135 </p> \
   </div>   \
-"
+  "
 }
 
 
 // images = {
-//  
-//  tea: [ "images/cdf/img1.png", "images/cdf/write1.png", "images/cdf/img2.jpg", "img src='images/cdf/end.jpg" ] 
-//   
-// }
+  //  
+  //  tea: [ "images/cdf/img1.png", "images/cdf/write1.png", "images/cdf/img2.jpg", "img src='images/cdf/end.jpg" ] 
+  //   
+  // }
