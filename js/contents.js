@@ -256,7 +256,7 @@ contents = {
   <p> Adobe Illustrator, Adobe InDesign, Laser Cutting, Rhino, Grasshoper </p>          \
   </div>                                                                           \
   <div>                                                                            \
-  <a class='btn btn-primary' href='downloads/waffle-canopy.pdf' download='waffle-canopy.pdf' 'target='_blank'> Download </a>  \
+  <a class='btn btn-primary' href='downloads/waffle-canopy.pdf' 'target='_blank' download='waffle-canopy.pdf'> Download </a>  \
   </div>                                         \
   </div>                                         \
   </div>                                         \

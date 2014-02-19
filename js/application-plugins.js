@@ -62,12 +62,12 @@ $.fn.animate_children = function ( mobile ) {
         $this.animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
         
         // discrepancies with safari and chrome
-        if (navigator.appCodeName !== "Mozilla") {
+        if ( !bowser.webkit ) {
           TweenMax.to( $this, 1, { top: "-20px"} );
           TweenMax.to( name_container, 1, {  fontSize: "120px", opacity: 0.07, ease:Power2.easeInOut, onComplete: show_others(0.8, type_container) } );
         }
         else {
-          $this.animate({  top: "-20px"  }, 10); 
+          TweenMax.to( $this, 1, { top: "-20px"} );
           name_container.transition({ opacity: 0.07, "font-size" : "120px" }, show_others(0.8, type_container ));   
         }
       
@@ -82,7 +82,14 @@ $.fn.animate_children = function ( mobile ) {
         })
 
       }, function () {
-        TweenLite.to( name_container, 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback(this, type_container) } );
+        if ( !bowser.webkit ) {
+          TweenLite.to( name_container, 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback(this, type_container) } );
+        }
+        else {
+          name_container.transition({ opacity: 1, "font-size" : "80px" }, callback(this, type_container ));
+        }
+
+        
       });
     }
 
