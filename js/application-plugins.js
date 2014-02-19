@@ -60,8 +60,17 @@ $.fn.animate_children = function ( mobile ) {
         var $this = $(this); 
 
         $this.animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
-        TweenLite.to( $this, 1, { top: "-20px"} );
-        TweenLite.to( name_container, 1, {  fontSize: "120px", opacity: 0.07, ease:Power2.easeInOut, onComplete: show_others(0.8, type_container) } );
+        
+        // discrepancies with safari and chrome
+        if (navigator.appCodeName !== "Mozilla") {
+          TweenMax.to( $this, 1, { top: "-20px"} );
+          TweenMax.to( name_container, 1, {  fontSize: "120px", opacity: 0.07, ease:Power2.easeInOut, onComplete: show_others(0.8, type_container) } );
+        }
+        else {
+          $this.animate({  top: "-20px"  }, 10); 
+          name_container.transition({ opacity: 0.07, "font-size" : "120px" }, show_others(0.8, type_container ));   
+        }
+      
         
         $(this).on("click", function() {
           var page_tag = $(this).attr("tag");
