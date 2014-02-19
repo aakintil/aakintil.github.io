@@ -43,8 +43,13 @@ $.fn.animate_children = function ( mobile ) {
       if ( prev === curr 
         && prev.constructor === String 
         && curr.constructor === String ) {
-          console.log("do something cool")
-
+      
+          var page_tag = current.attr("tag");
+          var page = _project_pages.findTag( page_tag );
+          page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page();
+          TweenLite.to( $("#logo"), 2, { width: "100px", height: "100px", ease: "SlowMo.easeIn", delay: 1 });
+          new TimelineLite().to( [ $("#contact"), $("#resume") ], 2, { width: "60px", height: "68px", delay: 2 });
+          TweenLite.to( $("#toggle-menu h1"), 2, { fontSize : "50px", ease: "SlowMo.easeIn", delay: 1 } );
         }
       });
 
