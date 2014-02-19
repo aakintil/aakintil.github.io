@@ -15,7 +15,7 @@
 
 #top-row h1, 
 #top-row h4 {
-  font-weight: 100;
+  font-weight: normal;
   margin-top: 0;
   position: absolute;
   display: inline-block;
@@ -202,6 +202,18 @@
 
 #details-container .emphasis + p {
   font-size: 17px;
+}
+
+#details-container h4 {
+  font-weight: 400;
+}
+
+#details-container .btn.btn-primary {
+  display: block;
+}
+
+#details-container .margin {
+  margin-bottom: 20px;
 }
 
 
