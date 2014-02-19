@@ -128,11 +128,11 @@ function create_pages() {
     ipad : new Page( "iPad Magazine", "I", contents.ipad ),
     biologic : new Page( "Biologic", "B", contents.biologic ), 
     hri : new Page( "Human Robot Interaction", "HRI", contents.hri ),
-    tea : new Page( "Tea", "T",  contents.tea ),
-    apartment_reviews : new Page( "Apartment Reviews", "ar", contents.apartment_reviews ), 
+    tea : new Page( "Tea", "T",  contents.tea ), // not using
+    apartment_reviews : new Page( "Apartment Reviews", "AR", contents.apartment_reviews ), 
     hex : new Page( "Hex Tiles", "H", contents.hex ),
     waffle : new Page( "Waffle Canopy", "W", contents.waffle ),   
-    contact_me : new Page( "Contact Me", "CM",  contents.contact_me ) 
+    ucre : new Page( "User Centered Research & Evaluation", "UR",  contents.ucre ) 
   }
 
 

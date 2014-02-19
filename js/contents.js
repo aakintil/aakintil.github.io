@@ -74,7 +74,7 @@ contents = {
   <p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6 </p>          \
   </div>                                                                           \
   <div>                                                                            \
-  <a class='btn btn-primary' target='_blank' href='downloads/poster.pdf' download='poster.pdf'> Download </a> \
+  <a class='btn btn-primary' target='_blank' href='downloads/poster.pdf'> Download </a> \
   </div>                                         \
   </div>                                         \
   \
@@ -94,30 +94,51 @@ contents = {
   \
   </div>", 
 
-  ipad: "<div class='col-md-8' id='pieces-container'>\
-  <p id='description'>\
-  This was a course project where we were tasked with designing an iPad Magazine within a given four categories: Travel, Personal Finance, Desserts, and Gardening. We you selected a target audience, developed personas, created a mood board for inspiration, generated concepts, developed a design language and color palette, and designed simple navigation. Our design layouts had to be 768 by 1024 pixels (iPad screen size).\
-  </p>\
-  <div class='col-sm-6 col-md-12 pieces'><img src='images/ixdf/ipad/coming-soon.png'/></div> \
-  <div class='col-sm-6 col-md-12 pieces'> <img src='images/ixdf/ipad/coming-soon2.png'/></div>\
-  </div>\
-  <div class='col-md-4' id='details-container'>\
-  <h4> Project Details </h4>\
-  <div>\
-  <p class='title'> Context </p>\
-  <p> Interaction Design Fundamentals (05-651) </p>\
-  </div>\
-  <div>\
-  <p class='title'>Dates</p>\
-  <p> October - December 2013 </p>\
-  </div>\
-  <div>\
-  <p class='title'> Methods Used </p>\
-  <p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6</p>\
-  </div>\
-  <div>\
-  <a class='btn btn-primary disabled' href='downloads/iPad.pdf' download='iPadMag.pdf 'target='_blank'> Unavailable </a>\
-  </div>\
+  ipad: "<div id='top-row' class='col-sm-12'>   \
+  <h1 id='title'> iPad Mag </h1>                         \
+  <h4 id='type'> interaction design </h4>                      \
+  <h1 id='close-page'> + </h1>                            \
+  </div>                                               \
+  <div id='info-row' class='col-sm-12'>        \
+  <div id='description' class='col-md-4 col-sm-6'>      \
+  <p id=''> This was a course project where we were tasked with designing an iPad Magazine within a given four categories: Travel, Personal Finance, Desserts, and Gardening. We you selected a target audience, developed personas, created a mood board for inspiration, generated concepts, developed a design language and color palette, and designed simple navigation. Our design layouts had to be 768 by 1024 pixels (iPad screen size). \
+  </p>                                                                             \
+  \
+  <div id='details-container'>                                                     \
+  <h4> Project Details </h4>                                                       \
+  <div>                                                                            \
+  <p class='emphasis'> Context </p>                                                \
+  <p> Interaction Design Fundamentals (05-651) </p>                                \
+  </div>                                                                           \
+  <div>                                                                            \
+  <p class='emphasis'>Dates</p>                                                    \
+  <p> Fall 2014 </p>                                                          \
+  </div>                                                                           \
+  <div>                                                                            \
+  <p class='emphasis'> Methods Used </p>                                           \
+  <p> Adobe Illustrator, Adobe InDesign, Adobe Photoshop, Personas,  </p>          \
+  </div>                                                                           \
+  <div>                                                                            \
+  <a class='btn btn-primary' href='downloads/iPad.pdf' download='iPadMag.pdf 'target='_blank'> Download </a>\
+  </div>                                         \
+  </div>                                         \
+  \
+  </div>                                         \
+  <div id='images' class='col-md-8 col-sm-6'>             \
+  <img src='images/biologic/initial.jpg'/>  \
+  <p class='caption'> One of the initial prototypes we made: a balloon and toothpicks attached to a coffee filter on its head   </p> \
+  <img src='images/biologic/initial.jpg'/>  \
+  <p class='caption'> One of the initial molds we made in order to test how the organisms 'spike' mechanism </p> \
+  <img src='images/biologic/mold2.jpg'/>   \
+  <p class='caption'> We attached tubes and a pump to these early prototypes and studied how inflation was affected by shape  </p>             \
+  <img src='images/biologic/print1.jpg'/>   \
+  <p class='caption'> A 3D printed mold for our prototype which we later poured silicone into  </p>             \
+  <img src='images/biologic/schematic.png'/>          \
+  <p class='caption'> Schematic of how our final prototype was supposed to work </p> \
+  <img src='images/biologic/presentation.jpg'/>  \
+  <p class='caption'> A close-up of our prototype during the exhibit </p> \
+  </div>                                         \
+  \
   </div>", 
 
   biologic: "<div id='top-row' class='col-sm-12'>   \
@@ -293,16 +314,49 @@ contents = {
   </div> \
   </div>", 
 
-  contact_me: "<div class='col-md-12' id='personal-page'>\
-  <h1> Design. Code. Build. </h1> \
-  <p> I'm currently a graduate student studying Human Computer Interaction at Carnegie Mellon University. I love design, music, sports, and food. I have this problem where I can't sit still, and although i've dabbled a little with Arduino, dFab, and shop, I would love to get more experience. Ideally an interaction design gig would be awesome, but as long as I am in a situation where I am tasked with helping users in whatever fashion i'm happy! </p> \
-  </p>\
-  <h5> Wanna learn more? </h5> \
-  <p> Checkout my <a id='resume' href='downloads/resume.pdf'>resume</a>! </p> \
-  <h5> Get in touch...Or hire me! </h5> \
-  <p> <a id='mail-me' href='mailto:akintilo@cmu.com'>akintilo@cmu.edu</a> | 240-821-3135 </p> \
-  </div>   \
-  "
+  ucre: "<div id='top-row' class='col-sm-12'>   \
+  <h1 id='title-long'> UCRE </h1>                         \
+  <h4 id='type'> research + design </h4>                      \
+  <h1 id='close-page'> + </h1>                            \
+  </div>                                               \
+  <div id='info-row' class='col-sm-12'>        \
+  <div id='description' class='col-md-4 col-sm-6'>      \
+  <p id=''> UCRE is an acronym for user centered research & evaluation. It is a required course for Carnegie Mellon's Master of Human Computer Interaction program. UCRE taught us methods and tools to understand, improve, and create technology that harmonizes with and improves human capabilities, goals, and social environments. We learnt methods such as 'think aloud protocols, interviews, log analyses, competitive analyses, contextual design, and much more. We had a couple individual assignments but most were group based where we learnt and practiced research methods. Below are some pictures of the contextual design process my team and I learnt and applied to solving problems in the Computer Science department. You can download most of the documents I worked on (with and without teams).   \
+  </p>                                                                             \
+  <div id='details-container'>                                                     \
+  <h4> Project Details </h4>                                                       \
+  <div>                                                                            \
+  <p class='emphasis'> Context </p>                                                \
+  <p> User Centered Research & Evaluation (05-610) </p>                                \
+  </div>                                                                           \
+  <div>                                                                            \
+  <p class='emphasis'>Dates</p>                                                    \
+  <p> Fall 2014 </p>                                                          \
+  </div>                                                                           \
+  <div>                                                                            \
+  <p class='emphasis'> Methods Used </p>                                           \
+  <p> Adobe Illustrator, Adobe InDesign </p>          \
+  </div>                                                                           \
+  <div> \
+  <p class='emphasis'>Collaborators</p>   \
+  <p>  </p> \
+  </div> \
+  <div>                                                                            \
+  <a class='btn btn-primary' href='http://www.aderinsola.com/HRI-Assignment01' 'target='_blank'> Visit Site </a>  \
+  </div>                                         \
+  </div>                                         \
+  </div>                                         \
+  <div id='images' class='col-md-8 col-sm-6'>             \
+  <img src='images/hri/sketch1.png'/>  \
+  <p class='caption'> Sketches of a pedestrian misinterpreting the car's intention with and without our system </p> \
+  <img src='images/hri/sketch2.png'/>  \
+  <p class='caption'> Sketches of a blind pedestrian at an intersection with and without our system </p> \
+  <img src='images/hri/medusa.png'/>          \
+  <p class='caption'> A mockup of the 'all seeing eye'  </p> \
+  <img src='images/hri/device.png'/>              \
+  <p class='caption'> A mockup of the device that would attach to signs or objects near intersections </p> \
+  </div> \
+  </div>"
 }
 
 
