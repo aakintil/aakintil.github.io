@@ -28,22 +28,26 @@ $.fn.animate_children = function ( mobile ) {
 
       current.animate({ borderWidth: "2px", borderColor: "#4ad6de" }, 1000, "easeOutElastic"); 
       TweenLite.to( current, 1, { top: "-20px"} ); 
-      name_container.transition({ opacity: 0.07, "font-size" : "120px" }, show_others(0.8, type_container )); 
+      curr_name.transition({ opacity: 0.07, "font-size" : "120px" }, show_others(0.8, type_container )); 
 
 
       if ( prev !== curr && prev !== undefined ) {
         // reset previously selected element
-        console.log("reset ", prev)
         var previous = $(".gallery").find( $(".project-containers[tag="+prev+"]"));
         var prev_type = previous.find(".type"); 
-        var prev_name = previous.find(".name")
-        TweenLite.to( prev_name, 1, {  fontSize: "80px", opacity: 1, ease: "Power2.easeInOut", onComplete: callback( previous, prev_type ) })
+        var prev_name = previous.find(".name");
+        
+        previous.animate({ borderWidth: "2px", borderColor: "#918E8C" }, 1000, "easeOutElastic"); 
+        TweenLite.to( previous, 1, { top: "0px"} ); 
+        prev_name.transition({ opacity: 1, "font-size" : "80px" }, show_others(0, prev_type ));
       }
 
-      if ( prev === curr 
+      else if ( prev === curr 
         && prev.constructor === String 
         && curr.constructor === String ) {
       
+          // if clicked twice then pull up new page
+          
           var page_tag = current.attr("tag");
           var page = _project_pages.findTag( page_tag );
           page !== undefined ? hide_index_page( $(this).parent(), page ) : show_page();

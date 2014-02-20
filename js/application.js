@@ -46,13 +46,6 @@ $(document).ready( function() {
   
 TweenLite.to(window, 1, { scrollTo: { y:0 } });
   
-  if (_mobile) {
-    
-    $("body").on("tapone", function() {
-      $(".project-containers").data('clicked_once', false);
-    });    
-  }
-  
   var ani_speed = 1;
   $("#logo").add($("#contact").add($("#resume"))).hover( function() { 
      $(this).attr("id") === "logo" ? ani_speed = 0.2 : ani_speed = 1;  
