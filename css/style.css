@@ -1,0 +1,584 @@
+@import url(http://fonts.googleapis.com/css?family=Abel);
+
+/* looks good */
+@font-face {
+  font-family: "Franklin Gothic";
+  src: url("../fonts/FC.otf");
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Avenir Light";
+  src: url("../fonts/AvenirLTStd-Light.otf");
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Crimson";
+  src: url("../fonts/Ovo-Regular.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Univers Bold";
+  src: url('../fonts/UniversBoldCn.otf'); 
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Cantarell";
+  src: url('../fonts/CantarellRegular.ttf'); 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cantarell Bold";
+  src: url('../fonts/CantarellBold.ttf');
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "League Gothic";
+  src: url('../fonts/leaguegothic-regular.ttf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Jura";
+  src: url('../fonts/Jura-Regular.ttf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Canter";
+  src: url('../fonts/Canter Bold.otf');
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Futura Medium";
+  src: url('../fonts/Futura-Medium.otf');
+  font-style: medium;
+}
+
+
+@font-face {
+  font-family: "Futura";
+  src: url('../fonts/FuturaStd-Book.otf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura Bold";
+  src: url('../fonts/FuturaStd-Heavy.otf');
+  font-style: bold;
+}
+
+
+/*FuturaStd-Book*/
+/*------------------------------------------------------------------
+[Table of contents]
+
+
+1. General
+2. Home Navigation / #header
+3. Main Navigation / #main 
+4. Project Page
+
+
+10. Media Queries 
+
+
+4. Content / #content
+5. Left column / #leftcolumn
+6. Right column / #rightcolumn
+7. Sidebar / #sidebar
+8. RSS / #rss
+9. Search / #search
+10. Boxes / .box
+11. Sideblog / #sideblog
+12. Advertisements / .ads
+13. Footer / #footer
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+General Colors
+
+Triadic Logo
+
+purple: {
+hex: #613db5, 
+rgb: 52, 73, 94
+}
+
+light blue: {
+hex: #4ad6de,
+change 
+rgb: 117, 224, 249
+}
+
+dark blue: {
+hex: #428cff, 
+change
+rgb: 10, 198, 242
+
+}
+
+darker blue: {
+hex: #0060f5, 
+}
+
+-------------------------------------------------------------------*/
+
+
+/*---------------------------
+General 
+---------------------------*/
+body {
+/*opacity: 0;*/
+font-family: "Futura";
+background-color: #000;
+position: relative;
+}
+
+#main-container {
+
+}
+
+
+
+/*---------------------------
+Navigation
+---------------------------*/
+
+#header {
+  height: 150px;
+  color: #918E8C;
+}
+
+#header div {
+  margin-top: 20px;
+}
+
+#logo:hover, 
+#resume:hover, 
+#contact:hover {
+  cursor: pointer;
+}
+
+#logo {
+  background-image: url("../images/logo-v2.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  z-index: 10;
+  
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+#logo h1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+#resume, #contact {
+  position: relative;
+/*  margin-left: -500px;*/
+  text-align: center;
+/*  opacity: 0;*/
+/*  height: 150px;*/
+}
+
+#resume {
+  background-image:url("../images/icons/resume-v2.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 87.5px;
+  height: 100px;
+  margin-left: 20px;
+  top: -6px;
+}
+
+#contact {
+  background-image:url("../images/icons/contact-v4.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 87.5px;
+  height: 100px;
+  margin-left: 20px;
+  top: -6px;
+}
+
+#resume h1, 
+#contact h1 {
+  font-family: "Lato" !important;
+  font-size: 30px;
+  line-height: 85px;
+}
+
+#menu h1 {
+    font-family: "Lato";
+    font-weight: 100;
+}
+
+#menu {
+  margin-top: -15px !important;
+}
+
+#toggle-menu:hover h1 {
+  /* just a thought... */
+/*    font-weight: bold;*/
+}
+
+#toggle-menu h1 {
+  width: 45px;
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+#toggle-menu {
+  text-align: center;
+  top: 10px;
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+#toggle-menu:hover {
+ cursor: pointer; 
+}
+
+.rotate45 {
+  -webkit-font-smoothing: antialiased;
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  
+  /* Safari */
+  -webkit-transform: rotate(-45deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-45deg);
+
+  /* IE */
+  -ms-transform: rotate(-45deg);
+
+  /* Opera */
+  -o-transform: rotate(-45deg);
+
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  
+}
+
+.rotate60 {
+  -webkit-font-smoothing: antialiased;
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  
+  /* Safari */
+  -webkit-transform: rotate(-60deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-60deg);
+
+  /* IE */
+  -ms-transform: rotate(-60deg);
+
+  /* Opera */
+  -o-transform: rotate(-60deg);
+
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  
+}
+
+
+
+/*---------------------------
+Content
+---------------------------*/
+/* image containers */
+#content > .gallery {
+  /* or add col class to it */
+  /* change to < 70 when in screen size small*/
+  margin-top: 60px;
+}
+
+#content .project-containers {
+  margin: 0 auto;
+  width: 90%;
+  height: 150px;
+  border: 2px solid #918E8C;
+  position: relative;
+}
+
+#content .project-containers:hover {
+  cursor: pointer;
+}
+
+#content {
+  padding-bottom: 40px;
+  position: relative;
+  top: 150px;
+}
+
+
+
+.project-containers {
+  overflow: hidden;
+  text-align: center;
+}
+
+.project-containers > div {
+  position: absolute;
+  color: #918E8C;
+}
+
+.project-containers .name {
+  font-size: 80px;
+}
+
+.project-containers .name, 
+.project-containers .type {
+  left: 0;
+  right: 0;
+} 
+
+.project-containers .name {
+  line-height: 150px;
+}
+
+.project-containers .type {
+  line-height: 140px;
+}
+
+.project-containers .type.smaller {
+  font-size: 20px;
+}
+
+
+.project-containers .type {
+  font-size: 30px;
+  font-family: "Futura";
+}
+
+
+.project-containers .swipe {
+  font-size: 60px;
+  left: 0;
+  right: 0;
+  line-height: 220px;
+}
+
+.swipe img {
+  width: 46.8px;
+  height: 36px;
+}
+
+
+.project-containers .type, 
+.project-containers .swipe {
+  opacity: 0;
+}
+
+
+
+
+
+
+.project-containers .name {
+/*  background-color: grey;*/
+-webkit-transition-property: all;
+-webkit-transition-duration: 20s;
+/*  font-size: 80px;*/
+/*  line-height: 150px;*/
+}
+
+#title-shrink {
+  font-size: 80px !important;
+}
+
+
+
+
+/*---------------------------
+Media Queries
+---------------------------*/
+@media (max-width: 992px) {
+  
+  .type.smaller {
+    font-size: 25px !important;
+  }
+  
+  
+  #title {
+    font-size: 80px !important;
+  }
+  
+  #title-long {
+     top: 22px !important;
+     font-size: 44px !important
+   }
+
+  
+  #title-shrink {
+    font-size: 60px !important;
+  }
+  
+  #type {
+    font-size: 30px !important;
+  }
+  
+  #close-page {
+    font-size: 80px;
+  }
+  
+  #description > p {
+    font-size: 17px;
+    padding: 0;
+  }
+}
+
+
+@media (max-width: 770px) {
+  
+  .type.smaller {
+    font-size: 30px !important;
+  }
+  
+  .swipe {
+    font-size: 75px !important;
+  }
+  
+  #content {
+    top: 150px !important;
+  }
+  
+  #type {
+    top: 75px;
+  }
+  
+  
+  #close-page {
+    font-size: 70px;
+  }
+  
+  #description,
+  #images {
+    margin-top: 50px;
+  }
+  
+  #images img {
+    width: 100%;
+  }
+
+  #images .caption {
+    padding-left: 0;
+  }
+
+  #title {
+    font-size: 65px !important;
+  }
+  
+  #title-shrink {
+    font-size: 45px !important;
+  }
+  
+  #title-long {
+    top: 24px;
+    font-size: 33px !important
+  }
+  
+  #logo, 
+  #resume, 
+  #contact {
+    margin: 0 auto;
+  }
+  
+  #contact {
+    margin-top: 40px;
+  }
+  
+  #header {
+    height: 250px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  #title, 
+  #close-page {
+    font-size: 40px !important;
+  }
+  
+  
+  #title-shrink {
+    font-size: 30px !important;
+  }
+  
+  #title-long {
+    top: 9px !important;
+    font-size: 25px !important
+  }
+  
+  #title-long + #type {
+    top: 75px;
+  }
+  
+  #type {
+    font-size: 25px !important;
+    top: 50px;
+  }
+  
+}
+
+
+
+
+
+
+@media (max-width: 992px) {
+
+}
+
+@media (min-width: 993px) {
+
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (max-width: 767px) {
+
+}
+
+
+
+/* Remove Jquery Mobile nonsense */
+.ui-loading .ui-loader { display: block; }
+.ui-loader { display: none; position: absolute; opacity: .85; z-index: 100; left: 50%; width: 200px; margin-left: -130px; margin-top: -35px; padding: 10px 30px; }
+
