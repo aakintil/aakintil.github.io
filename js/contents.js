@@ -186,9 +186,8 @@ contents = {
   <img src='images/biologic/print1.jpg'/>   \
   <p class='caption'> A 3D printed mold for our prototype which we later poured silicone into  </p>             \
   <img src='images/biologic/schematic.png'/>          \
-  <p class='caption'> Schematic of how our final prototype was supposed to work </p> \
   <img src='images/biologic/presentation.jpg'/>  \
-  <p class='caption'> A close-up of our prototype during the exhibit </p> \
+  <p class='caption'> A section of what a wall covered in my tiles would look like </p> \
   </div>                                         \
   \
   </div>", 
