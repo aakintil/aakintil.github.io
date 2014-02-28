@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="css/flat-ui.css">
 
   <!-- Loading My Stylesheet -->
-    <link rel="stylesheet" href="css/project-page.css">
+  <link rel="stylesheet" href="css/project-page.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/transitions.css">
 
@@ -31,8 +31,11 @@
   <![endif]-->
 
   <!-- Loading jQuery libraries -->
-  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery-ui.js"></script>
+
+  <!-- // <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> -->
+  <!-- // <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script> -->
   <script src="js/enquire.min.js"></script>
   <script src="js/mobile-check.js"></script>
   <script src="js/touchSwipe.js"></script>
@@ -79,82 +82,80 @@
 
       </div>
 
-<!-- fix for safari & chrome and change mail icon to just mail -->
-      <!-- <div id="menu" class="col-sm-8"> -->
-        <a target="_top" href="mailto:akintilo@cmu.com"> <div id='contact' class='col-sm-4'> </div> </a>
-        <a target='_blank' href='downloads/resume.pdf' download='resume.pdf'> <div id='resume' class='col-sm-4'> </div> </a>
+      <a target="_top" href="mailto:akintilo@cmu.com"> <div id='contact' class='col-sm-4'> </div> </a>
+      <a target='_blank' href='downloads/resume.pdf' download='resume.pdf'> <div id='resume' class='col-sm-4'> </div> </a>
 
+    </div>
+  </nav>
+
+  <section id="content" class="row">
+
+    <div class="col-sm-6 col-md-3 gallery">
+      <div class="project-containers" tag="AG">
+        <div class="name"> AG </div> 
+        <div class="type smaller"> poster design </div>  
       </div>
-    </nav>
+    </div>
 
-    <section id="content" class="row">
-
-      <div class="col-sm-6 col-md-3 gallery">
-        <div class="project-containers" tag="AG">
-          <div class="name"> AG </div> 
-          <div class="type smaller"> poster design </div>  
-        </div>
+    <div class="col-sm-6 col-md-3 gallery">
+      <div class="project-containers" tag="AR">
+        <div class="name"> AR </div> 
+        <div class="type smaller"> web dev </div>  
       </div>
+    </div>
 
-      <div class="col-sm-6 col-md-3 gallery">
-        <div class="project-containers" tag="AR">
-          <div class="name"> AR </div> 
-          <div class="type smaller"> web dev </div>  
-        </div>
+    <div class="col-sm-6 col-md-3 gallery">
+      <div class="project-containers" tag="B">
+        <div class="name"> B </div> 
+        <div class="type smaller"> research + design</div>  
       </div>
+    </div>
 
-      <div class="col-sm-6 col-md-3 gallery">
-        <div class="project-containers" tag="B">
-          <div class="name"> B </div> 
-          <div class="type smaller"> research + design</div>  
-        </div>
+    <div class="col-sm-6 col-md-3 gallery">
+      <div class="project-containers" tag="H">
+        <div class="name"> H </div> 
+        <div class="type smaller"> architecture </div>  
       </div>
+    </div>
 
-      <div class="col-sm-6 col-md-3 gallery">
-        <div class="project-containers" tag="H">
-          <div class="name"> H </div> 
-          <div class="type smaller"> architecture </div>  
-        </div>
+    <div class="col-sm-6 col-md-3 gallery">
+      <div class="project-containers" tag="HRI">
+        <div class="name"> HRI </div> 
+        <div class="type smaller"> research + design </div>  
       </div>
+    </div>
 
-      <div class="col-sm-6 col-md-3 gallery">
-        <div class="project-containers" tag="HRI">
-          <div class="name"> HRI </div> 
-          <div class="type smaller"> research + design </div>  
-          <!-- <div class="more" tag="HRI"> + </div> -->
-        </div>
+    <div class="col-sm-6 col-md-3 gallery">
+      <div class="project-containers" tag="IM">
+        <div class="name"> IM </div> 
+        <div class="type smaller"> interaction design </div>  
       </div>
+    </div>
 
-      <div class="col-sm-6 col-md-3 gallery">
-        <div class="project-containers" tag="IM">
-          <div class="name"> IM </div> 
-          <div class="type smaller"> interaction design </div>  
-        </div>
+    <div class="col-sm-6 col-md-3 gallery">
+      <div class="project-containers" tag="W">
+        <div class="name"> C </div> 
+        <div class="type smaller"> architecture </div>  
       </div>
+    </div>
 
-      <div class="col-sm-6 col-md-3 gallery">
-        <div class="project-containers" tag="W">
-          <div class="name"> C </div> 
-          <div class="type smaller"> architecture </div>  
-        </div>
+    <div class="col-sm-6 col-md-3 gallery">
+      <div class="project-containers" tag="UR">
+        <div class="name"> UR </div> 
+        <div class="type smaller"> research + design </div>
       </div>
+    </div>
 
-      <div class="col-sm-6 col-md-3 gallery">
-        <div class="project-containers" tag="UR">
-           <div class="name"> UR </div> 
-            <div class="type smaller"> research + design </div>
-        </div>
-      </div>
+  </section>
 
-    </section>
+</div>
 
-  </div>
-  <!-- Javascript Loading... -->
 
-  <script src="bootstrap/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-  <script src="js/greensock/TimelineMax.js"></script>
-  <script src="js/greensock/TweenMax.js"></script>
+<!-- Javascript Loading -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script src="js/greensock/TimelineMax.js"></script>
+<script src="js/greensock/TweenMax.js"></script>
 
 <!-- Loading Personal Library -->
 <script type="text/javascript" src="js/application-functions.js"></script>
@@ -167,4 +168,5 @@
 
 </body>
 <!-- end of body -->
+
 </html>

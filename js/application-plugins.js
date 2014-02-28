@@ -116,17 +116,6 @@ $.fn.animate_children = function ( mobile ) {
   }                                                                                                                                                                                                                                                                                                                                                                  
 }
 
-$.fn.reset = function() {
-
-  if ( _mobile ) {
-
-  }
-  else 
-  {
-
-  }
-
-}
 
 // toggle menu widget / function 
 $.fn.toggle_menu = function () {

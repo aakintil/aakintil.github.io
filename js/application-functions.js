@@ -11,6 +11,8 @@ function drop_gallery() {
   TweenMax.staggerTo( _gallery, 1,  { css: { opacity: 1 }, ease: "Power4.easeIn", delay: 3 }, 0.40 );  
 }
 
+
+
 function recreate() {
   var $this = ""; 
   $(".gallery").each( function(i) {
@@ -25,25 +27,21 @@ function recreate() {
 
 
 function hide_index_page( o, page ) {
-   
+
   var obj = []; 
   var $this = ""; 
   $(".gallery").each( function(i) {
     $this = $(this); 
     obj[i] = $this; 
   }); 
-  
+
   var timer = 5000; 
-  
+
   TweenMax.staggerTo( obj, 1,  { css: { opacity: 0 }, ease: "Power4.easeIn", onComplete: delay5s( show_new_page, 3000, page ) }, 0.20); 
-  
+
   // TweenMax.staggerTo( obj, 1,  { css: { left: "-1500px" }, ease: "Power4.easeIn", onComplete: hide() }, 0.1); 
 }
 
-
-function hide( t ) {
-  // $("#content").empty(); 
-}
 
 // show page function 
 function delay5s( fn, timer, page ) {
@@ -54,9 +52,6 @@ function delay5s( fn, timer, page ) {
 }
 
 
-function callback() {
-
-}
 
 
 function show_new_page( page ) {
@@ -71,8 +66,8 @@ function show_new_page( page ) {
   var timeline = new TimelineLite();  
   timeline.to( $("#content").children() , 2, { css: { opacity: 1, top: 0, ease: "Expo.easeIn" } } );
   $("#content").css("padding", "0px 30px"); 
-  
-  
+
+
   $("#close-page").on("click", function() {
     TweenLite.to( $("#content"), 2, { top: "-400px", opacity: 0, ease: "SlowMo.easeIn", onComplete: delay5s(t, 700) });
   })
@@ -88,7 +83,7 @@ function t() {
 
   $("#content").css("padding", "0px 0px"); 
   $("#content").css("padding-bottom", "40px");
-  
+
 
   TweenLite.to( $("#content"), 2.5, { top: "150px", opacity: 1, ease: "SlowMo.easeIn" });
   TweenLite.to( $("#logo"), 1, { width: "150px", height: "150px",  ease: "SlowMo.easeIn", delay: 1 }); 
@@ -150,11 +145,11 @@ function rotate45(t, r) {
 
 function new_page() {
   $("#content").empty();
-   
+
   for (var i = 0; i < _gallery.length; i++ ) {
     $("#content").append(_gallery[i]); 
   }
-  
+
   $("#content").transition({ opacity: 1, top: 0 })
   // TweenMax.to( $("#content"), 2.5, { top: 0, opacity: 1, ease: "SlowMo.easeIn" });
 }
