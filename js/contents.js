@@ -119,8 +119,8 @@ contents = {
   <p> Adobe Illustrator, Adobe InDesign, Adobe Photoshop, Personas, Moodboards  </p>          \
   </div>                                                                           \
   <div>                                                                            \
-  <a class='btn btn-primary margin' href='downloads/ipad-process.pdf' download='ipad-process.pdf 'target='_blank'> Download Process </a>\
-  <a class='btn btn-primary' 'target='_blank' href='downloads/iPad.pdf' download='iPadMag.pdf> Download Mag </a>\
+  <a class='btn btn-primary margin' href='downloads/ipad-process.pdf' download='ipad-process.pdf' target='_blank'> Download Process </a>\
+  <a class='btn btn-primary' target='_blank' href='downloads/iPad.pdf' download='iPadMag.pdf'> Download Mag </a>\
   </div>                                         \
   </div>                                         \
   \
@@ -171,7 +171,7 @@ contents = {
   <p> Suzy Li, Fereshteh Shahmiri </p> \
   </div> \
   <div>                                                                            \
-  <a class='btn btn-primary' 'target='_blank' href='downloads/biologic.pdf' download='biologic.pdf' > Download </a>\
+  <a class='btn btn-primary' target='_blank' href='downloads/biologic.pdf' download='biologic.pdf' > Download </a>\
   </div>                                         \
   </div>                                         \
   \
