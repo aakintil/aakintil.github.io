@@ -20,8 +20,7 @@ Pages.prototype = {
 
   findTag : function( page_tag ) {
     for ( i in this.children ) {
-      var obj = this.children[i]; 
-      console.log( obj.tag, "    ",  page_tag )
+      var obj = this.children[i];
       if ( obj.tag.toLowerCase() === page_tag.toLowerCase() ) {
         return obj; 
       }
@@ -43,10 +42,11 @@ Pages.prototype = {
 // original 
 // var Page = function(title, tag, img_src, images, content) {
   
-var Page = function(title, tag, content) {
+var Page = function(title, meta_title, tag, content) {
 
   this.title = title; 
   this.tag = tag; 
+  this.meta_title = meta_title; 
   // this.img_src = img_src; 
   // this.images = images; 
   this.content = content; 

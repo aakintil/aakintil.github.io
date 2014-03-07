@@ -19,7 +19,6 @@ function recreate() {
     $this = $(this); 
     _gallery[i] = $this; 
   }); 
-  console.log(_gallery)
   return _gallery; 
   // TweenMax.staggerTo( _gallery, 1,  { css: { opacity: 1 }, ease: "Power4.easeIn", delay: 3 }, 0.40 );  
 }
@@ -55,21 +54,20 @@ function delay5s( fn, timer, page ) {
 
 
 function show_new_page( page ) {
-  console.log( page )
   $("#content").empty();
   var content = page.content;  
   // $("#content").css("opacity", 0); 
   $("#content").append( content ); 
-  console.log( typeof $("#content").children()); 
   $("#content").css("top", "50px"); 
+  $(document).attr("title", page.meta_title); 
   $("#content").children().css({ "opacity" : 0, top: "100px"} ); 
   var timeline = new TimelineLite();  
   timeline.to( $("#content").children() , 2, { css: { opacity: 1, top: 0, ease: "Expo.easeIn" } } );
   $("#content").css("padding", "0px 30px"); 
 
-
   $("#close-page").on("click", function() {
     TweenLite.to( $("#content"), 2, { top: "-400px", opacity: 0, ease: "SlowMo.easeIn", onComplete: delay5s(t, 700) });
+  $(document).attr("title", "Aderinsola Akintilo's Portfolio"); 
   })
 }
 
@@ -90,7 +88,7 @@ function t() {
   new TimelineLite().to( [ $("#contact"), $("#resume") ], 1, { width: "87.5px", height: "100px", delay: 2 } ); 
 
   TweenMax.staggerTo( _gallery, 1,  { css: { opacity: 1 }, ease: "Power4.easeIn", delay: 3 }, 0.40 );   
-  console.log("mobile...", _mobile)
+
   $(".project-containers").animate_children( _mobile );
   $(".project-containers").blur();
   $(".gallery").blur(); 
@@ -119,15 +117,15 @@ function reset_project_elements() {
 function create_pages() {
 
   var obj = {
-    avant_garde : new Page( "Avant-Garde", "AG", contents.avant_garde ),
-    ipad : new Page( "iPad Magazine", "IM", contents.ipad ),
-    biologic : new Page( "Biologic", "B", contents.biologic ), 
-    hri : new Page( "Human Robot Interaction", "HRI", contents.hri ),
+    avant_garde : new Page( "Avant-Garde", "Avant-Garde | Poster Design", "AG", contents.avant_garde ),
+    ipad : new Page( "iPad Magazine","iPad Mag | Interaction Design", "IM", contents.ipad ),
+    biologic : new Page( "Biologic","Biologic | Research + Design", "B", contents.biologic ), 
+    hri : new Page( "Human Robot Interaction","Human Robot Interaction | Research + Design", "HRI", contents.hri ),
     tea : new Page( "Tea", "T",  contents.tea ), // not using
-    apartment_reviews : new Page( "Apartment Reviews", "AR", contents.apartment_reviews ), 
-    hex : new Page( "Hex Tiles", "H", contents.hex ),
-    waffle : new Page( "Waffle Canopy", "W", contents.waffle ),   
-    ucre : new Page( "User Centered Research & Evaluation", "UR",  contents.ucre ) 
+    apartment_reviews : new Page( "Apartment Reviews","Apartment Reviews | Web Development + Web Design", "AR", contents.apartment_reviews ), 
+    hex : new Page( "Hex Tiles","Hex Tiles | Architecture", "H", contents.hex ),
+    waffle : new Page( "Waffle Canopy","Waffle Canopy | Architecture", "W", contents.waffle ),   
+    ucre : new Page( "User Centered Research & Evaluation", "User Centered Research & Evaluation | Research + Design", "UR",  contents.ucre ) 
   }
 
 
