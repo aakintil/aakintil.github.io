@@ -176,7 +176,9 @@ Navigation
 
 #nav li {
   display: inline;
+  margin-left: 20px;
   border: 1px solid green;
+  line-height: 150px;
   padding: 10px;
 }
 
@@ -185,12 +187,13 @@ Navigation
 }
 
 #nav ul {
-  margin-top: 30px;
+/*  margin-top: 50px;*/
 }
 
 #nav ul li:hover {
   cursor: pointer;
 }
+
 
 
 /*---------------------------
@@ -201,16 +204,23 @@ Projects
   margin-bottom: 50px;
 }
 
-#content .columns {
-  border: 1px solid white;
-  padding: 0px 50px;
+#content .column_4.center {
+/*  position: relative;*/
+  padding: 0px 37.5px;
 }
 
+#content .column_4.left {
+  padding-right: 75px;
+}
+
+#content .column_4.right {
+  padding-left: 75px;
+}
 
 
 #content .card {
   border: 1px solid rgba(136, 140, 142, 0.4);
-  background-color: green;
+/*  background-color: green;*/
   height: inherit;
   margin-bottom: 100px;
 }
