@@ -148,10 +148,15 @@ body {
 /*---------------------------
 Navigation
 ---------------------------*/
-#nav .nav-container {
+
+#nav {
+  margin-bottom: 50px;
+}
+
+.nav-container {
   height: 150px;
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
+  border-top: 2px solid rgba(136, 140, 142, 0.4);
+  border-bottom: 2px solid rgba(136, 140, 142, 0.4);
 }
 
 #nav .row .name {
@@ -170,8 +175,20 @@ Navigation
 
 #nav li {
   display: inline;
-  background-color: blue;
+  border: 1px solid green;
   padding: 10px;
+}
+
+.name {
+  margin-bottom: 20px;
+}
+
+#nav ul {
+  margin-top: 30px;
+}
+
+#nav ul li:hover {
+  cursor: pointer;
 }
 
 
@@ -187,14 +204,26 @@ Projects
   background-color: red;
   height: 400px;
   border: 1px solid white;
-  padding: 50px;
+  padding: 0px 50px;
 }
 
 
-.columns > div {
+
+#content .card{
+  border: 1px solid rgba(136, 140, 142, 0.4);
   background-color: green;
+  height: inherit;
 }
 
+
+/*---------------------------
+Footer
+---------------------------*/
+#footer .footer-container {
+  height: 150px;
+  border-top: 1px solid rgba(136, 140, 142, 0.4);
+  border-bottom: 1px solid rgba(136, 140, 142, 0.4);
+}
 
 
 /*---------------------------
