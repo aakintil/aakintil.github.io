@@ -148,10 +148,14 @@ body {
 /*---------------------------
 Navigation
 ---------------------------*/
-#nav .row {
+#nav .nav-container {
   height: 150px;
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
+}
+
+#nav .row .name {
+  text-align: center;
 }
 
 #nav .row > div {
@@ -171,6 +175,27 @@ Navigation
 }
 
 
+/*---------------------------
+Projects
+---------------------------*/
+
+#content .row {
+  margin-bottom: 50px;
+}
+
+#content .columns {
+  background-color: red;
+  height: 400px;
+  border: 1px solid white;
+  padding: 50px;
+}
+
+
+.columns > div {
+  background-color: green;
+}
+
+
 
 /*---------------------------
 Media Queries
@@ -183,6 +208,12 @@ Media Queries
 
 @media (max-width: 770px) {
   
+}
+
+@media (min-width: 1025px) {
+  #content .you {
+    margin-left: 12.6666%;
+  }
 }
 
 
