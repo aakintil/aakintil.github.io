@@ -141,7 +141,6 @@ hex: #0060f5,
 General 
 ---------------------------*/
 body {
-  padding: 20px;
   background-color: #fff;
 }
 
@@ -154,6 +153,8 @@ Navigation
 }
 
 .nav-container {
+  /* add media query to here. so that there's no margin when it's small*/
+  margin: 0px 15px; 
   height: 150px;
   border-top: 2px solid rgba(136, 140, 142, 0.4);
   border-bottom: 2px solid rgba(136, 140, 142, 0.4);
@@ -180,7 +181,7 @@ Navigation
 }
 
 .name {
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 #nav ul {
@@ -201,9 +202,6 @@ Projects
 }
 
 #content .columns {
-/*  background-color: red;g
-*/
-  height: 400px;
   border: 1px solid white;
   padding: 0px 50px;
 }
@@ -214,6 +212,7 @@ Projects
   border: 1px solid rgba(136, 140, 142, 0.4);
   background-color: green;
   height: inherit;
+  margin-bottom: 100px;
 }
 
 #content .card .header {
