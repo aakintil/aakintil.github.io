@@ -201,7 +201,7 @@ Projects
 }
 
 #content .columns {
-  background-color: red;
+/*  background-color: red;*/
   height: 400px;
   border: 1px solid white;
   padding: 0px 50px;
@@ -209,12 +209,29 @@ Projects
 
 
 
-#content .card{
+#content .card {
   border: 1px solid rgba(136, 140, 142, 0.4);
   background-color: green;
   height: inherit;
 }
 
+#content .card .header {
+  height: 50px;
+}
+
+#content .card .img {
+  height: 200px;
+  background-color: yellow;
+}
+
+#content .card .bottom {
+  height: 150px;
+}
+
+#content .card .header, 
+#content .card .bottom {
+  padding: 25px;
+}
 
 /*---------------------------
 Footer
