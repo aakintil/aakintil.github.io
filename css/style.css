@@ -180,7 +180,7 @@ Navigation
 }
 
 #nav li a {
-   color: #75797c;
+  color: #75797c;
 }
 
 
@@ -195,7 +195,7 @@ Projects
 
 #content .column_4.center {
 /*  position: relative;*/
-  padding: 0px 37.5px;
+padding: 0px 37.5px;
 }
 
 #content .column_4.left {
@@ -211,7 +211,7 @@ Projects
   border: 1px solid #e7e8e8;
   height: inherit;
   margin-bottom: 100px;
-  
+
   -webkit-transition: background-color .25s linear; 
   -moz-transition:  background-color .25s linear; 
   -ms-transition: background-color .25s linear; 
@@ -235,7 +235,15 @@ Projects
 
 #content .card .img {
   height: 200px;
-  background-color: yellow;
+  background-color: #e7e8e8;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  
+  -webkit-transition: background-color .25s linear; 
+  -moz-transition:  background-color .25s linear; 
+  -ms-transition: background-color .25s linear; 
+  -o-transition: background-color .25s linear; 
+  transition:  background-color .25s linear;
 }
 
 #content .card .bottom {
@@ -256,12 +264,22 @@ Projects
 }
 
 
+.card object {
+  display: block;
+  height: inherit;
+  margin: 0 auto;
+}
+
+.card .img {
+  margin: 0 auto;
+}
+
 
 #content .card:hover {
   background-color: #428cff;
   border: 1px solid white;
   cursor: pointer;
-  
+
   -webkit-transition: background-color .25s linear; 
   -moz-transition:  background-color .25s linear; 
   -ms-transition: background-color .25s linear; 
@@ -277,6 +295,18 @@ Projects
   -ms-transition: color .25s linear; 
   -o-transition: color .25s linear; 
   transition:  color .25s linear;
+}
+
+#content .card:hover .img {
+  background-color: transparent;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  
+  -webkit-transition: background-color .04s linear; 
+  -moz-transition:   background-color .04s linear; 
+  -ms-transition:  background-color .04s linear; 
+  -o-transition:  background-color .04s linear; 
+  transition:  background-color .04s linear;
 }
 
 
@@ -299,7 +329,7 @@ Media Queries
 
 
 @media (max-width: 770px) {
-  
+
 }
 
 @media (min-width: 1025px) {
