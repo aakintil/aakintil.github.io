@@ -44,6 +44,21 @@
 Color Pallette
 
 Triadic Logo
+-- purple --
+hex: #613db5, 
+rgb: 52, 73, 94
+
+
+-- light blue --
+hex: #4ad6de,
+change 
+rgb: 117, 224, 249
+
+
+-- dark blue --
+hex: #428cff, 
+change
+rgb: 10, 198, 242
 
 -- grey --
 #e7e8e8
@@ -101,10 +116,22 @@ Navigation
 #nav li {
   display: inline;
   margin-left: 20px;
-  border: 1px solid green;
   line-height: 150px;
-  padding: 10px;
+  border: 2px solid transparent;
+  padding: 10px 20px;
+
+  -webkit-transition: border .25s linear; 
+  -moz-transition:  border .25s linear; 
+  -ms-transition: border .25s linear; 
+  -o-transition: border .25s linear; 
+  transition:  border .25s linear;
 }
+
+#nav .work.active {
+  border: 2px solid #4ad6de;
+}
+
+
 
 .name {
   font-size: 0.938em;
@@ -118,6 +145,12 @@ Navigation
 
 #nav ul li:hover {
   cursor: pointer;
+
+  -webkit-transition: border .25s linear; 
+  -moz-transition:  border .25s linear; 
+  -ms-transition: border .25s linear; 
+  -o-transition: border .25s linear; 
+  transition:  border .25s linear; 
 }
 
 
