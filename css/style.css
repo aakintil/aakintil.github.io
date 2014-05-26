@@ -60,10 +60,14 @@ hex: #428cff,
 change
 rgb: 10, 198, 242
 
--- grey --
+-- super light grey --
 #e7e8e8
 
+-- slightly darker grey -- 
+#cdcfcf
 
+-- text grey --
+#75797c
 -------------------------------------------------------------------*/
 
 
@@ -73,6 +77,7 @@ General
 body {
   font-family: "Oswald Light";
   background-color: #fff;
+  color: #75797c;
 }
 
 h1, 
@@ -87,6 +92,16 @@ span {
 Navigation
 ---------------------------*/
 
+#logo {
+  margin-top: 35px;
+}
+
+#logo img {
+  width: auto;
+  height: 80px;
+}
+
+
 #nav {
   margin: 50px 0px;
 }
@@ -99,7 +114,7 @@ Navigation
   border-bottom: 2px solid #e7e8e8;
 }
 
-#nav .row .name {
+#name {
   text-align: center;
 }
 
@@ -118,7 +133,7 @@ Navigation
   margin-left: 20px;
   line-height: 150px;
   border: 2px solid transparent;
-  padding: 10px 20px;
+  padding: 7.5px 20px;
 
   -webkit-transition: border .25s linear; 
   -moz-transition:  border .25s linear; 
@@ -133,9 +148,9 @@ Navigation
 
 
 
-.name {
-  font-size: 0.938em;
-  color: #e7e8e8;
+#name h4 {
+  font-size: 1.1em !important;
+  color: #cdcfcf; 
   margin-top: 20px;
 }
 
@@ -151,6 +166,10 @@ Navigation
   -ms-transition: border .25s linear; 
   -o-transition: border .25s linear; 
   transition:  border .25s linear; 
+}
+
+#nav li a {
+   color: #75797c;
 }
 
 
