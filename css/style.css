@@ -13,6 +13,12 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Oswald Bold";
+  src: url("../fonts/Oswald-Bold.otf");
+  font-style: bold;
+}
+
 
 /*FuturaStd-Book*/
 /*------------------------------------------------------------------
@@ -68,6 +74,10 @@ rgb: 10, 198, 242
 
 -- text grey --
 #75797c
+
+-- card header grey --
+#a9acae
+
 -------------------------------------------------------------------*/
 
 
@@ -84,7 +94,8 @@ h1,
 h2, 
 h3, 
 h4,
-span {
+span, 
+.header {
   letter-spacing: 0.14em;
 }
 
@@ -143,7 +154,7 @@ Navigation
 }
 
 #nav .work.active {
-  border: 2px solid #4ad6de;
+  border: 2px solid #428cff;
 }
 
 
@@ -198,13 +209,28 @@ Projects
 
 #content .card {
   border: 1px solid #e7e8e8;
-/*  background-color: green;*/
   height: inherit;
   margin-bottom: 100px;
+  
+  -webkit-transition: background-color .25s linear; 
+  -moz-transition:  background-color .25s linear; 
+  -ms-transition: background-color .25s linear; 
+  -o-transition: background-color .25s linear; 
+  transition:  background-color .25s linear;
+}
+
+#content .card > div {
+  -webkit-transition: color .25s linear; 
+  -moz-transition:  color .25s linear; 
+  -ms-transition: color .25s linear; 
+  -o-transition: color .25s linear; 
+  transition:  color .25s linear;
 }
 
 #content .card .header {
+  font-family: "Oswald Regular";
   height: 50px;
+  color: #a9acae;
 }
 
 #content .card .img {
@@ -220,6 +246,39 @@ Projects
 #content .card .bottom {
   padding: 25px;
 }
+
+#content .type {
+  margin-bottom: 10px;
+}
+
+#content .desc {
+  font-size: 15px;
+}
+
+
+
+#content .card:hover {
+  background-color: #428cff;
+  border: 1px solid white;
+  cursor: pointer;
+  
+  -webkit-transition: background-color .25s linear; 
+  -moz-transition:  background-color .25s linear; 
+  -ms-transition: background-color .25s linear; 
+  -o-transition: background-color .25s linear; 
+  transition:  background-color .25s linear;
+}
+
+#content .card:hover > div {
+  color: white;
+
+  -webkit-transition: color .25s linear; 
+  -moz-transition:  color .25s linear; 
+  -ms-transition: color .25s linear; 
+  -o-transition: color .25s linear; 
+  transition:  color .25s linear;
+}
+
 
 /*---------------------------
 Footer

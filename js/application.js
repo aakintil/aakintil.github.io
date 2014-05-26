@@ -3,8 +3,8 @@
 /////////////////////////
 
 var highlight = { 
-  work: "#4ad6de", 
-  contact: "#428cff", 
+  work: "#428cff", 
+  contact: "#4ad6de", 
   about: "#613db5"
 }
 
