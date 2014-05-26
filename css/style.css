@@ -1,83 +1,16 @@
 /* font faces */
 
 @font-face {
-  font-family: "Franklin Gothic";
-  src: url("../fonts/FC.otf");
+  font-family: "Oswald Light";
+  src: url("../fonts/Oswald-Light.otf");
   font-style: normal;
 }
 
 
 @font-face {
-  font-family: "Avenir Light";
-  src: url("../fonts/AvenirLTStd-Light.otf");
+  font-family: "Oswald Regular";
+  src: url("../fonts/Oswald-Regular.otf");
   font-style: normal;
-}
-
-
-@font-face {
-  font-family: "Crimson";
-  src: url("../fonts/Ovo-Regular.ttf");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Univers Bold";
-  src: url('../fonts/UniversBoldCn.otf'); 
-  font-style: bold;
-}
-
-@font-face {
-  font-family: "Cantarell";
-  src: url('../fonts/CantarellRegular.ttf'); 
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cantarell Bold";
-  src: url('../fonts/CantarellBold.ttf');
-  font-style: bold;
-}
-
-@font-face {
-  font-family: "League Gothic";
-  src: url('../fonts/leaguegothic-regular.ttf');
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Jura";
-  src: url('../fonts/Jura-Regular.ttf');
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Canter";
-  src: url('../fonts/Canter Bold.otf');
-  font-style: bold;
-}
-
-@font-face {
-  font-family: "Futura Medium";
-  src: url('../fonts/Futura-Medium.otf');
-  font-style: medium;
-}
-
-
-@font-face {
-  font-family: "Futura";
-  src: url('../fonts/FuturaStd-Book.otf');
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Futura Bold";
-  src: url('../fonts/FuturaStd-Heavy.otf');
-  font-style: bold;
 }
 
 
@@ -141,7 +74,17 @@ hex: #0060f5,
 General 
 ---------------------------*/
 body {
+  font-family: "Oswald Light";
   background-color: #fff;
+}
+
+h1, 
+h2, 
+h3, 
+h4,
+span {
+  letter-spacing: 0.14em;
+  font-size: 1.250em;
 }
 
 /*---------------------------
@@ -149,7 +92,7 @@ Navigation
 ---------------------------*/
 
 #nav {
-  margin-bottom: 50px;
+  margin: 50px 0px;
 }
 
 .nav-container {
