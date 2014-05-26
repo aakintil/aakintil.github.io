@@ -41,31 +41,13 @@
 -------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------
-General Colors
+Color Pallette
 
 Triadic Logo
 
-purple: {
-hex: #613db5, 
-rgb: 52, 73, 94
-}
+-- grey --
+#e7e8e8
 
-light blue: {
-hex: #4ad6de,
-change 
-rgb: 117, 224, 249
-}
-
-dark blue: {
-hex: #428cff, 
-change
-rgb: 10, 198, 242
-
-}
-
-darker blue: {
-hex: #0060f5, 
-}
 
 -------------------------------------------------------------------*/
 
@@ -84,7 +66,6 @@ h3,
 h4,
 span {
   letter-spacing: 0.14em;
-  font-size: 1.250em;
 }
 
 /*---------------------------
@@ -126,6 +107,8 @@ Navigation
 }
 
 .name {
+  font-size: 0.938em;
+  color: #e7e8e8;
   margin-top: 20px;
 }
 
