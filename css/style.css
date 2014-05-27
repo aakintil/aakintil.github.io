@@ -189,11 +189,19 @@ Navigation
 #nav ul li:hover {
   cursor: pointer;
 
+  -webkit-transition: all .5s linear; 
+  -moz-transition:  all .5s linear; 
+  -ms-transition: all .5s linear; 
+  -o-transition: all .5s linear; 
+  transition:  all .5s linear; 
+}
+
+#nav ul li {
   -webkit-transition: all .25s linear; 
   -moz-transition:  all .25s linear; 
   -ms-transition: all .25s linear; 
   -o-transition: all .25s linear; 
-  transition:  all .25s linear; 
+  transition:  all .25s linear;  
 }
 
 #nav li a {
