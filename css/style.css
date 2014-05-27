@@ -19,6 +19,12 @@
   font-style: bold;
 }
 
+@font-face {
+  font-family: "Crimson Text";
+  src: url("../fonts/Crimson Text-Roman.ttf");
+  font-style: normal;
+}
+
 
 /*FuturaStd-Book*/
 /*------------------------------------------------------------------
@@ -78,6 +84,9 @@ rgb: 10, 198, 242
 -- card header grey --
 #a9acae
 
+-- another grey --
+#c0c3c3
+
 -------------------------------------------------------------------*/
 
 
@@ -95,7 +104,8 @@ h2,
 h3, 
 h4,
 span, 
-.header {
+.header, 
+.type {
   letter-spacing: 0.14em;
 }
 
@@ -227,15 +237,21 @@ padding: 0px 37.5px;
   transition:  color .25s linear;
 }
 
-#content .card .header {
+#content .header {
   font-family: "Oswald Regular";
   height: 50px;
   color: #a9acae;
+  position: relative;
+}
+
+#content .header p {
+  position: relative;
+  margin-top: -7.5px;
 }
 
 #content .card .img {
   height: 200px;
-  background-color: #e7e8e8;
+  background-color: #c0c3c3;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
   
@@ -257,9 +273,14 @@ padding: 0px 37.5px;
 
 #content .type {
   margin-bottom: 10px;
+  font-family: "Oswald Regular";
+  font-size: 15px;
+  color: #c0c3c3;
 }
 
 #content .desc {
+  line-height: 20px;
+  font-family: "Crimson Text";
   font-size: 15px;
 }
 
@@ -287,9 +308,8 @@ padding: 0px 37.5px;
   transition:  background-color .25s linear;
 }
 
-#content .card:hover > div {
+#content .card:hover p {
   color: white;
-
   -webkit-transition: color .25s linear; 
   -moz-transition:  color .25s linear; 
   -ms-transition: color .25s linear; 
