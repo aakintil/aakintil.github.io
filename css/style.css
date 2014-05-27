@@ -156,11 +156,11 @@ Navigation
   border: 2px solid transparent;
   padding: 7.5px 20px;
 
-  -webkit-transition: border .25s linear; 
-  -moz-transition:  border .25s linear; 
-  -ms-transition: border .25s linear; 
-  -o-transition: border .25s linear; 
-  transition:  border .25s linear;
+  -webkit-transition: all .25s linear; 
+  -moz-transition:  all .25s linear; 
+  -ms-transition: all .25s linear; 
+  -o-transition: all .25s linear; 
+  transition:  all .25s linear;
 }
 
 #nav .work.active {
@@ -182,11 +182,11 @@ Navigation
 #nav ul li:hover {
   cursor: pointer;
 
-  -webkit-transition: border .25s linear; 
-  -moz-transition:  border .25s linear; 
-  -ms-transition: border .25s linear; 
-  -o-transition: border .25s linear; 
-  transition:  border .25s linear; 
+  -webkit-transition: all .25s linear; 
+  -moz-transition:  all .25s linear; 
+  -ms-transition: all .25s linear; 
+  -o-transition: all .25s linear; 
+  transition:  all .25s linear; 
 }
 
 #nav li a {
@@ -222,19 +222,20 @@ padding: 0px 37.5px;
   height: inherit;
   margin-bottom: 100px;
 
-  -webkit-transition: background-color .25s linear; 
-  -moz-transition:  background-color .25s linear; 
-  -ms-transition: background-color .25s linear; 
-  -o-transition: background-color .25s linear; 
-  transition:  background-color .25s linear;
+  -webkit-transition: all .25s linear; 
+  -moz-transition:  all .25s linear; 
+  -ms-transition: all .25s linear; 
+  -o-transition: all .25s linear; 
+  transition:  all .25s linear;
 }
 
-#content .card > div {
-  -webkit-transition: color .25s linear; 
-  -moz-transition:  color .25s linear; 
-  -ms-transition: color .25s linear; 
-  -o-transition: color .25s linear; 
-  transition:  color .25s linear;
+#content .card > div, 
+#content .card p {
+  -webkit-transition: all .25s linear; 
+  -moz-transition:  all .25s linear; 
+  -ms-transition: all .25s linear; 
+  -o-transition: all .25s linear; 
+  transition:  all .25s linear;
 }
 
 #content .header {
@@ -251,15 +252,15 @@ padding: 0px 37.5px;
 
 #content .card .img {
   height: 200px;
-  background-color: #c0c3c3;
+/*  background-color: #c0c3c3;*/
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
   
-  -webkit-transition: background-color .25s linear; 
-  -moz-transition:  background-color .25s linear; 
-  -ms-transition: background-color .25s linear; 
-  -o-transition: background-color .25s linear; 
-  transition:  background-color .25s linear;
+  -webkit-transition: all .25s linear; 
+  -moz-transition:  all .25s linear; 
+  -ms-transition: all .25s linear; 
+  -o-transition: all .25s linear; 
+  transition:  all .25s linear;
 }
 
 #content .card .bottom {
@@ -275,7 +276,7 @@ padding: 0px 37.5px;
   margin-bottom: 10px;
   font-family: "Oswald Regular";
   font-size: 15px;
-  color: #c0c3c3;
+  color: #A9ACAE;
 }
 
 #content .desc {
@@ -291,42 +292,51 @@ padding: 0px 37.5px;
   margin: 0 auto;
 }
 
+.card object {
+  color: red !important;
+}
+
 .card .img {
   margin: 0 auto;
 }
 
-
+#content .img:hover, 
+object:hover {
+  cursor: pointer;
+}
 #content .card:hover {
-  background-color: #428cff;
-  border: 1px solid white;
+  background-color: #8fbbff;
+  border: 1px solid #8fbbff;
   cursor: pointer;
 
-  -webkit-transition: background-color .25s linear; 
-  -moz-transition:  background-color .25s linear; 
-  -ms-transition: background-color .25s linear; 
-  -o-transition: background-color .25s linear; 
-  transition:  background-color .25s linear;
+  -webkit-transition: all .5s linear; 
+  -moz-transition:  all .5s linear; 
+  -ms-transition: all .5s linear; 
+  -o-transition: all .5s linear; 
+  transition:  all .5s linear;
 }
 
 #content .card:hover p {
   color: white;
-  -webkit-transition: color .25s linear; 
-  -moz-transition:  color .25s linear; 
-  -ms-transition: color .25s linear; 
-  -o-transition: color .25s linear; 
-  transition:  color .25s linear;
+  
+  -webkit-transition: all .25s linear; 
+  -moz-transition:  all .25s linear; 
+  -ms-transition: all .25s linear; 
+  -o-transition: all .25s linear; 
+  transition:  all .25s linear;
 }
 
+/* might be able to delete */
 #content .card:hover .img {
-  background-color: transparent;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  
-  -webkit-transition: background-color .04s linear; 
-  -moz-transition:   background-color .04s linear; 
-  -ms-transition:  background-color .04s linear; 
-  -o-transition:  background-color .04s linear; 
-  transition:  background-color .04s linear;
+/*  background-color: white;*/
+/*  border-top: 1px solid white;
+  border-bottom: 1px solid white;*/
+
+  -webkit-transition: all .2s linear; 
+  -moz-transition:   all .2s linear; 
+  -ms-transition:  all .2s linear; 
+  -o-transition:  all .2s linear; 
+  transition:  all .2s linear;
 }
 
 
