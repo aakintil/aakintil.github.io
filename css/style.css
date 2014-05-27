@@ -136,6 +136,8 @@ Navigation
 }
 
 #name {
+  color: #A9ACAE;
+  height: 70px;
   text-align: center;
 }
 
@@ -169,10 +171,15 @@ Navigation
 
 
 
-#name h4 {
+#name > h4 {
   font-size: 1.1em !important;
-  color: #cdcfcf; 
   margin-top: 20px;
+}
+
+#name > p {
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  margin-top: 10px;
 }
 
 #nav ul {
