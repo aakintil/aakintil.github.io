@@ -181,7 +181,8 @@ form .fieldset input[type="text"],.form .fieldset input[type="text"],form fields
 .hide-phone{display:inherit !important}
 .hide-tablet{display:inherit !important}
 .hide-screen{display:none !important}
-}@media only screen and (min-width: 768px) and (max-width: 959px){.row{width:768px;}
+}
+@media only screen and (min-width: 768px) and (max-width: 959px){.row{width:768px;}
 .row .row{margin:0 -14px 0 -14px}
 [class^="column_"],[class*=" column_"]{margin:0 14px 0 14px}
 .column_1{width:36px}
@@ -213,7 +214,8 @@ form .fieldset input[type="text"],.form .fieldset input[type="text"],form fields
 .hide-phone{display:inherit !important}
 .hide-tablet{display:none !important}
 .hide-screen{display:inherit !important}
-}@media only screen and (max-width: 767px){.row{width:300px;}
+}
+@media only screen and (max-width: 767px){.row{width:300px;}
 .row .row{margin:0}
 [class^="column_"],[class*=" column_"]{width:300px;margin:10px 0 0 0}
 .offset_1,.offset_2,.offset_3,.offset_4,.offset_5,.offset_6,.offset_7,.offset_8,.offset_9,.offset_10,.offset_11{margin-left:0}
@@ -223,7 +225,8 @@ form .fieldset input[type="text"],.form .fieldset input[type="text"],form fields
 .hide-phone{display:none !important}
 .hide-tablet{display:inherit !important}
 .hide-screen{display:inherit !important}
-}@media only screen and (min-width: 480px) and (max-width: 767px){.row{margin:0 auto;width:456px}
+}
+@media only screen and (min-width: 480px) and (max-width: 767px){.row{margin:0 auto;width:456px}
 .row .row{margin:0;width:auto;display:inline-block}
 [class^="column_"],[class*=" column_"]{margin:10px 0 0 0;width:456px}
 .show-phone,.hide-tablet,.hide-screen{display:inherit !important}

@@ -219,8 +219,7 @@ Projects
 }
 
 #content .column_4.center {
-/*  position: relative;*/
-padding: 0px 37.5px;
+  padding: 0px 37.5px;
 }
 
 #content .column_4.left {
@@ -367,23 +366,90 @@ Footer
 /*---------------------------
 Media Queries
 ---------------------------*/
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1199px) { 
+    #content .column_4.center {
+      padding: 0px 18.75px;
+    }
+    
+    #content .card {
+      height: 420px;
+    }
+
+    #content .column_4.left {
+      padding-right: 37.5px;
+    }
+
+    #content .column_4.right {
+      padding-left: 37.5px;
+    }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  #content .column_4.center {
+    padding: 0px 9.375px;
+  }
+  
+  #content .card {
+    height: 440px;
+  }
+
+  #content .column_4.left {
+    padding-right: 18.75px;
+  }
+
+  #content .column_4.right {
+    padding-left: 18.75px;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+/*  #content .column_4 {
+    padding: 0 15px !important;
+  }*/
+
+  
+}
+@media only screen and (max-width: 767px) {
+  #content .column_4 {
+    padding: 0 15px !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  
+}
+
+
 
 @media (max-width: 480px) {
 
 }
 
+@media only screen and (max-width:1200px) {
+/*  #content .column_4.center {
+    padding: 0px 18.75px;
+    border: 5px solid red;
+  }*/
+}
 
-@media (max-width: 770px) {
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
 
 }
 
-@media (min-width: 1025px) {
-  #content .you {
-    margin-left: 12.6666%;
-  }
-}
 
 
 @media (max-width: 992px) {
+  
+}
+
+
+@media (min-width: 1025px) {
 
 }
