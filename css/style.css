@@ -99,6 +99,10 @@ body {
   color: #75797c;
 }
 
+body > section {
+  opacity: 0;
+}
+
 h1, 
 h2, 
 h3, 
@@ -168,6 +172,16 @@ Navigation
 #nav .work.active {
   border: 2px solid #428cff;
 }
+
+#nav .contact.active {
+  border: 2px solid #4ad6de;
+}
+
+#nav .about.active {
+  border: 2px solid #613db5;
+}
+
+
 
 
 
