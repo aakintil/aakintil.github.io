@@ -137,7 +137,7 @@ Navigation
 
 #name {
   color: #A9ACAE;
-  height: 70px;
+  height: 80px;
   text-align: center;
 }
 
@@ -172,14 +172,14 @@ Navigation
 
 
 #name > h4 {
-  font-size: 1.1em !important;
+  font-size: 1.4em !important;
   margin-top: 20px;
 }
 
 #name > p {
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0.1em;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 #nav ul {
@@ -413,7 +413,7 @@ Media Queries
 
 @media only screen and (max-width: 767px) {
   #name {
-    height: 90px;
+    height: 100px;
     padding: 0 15px;
   }
   
@@ -423,7 +423,6 @@ Media Queries
   
   #name > p {
     line-height: 22px;
-    font-size: 16px;
   }
   
   
@@ -457,17 +456,10 @@ Media Queries
 @media (max-width: 480px) {
   
   #name {
-    height: 120px;
+    height: 130px;
     padding: 0 15px;
   }
-  #name > h4 {
-    font-size: 1.6em !important;
-  }
-  #name > p {
-    line-height: 22px;
-    font-size: 16px;
-  }
-
+  
   #nav .nav-container > div {
     width: 100%;
   }
