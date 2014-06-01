@@ -10,6 +10,7 @@ var highlight = {
 
 // Document ready 
 $(document).ready( function() {
+  
   // slowly load and animate the page
   $("#nav").animate({ opacity: 1 }, 1900, function() {
     $("#content").animate({ opacity: 1 }, 1500, function() {
@@ -17,6 +18,7 @@ $(document).ready( function() {
     })
   }); 
   
+  console.log($(".nav-container").width()); 
   
   // different color hover effects for menu links
   $("#nav ul li").hover( function() {

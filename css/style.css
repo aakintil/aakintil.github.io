@@ -100,7 +100,7 @@ body {
 }
 
 body > section {
-  opacity: 0;
+/*  opacity: 0;*/
 }
 
 h1, 
@@ -135,8 +135,8 @@ Navigation
   /* add media query to here. so that there's no margin when it's small*/
   margin: 0px 15px; 
   height: 150px;
-  border-top: 2px solid #e7e8e8;
-  border-bottom: 2px solid #e7e8e8;
+  border-top: 1px solid #e7e8e8;
+  border-bottom: 1px solid #e7e8e8;
 }
 
 #name {
@@ -190,7 +190,7 @@ Navigation
   margin-top: 20px;
 }
 
-#name > p {
+#name > p, #footer p {
   font-size: 14px;
   letter-spacing: 0.1em;
   margin-top: 20px;
@@ -371,10 +371,14 @@ object:hover {
 /*---------------------------
 Footer
 ---------------------------*/
-#footer .footer-container {
+#footer > .row > .nav-container {
   height: 150px;
   border-top: 1px solid #e7e8e8;
+  text-align: center;
+  margin-right: 0 !important;
 }
+
+
 
 
 /*---------------------------
