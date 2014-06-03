@@ -12,16 +12,21 @@ var page = "";
 
 // Document ready 
 $(document).ready( function() {
-  
+
+  // hide the projects and move left for animation
   $("#project").hide(); 
-  
+  // $("#project").children().css({ opacity: 0 }); 
+  // $("#project").children().each( function() {
+  //   $(this).css({ marginLeft: "-1000px" });  
+  // } )
+
   // slowly load and animate the page
   $("#nav").animate({ opacity: 1 }, 1900, function() {
     $("#content").animate({ opacity: 1 }, 1500, function() {
       $("#footer").animate({ opacity: 1 }, 1000)
     })
   });
-  
+
   // different color hover effects for menu links
   $("#nav ul li").hover( function() {
     var el = $(this).attr("class"); 
@@ -34,10 +39,15 @@ $(document).ready( function() {
   })
 
 
-$(".card").on("click", function() {
-  sessionStorage.myValue = $(this).attr("id"); 
-  // console.log($(this).parent().attr("id")); 
-} ); 
+  $(".card").on("click", function() {
+    sessionStorage.myValue = $(this).attr("id"); 
+    $("#project").show( 2000, function() {
+      $("#project .row").children().each( function() {
+        $(this).animate({ "margin-left" : "+=5000px"}, 1500, "easeOutCubic");
+
+      });
+    } ); 
+  } ); 
 
 
 }); 
