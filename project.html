@@ -4,22 +4,33 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title> Aderinsola Akintilo </title>
-  <meta name="author" content="Aderinsola Akintilo">
+  <title> PROJECT PAGE </title>
+
+  <link rel="canonical" href="http://www.aderinsola.com"/>
+  <meta property="og:site_name" content="Aderinsola Akintilo"/>
+  <meta property="og:title" content="Work"/>
+  <meta itemprop="name" content="Work"/>
+  <meta property="og:url" content="http://www.aderinsola.com"/>
+  <meta itemprop="url" content="http://www.aderinsola.com"/>
+  <meta property="og:type" content="website"/>
+
+  <meta name="description" content="Design portfolio of Aderinsola Akintilo, student of Interaction / UX Design at Carnegie Mellon's Human Computer Interaction Institute">
 
 
   <!-- Loading Reset -->
   <link rel="stylesheet" href="css/reset.css">
 
   <!-- Loading Bootstrap -->
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="css/tuktuk.css">
 
   <!-- Loading Flat UI -->
-  <link rel="stylesheet" href="css/flat-ui.css">
+  <!-- <link rel="stylesheet" href="css/flat-ui.css"> -->
 
   <!-- Loading My Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/project-page.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/transitions.css">
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,17 +40,18 @@
   <![endif]-->
 
   <!-- Loading jQuery libraries -->
-  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> -->
+  <!-- use when debugging -->
+  <!-- // <script src="js/jquery.js"></script> -->
+  <!-- // <script src="js/jquery-ui.js"></script> -->
+
   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-  <script src="js/enquire.min.js"></script>
-  <script src="js/mobile-check.js"></script>
-  <script src="js/jGestures.js"></script>
-  <script src="js/jquery.animate.extended.min.js"></script>
-
+  <script src="js/modernizr.custom.js"></script>
+  <script src="js/init.js"></script>
   <!-- Analytics -->
   <script type="text/javascript">
+
+
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-29643116-1']);
   _gaq.push(['_setDomainName', 'aderinsola.com']);
@@ -53,94 +65,95 @@
 
 
   </script>	
-
   <script src="js/modernizr.custom.js"></script>
-  <script src="http://cdn.jsdelivr.net/modernizr/2.7.0/modernizr.min.js"></script>
-  <link href="images/logo.ico" type="image/x-icon.ico" rel="icon">
+  <script src="https://cdn.jsdelivr.net/modernizr/2.7.0/modernizr.min.js"></script>
+  <link rel="shortcut icon" href="images/main-favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/main-favicon.ico" type="image/x-icon">
 </head> 
 <!-- end of head -->
 
-<body>
+<body id="project-body">
 
-<!-- main container -->
-<div id="main-container" class="container">
 
-  <nav class="row">
-    <div id="header" class="col-sm-12">
+<!-- Navigation -->
+<section id="nav">
 
-      <div id="logo" class="col-sm-4">
-
-      </div>
-
+  <!-- name row -->
+  <div class="row margin-bottom">
+    <div id="name" class="column_12">
+      <h4>ADERINSOLA AKINTILO  </h4>
+      <p> INTERACTION DESIGNER WITH A PASSION FOR DIGITAL AND TANGIBLE INTERFACES AND INTERACTIONS </p>
     </div>
-  </nav>
+  </div>
 
-  <!-- change top variable -->
-  <section id='content' class='row'>
+  <!-- menu row -->
+  <div class="row margin-bottom">
 
-    <div id='top-row' class='col-sm-12'>
-      <h1 id='title'> PPTV </h1>
-      <h4 id='type'> research </h4>
+    <div class="nav-container">
+      <div id="logo" class="column_3"> 
+        <a href=""><img src="images/logo-minimal.png" alt="" /></a>
+      </div>
 
-      <h1 id='close-page'> + </h1>
+      <div class="column_6">  
+      </div>
+
+      <div class="column_3">
+        <ul>
+          <li class="work active"><a href="">WORK</a></li>
+          <li class="contact"><a href="">CONTACT</a></li>
+          <li class="about"><a href="">ABOUT</a></li>
+        </ul>
+      </div>
     </div>
 
-    <div id='info-row' class='col-sm-12'> 
-      <div id='description' class='col-sm-4'> 
-        <p id=''>  This was a course project where we were tasked with designing a poster for an upcoming Avant Garde Colloqium. We had to create a poster for a lecture series that will be displayed in a University Union Building kiosk. We used text and images to communicate informational and emotional content. We produced at least ten sketches of different designs using grid, content, and images. We also employed a variety of typefaces and sizes to explore hierarchy.
-        </p>
+  </div>
 
-        <div id='details-container'>
-          <h4> Project Details </h4>
-          <div>
-            <p class='emphasis'> Context </p>
-            <p> Interaction Design Fundamentals (05-651) </p>
-          </div>
-          <div>
-            <p class='emphasis'>Dates</p>
-            <p> September 2013 </p>
-          </div>
-          <div>
-            <p class='emphasis'> Methods Used </p>
-            <p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6 </p>
-          </div>
-          <div>
-            <a class='btn btn-primary' target='_blank' href='downloads/poster.pdf' download='poster.pdf'> Download </a>
-          </div>
-        </div>
-      
-      </div>
-      <div id='images' class='col-sm-8'>
-        <img src='images/ixdf/avant-garde/img3.png'/>
-        <img src='images/ixdf/avant-garde/img4.png'/>
-        <img src='images/cdf/img2.jpg'/>
-        <img src='images/cdf/end.jpg'/>
-      </div>
+</section>
+
+
+<!-- Projects -->
+<section id="content">
+
+  <div class="row margin-bottom">
+    
+    <div class="sidebar column_4">
       
     </div>
-
+    
+    <div class="main column_8">
+      
+    </div>
     
   </div>
 
 </section>
 
-</div>
-<!-- Javascript Loading... -->
 
+<!-- Footer -->
+<section id="footer">
+  <!-- menu row -->
+  <div class="row">
+    <div class="nav-container">
+      <p> &#169; ADERINSOLA AKINTILO 2014 </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- Javascript Loading -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 <script src="js/greensock/TimelineMax.js"></script>
 <script src="js/greensock/TweenMax.js"></script>
 
 <!-- Loading Personal Library -->
-<script type="text/javascript" src="js/application-functions.js"></script>
-<script type="text/javascript" src="js/application-plugins.js"></script>
-<script type="text/javascript" src="js/contents.js"></script>
-<script type="text/javascript" src="js/pages.js"></script>
+<script type="text/javascript" src="js/tuktuk.js"></script>
 <script type="text/javascript" src="js/application.js"></script>
-<!-- <script type="text/javascript" src="js/appTest.js"></script> -->
 
 
 </body>
 <!-- end of body -->
+
 </html>

@@ -7,6 +7,8 @@ var highlight = {
   contact: "#4ad6de", 
   about: "#613db5"
 }
+   console.log("global variable ", sessionStorage)
+var page = ""; 
 
 // Document ready 
 $(document).ready( function() {
@@ -30,8 +32,8 @@ $(document).ready( function() {
   })
 
 
-$(".img object").on("click", function() {
-  alert("wuuut")
+$(".card").on("click", function() {
+  sessionStorage.myValue = $(this).attr("id"); 
   // console.log($(this).parent().attr("id")); 
 } ); 
 
