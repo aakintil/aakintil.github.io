@@ -6,7 +6,7 @@ var Pages = {
     title: "NASA", 
     content: get_content( page )
   }, 
-  
+
   ar: {
     id: "apartment-reviews",
     title: "Apartment Reviews", 
@@ -16,6 +16,9 @@ var Pages = {
 }
 
 $(document).ready( function() {
+  	window.location.hash = "#" + page;
+  $(document).attr('title', page.toUpperCase() ); 
+
   console.log("in the project page ", Pages[page].content)
 })
 

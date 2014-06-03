@@ -228,7 +228,7 @@ Navigation
 
 
 /*---------------------------
-Home Page Projects
+Showing All My Work
 ---------------------------*/
 
 #content .row {
@@ -381,19 +381,30 @@ Project Page Projects
 ---------------------------*/
 #project-body .sidebar, 
 #project-body .main {
-  border: 1px solid red;
-  height: 600px;
-  padding: 0 10px;
+/*  border: 1px solid red;*/
+  margin-top: 20px;
+  padding-right: 10px;
 }
 
-#project-body .about > p {
+#project-body .sidebar {
+/*  overflow: auto;*/
+}
+
+#project-body .sidebar div > p {
   font-family: "Crimson Text";
+  line-height: 20px;
+}
+
+#project-body .process {
+  margin-top: 35px;
 }
 
 #project-body h1, 
 #project-body h2, 
-#project-body h3 {
+#project-body h3, 
+#project-body h4 {
   color: #428cff;
+  margin-bottom: 20px;
 }
 
 

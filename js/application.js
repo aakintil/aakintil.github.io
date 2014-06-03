@@ -7,7 +7,7 @@ var highlight = {
   contact: "#4ad6de", 
   about: "#613db5"
 }
-   console.log("global variable ", sessionStorage)
+console.log("global variable ", sessionStorage)
 var page = ""; 
 
 // Document ready 
