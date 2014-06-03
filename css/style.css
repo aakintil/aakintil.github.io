@@ -298,13 +298,8 @@ Projects
   transition:  all .25s linear;
 }
 
-#content .card .bottom {
-  height: 150px;
-  display: none;
-}
 
-#content .card .header, 
-#content .card .bottom {
+#content .card .header {
   padding: 25px;
 }
 

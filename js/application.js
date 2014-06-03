@@ -16,9 +16,7 @@ $(document).ready( function() {
     $("#content").animate({ opacity: 1 }, 1500, function() {
       $("#footer").animate({ opacity: 1 }, 1000)
     })
-  }); 
-  
-  console.log($(".nav-container").width()); 
+  });
   
   // different color hover effects for menu links
   $("#nav ul li").hover( function() {
@@ -31,6 +29,11 @@ $(document).ready( function() {
     $( this ).css({ border: "2px solid transparent" }); 
   })
 
+
+$("object").on("click", function() {
+  alert("wuuut")
+  // console.log($(this).parent().attr("id")); 
+} ); 
 
 
 }); 
