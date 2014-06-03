@@ -381,10 +381,19 @@ Project Page Projects
 ---------------------------*/
 #project-body .sidebar, 
 #project-body .main {
-  
   border: 1px solid red;
   height: 600px;
-  
+  padding: 0 10px;
+}
+
+#project-body .about > p {
+  font-family: "Crimson Text";
+}
+
+#project-body h1, 
+#project-body h2, 
+#project-body h3 {
+  color: #428cff;
 }
 
 
