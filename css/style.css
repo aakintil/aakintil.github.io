@@ -377,32 +377,38 @@ Footer
 
 
 /*---------------------------
-Project Page Projects
+Showing Individual Project
 ---------------------------*/
-#project-body .sidebar, 
-#project-body .main {
+#project .sidebar, 
+#project .main {
 /*  border: 1px solid red;*/
   margin-top: 20px;
   padding-right: 10px;
 }
 
-#project-body .sidebar {
+#project .sidebar {
 /*  overflow: auto;*/
 }
 
-#project-body .sidebar div > p {
+#project .sidebar div > p {
   font-family: "Crimson Text";
   line-height: 20px;
 }
 
-#project-body .process {
+#project .process {
   margin-top: 35px;
 }
 
-#project-body h1, 
-#project-body h2, 
-#project-body h3, 
-#project-body h4 {
+#project .row {
+  border-bottom: 1px solid #e7e8e8;
+  margin-bottom: 120px;
+  padding-bottom: 100px;
+}
+
+#project h1, 
+#project h2, 
+#project h3, 
+#project h4 {
   color: #428cff;
   margin-bottom: 20px;
 }
@@ -417,6 +423,7 @@ Media Queries
 }
 
 @media only screen and (min-width: 960px) and (max-width: 1199px) { 
+    
     #content .column_4.center {
       padding: 0px 18.75px;
     }
