@@ -109,7 +109,10 @@ h3,
 h4,
 span, 
 .header, 
-.type {
+.type,
+#nav li a, 
+#name, 
+#footer {
   letter-spacing: 0.14em;
 }
 
@@ -119,6 +122,7 @@ Navigation
 
 #logo {
   margin-top: 35px;
+  margin-left: 0;
 }
 
 #logo img {
@@ -192,7 +196,6 @@ Navigation
 
 #name > p, #footer p {
   font-size: 14px;
-  letter-spacing: 0.1em;
   margin-top: 20px;
 }
 
@@ -247,9 +250,11 @@ Projects
 
 #content .card {
   border: 1px solid #e7e8e8;
-  height: inherit;
+  height: 275px;
   margin-bottom: 100px;
-
+  text-align: center;
+  line-height: 20px;
+  overflow: auto;
   -webkit-transition: all .25s linear; 
   -moz-transition:  all .25s linear; 
   -ms-transition: all .25s linear; 
@@ -271,9 +276,11 @@ Projects
   height: 50px;
   color: #a9acae;
   position: relative;
+  margin-bottom: 10px;
 }
 
 #content .header p {
+  font-size: 18px;
   position: relative;
   margin-top: -7.5px;
 }
@@ -293,6 +300,7 @@ Projects
 
 #content .card .bottom {
   height: 150px;
+  display: none;
 }
 
 #content .card .header, 
@@ -392,10 +400,6 @@ Media Queries
     #content .column_4.center {
       padding: 0px 18.75px;
     }
-    
-    #content .card {
-      height: 420px;
-    }
 
     #content .column_4.left {
       padding-right: 37.5px;
@@ -411,10 +415,7 @@ Media Queries
   #content .column_4.center {
     padding: 0px 9.375px;
   }
-  
-  #content .card {
-    height: 440px;
-  }
+
 
   #content .column_4.left {
     padding-right: 18.75px;
@@ -426,6 +427,9 @@ Media Queries
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+  #logo {
+    margin-left: -10px;
+  }
   
 }
 
@@ -478,11 +482,15 @@ Media Queries
     padding: 0 15px;
   }
   
+  #logo img {
+    height: 100px;
+  }
+  
   #nav .nav-container > div {
     width: 100%;
   }
   #nav .nav-container {
-    height: 390px;
+    height: 410px;
   }
 
   #nav li {
