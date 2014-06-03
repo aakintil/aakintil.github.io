@@ -298,6 +298,10 @@ Projects
   transition:  all .25s linear;
 }
 
+#content img {
+  height: inherit;
+}
+
 
 #content .card .header {
   padding: 25px;

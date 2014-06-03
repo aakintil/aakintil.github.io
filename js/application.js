@@ -30,7 +30,7 @@ $(document).ready( function() {
   })
 
 
-$("object").on("click", function() {
+$(".img object").on("click", function() {
   alert("wuuut")
   // console.log($(this).parent().attr("id")); 
 } ); 
