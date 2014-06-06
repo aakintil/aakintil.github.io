@@ -107,6 +107,7 @@ h1,
 h2, 
 h3, 
 h4,
+h5,
 span, 
 .header, 
 .type,
@@ -454,7 +455,8 @@ Showing Individual Project
 #project h1, 
 #project h2, 
 #project h3, 
-#project h4 {
+#project h4, 
+#project h5 {
   color: #428cff;
   margin-bottom: 20px;
 }
