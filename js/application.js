@@ -14,7 +14,9 @@ var page = "";
 $(document).ready( function() {
 
   // hide the projects and move left for animation
-  $("#project").hide(); 
+  // $("#project").hide(); 
+  
+  
   // $("#project").children().css({ opacity: 0 }); 
   // $("#project").children().each( function() {
   //   $(this).css({ marginLeft: "-1000px" });  
@@ -42,9 +44,9 @@ $(document).ready( function() {
   $(".card").on("click", function() {
     sessionStorage.myValue = $(this).attr("id"); 
     $("#project").show( 2000, function() {
+      $("#close").animate({ "margin-left" : "-=5000px"}, 1500, "easeOutCubic");
       $("#project .row").children().each( function() {
         $(this).animate({ "margin-left" : "+=5000px"}, 1500, "easeOutCubic");
-
       });
     } ); 
   } ); 

@@ -402,12 +402,14 @@ Showing Individual Project
 #project .row {
   border-bottom: 1px solid #e7e8e8;
   margin-bottom: 120px;
-  padding: 100px 14px;
-  padding-top: 0;
+  padding: 100px 0;
+  padding-top: 0; 
+  position: relative;
+  
 }
 
 #project .row > div {
-  margin-left: -5000px;
+/*  margin-left: -5000px;*/
 }
 
 #project h1, 
@@ -416,6 +418,29 @@ Showing Individual Project
 #project h4 {
   color: #428cff;
   margin-bottom: 20px;
+}
+
+#project .main {
+  overflow: auto;
+  height: 600px;
+    border: 1px solid #e7e8e8;
+}
+
+#project .main img {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+#project .width-70 {
+  width: 70% !important;
+  margin: auto;
+  display: block;
+}
+
+#close {
+  position: absolute;
+  top: 20px;
+  right: 0;
 }
 
 
