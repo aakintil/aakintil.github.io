@@ -116,6 +116,45 @@ span,
   letter-spacing: 0.14em;
 }
 
+/* buttons */
+
+.button.primary {
+  border: 2px solid #e7e8e8;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.4;
+  padding: 10px 15px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-transition: 0.25s linear;
+  transition: 0.25s linear;
+  margin: 20px 0;
+  width: 100%;
+  font-family: "Oswald Light";
+}
+
+.button.primary:hover {
+  color: white !important;
+  border: 2px solid transparent;
+}
+
+
+#project .button.primary {
+  color: #428cff;
+}
+
+#project .button.primary:hover {
+  background-color: #428cff;
+  
+}
+
+#about .button.primary {
+  
+}
+
+#contact .button.primary {
+  
+}
+
 /*---------------------------
 Navigation
 ---------------------------*/
@@ -437,9 +476,6 @@ Showing Individual Project
   display: block;
 }
 
-#project .button.primary {
-  
-}
 
 #close {
   position: absolute;
