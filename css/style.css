@@ -437,6 +437,10 @@ Showing Individual Project
   display: block;
 }
 
+#project .button.primary {
+  
+}
+
 #close {
   position: absolute;
   top: 20px;
