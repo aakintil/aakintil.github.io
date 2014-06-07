@@ -129,6 +129,11 @@ span,
   letter-spacing: 0.14em;
 }
 
+a {
+  color: #75797c !important; 
+  letter-spacing: 0.14em;
+}
+
 /* buttons */
 
 .button.primary {
@@ -145,6 +150,11 @@ span,
   font-family: "Oswald Light";
 }
 
+.button a {
+  text-transform: lowercase;
+  font-size: 16px;
+}
+
 .button.primary:hover {
   color: white !important;
   border: 2px solid transparent;
@@ -153,6 +163,10 @@ span,
 
 #project .button.primary {
   color: #428cff;
+}
+
+#project a {
+  color: inherit !important;
 }
 
 #project .button.primary:hover {
