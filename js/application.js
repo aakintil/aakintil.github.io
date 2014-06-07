@@ -13,7 +13,7 @@ var page = "";
 // Document ready 
 $(document).ready( function() {
   // hide the projects and move left for animation
-  // $("#project").hide(); 
+  $("#project").hide(); 
   // $("#project").children().css({ opacity: 0 }); 
   // $("#project").children().each( function() {
   //   $(this).css({ marginLeft: "-1000px" });  
@@ -37,19 +37,43 @@ $(document).ready( function() {
     $( this ).css({ border: "2px solid transparent" }); 
   })
 
-
+// console.log("the contents ", contents)
   $(".card").on("click", function() {
-    sessionStorage.myValue = $(this).attr("id"); 
+    var value = $(this).attr("id"); 
+    
+    $("#project").html( contents[value] ); 
     $("#project").show( 2000, function() {
-      $("#close").animate({ "margin-left" : "-=5000px"}, 1500, "easeOutCubic");
-      $("#project .row").children().each( function() {
-        $(this).animate({ "margin-left" : "+=5000px"}, 1500, "easeOutCubic");
-      });
+      // $("#close").animate({ "margin-left" : "-=5000px"}, 1500, "easeOutCubic");
+      // $("#project .row").children().each( function() {
+      //   $(this).animate({ "margin-left" : "+=5000px"}, 1500, "easeOutCubic");
+      // });
     } ); 
   } ); 
 
+  // $('body').on('click', function(event) {
+  //   if ($(this).attr("id") === '#close') {
+  //     console.log("gottem")
+  //       $("#project").hide( 2000 );
+  //     // do your action on your 'li' or whatever it is you're listening for
+  //   }
+  // });
+  $('#project').on('click', '#close', function (event) {
+      $("#project").hide( 2000 , function() {
+        $(this).empty(); 
+      });
+  });
+  
 
+  // $("#close").on("click", function() {
+  //   $("#project").hide( 2000 );
+  // })
+  
 }); 
 
+
+function get_content( name ) {
+  // contents.name; 
+  return contents.name;  
+}
 
 

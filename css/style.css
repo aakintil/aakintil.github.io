@@ -520,6 +520,10 @@ Showing Individual Project
   color: #75797c;
 }
 
+#close:hover {
+  cursor: pointer;
+}
+
 #snapshot img {
   width: inherit;
 }
