@@ -21,8 +21,20 @@
 
 @font-face {
   font-family: "Crimson Text";
-  src: url("../fonts/Crimson Text-Roman.ttf");
+  src: url("../fonts/CrimsonText-Roman.ttf");
   font-style: normal;
+}
+
+@font-face {
+  font-family: "Crimson Text Semibold";
+  src: url("../fonts/CrimsonText-Semibold.ttf");
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Crimson Text Bold";
+  src: url("../fonts/CrimsonText-Bold.ttf");
+  font-style: bold;
 }
 
 
@@ -179,8 +191,8 @@ Navigation
   /* add media query to here. so that there's no margin when it's small*/
   margin: 0px 15px; 
   height: 150px;
-  border-top: 1px solid #e7e8e8;
-  border-bottom: 1px solid #e7e8e8;
+  border-top: 2px solid #e7e8e8;
+  border-bottom: 2px solid #e7e8e8;
 }
 
 #name {
@@ -464,7 +476,7 @@ Showing Individual Project
 #project .main {
   overflow: auto;
   height: 600px;
-    border: 1px solid #e7e8e8;
+  border: 1px solid #e7e8e8;
 }
 
 #project .main img {
@@ -481,9 +493,47 @@ Showing Individual Project
 
 #close {
   position: absolute;
-  top: 20px;
+  top: 10px;
+  font-size: 20px;
   right: 0;
+  z-index: 1;
+  color: #75797c;
 }
+
+#snapshot img {
+  width: inherit;
+}
+
+#summary-middle {
+  padding-top: 55px;
+}
+
+#project ul li {
+  list-style-type: none; 
+}
+
+#project .emphasis {
+  font-family: "Crimson Text";
+  font-style: bold;
+}
+
+#project li, 
+#project p {
+  font-family: "Crimson Text";
+}
+
+#project .emphasis {
+  font-family: "Crimson Text Bold";
+}
+
+#project .row ul {
+  margin-bottom: 20px;
+}
+
+#project .row li {
+  line-height: 18px;
+}
+
 
 
 

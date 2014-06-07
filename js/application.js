@@ -12,11 +12,8 @@ var page = "";
 
 // Document ready 
 $(document).ready( function() {
-
   // hide the projects and move left for animation
   // $("#project").hide(); 
-  
-  
   // $("#project").children().css({ opacity: 0 }); 
   // $("#project").children().each( function() {
   //   $(this).css({ marginLeft: "-1000px" });  
