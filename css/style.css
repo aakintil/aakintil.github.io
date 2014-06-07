@@ -452,13 +452,13 @@ Showing Individual Project
 }
 
 #project .row {
-  padding: 100px 0;
+  padding: 50px 0;
   padding-top: 0; 
   position: relative;
 }
 
 
-#project .container > .row:last-child {
+#project > .row {
   margin-bottom: 120px;
   border-bottom: 2px solid #e7e8e8;
 }
@@ -523,6 +523,24 @@ Showing Individual Project
 
 #process h4 {
   margin-bottom: 25px;
+}
+
+#process > .row {
+/*  padding: 0;*/
+/*  margin*/
+}
+#process .img-container {
+  margin-top: 20px;
+}
+
+#process .middle {
+  padding-top: 50px;
+  position: relative;
+  margin-top: 50px;
+}
+
+#process .img-container > img {
+  width: inherit;
 }
 
 #project li, 
