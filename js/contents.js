@@ -47,10 +47,130 @@ contents = {
         <li> User Testing </li>                                                              \
         </ul>                                                                               \
           <div class='button primary'>                                                        \
-            <a href=''>                                                                       \
-              View our site                                                          \
+            <a href='http://www.hcii.cmu.edu/M-HCI/2014/NASA/' target='_blank'>                                                                       \
+              view our site                                                          \
             </a>                                                                              \
           </div>                                                                              \                                                                           \
+        </div>                                                                                \
+        <div id='snapshot' class='column_4'>                                                  \
+          <img src='images/nasa/snapshot2.png' alt='' />                                  \
+        </div>                                                                                \
+        <!-- .row.margin-bottom -->                                                           \
+      </div>                                                                                  \
+                                                                                              \
+    </div>                                                                                    \
+                                                                                              \
+    <div id='in-depth' class='column_12'>                                                     \
+      <div class='row'>                                                                       \
+        <div id='process'class='column_12'>                                                   \
+          <div class='row'>                                                                   \
+                                                                                              \
+            <div class='column_12'>                                                           \
+              <h4> Kickoff </h4>                                                             \
+              <p>                                                                             \
+          Back in January, we had our kickoff meeting with our client Matthew Sharpe. This meeting served as a formal introduction to the team and NASA's problem at hand. In the meeting, we learnt that not only are procedures paper based, but there are specific steps that occur in succession. These procedures have to be signed by the engineer and a present QA engineer. Afterwards, since we are unable to fly up to the ISS and observe astronauts (Lisa was sad about that), we discussed analogous domains that we could perform contextual inquiries on. After naming a few, we decided to plot out the characteristics that each domain had in common with astronauts and engineers at NASA. Matt then mapped out ideas about how our solution could affect NASA employees and showed us a new way to affinity. The takeaway from Matt’s diagram was smart procedures: based on the context, our solution could possibly tell an astronaut where his tools are located, which tools are necessary or can be replaced if malfunctioning, and redirect an astronaut if he skips a step or if there’s a more efficient way to do said step. Matt then taught us how to do an affinity brainstorm with questions! This was exceptionally useful because it gave us a better look at the characteristics in each domain we should focus on, and it gave us useful (general and specific) questions to use in our contextual inquiries. \
+              </p>         \
+            </div>         \
+                           \
+            <div class='column_6 img-container'>                                        \
+              <img src='images/nasa/kickoff.jpg' />                \
+            </div>                                                                      \
+            <div class='column_6 img-container'>                                        \
+              <img  src='images/nasa/kickoff.jpg' />           \
+            </div>                                                                      \                                                                  \
+          </div>                                                                        \
+                                                                                        \
+          <div class='row'>                                                             \
+            <div class='column_12'>                                                     \
+              <h4> CONTINUE WRITING WHEN YOU GET BACK NIGGA </h4>                                                      \
+              <p>                                                                       \
+                I looked through food, travel, and lifestyle magazines to draw inspiration for the design language of the magazine. On the top half of my board, there are pantone and earthy colors that are warm and calming yet exciting. On the bottom half of my board, there are much brighter colors that you would find in foods, and at times table decor. \
+              </p>        \
+            </div>        \
+            <div class='column_6 img-container'>                               \
+              <img src='images/ixdf/ipad/moodboard-top.png' />                 \
+            </div>                                                             \
+            <div class='column_6 img-container'>                               \
+              <img src='images/ixdf/ipad/moodboard-bottom2.png' />             \
+            </div>                                                             \
+          </div>                                                               \
+                                                                               \
+                                                                               \
+          <div class='row'>                                                    \
+            <div class='column_12'>                                            \
+              <h4> Brand </h4>                                                 \
+              <p>                                                              \
+                Deciding on the typeface was the next difficult issue for me. I went through about 20 variations, most of which looked terrible to be honest, before I finally settled on LT Osaka and Yanone Kaffeesatz for my headers, and Roboto slab for my text. Finally, selecting my magazine's logo was a necessary yet painful process. I was never happy with my decision. I wanted a FAT logo that was skinny, but sometimes I wanted a FAT logo that was actually fat! I could not make up my mind. Eventually it came down to a matter of time and luck. The project was due in less than 10 hours and I still was very unhappy with cover. Oddly enough, I had chose LT Osaka for parts of my headers already, but it never dawned on me to try it on the front page. I think it worked out really well! If you're interested in seeing more of my process, please feel free to download the process document below. If you're also interested in seeing the entire book (please keep in mind it's not really interactive), a download of that is also available below!     \
+              </p>                                                 \
+            </div>                                                 \
+            <div class='column_12 img-container'>                  \
+              <img src='images/ixdf/ipad/process.png' />           \
+            </div>                                                 \
+          </div>                                                   \
+                                                                   \
+          <div class='row'>                                        \
+            <div class='column_12'>                                \
+              <h4> Final Layout </h4>                              \
+              <p>                                                  \
+                For the final layout, I created the cover, two table of contents - one for food and one for travel, an example of a an interactive title page that lets the reader explore Japan, and finally, a two-page feature on a perfect Japanese dish: Kaiseki.   \
+              </p>                                                                                 \
+            </div>                                                                                 \
+            <div class='column_6 img-container'>                                                   \
+              <img src='images/ixdf/ipad/cover-page.png' />                                        \
+            </div>                                                                                 \
+            <div class='column_6 img-container'>                                                   \
+              <img src='images/ixdf/ipad/food.png' />                                              \
+            </div>                                                                                 \
+          </div>                                                                                   \
+                                                                                                   \
+                                                                                                   \
+                                                                                                   \
+          <!-- #process -->                                                                        \
+        </div>                                                                                     \
+        <!-- .row.margin-bottom -->                                                                \
+      </div>                                                                                       \
+    </div>                                                                                         \
+                                                                                                   \
+    <!-- .row.margin-bottom.container -->                                                          \
+  </div>                                                                                           \
+  ", 
+  tea : "<div class='col-md-8' id='pieces-container'><p id='description'>This was my Communication Design Fundamentals final project. Our assignment was to create a booklet about anything we want. I decided to create a couple spreads about different teas from different areas. Some of the teas were borrowed from my roommate, while the others were given to me by the owners of Margaret's Fine Imports</p><div class='col-sm-6 col-md-12 pieces'><img src='images/cdf/img1.png'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/write1.png'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/img2.jpg'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/end.jpg'/></div></div><div class='col-md-4' id='details-container'><h4> Project Details </h4><div><p class='title'> Context </p><p> Summer Research</p></div><div><p class='title'>Dates</p><p>October - December 2011 & June - August 2012</p></div><div><p class='title'> Methods Used </p><p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6, Photography</p></div><div><a class='btn btn-primary' target='_blank' href='downloads/tea-booklet.pdf' download='tea.pdf'> Download </a></div></div></div>", 
+
+  ar : "<div class='row container'>                          \
+                                                              \
+    <span id='close' class='fui-cross'></span>                \
+    <div id='glance' class='column_12'>                       \
+      <div class='row margin-bottom'>                         \
+        <div id='summary-left' class='column_4'>              \
+          <h2> Apartment Reviews </h2>                             \
+          <ul>                                                \
+          <li class='emphasis'> Full-Time Summer Job </li>              \
+          </ul> \
+          <ul>                                                \
+            <li class='emphasis'> Timeline </li>              \
+            <li>  13 weeks (June - Aug 2013) </li>                                \
+          </ul>                                               \
+                                                              \
+          <ul>                                                \
+            <li class='emphasis'> Blurb </li>                 \
+            <li> I worked for <a class='project-links' target='_blank' href='http://clickbrands.com/'>ClickBrands</a> as a Front-End Designer. It was my first real front-end gig and I bloody loved it! Initially, I got my feet wet with a project called <a class='project-links' target='_blank' href='http://www.apartmentlinks.com/'>Apartment Links</a>, but the bulk of our time and effort was spent revamping their old apartment ratings site to Apartment Reviews (.net). The best part was that because we had a small team, I not only did front-end tasks, but I designed mockups, helped with the user experience of the site, helped with their Ruby on Rails framework, and migrated the working front-end prototypes into the application. </li> \
+          </ul>     \
+                    \
+        </div>      \
+        <div id='summary-middle' class='column_4'>                                            \
+          <ul>                                                                                \
+            <li class='emphasis'> Process </li>                                               \
+            <li> Javascript </li>                                           \
+            <li> Ruby On Rails </li>                                                              \
+            <li> Visual Design </li>                                                              \
+            <li> Wireframes </li>                                                         \
+            <li> Low to Med-Fi Mockups </li>                                                          \
+          </ul>                                                                               \
+          <div class='button primary'>                                                        \
+            <a target='_blank' href='downloads/ipad.pdf'>                                                                       \
+              view the site                                                          \
+            </a>                                                                              \
+          </div>                                                                              \                                                                            \
         </div>                                                                                \
         <div id='snapshot' class='column_4'>                                                  \
           <img src='images/ixdf/ipad/snapshot.png' alt='' />                                  \
@@ -66,14 +186,17 @@ contents = {
           <div class='row'>                                                                   \
                                                                                               \
             <div class='column_12'>                                                           \
-              <h4> Personas </h4>                                                             \
+              <h4> Process </h4>                                                             \
               <p>                                                                             \
                 Finding the right magazine type was difficult. I envisioned myself doing a magazine on sushi and japan, but after discussions with my peers and professor, I found that food was not one of the acceptable categories. And doing a piece on just japan seemed too boring to me. So rather than waste time thinking about the type of magazine, I began designing my mood board, thinking more about the feelings I wanted my magazine to elicit from my audience. Afterwards, I decided on making a Japanese Travel magazine that highlighted the popular foods in this issue's cities. I was then able to create my personas: the gastronomer Angela Nhu, the recent grad Amelie Duval, and the software engineer Jonathan Mbu. Each of these personas loved food as much as they loved to travel, which made them perfect for my magazine! \
               </p>         \
             </div>         \
                            \
-            <div class='column_4 img-container'>                                        \
-              <img class='width-70' src='images/ixdf/ipad/angela.png' />                \
+            <div class='column_6 img-container'>                                        \
+              <img src='images/apartment-reviews/dashboard.png' />                \
+            </div>                                                                      \
+            <div class='column_6 img-container'>                                        \
+              <img src='images/apartment-reviews/city-page2.png'/>                \
             </div>                                                                      \
             <div class='column_4 img-container'>                                        \
               <img class='width-70' src='images/ixdf/ipad/jonathan.png' />              \
@@ -136,52 +259,6 @@ contents = {
                                                                                                    \
     <!-- .row.margin-bottom.container -->                                                          \
   </div>                                                                                           \
-  ", 
-  tea : "<div class='col-md-8' id='pieces-container'><p id='description'>This was my Communication Design Fundamentals final project. Our assignment was to create a booklet about anything we want. I decided to create a couple spreads about different teas from different areas. Some of the teas were borrowed from my roommate, while the others were given to me by the owners of Margaret's Fine Imports</p><div class='col-sm-6 col-md-12 pieces'><img src='images/cdf/img1.png'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/write1.png'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/img2.jpg'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/end.jpg'/></div></div><div class='col-md-4' id='details-container'><h4> Project Details </h4><div><p class='title'> Context </p><p> Summer Research</p></div><div><p class='title'>Dates</p><p>October - December 2011 & June - August 2012</p></div><div><p class='title'> Methods Used </p><p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6, Photography</p></div><div><a class='btn btn-primary' target='_blank' href='downloads/tea-booklet.pdf' download='tea.pdf'> Download </a></div></div></div>", 
-
-  apartment_reviews : "<div id='top-row' class='col-sm-12'>   \
-  <h1 id='title-shrink'> Apartment Reviews </h1>                         \
-  <h4 id='type'> web development </h4>                      \
-  <h1 id='close-page'> + </h1>                            \
-  </div>                                               \
-  <div id='info-row' class='col-sm-12'>        \
-  <div id='description' class='col-md-4 col-sm-6'>      \
-  <p id=''> I worked for <a class='project-links' target='_blank' href='http://clickbrands.com/'>ClickBrands</a> as a Front-End Developer. It was my first real front-end gig and I bloody loved it! Initially, I got my feet wet with a project called <a class='project-links' target='_blank' href='http://www.apartmentlinks.com/'>Apartment Links</a>, but the bulk of our time and effort was spent revamping their old apartment ratings site to Apartment Reviews. The best part was that because we had a small team, I not only did front-end tasks, but I designed mockups, helped with rails logic, and migrated the working front-end prototypes into the rails application. \
-  </p> \
-  <div id='details-container'>                                                     \
-  <h4> Project Details </h4>                                                       \
-  <div>                                                                            \
-  <p class='emphasis'> Context </p>                                                \
-  <p> Summer Job </p>                                \
-  </div>                                                                           \
-  <div>                                                                            \
-  <p class='emphasis'>Dates</p>                                                    \
-  <p> June 2013 - N/A </p>                                                          \
-  </div> \
-  <div>                                                                            \
-  <p class='emphasis'> Methods Used </p>                                           \
-  <p> Wireframing, Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6, Ruby on Rails, HTML, CSS, Javascript </p>          \
-  </div>                                                                           \
-  <div> \
-  <p class='emphasis'>Collaborators</p>   \
-  <p> Jonathan Miller, Joshua Gerbasi, Daniel Muller, Justin Edwards, Rebecca Chen </p> \
-  </div> \
-  <div>                                                                            \
-  <a class='btn btn-primary' target='_blank' href href='http://www.apartmentreviews.net/'> Visit Site </a> \
-  </div>                                         \
-  </div>                                         \
-  </div>                                         \
-  <div id='images' class='col-md-8 col-sm-6'>             \
-  <img src='images/apartment-reviews/property-page2.png'/>  \
-  <p class='caption'> A mockup for the apartment page </p> \
-  <img src='images/apartment-reviews/city-page2.png'/>  \
-  <p class='caption'> Very lose mockup of the city page </p> \
-  <img src='images/apartment-reviews/dashboard.png'/>          \
-  <p class='caption'> A mockup for the user personalization callout  </p> \
-  <img src='images/apartment-reviews/apartment-cards.png'/>              \
-  <p class='caption'> Mockups for the 'apartment cards': the elements that popup after a search </p> \
-  </div>                                               \
-  </div> \
   ", 
 
 
@@ -261,12 +338,12 @@ contents = {
             <li> Visual Design </li>                                                          \
           </ul>                                                                               \
           <div class='button primary'>                                                        \
-            <a href=''>                                                                       \
+            <a target='_blank' href='downloads/ipad.pdf'>                                                                       \
               Download fat Magazine                                                           \
             </a>                                                                              \
           </div>                                                                              \
           <div class='button primary'>                                                        \
-            <a href=''>                                                                       \
+            <a target='_blank' href='downloads/ipad-process.pdf'>                                                                       \
               Download my process                                                             \
             </a>                                                                              \
           </div>                                                                              \
