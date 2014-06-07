@@ -12,14 +12,18 @@ var Pages = {
     title: "Apartment Reviews", 
     content: get_content( page )
   }
+  
+  ipad: {
+    content: get_content( page )
+  }
 
 }
 
 $(document).ready( function() {
-  	window.location.hash = "#" + page;
-  $(document).attr('title', page.toUpperCase() ); 
-
-  console.log("in the project page ", Pages[page].content)
+  //  window.location.hash = "#" + page;
+  // $(document).attr('title', page.toUpperCase() ); 
+  // 
+  // console.log("in the project page ", Pages[page].content)
 })
 
 

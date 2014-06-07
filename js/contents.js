@@ -94,53 +94,7 @@ contents = {
   \
   </div>", 
 
-  ipad: "<div id='top-row' class='col-sm-12'>   \
-  <h1 id='title'> iPad Mag </h1>                         \
-  <h4 id='type'> interaction design </h4>                      \
-  <h1 id='close-page'> + </h1>                            \
-  </div>                                               \
-  <div id='info-row' class='col-sm-12'>        \
-  <div id='description' class='col-md-4 col-sm-6'>      \
-  <p id=''> This was a course project where we were tasked with designing an iPad Magazine within four given categories: Travel, Personal Finance, Desserts, and Gardening. We selected a target audience, developed personas, created a mood board for inspiration, generated concepts, developed a design language and color palette, and designed simple navigation. Our design layouts had to be 768 by 1024 pixels (iPad screen size). You can download the magazine and the process document below, but keep in mind that the magazine is not actually interactive! \
-  </p>                                                                             \
-  \
-  <div id='details-container'>                                                     \
-  <h4> Project Details </h4>                                                       \
-  <div>                                                                            \
-  <p class='emphasis'> Context </p>                                                \
-  <p> Interaction Design Fundamentals (05-651) </p>                                \
-  </div>                                                                           \
-  <div>                                                                            \
-  <p class='emphasis'>Dates</p>                                                    \
-  <p> Fall 2014 </p>                                                          \
-  </div>                                                                           \
-  <div>                                                                            \
-  <p class='emphasis'> Methods Used </p>                                           \
-  <p> Adobe Illustrator, Adobe InDesign, Adobe Photoshop, Personas, Moodboards  </p>          \
-  </div>                                                                           \
-  <div>                                                                            \
-  <a class='btn btn-primary margin' href='downloads/ipad-process.pdf' download='ipad-process.pdf' target='_blank'> Download Process </a>\
-  <a class='btn btn-primary' target='_blank' href='downloads/iPad.pdf' download='iPadMag.pdf'> Download Mag </a>\
-  </div>                                         \
-  </div>                                         \
-  \
-  </div>                                         \
-  <div id='images' class='col-md-8 col-sm-6'>             \
-  <img src='images/ixdf/ipad/moodboard-bottom.png'/>  \
-  <p class='caption'> This is the bottom half of my moodboard  </p> \
-  <img src='images/ixdf/ipad/angela.png'/>  \
-  <p class='caption'> This is Anglea Nhu, one of the three personas I created for my magazine </p> \
-  <img src='images/ixdf/ipad/process.png'/>   \
-  <p class='caption'> These are a few iterations I made on the magazine cover </p>             \
-  <img src='images/ixdf/ipad/japan.png'/>   \
-  <p class='caption'> The japanese section of my magazine  </p>             \
-  <img src='images/ixdf/ipad/food.png'/>          \
-  <p class='caption'> The food section about 'kaiseki:' the interaction here is that the image explodes out with a dark overlay when tapped </p> \
-  <img src='images/ixdf/ipad/cover-page.png'/>  \
-  <p class='caption'> The final iteration of my cover page </p> \
-  </div>                                         \
-  \
-  </div>", 
+  ipad: "", 
 
   biologic: "<div id='top-row' class='col-sm-12'>   \
   <h1 id='title'> Biologic </h1>                         \
