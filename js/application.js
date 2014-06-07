@@ -12,8 +12,9 @@ var page = "";
 
 // Document ready 
 $(document).ready( function() {
+  $("#project").html( contents["nasa"]); 
   // hide the projects and move left for animation
-  $("#project").hide(); 
+  // $("#project").hide(); 
   // $("#project").children().css({ opacity: 0 }); 
   // $("#project").children().each( function() {
   //   $(this).css({ marginLeft: "-1000px" });  
@@ -50,30 +51,13 @@ $(document).ready( function() {
     } ); 
   } ); 
 
-  // $('body').on('click', function(event) {
-  //   if ($(this).attr("id") === '#close') {
-  //     console.log("gottem")
-  //       $("#project").hide( 2000 );
-  //     // do your action on your 'li' or whatever it is you're listening for
-  //   }
-  // });
   $('#project').on('click', '#close', function (event) {
       $("#project").hide( 2000 , function() {
         $(this).empty(); 
       });
   });
   
-
-  // $("#close").on("click", function() {
-  //   $("#project").hide( 2000 );
-  // })
-  
 }); 
 
-
-function get_content( name ) {
-  // contents.name; 
-  return contents.name;  
-}
 
 
