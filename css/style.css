@@ -421,7 +421,7 @@ Footer
 ---------------------------*/
 #footer > .row > .nav-container {
   height: 150px;
-  border-top: 1px solid #e7e8e8;
+  border-top: 2px solid #e7e8e8;
   border-bottom: none;
   text-align: center;
   margin-right: 0 !important;
@@ -452,17 +452,17 @@ Showing Individual Project
 }
 
 #project .row {
-  border-bottom: 1px solid #e7e8e8;
-  margin-bottom: 120px;
   padding: 100px 0;
   padding-top: 0; 
   position: relative;
-  
 }
 
-#project .row > div {
-/*  margin-left: -5000px;*/
+
+#project .container > .row:last-child {
+  margin-bottom: 120px;
+  border-bottom: 2px solid #e7e8e8;
 }
+
 
 #project h1, 
 #project h2, 
@@ -470,7 +470,7 @@ Showing Individual Project
 #project h4, 
 #project h5 {
   color: #428cff;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 #project .main {
@@ -484,11 +484,11 @@ Showing Individual Project
   margin-bottom: 50px;
 }
 
-#project .width-70 {
-  width: 70% !important;
+/*#project .width-70 {
+  width: 50% !important;
   margin: auto;
   display: block;
-}
+}*/
 
 
 #close {
@@ -505,16 +505,24 @@ Showing Individual Project
 }
 
 #summary-middle {
-  padding-top: 55px;
+  padding-top: 85px;
 }
 
 #project ul li {
   list-style-type: none; 
 }
 
+#snapshot {
+  padding-top: 50px;
+}
+
 #project .emphasis {
   font-family: "Crimson Text";
   font-style: bold;
+}
+
+#process h4 {
+  margin-bottom: 25px;
 }
 
 #project li, 
