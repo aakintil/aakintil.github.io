@@ -2,6 +2,102 @@
 // console.log( "contents page loaded "); 
 contents = {
   
+  aqi : "<div class='row container'>                          \
+                                                              \
+    <span id='close' class='fui-cross'></span>                \
+    <div id='glance' class='column_12'>                       \
+      <div class='row margin-bottom'>                         \
+        <div id='summary-left' class='column_4'>              \
+          <h2> Air Quality Display </h2>                             \
+          <ul>                                                \
+          <li class='emphasis'> Architecture / Haptic Team Project </li>              \
+          </ul> \
+          <ul>                                                \
+            <li class='emphasis'> Timeline </li>              \
+            <li>  8 weeks (Mar - May 2013) </li>                                \
+          </ul>                                               \
+          <ul>                                                \
+            <li class='emphasis'> Client </li>              \
+            <li>  Group Against Smog and Pollution (GASP) </li>                                \
+          </ul> \
+          <ul>                                                \
+            <li class='emphasis'> Blurb </li>                 \
+            <li> Easily one of the most fun I've had in a class during my 5 years at CMU. Haptic Actions encouraged students to dive into both the physical and digital environments to produce aesthetically pleasing and functional designs. Throughout the course, we were exposed to woodshop, metal shop, digital fabrication, micro-controllers, electronics, and many more. After mid semester, we were partnered with clients from outside the university to create a haptic solution to a problem they have. I was teamed up with an architecture student named Adam Lans and our client was GASP. We built an interactive air quality display that pulls the current air quality index in Pittsburgh, and displays that information in a visually pleasing manner for passerby.  </li> \
+          </ul>     \
+                    \
+        </div>      \
+        <div id='summary-middle' class='column_4'>                                            \
+          <ul>                                                                                \
+            <li class='emphasis'> Process </li>                                               \
+            <li> Sketching </li>                                           \
+            <li> CNC Mill </li>                                                              \
+            <li> Laser Cutter </li>                                                              \
+            <li> Soldering </li>                                                              \
+            <li> Arduino </li>                                                              \
+            <li> Table Saw </li>                                                         \
+            <li> Sanding </li>                                                         \
+            <li> Varnishing </li>                                                          \
+          </ul>                                                                               \
+          \
+          <ul>                              \
+           <li class='emphasis'> Collaborator </li>  \
+            <li> Adam Lans </li>                       \
+          </ul>                             \
+          \
+          <div class='button primary'>                                                        \
+          <a target='_blank' href='http://hapticaction.blogspot.com/'>                                                                    \
+            view the course blog                                                           \
+          </a>                                                                           \
+          </div>                                                                              \
+          <div class='button primary'>                                                        \
+          <a target='_blank' href='downloads/aqi.pdf'>                                                                       \
+            download our process                                                           \
+          </a>                                                                           \
+          </div>                                                 \
+        </div>                                                                                \
+        <div id='snapshot' class='column_4'>                                                  \
+          <img src='images/haptic/snapshot.png' alt='' />                                  \
+        </div>                                                                                \
+        <!-- .row.margin-bottom -->                                                           \
+      </div>                                                                                  \
+                                                                                              \
+    </div>                                                                                    \
+                                                                                              \
+    <div id='in-depth' class='column_12'>                                                     \
+      <div class='row'>                                                                       \
+        <div id='process'class='column_12'>                                                   \
+          <div class='row'>                                                                   \
+                                                                                              \
+            <div class='column_12'>                                                           \
+              <h4> Process </h4>                                                             \
+              <p>                                                                             \
+               \
+              </p>         \
+            </div>         \
+                           \
+            <div class='column_6 img-container'>                                        \
+              <img src='images/apartment-reviews/dashboard.png' />                \
+            </div>                                                                      \
+            <div class='column_6 img-container'>                                        \
+              <img src='images/apartment-reviews/city-page2.png'/>                \
+            </div>                                                                      \
+            <div class='column_6 img-container'>                                        \
+              <img class='width-70' src='images/apartment-reviews/apartment-cards.png' />              \
+            </div>                                                                      \
+            <div class='column_6 img-container'>                                        \
+              <img class='width-70' src='images/apartment-reviews/property-pages.png' />                \
+            </div>                                                                      \
+          </div>                                                                        \                                                  \
+          <!-- #process -->                                                                        \
+        </div>                                                                                     \
+        <!-- .row.margin-bottom -->                                                                \
+      </div>                                                                                       \
+    </div>                                                                                         \
+                                                                                                   \
+    <!-- .row.margin-bottom.container -->                                                          \
+  </div>                                                                                           \
+  ",
+  
   nasa:"<div class='row container'>                          \
                                                               \
     <span id='close' class='fui-cross'></span>                \
@@ -134,7 +230,6 @@ contents = {
     <!-- .row.margin-bottom.container -->                                                          \
   </div>                                                                                           \
   ", 
-  tea : "<div class='col-md-8' id='pieces-container'><p id='description'>This was my Communication Design Fundamentals final project. Our assignment was to create a booklet about anything we want. I decided to create a couple spreads about different teas from different areas. Some of the teas were borrowed from my roommate, while the others were given to me by the owners of Margaret's Fine Imports</p><div class='col-sm-6 col-md-12 pieces'><img src='images/cdf/img1.png'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/write1.png'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/img2.jpg'/></div><div class='col-sm-6 col-md-12 pieces'> <img src='images/cdf/end.jpg'/></div></div><div class='col-md-4' id='details-container'><h4> Project Details </h4><div><p class='title'> Context </p><p> Summer Research</p></div><div><p class='title'>Dates</p><p>October - December 2011 & June - August 2012</p></div><div><p class='title'> Methods Used </p><p> Adobe InDesign CS6, Adobe Illustrator CS6, Adobe Photoshop CS6, Photography</p></div><div><a class='btn btn-primary' target='_blank' href='downloads/tea-booklet.pdf' download='tea.pdf'> Download </a></div></div></div>", 
 
   ar : "<div class='row container'>                          \
                                                               \
