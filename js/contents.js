@@ -166,6 +166,16 @@ contents = {
             <li> Wireframes </li>                                                         \
             <li> Low to Med-Fi Mockups </li>                                                          \
           </ul>                                                                               \
+          \
+          <ul>                              \
+           <li class='emphasis'> Collaborators </li>  \
+            <li>Jonathan Miller </li>                       \
+            <li>Joshua Gerbasi</li>                       \
+            <li>Daniel Muller</li>                       \
+            <li>Justin Edwards</li>                       \
+            <li>Rebecca Chen</li>                       \
+          </ul>                             \
+          \
           <div class='button primary'>                                                        \
             <a target='_blank' href='downloads/ipad.pdf'>                                                                       \
               view the site                                                          \
@@ -173,7 +183,7 @@ contents = {
           </div>                                                                              \                                                                            \
         </div>                                                                                \
         <div id='snapshot' class='column_4'>                                                  \
-          <img src='images/ixdf/ipad/snapshot.png' alt='' />                                  \
+          <img src='images/apartment-reviews/snapshot.png' alt='' />                                  \
         </div>                                                                                \
         <!-- .row.margin-bottom -->                                                           \
       </div>                                                                                  \
@@ -188,7 +198,7 @@ contents = {
             <div class='column_12'>                                                           \
               <h4> Process </h4>                                                             \
               <p>                                                                             \
-                Finding the right magazine type was difficult. I envisioned myself doing a magazine on sushi and japan, but after discussions with my peers and professor, I found that food was not one of the acceptable categories. And doing a piece on just japan seemed too boring to me. So rather than waste time thinking about the type of magazine, I began designing my mood board, thinking more about the feelings I wanted my magazine to elicit from my audience. Afterwards, I decided on making a Japanese Travel magazine that highlighted the popular foods in this issue's cities. I was then able to create my personas: the gastronomer Angela Nhu, the recent grad Amelie Duval, and the software engineer Jonathan Mbu. Each of these personas loved food as much as they loved to travel, which made them perfect for my magazine! \
+               \
               </p>         \
             </div>         \
                            \
@@ -198,59 +208,13 @@ contents = {
             <div class='column_6 img-container'>                                        \
               <img src='images/apartment-reviews/city-page2.png'/>                \
             </div>                                                                      \
-            <div class='column_4 img-container'>                                        \
-              <img class='width-70' src='images/ixdf/ipad/jonathan.png' />              \
+            <div class='column_6 img-container'>                                        \
+              <img class='width-70' src='images/apartment-reviews/apartment-cards.png' />              \
             </div>                                                                      \
-            <div class='column_4 img-container'>                                        \
-              <img class='width-70' src='images/ixdf/ipad/amelie.png' />                \
+            <div class='column_6 img-container'>                                        \
+              <img class='width-70' src='images/apartment-reviews/property-pages.png' />                \
             </div>                                                                      \
-          </div>                                                                        \
-                                                                                        \
-          <div class='row'>                                                             \
-            <div class='column_12'>                                                     \
-              <h4> Moodboard </h4>                                                      \
-              <p>                                                                       \
-                I looked through food, travel, and lifestyle magazines to draw inspiration for the design language of the magazine. On the top half of my board, there are pantone and earthy colors that are warm and calming yet exciting. On the bottom half of my board, there are much brighter colors that you would find in foods, and at times table decor. \
-              </p>        \
-            </div>        \
-            <div class='column_6 img-container'>                               \
-              <img src='images/ixdf/ipad/moodboard-top.png' />                 \
-            </div>                                                             \
-            <div class='column_6 img-container'>                               \
-              <img src='images/ixdf/ipad/moodboard-bottom2.png' />             \
-            </div>                                                             \
-          </div>                                                               \
-                                                                               \
-                                                                               \
-          <div class='row'>                                                    \
-            <div class='column_12'>                                            \
-              <h4> Brand </h4>                                                 \
-              <p>                                                              \
-                Deciding on the typeface was the next difficult issue for me. I went through about 20 variations, most of which looked terrible to be honest, before I finally settled on LT Osaka and Yanone Kaffeesatz for my headers, and Roboto slab for my text. Finally, selecting my magazine's logo was a necessary yet painful process. I was never happy with my decision. I wanted a FAT logo that was skinny, but sometimes I wanted a FAT logo that was actually fat! I could not make up my mind. Eventually it came down to a matter of time and luck. The project was due in less than 10 hours and I still was very unhappy with cover. Oddly enough, I had chose LT Osaka for parts of my headers already, but it never dawned on me to try it on the front page. I think it worked out really well! If you're interested in seeing more of my process, please feel free to download the process document below. If you're also interested in seeing the entire book (please keep in mind it's not really interactive), a download of that is also available below!     \
-              </p>                                                 \
-            </div>                                                 \
-            <div class='column_12 img-container'>                  \
-              <img src='images/ixdf/ipad/process.png' />           \
-            </div>                                                 \
-          </div>                                                   \
-                                                                   \
-          <div class='row'>                                        \
-            <div class='column_12'>                                \
-              <h4> Final Layout </h4>                              \
-              <p>                                                  \
-                For the final layout, I created the cover, two table of contents - one for food and one for travel, an example of a an interactive title page that lets the reader explore Japan, and finally, a two-page feature on a perfect Japanese dish: Kaiseki.   \
-              </p>                                                                                 \
-            </div>                                                                                 \
-            <div class='column_6 img-container'>                                                   \
-              <img src='images/ixdf/ipad/cover-page.png' />                                        \
-            </div>                                                                                 \
-            <div class='column_6 img-container'>                                                   \
-              <img src='images/ixdf/ipad/food.png' />                                              \
-            </div>                                                                                 \
-          </div>                                                                                   \
-                                                                                                   \
-                                                                                                   \
-                                                                                                   \
+          </div>                                                                        \                                                  \
           <!-- #process -->                                                                        \
         </div>                                                                                     \
         <!-- .row.margin-bottom -->                                                                \
