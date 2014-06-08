@@ -2,11 +2,10 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1"
-	 id="svg2" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" inkscape:version="0.48.2 r9819" sodipodi:docname="space shuttle.svg"
+	 id="svg2" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" sodipodi:docname="space shuttle.svg" inkscape:version="0.48.2 r9819"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="313.99px"
-	 height="436.3px" viewBox="-89.503 -124.371 313.99 436.3" enable-background="new -89.503 -124.371 313.99 436.3"
-	 xml:space="preserve">
-<sodipodi:namedview  id="namedview6" bordercolor="#666666" pagecolor="#ffffff" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" showgrid="true" inkscape:zoom="4" inkscape:cx="26.69104" inkscape:cy="52.654362" inkscape:window-x="-8" inkscape:current-layer="layer1" inkscape:window-maximized="1" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-y="-8" inkscape:snap-grids="false" inkscape:window-height="706" inkscape:window-width="1366">
+	 height="436.3px" viewBox="0 0 313.99 436.3" enable-background="new 0 0 313.99 436.3" xml:space="preserve">
+<sodipodi:namedview  id="namedview6" borderopacity="1" inkscape:zoom="4" gridtolerance="10" pagecolor="#ffffff" inkscape:cy="52.654362" inkscape:cx="26.69104" guidetolerance="10" objecttolerance="10" showgrid="true" bordercolor="#666666" inkscape:pageshadow="2" inkscape:pageopacity="0" inkscape:current-layer="layer1" inkscape:window-x="-8" inkscape:window-maximized="1" inkscape:window-height="706" inkscape:snap-grids="false" inkscape:window-width="1366" inkscape:window-y="-8">
 	<inkscape:grid  type="xygrid" id="grid8729"></inkscape:grid>
 </sodipodi:namedview>
 <g id="layer2" inkscape:label="layer1" inkscape:groupmode="layer" display="none">
@@ -23,13 +22,13 @@
 <path fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-miterlimit="10" d="M-356.6-123.449l17.94,19.16
 	c0,0,26.44-43.27,51.726,0.001l17.94-19.162"/>
 <g>
-	<polygon fill="#428CFF" points="28.896,223.371 67.438,-46.483 105.978,223.371 	"/>
-	<polygon fill="#428CFF" points="106.094,223.371 67.497,286.166 28.896,223.371 	"/>
+	<polygon fill="#428CFF" points="118.454,347.743 156.996,77.889 195.536,347.743 	"/>
+	<polygon fill="#428CFF" points="195.594,347.743 156.997,410.538 118.396,347.743 	"/>
 	<g>
-		<path fill="#428CFF" d="M88.808-64.014c9.501,0,13.213,6.392,8.235,14.49L76.556-16.308c-4.982,8.101-13.125,8.042-18.104-0.057
-			l-20.5-33.134c-4.979-8.099-1.276-14.518,8.232-14.518L88.808-64.014L88.808-64.014z"/>
+		<path fill="#428CFF" d="M178.307,60.357c9.502,0,13.213,6.392,8.234,14.49l-20.486,33.216c-4.982,8.101-13.125,8.042-18.104-0.057
+			l-20.5-33.134c-4.979-8.099-1.276-14.518,8.232-14.518L178.307,60.357L178.307,60.357z"/>
 	</g>
-	<path fill="none" stroke="#428CFF" stroke-width="1.5" stroke-miterlimit="10" d="M-27.158-98.461L11.61-57.059
-		c0,0,57.133-93.488,111.767,0.002l38.766-41.406"/>
+	<path fill="none" stroke="#428CFF" stroke-width="1.5" stroke-miterlimit="10" d="M62.344,25.911l38.769,41.402
+		c0,0,57.132-93.488,111.767,0.002l38.766-41.406"/>
 </g>
 </svg>

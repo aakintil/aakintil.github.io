@@ -12,7 +12,7 @@ var page = "";
 
 // Document ready 
 $(document).ready( function() {
-  $("#project").html( contents["ar"]); 
+  $("#project").html( contents["wp"]); 
   // hide the projects and move left for animation
   // $("#project").hide(); 
   // $("#project").children().css({ opacity: 0 }); 

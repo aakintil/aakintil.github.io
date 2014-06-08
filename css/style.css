@@ -129,6 +129,22 @@ span,
   letter-spacing: 0.14em;
 }
 
+* {
+  -webkit-transition: all .25s linear; 
+  -moz-transition:  all .25s linear; 
+  -ms-transition: all .25s linear; 
+  -o-transition: all .25s linear; 
+  transition:  all .25s linear;
+}
+
+*:hover {
+  -webkit-transition: all .25s linear; 
+  -moz-transition:  all .25s linear; 
+  -ms-transition: all .25s linear; 
+  -o-transition: all .25s linear; 
+  transition:  all .25s linear;
+}
+
 a {
   color: #75797c !important; 
   letter-spacing: 0.14em;
@@ -232,12 +248,8 @@ Navigation
   border: 2px solid transparent;
   padding: 7.5px 20px;
 
-  -webkit-transition: all .25s linear; 
-  -moz-transition:  all .25s linear; 
-  -ms-transition: all .25s linear; 
-  -o-transition: all .25s linear; 
-  transition:  all .25s linear;
 }
+
 
 #nav .work.active {
   border: 2px solid #428cff;
@@ -280,11 +292,7 @@ Navigation
 }
 
 #nav ul li {
-  -webkit-transition: all .25s linear; 
-  -moz-transition:  all .25s linear; 
-  -ms-transition: all .25s linear; 
-  -o-transition: all .25s linear; 
-  transition:  all .25s linear;  
+
 }
 
 #nav li a {
@@ -321,20 +329,11 @@ Showing All My Work
   text-align: center;
   line-height: 20px;
   overflow: auto;
-  -webkit-transition: all .25s linear; 
-  -moz-transition:  all .25s linear; 
-  -ms-transition: all .25s linear; 
-  -o-transition: all .25s linear; 
-  transition:  all .25s linear;
+
 }
 
 #content .card > div, 
 #content .card p {
-  -webkit-transition: all .25s linear; 
-  -moz-transition:  all .25s linear; 
-  -ms-transition: all .25s linear; 
-  -o-transition: all .25s linear; 
-  transition:  all .25s linear;
 }
 
 #content .header {
@@ -356,12 +355,6 @@ Showing All My Work
 /*  background-color: #c0c3c3;*/
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  
-  -webkit-transition: all .25s linear; 
-  -moz-transition:  all .25s linear; 
-  -ms-transition: all .25s linear; 
-  -o-transition: all .25s linear; 
-  transition:  all .25s linear;
 }
 
 #content img {
@@ -419,12 +412,6 @@ object:hover {
 
 #content .card:hover p {
   color: white;
-  
-  -webkit-transition: all .25s linear; 
-  -moz-transition:  all .25s linear; 
-  -ms-transition: all .25s linear; 
-  -o-transition: all .25s linear; 
-  transition:  all .25s linear;
 }
 
 /* might be able to delete */
@@ -509,6 +496,13 @@ Showing Individual Project
   display: block;
 }*/
 
+#project .opaque {
+  opacity: 1;
+}
+
+#project .opaque:hover {
+  opacity: 0.6;
+}
 
 #close {
   position: absolute;
