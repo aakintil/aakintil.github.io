@@ -70,8 +70,7 @@ contents = {
                                                                                               \
             <div class='column_12'>                                                           \
               <h4> Process </h4>                                                             \
-              <p>                                                                             \
-               \
+              <p> This project taught me a lot about combining digital and physical products together. There were two main components of the AQI display: the arduino half, and the actual display half. Getting the arduino to work was very difficult. I have messed around and done minor projects with arduino prior to this course, but nothing on this level. In addition, I had never used a 'shield' as they like to call it. In order to get the current AQI reading, we had to connect to airnow.gov and pull that data to the arduino. In order to do that, we needed an Arduino WiFly Shield. After many, many hours of struggling, I decided to go into our school's Robo Club for help. There I met with a member, Brent Strysko, who was immensely helpful (thank you Brent!). 
               </p>         \
             </div>         \
                            \
