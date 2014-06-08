@@ -390,7 +390,7 @@ contents = {
         </ul>                                                                               \                                                                          \
         </div>                                                                                \
         <div id='snapshot' class='column_4'>                                                  \
-          <img src='images/ixds/snapshot-01.png' alt='' />                                  \
+          <img src='images/ixds/snapshot.png' alt='' />                                  \
         </div>                                                                                \
         <!-- .row.margin-bottom -->                                                           \
       </div>                                                                                  \
@@ -403,32 +403,40 @@ contents = {
           <div class='row'>                                                                   \
                                                                                               \
             <div class='column_12'>                                                           \
-              <h4> Personas </h4>                                                             \
+              <h4> Process </h4>                                                             \
               <p>                                                                             \
-                Finding the right magazine type was difficult. I envisioned myself doing a magazine on sushi and japan, but after discussions with my peers and professor, I found that food was not one of the acceptable categories. And doing a piece on just japan seemed too boring to me. So rather than waste time thinking about the type of magazine, I began designing my mood board, thinking more about the feelings I wanted my magazine to elicit from my audience. Afterwards, I decided on making a Japanese Travel magazine that highlighted the popular foods in this issue's cities. I was then able to create my personas: the gastronomer Angela Nhu, the recent grad Amelie Duval, and the software engineer Jonathan Mbu. Each of these personas loved food as much as they loved to travel, which made them perfect for my magazine! \
+                The team and I started off the project by going to 'UP' Bar in Shadyside for their weekly wine night on wednesday. The bar, which is half a sit down restaurant and half a really relaxed bar, was very different that night. When we got there it was packed. Very little room to move and it took me a while to find my teammates. That night we came to observe, mingle, and learn about the reasons why people would want to come to 'UP' rather than other bars. Some of our findings and insights are: people come to celebrate with friends, the bartender / waiters are extremely busy (making it very hard to get their attention at times), and people like to buy drinks and share them. Afterwards we framed the problem at hand and came up with specific solutions that we shared with the class. Below is a visualization of the frames we created. Below each frame is a solution/idea that we brainstormed in class.   \
               </p>         \
             </div>         \
-                           \
+            \
             <div class='column_12 img-container'>                                        \
-            </div>                                                                      \
+            <img src='images/ixds/ubicomp-frames.png' alt='' />                                  \
+            </div> \                                                                    \
           </div>                                                                        \
-                                                  \
+          <div class='row'>  \
+          <div class='column_12'>                                                           \
+          <h4> Ubicomp Chart </h4>                                                             \
+          <p>                                                                             \
+   After framing, we mapped out each idea on a chart to see which ones were the most feasible and to create storyboards so that we could speed date with individuals and get better feedback. We created 6 storyboards portraying different ideas and implementations we had to solve problems we saw. The storyboards were ideas like a game that encouraged strangers to mingle, a system that allowed you to remotely place an order to the bartender, glasses that when clinked would create awesome visualizations, and more.  \
+          </p>         \
+          </div>         \
+          \
+          <div class='column_9 img-container'>                                        \
+          <img src='images/ixds/ubicomp-chart.png' alt='' />                                  \
+          </div>                                                                                                                                    \
+          </div> \
           <div class='row'>                                        \
             <div class='column_12'>                                \
-              <h4> Final Video Sketch </h4>                              \
-              <p>                                                  \
-                For the final layout, I created the cover, two table of contents - one for food and one for travel, an example of a an interactive title page that lets the reader explore Japan, and finally, a two-page feature on a perfect Japanese dish: Kaiseki.   \
+              <h4> Final Solution </h4>                              \
+              <p> Eventually, with feedback from speed-daters and our class, we decided to focus on solving the issue of getting the waiter's attention. This led to the creation of 'Waiter Please!' To explain this concept we created a video sketch that shows 3 different vignettes and how the system responds in each one. The video below is the final sketch we created, but if you're interested in seeing the rough one, just checkout my vimeo videos (after watching the final :P ). At the end of the video we explain the technical features of the system and show that it is feasible and can easily be implemented today! Click on the image below to watch the sketch!   \
               </p>                                                                                 \
             </div>                                                                                 \
             <div class='column_12 img-container'>  \
-            <a class='opaque' href=''> \
+            <a class='opaque' target='_blank' href='http://vimeo.com/97637176'> \
             <img src='images/ixds/video-sketch.png' />  \
             </a> \
             </div>                   \
-          </div>                                                                                   \
-                                                                                                   \
-                                                                                                   \
-                                                                                                   \
+          </div>                                                                                   \                                                                       \
           <!-- #process -->                                                                        \
         </div>                                                                                     \
         <!-- .row.margin-bottom -->                                                                \
