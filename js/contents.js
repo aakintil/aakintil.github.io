@@ -134,7 +134,7 @@ contents = {
         </ul> \
         <ul>                                                \
         <li class='emphasis'> Timeline </li>              \
-        <li> 8 months ( Jan - Aug 2014 )</li>                                \
+        <li> 8 months ( Jan - Aug 2014 in progress)</li>                                \
         </ul>                                               \
         \
         <ul>                                                \
@@ -163,13 +163,13 @@ contents = {
         <li> User Testing </li>                                                              \
         </ul>                                                                               \
           <div class='button primary'>                                                        \
-            <a href='http://www.hcii.cmu.edu/M-HCI/2014/NASA/' target='_blank'>                                                                       \
+            <a href='http://www.hcii.cmu.edu/M-HCI/2014/NASA/' target='_blank'> \
               view our site                                                          \
             </a>                                                                              \
           </div>                                                                              \                                                                           \
         </div>                                                                                \
         <div id='snapshot' class='column_4'>                                                  \
-          <img src='images/nasa/snapshot2.png' alt='' />                                  \
+          <img src='images/nasa/snapshot.png' alt='' />                                  \
         </div>                                                                                \
         <!-- .row.margin-bottom -->                                                           \
       </div>                                                                                  \
@@ -192,15 +192,15 @@ contents = {
               <img src='images/nasa/kickoff.jpg' />                \
             </div>                                                                      \
             <div class='column_6 img-container'>                                        \
-              <img  src='images/nasa/kickoff.jpg' />           \
+              <img  src='images/nasa/stickies.JPG' />           \
             </div>                                                                      \                                                                  \
           </div>                                                                        \
                                                                                         \
           <div class='row'>                                                             \
             <div class='column_12'>                                                     \
-              <h4> CONTINUE WRITING WHEN YOU GET BACK NIGGA </h4>                                                      \
+              <h4> Where We Are </h4>                                                      \
               <p>                                                                       \
-                I looked through food, travel, and lifestyle magazines to draw inspiration for the design language of the magazine. On the top half of my board, there are pantone and earthy colors that are warm and calming yet exciting. On the bottom half of my board, there are much brighter colors that you would find in foods, and at times table decor. \
+               We spent the entirety of last semester conducting research on analogous domains. We created a competitive analysis, sequence models, flow models, artifact models, affinity diagrams, visions,  \
               </p>        \
             </div>        \
             <div class='column_6 img-container'>                               \
@@ -210,37 +210,7 @@ contents = {
               <img src='images/ixdf/ipad/moodboard-bottom2.png' />             \
             </div>                                                             \
           </div>                                                               \
-                                                                               \
-                                                                               \
-          <div class='row'>                                                    \
-            <div class='column_12'>                                            \
-              <h4> Brand </h4>                                                 \
-              <p>                                                              \
-                Deciding on the typeface was the next difficult issue for me. I went through about 20 variations, most of which looked terrible to be honest, before I finally settled on LT Osaka and Yanone Kaffeesatz for my headers, and Roboto slab for my text. Finally, selecting my magazine's logo was a necessary yet painful process. I was never happy with my decision. I wanted a FAT logo that was skinny, but sometimes I wanted a FAT logo that was actually fat! I could not make up my mind. Eventually it came down to a matter of time and luck. The project was due in less than 10 hours and I still was very unhappy with cover. Oddly enough, I had chose LT Osaka for parts of my headers already, but it never dawned on me to try it on the front page. I think it worked out really well! If you're interested in seeing more of my process, please feel free to download the process document below. If you're also interested in seeing the entire book (please keep in mind it's not really interactive), a download of that is also available below!     \
-              </p>                                                 \
-            </div>                                                 \
-            <div class='column_12 img-container'>                  \
-              <img src='images/ixdf/ipad/process.png' />           \
-            </div>                                                 \
-          </div>                                                   \
-                                                                   \
-          <div class='row'>                                        \
-            <div class='column_12'>                                \
-              <h4> Final Layout </h4>                              \
-              <p>                                                  \
-                For the final layout, I created the cover, two table of contents - one for food and one for travel, an example of a an interactive title page that lets the reader explore Japan, and finally, a two-page feature on a perfect Japanese dish: Kaiseki.   \
-              </p>                                                                                 \
-            </div>                                                                                 \
-            <div class='column_6 img-container'>                                                   \
-              <img src='images/ixdf/ipad/cover-page.png' />                                        \
-            </div>                                                                                 \
-            <div class='column_6 img-container'>                                                   \
-              <img src='images/ixdf/ipad/food.png' />                                              \
-            </div>                                                                                 \
-          </div>                                                                                   \
-                                                                                                   \
-                                                                                                   \
-                                                                                                   \
+                                                                             \
           <!-- #process -->                                                                        \
         </div>                                                                                     \
         <!-- .row.margin-bottom -->                                                                \
