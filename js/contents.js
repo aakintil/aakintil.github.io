@@ -101,10 +101,10 @@ contents = {
             </div>         \
                            \
             <div class='column_6 img-container'>                                        \
-              <img src='images/haptic/milled.png' />                \
+              <img src='images/haptic/final-back.png' />                \
             </div>                                                                      \
             <div class='column_6 img-container'>                                        \
-              <img src='images/haptic/clamps.png'/>                \
+              <img src='images/haptic/final-front.png'/>                \
             </div>                                                                      \
             <!-- .row --> \
           </div>                                                                        \
