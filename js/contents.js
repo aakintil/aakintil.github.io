@@ -22,7 +22,7 @@ contents = {
           </ul> \
           <ul>                                                \
             <li class='emphasis'> Blurb </li>                 \
-            <li> Easily one of the most fun I've had in a class during my 5 years at CMU. Haptic Actions encouraged students to dive into both the physical and digital environments to produce aesthetically pleasing and functional designs. Throughout the course, we were exposed to woodshop, metal shop, digital fabrication, micro-controllers, electronics, and many more. After mid semester, we were partnered with clients from outside the university to create a haptic solution to a problem they have. I was teamed up with an architecture student named Adam Lans and our client was GASP. We built an interactive air quality display that pulls the current air quality index in Pittsburgh, and displays that information in a visually pleasing manner for passerby.  </li> \
+            <li> Easily one of the most fun I've had in a class during my 5 years at CMU. Haptic Actions encouraged students to dive into both the physical and digital environments to produce aesthetically pleasing and functional designs. Throughout the course, we were exposed to woodshop, metal shop, digital fabrication, micro-controllers, electronics, and many more. After mid semester, we were partnered with clients from outside the university to create a haptic solution to a problem they have. I was teamed up with an architecture student named Adam Lans and our client was GASP. GASP is a non-profit citizens’ group in Southwestern Pennsylvania working for a healthy, sustainable environment. We built an interactive air quality display that pulls the current air quality index in Pittsburgh, and displays that information in a visually pleasing manner for passerby.  </li> \
           </ul>     \
                     \
         </div>      \
@@ -67,26 +67,47 @@ contents = {
       <div class='row'>                                                                       \
         <div id='process'class='column_12'>                                                   \
           <div class='row'>                                                                   \
-                                                                                              \
             <div class='column_12'>                                                           \
-              <h4> Process </h4>                                                             \
-              <p> This project taught me a lot about combining digital and physical products together. There were two main components of the AQI display: the arduino half, and the actual display half. Getting the arduino to work was very difficult. I have messed around and done minor projects with arduino prior to this course, but nothing on this level. In addition, I had never used a 'shield' as they like to call it. In order to get the current AQI reading, we had to connect to airnow.gov and pull that data to the arduino. In order to do that, we needed an Arduino WiFly Shield. After many, many hours of struggling, I decided to go into our school's Robo Club for help. There I met with a member, Brent Strysko, who was immensely helpful (thank you Brent!). 
+              <h4> Arduino </h4>                                                             \
+              <p> This project taught me a lot about combining digital and physical products together. There were two main components of the AQI display: the arduino half, and the actual display half. Getting the arduino to work was very difficult. I have messed around and done minor projects with arduino prior to this course, but nothing on this level. In addition, I had never used a 'shield' as they like to call it. In order to get the current AQI reading, we had to connect to airnow.gov and pull that data to the arduino. In order to do that, we needed an Arduino WiFly Shield. After many, many hours of struggling, I decided to go into our school's Robo Club for help. There I met with a member, Brent Strysko, who was immensely helpful (thank you Brent!). The WiFly sends a HTTP request to airnow.gov and once connected, the WiFly pulls the current air quality data for Pittsburgh. Once this value is downloaded, the Arduino basically waits for a button push. The LEDs are the standard small size (5mm) but are much brighter than others. Each LED was soldered onto a resistor and then connected directly to the Arduino. \
+              </p>         \
+            </div>         \
+                           \
+            <div class='column_12 img-container'>                                        \
+              <img src='images/haptic/arduino.png' />                \
+            </div>                                                                      \
+            <!-- .row -->               \
+          </div>                                                                        \                                                  \
+          <div class='row'>                                                                   \
+            <div class='column_12'>                                                           \
+              <h4> Wood Work </h4>                                                             \
+              <p> Fabricating the display began with milling out the female inserts from a leftover discounted Cherry Plywood. These inserts housed a lasercut silhouette of figures with lungs that we designed. The inserts had holes in them which allow for light to shine from the back of the plywood to the laser cut lungs. The laser etchings were made out of poplar. Poplar was also complimentarily used to create a frame for the cherry plywood. The frame ended up housing light boxes and all the wirework in the back. Before gluing the frame together, we predrilled holes to insert nails into the frame. These nails when inserted aligned the frame during glue up. Once dry, we sanded everything and laser cut light boxes for the LEDs which we would insert into the back of the plywood inside the frame into the female inserts. These boxes illuminated the light, because the LEDs gave off too direct of light, and were made from an inexpensive green acrylic. The green acrylic was spray painted white with Krylon Fushion. After drilling a hole for the LEDs to sit in the box, we created shelves inside the frame to help keep the acrylic from moving inside the plywood inserts. This was accomplished with L brackets, zip ties, and datoed plywood. Once the boxes were installed into the frame, we then utilized the shelves to house the Arduino, battery, and wiring. \
               </p>         \
             </div>         \
                            \
             <div class='column_6 img-container'>                                        \
-              <img src='images/apartment-reviews/dashboard.png' />                \
+              <img src='images/haptic/milled.png' />                \
             </div>                                                                      \
             <div class='column_6 img-container'>                                        \
-              <img src='images/apartment-reviews/city-page2.png'/>                \
+              <img src='images/haptic/clamps.png'/>                \
+            </div>                                                                      \
+            <!-- .row --> \
+          </div>                                                                        \
+          <div class='row'>                                                                   \
+            <div class='column_12'>                                                           \
+              <h4> Final </h4>                                                             \
+              <p> After we finished the frame and got the WiFly to work, we had to think about powering the arduino. Initially we purchased a 'All Powers' 50k mAh external power supply with a micro usb port. However, this turned out to be faulty and we purchased another one. Currently, the display has not been assembled outside of GASP (5135 Penn Avenue) as we are working on some new issues but it should be up for anyone to see before the end of the summer!  \
+              </p>         \
+            </div>         \
+                           \
+            <div class='column_6 img-container'>                                        \
+              <img src='images/haptic/milled.png' />                \
             </div>                                                                      \
             <div class='column_6 img-container'>                                        \
-              <img class='width-70' src='images/apartment-reviews/apartment-cards.png' />              \
+              <img src='images/haptic/clamps.png'/>                \
             </div>                                                                      \
-            <div class='column_6 img-container'>                                        \
-              <img class='width-70' src='images/apartment-reviews/property-pages.png' />                \
-            </div>                                                                      \
-          </div>                                                                        \                                                  \
+            <!-- .row --> \
+          </div>                                                                        \
           <!-- #process -->                                                                        \
         </div>                                                                                     \
         <!-- .row.margin-bottom -->                                                                \
