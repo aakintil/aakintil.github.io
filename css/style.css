@@ -470,6 +470,10 @@ padding-right: 10px;
   border-bottom: 2px solid #e7e8e8;
 }
 
+#notebook #summary-left h2 {
+  margin-bottom: 15px;
+}
+
 
 #project h1, 
 #project h2, 

@@ -530,6 +530,97 @@ contents = {
                                                                                                    \
     <!-- .row.margin-bottom.container -->                                                          \
   </div>                                                                                           \
+  ", 
+  notebook: "<div id='notebook' class='row container'>                          \
+                                                              \
+    <span id='close' class='fui-cross'></span>                \
+    <div id='glance' class='column_12'>                       \
+      <div class='row margin-bottom'>                         \
+        <div id='summary-left' class='column_9'>              \
+          <h2> Notebook </h2>                             \
+          <h5> assorted concepts, smaller projects, thoughts, practices and ideas </h5>                             \
+        </div>      \                                                                              \
+        <div id='snapshot' class='column_3'>                                                  \
+          <img src='images/icons/other-projects.png' />                                  \
+        </div>                                                                                \
+        <!-- .row.margin-bottom -->                                                           \
+      </div>                                                                                  \
+                                                                                              \
+    </div>                                                                                    \
+                                                                                              \
+    <div id='in-depth' class='column_12'>                                                     \
+      <div class='row'>                                                                       \
+        <div id='process'class='column_12'>                                                   \
+          <div class='row'>                                                                   \
+                                                                                              \
+            <div class='column_6'>                                                           \
+              <h4> Biologic </h4>                                                             \
+              <p>                                                                             \
+                Quick blurb about biologic   \
+              </p>         \
+            </div>         \
+            \
+            <div class='column_6 img-container'>                                        \
+            <img src='images/biologic/presentation.jpg' alt='' />                                  \
+            </div> \                                                                    \
+          </div>                                                                        \
+          <div class='row'>  \
+          <div class='column_6'>                                                           \
+          <h4> Hex Tiles </h4>                                                             \
+          <p>                                                                             \
+   After framing, we mapped out each idea on a chart to see which ones were the most feasible and to create storyboards so that we could speed date with individuals and get better feedback. We created 6 storyboards portraying different ideas and implementations we had to solve problems we saw. The storyboards were ideas like a game that encouraged strangers to mingle, a system that allowed you to remotely place an order to the bartender, glasses that when clinked would create awesome visualizations, and more.  \
+          </p>         \
+          </div>         \
+          \
+          <div class='column_6 img-container'>                                        \
+          <img src='images/idm/hex-tiles/hex3.gif' alt='' />                                  \
+          </div>                                                                                                                                    \
+          </div> \
+          <div class='row'>                                        \
+            <div class='column_6'>                                \
+              <h4> Waffle Canopy </h4>                              \
+              <p> Eventually, with feedback from speed-daters and our class, we decided to focus on solving the issue of getting the waiter's attention. This led to the creation of 'Waiter Please!' To explain this concept we created a video sketch that shows 3 different vignettes and how the system responds in each one. The video below is the final sketch we created, but if you're interested in seeing the rough one, just checkout my vimeo videos (after watching the final :P ). At the end of the video we explain the technical features of the system and show that it is feasible and can easily be implemented today! Click on the image below to watch the sketch!   \
+              </p>                                                                                 \
+            </div>                                                                                 \
+            <div class='column_6 img-container'>  \
+            <a class='opaque' target='_blank' href='http://vimeo.com/97637176'> \
+            <img src='images/idm/waffle-canopy/assembly-top.png' />  \
+            </a> \
+            </div>                   \
+          </div>                                                                                   \                                                                       \
+          <div class='row'>                                        \
+            <div class='column_6'>                                \
+              <h4> Human Robot Interaction </h4>                              \
+              <p> Eventually, with feedback from speed-daters and our class, we decided to focus on solving the issue of getting the waiter's attention. This led to the creation of 'Waiter Please!' To explain this concept we created a video sketch that shows 3 different vignettes and how the system responds in each one. The video below is the final sketch we created, but if you're interested in seeing the rough one, just checkout my vimeo videos (after watching the final :P ). At the end of the video we explain the technical features of the system and show that it is feasible and can easily be implemented today! Click on the image below to watch the sketch!   \
+              </p>                                                                                 \
+            </div>                                                                                 \
+            <div class='column_6 img-container'>  \
+            <a class='opaque' target='_blank' href='http://vimeo.com/97637176'> \
+            <img class='custom-height' src='images/hri/robot-main.png' />  \
+            </a> \
+            </div>                   \
+          </div>                                                                                   \
+          \
+          <div class='row'>                                        \
+            <div class='column_6'>                                \
+              <h4> Tea Booklet </h4>                              \
+              <p> Eventually, with feedback from speed-daters and our class, we decided to focus on solving the issue of getting the waiter's attention. This led to the creation of 'Waiter Please!' To explain this concept we created a video sketch that shows 3 different vignettes and how the system responds in each one. The video below is the final sketch we created, but if you're interested in seeing the rough one, just checkout my vimeo videos (after watching the final :P ). At the end of the video we explain the technical features of the system and show that it is feasible and can easily be implemented today! Click on the image below to watch the sketch!   \
+              </p>                                                                                 \
+            </div>                                                                                 \
+            <div class='column_6 img-container'>  \
+            <a class='opaque' target='_blank' href='http://vimeo.com/97637176'> \
+            <img class='custom-height' src='images/cdf/tea.jpg' />  \
+            </a> \
+            </div>                   \
+          </div>                                                                                   \
+          <!-- #process -->                                                                        \
+        </div>                                                                                     \
+        <!-- .row.margin-bottom -->                                                                \
+      </div>                                                                                       \
+    </div>                                                                                         \
+                                                                                                   \
+    <!-- .row.margin-bottom.container -->                                                          \
+  </div>                                                                                           \
   "
 }
 
