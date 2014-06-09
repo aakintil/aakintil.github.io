@@ -200,14 +200,20 @@ contents = {
             <div class='column_12'>                                                     \
               <h4> Where We Are </h4>                                                      \
               <p>                                                                       \
-               We spent the entirety of last semester conducting research on analogous domains. We created a competitive analysis, sequence models, flow models, artifact models, affinity diagrams, visions,  \
+               We spent the entirety of last semester conducting research on analogous domains. We created a competitive analysis, sequence models, flow models, artifact models, affinity diagrams, visions, and many more during our research phase. By the end of the semester we created three insights based on our findings. Ease in gathering key information for quick reference streamlines procedure executions, successful collaboration requires coordinated sharing of procedure and status information, and related physical materials and information become meaningful when kept together. We are currently taking these insights and narrowing down the visions we made last semester to create a working prototype for NASA astronauts and engineers. So far we have narrowed down our scope to test and prototype three low fidelity forms. An augmented reality display, a wristwatch display, and an armband display. After user testing each prototype with NASA employees here, we will be able to get feedback on which form the users prefer, and then move onto the next round of tests focusing less on form and more on usability. I'll keep you updated on where we go, so stay tuned! \
               </p>        \
             </div>        \
             <div class='column_6 img-container'>                               \
-              <img src='images/ixdf/ipad/moodboard-top.png' />                 \
+              <img src='images/nasa/lo-fi.JPG' />                 \
             </div>                                                             \
             <div class='column_6 img-container'>                               \
-              <img src='images/ixdf/ipad/moodboard-bottom2.png' />             \
+              <img src='images/nasa/ar.JPG' />             \
+            </div>                                                             \
+            <div class='column_6 img-container'>                               \
+              <img src='images/nasa/lo-fi2.JPG' />                 \
+            </div>                                                             \
+            <div class='column_6 img-container'>                               \
+              <img src='images/nasa/room.JPG' />             \
             </div>                                                             \
           </div>                                                               \
                                                                              \
