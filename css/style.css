@@ -373,7 +373,8 @@ Showing All My Work
   color: #A9ACAE;
 }
 
-#content .desc {
+#content .desc, 
+#about-body p {
   line-height: 20px;
   font-family: "Crimson Text";
   font-size: 15px;
@@ -557,7 +558,8 @@ Showing Individual Project
   margin-top: 50px;
 }
 
-#process .img-container > img {
+#process .img-container > img, 
+#content .inherit-width > img {
   width: inherit;
 }
 
@@ -576,6 +578,29 @@ Showing Individual Project
   margin-bottom: 20px;
 }
 
+
+/*---------------------------
+About Page
+---------------------------*/
+
+#about-body #content h1, 
+#about-body #content h2, 
+#about-body #content h3, 
+#about-body #content h4, 
+#about-body #content h5 {
+  text-transform: uppercase;
+  color: #613db5;
+  line-height: 24px;
+  margin-bottom: 5px;
+}
+
+#about-body h5 ~ p {
+  font-size: 16px;
+}
+
+#about-body h5 ~ h5 {
+  margin-top: 20px;
+}
 
 
 
