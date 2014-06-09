@@ -351,7 +351,7 @@ contents = {
           </ul> \
           <ul>                                                \
             <li class='emphasis'> Timeline </li>              \
-            <li> 4 weeks </li>                                \
+            <li> 6 weeks (Nov - Dec 2013) </li>                                \
           </ul>                                               \
                                                               \
           <ul>                                                \
@@ -479,12 +479,12 @@ contents = {
           </ul> \
           <ul>                                                \
             <li class='emphasis'> Timeline </li>              \
-            <li> 5 weeks </li>                                \
+            <li> 8 weeks (Mar - May 2014) </li>                                \
           </ul>                                               \
                                                               \
           <ul>                                                \
             <li class='emphasis'> Blurb </li>                 \
-            <li> For the final project in our Interaction Design Studio course we investigated the possible futures for emerging spaces where no social norms exist to define how people should act and interact. We leveraged breakthroughs in machine learning, UbiComp sensing and sensemaking, and social computing technology to envision provocative, interactive, intelligent, service-systems designed to support the needs and desires of a target set of users at a specific location. The end result was a video sketch for a ubiquitous computing system to be used in a crowded area.  Be it a bar, a club, or a comedy show. My team and I designed a restaurant and bar system that detects when a glass or pitcher is almost empty, and  indicates to the people at the table where the nearest waiter is.  \
+            <li> For the final project in our Interaction Design Studio course we investigated the possible futures for emerging spaces where no social norms exist to define how people should act and interact. We leveraged breakthroughs in machine learning, UbiComp sensing and sensemaking, and social computing technology to envision provocative, interactive, intelligent, service-systems designed to support the needs and desires of a target set of users at a specific location. The end result was a video sketch for a ubiquitous computing system to be used in a crowded area.  Be it a bar, a club, or a comedy show. Our team designed a restaurant and bar system that detects when a glass or pitcher is almost empty, and  indicates to the people at the table where the nearest waiter is.  \
           </ul>     \
                     \
         </div>      \

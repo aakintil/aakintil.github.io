@@ -187,15 +187,15 @@ a {
 
 #project .button.primary:hover {
   background-color: #428cff;
-  
+
 }
 
 #about .button.primary {
-  
+
 }
 
 #contact .button.primary {
-  
+
 }
 
 /*---------------------------
@@ -352,7 +352,7 @@ Showing All My Work
 
 #content .card .img {
   height: 200px;
-/*  background-color: #c0c3c3;*/
+  /*  background-color: #c0c3c3;*/
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
 }
@@ -374,7 +374,7 @@ Showing All My Work
 }
 
 #content .desc, 
-#about-body p {
+#about-body #content p {
   line-height: 20px;
   font-family: "Crimson Text";
   font-size: 15px;
@@ -436,8 +436,8 @@ Showing Individual Project
 #project .sidebar, 
 #project .main {
 /*  border: 1px solid red;*/
-  margin-top: 20px;
-  padding-right: 10px;
+margin-top: 20px;
+padding-right: 10px;
 }
 
 #project .sidebar {
@@ -492,9 +492,9 @@ Showing Individual Project
 }
 
 /*#project .width-70 {
-  width: 50% !important;
-  margin: auto;
-  display: block;
+width: 50% !important;
+margin: auto;
+display: block;
 }*/
 
 #project .opaque {
@@ -594,14 +594,19 @@ About Page
   margin-bottom: 5px;
 }
 
-#about-body h5 ~ p {
+#about-body h5 ~ p, 
+#about-body p > a {
   font-size: 16px;
+  letter-spacing: 1px;
 }
 
 #about-body h5 ~ h5 {
   margin-top: 20px;
 }
 
+#about-body .email:hover a {
+  color: #613db5 !important;
+}
 
 
 /*---------------------------
@@ -612,18 +617,18 @@ Media Queries
 }
 
 @media only screen and (min-width: 960px) and (max-width: 1199px) { 
-    
-    #content .column_4.center {
-      padding: 0px 18.75px;
-    }
 
-    #content .column_4.left {
-      padding-right: 37.5px;
-    }
+  #content .column_4.center {
+    padding: 0px 18.75px;
+  }
 
-    #content .column_4.right {
-      padding-left: 37.5px;
-    }
+  #content .column_4.left {
+    padding-right: 37.5px;
+  }
+
+  #content .column_4.right {
+    padding-left: 37.5px;
+  }
 }
 
 
@@ -646,7 +651,7 @@ Media Queries
   #logo {
     margin-left: -10px;
   }
-  
+
 }
 
 @media only screen and (max-width: 767px) {
@@ -654,36 +659,36 @@ Media Queries
     height: 100px;
     padding: 0 15px;
   }
-  
+
   #name > h4 {
     font-size: 1.4em !important;
   }
-  
+
   #name > p {
     line-height: 22px;
   }
-  
-  
+
+
   #content .column_4 {
     padding: 0 15px !important;
   }
-  
+
   #nav .nav-container {
     height: 250px;
   }
-  
+
   #nav .column_6 {
     display: none;
   }
-  
+
   #nav .column_3 {
     text-align: center;
   }
-  
+
   #nav .column_3 > ul {
     left: 0;
   }
-  
+
   #nav li {
     font-size: 16.5px;
   }
@@ -692,16 +697,16 @@ Media Queries
 
 
 @media (max-width: 480px) {
-  
+
   #name {
     height: 130px;
     padding: 0 15px;
   }
-  
+
   #logo img {
     height: 100px;
   }
-  
+
   #nav .nav-container > div {
     width: 100%;
   }
@@ -721,9 +726,9 @@ Media Queries
 
 @media only screen and (max-width:1200px) {
 /*  #content .column_4.center {
-    padding: 0px 18.75px;
-    border: 5px solid red;
-  }*/
+padding: 0px 18.75px;
+border: 5px solid red;
+}*/
 }
 
 
@@ -735,7 +740,7 @@ Media Queries
 
 
 @media (max-width: 992px) {
-  
+
 }
 
 
