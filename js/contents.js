@@ -562,19 +562,21 @@ contents = {
             <div class='column_6'>                                                           \
               <h4> Biologic </h4>                                                             \
               <p>                                                                             \
-                Quick blurb about biologic   \
+This was a course project where we were tasked with choosing an organism, researching various aspects about the organism, and then coming up with a way to apply features of said organism to architecture. Through lots of iterations, ideation, and failure, my team and I designed a responsive building technology based on our initial organism: a pufferfish. We began by reading numerous research documents about pufferfish and learning about the organism's anatomy. This was a difficult project for two reasons: it forced my team and myself out of our comfort zones, and our prototypes and designs failed...a lot. But failure is never bad unless you're unable to understand what you did wrong and learn from it. This course taught me to research, design, and build without constraints. Most, if not all, of my previous projects have had some form of tangible end goal. This was my first time experiencing an truly open ended project. I did not like it at the time, but I eventually realized that industry might be similar to this. A client is going to ask you to build or design 'something' for them, and it's up to you to figure out what they need built, scope it out, and deliver the end product to them. \
               </p>         \
             </div>         \
             \
             <div class='column_6 img-container'>                                        \
+            <a class='opaque' target='_blank' href='http://vimeo.com/97637176'> \
             <img src='images/biologic/presentation.jpg' alt='' />                                  \
+            </a> \
             </div> \                                                                    \
           </div>                                                                        \
           <div class='row'>  \
           <div class='column_6'>                                                           \
           <h4> Hex Tiles </h4>                                                             \
           <p>                                                                             \
-   After framing, we mapped out each idea on a chart to see which ones were the most feasible and to create storyboards so that we could speed date with individuals and get better feedback. We created 6 storyboards portraying different ideas and implementations we had to solve problems we saw. The storyboards were ideas like a game that encouraged strangers to mingle, a system that allowed you to remotely place an order to the bartender, glasses that when clinked would create awesome visualizations, and more.  \
+This was a course project where we were tasked with designing a hexagonal wall pattern not unlike matsys's wall. We started off designing one tile, however, the end goal was to create a design that when rotated and placed together with other tiles, would create a new form or pattern along a wall. It was my first time really diving into Rhino and I struggled with the software. But now, I'm glad to say that I have working knowledge of Rhino! \
           </p>         \
           </div>         \
           \
@@ -585,7 +587,7 @@ contents = {
           <div class='row'>                                        \
             <div class='column_6'>                                \
               <h4> Waffle Canopy </h4>                              \
-              <p> Eventually, with feedback from speed-daters and our class, we decided to focus on solving the issue of getting the waiter's attention. This led to the creation of 'Waiter Please!' To explain this concept we created a video sketch that shows 3 different vignettes and how the system responds in each one. The video below is the final sketch we created, but if you're interested in seeing the rough one, just checkout my vimeo videos (after watching the final :P ). At the end of the video we explain the technical features of the system and show that it is feasible and can easily be implemented today! Click on the image below to watch the sketch!   \
+              <p>Another project from my IDM II course. This was our main introduction to laser cutting and parametric modeling. The basic premise of this project was to design a canopy that fulfilled the dimension requirements for the class. Other than that, the model had to be able to assembled when printed. I chose a very simple canopy design: one without waves and drastic increase or decrease in its width. I was not as skilled with Rhino and Grasshopper as the other students, but that is one of the reasons I liked my design. We also had to create an assembly diagram: if someone were to have the waffle canopy pieces, they would be able to assemble it without our help.   \
               </p>                                                                                 \
             </div>                                                                                 \
             <div class='column_6 img-container'>  \
@@ -597,7 +599,7 @@ contents = {
           <div class='row'>                                        \
             <div class='column_6'>                                \
               <h4> Human Robot Interaction </h4>                              \
-              <p> Eventually, with feedback from speed-daters and our class, we decided to focus on solving the issue of getting the waiter's attention. This led to the creation of 'Waiter Please!' To explain this concept we created a video sketch that shows 3 different vignettes and how the system responds in each one. The video below is the final sketch we created, but if you're interested in seeing the rough one, just checkout my vimeo videos (after watching the final :P ). At the end of the video we explain the technical features of the system and show that it is feasible and can easily be implemented today! Click on the image below to watch the sketch!   \
+              <p> This was an exceptional and though provoking course. Every project was team based and recorded onto a team website. Classes were split into lecture / discussions and then work sessions. The lectures were about 'underlying robotic technologies, as they relate to human-robot interaction, interaction methodologies and techniques, study design, ethics and the singularity, and man-machine coupling. Some classes were discussions of application domains that feature HRI. An example of a project we did was researching and designing interactions for automated cars. We had to take into consideration the variables that can occur at an intersection: children, people not paying attention to incoming traffic, visually impaired, etc. Then we brainstormed numerous ways a self-driving vehicle can communicate with pedestrians, and vice versa. In the end we broke our ideas up into three sense categories: audition, sight, and touch. Through our discussions and iterations, we designed an interactive eye around the bottom half of the self-driving vehicle, as well as a vibrating device that would be attached to a stop sign or object near the intersection.    \
               </p>                                                                                 \
             </div>                                                                                 \
             <div class='column_6 img-container'>  \
@@ -610,7 +612,7 @@ contents = {
           <div class='row'>                                        \
             <div class='column_6'>                                \
               <h4> Tea Booklet </h4>                              \
-              <p> Eventually, with feedback from speed-daters and our class, we decided to focus on solving the issue of getting the waiter's attention. This led to the creation of 'Waiter Please!' To explain this concept we created a video sketch that shows 3 different vignettes and how the system responds in each one. The video below is the final sketch we created, but if you're interested in seeing the rough one, just checkout my vimeo videos (after watching the final :P ). At the end of the video we explain the technical features of the system and show that it is feasible and can easily be implemented today! Click on the image below to watch the sketch!   \
+              <p> This was my Communication Design Fundamentals final project. Our assignment was to create a booklet about anything we want. I decided to create a couple spreads about different teas from different areas. Some of the teas were borrowed from my roommate, while the others were given to me by the owners of Margaret's Fine Imports.   \
               </p>                                                                                 \
             </div>                                                                                 \
             <div class='column_6 img-container'>  \

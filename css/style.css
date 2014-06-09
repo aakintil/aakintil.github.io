@@ -563,7 +563,9 @@ display: block;
 }
 
 #process .img-container > img, 
-#content .inherit-width > img {
+#content .inherit-width > img, 
+#process .opaque, 
+#process .opaque img {
   width: inherit;
 }
 
