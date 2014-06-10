@@ -7,7 +7,7 @@ var highlight = {
   contact: "#4ad6de", 
   about: "#613db5"
 }
-console.log("global variable ", sessionStorage)
+// console.log("global variable ", sessionStorage)
 var page = ""; 
 
 // Document ready 
@@ -36,25 +36,21 @@ $(document).ready( function() {
   function() {
     if ( !$( this ).hasClass("active") )
     $( this ).css({ border: "2px solid transparent" }); 
-  })
+  }); 
 
 // console.log("the contents ", contents)
-  $(".card").on("click", function() {
-    var value = $(this).attr("id"); 
-    
-    $("#project").html( contents[value] ); 
-    $("#project").show( 2000, function() {
-      // $("#close").animate({ "margin-left" : "-=5000px"}, 1500, "easeOutCubic");
-      // $("#project .row").children().each( function() {
-      //   $(this).animate({ "margin-left" : "+=5000px"}, 1500, "easeOutCubic");
-      // });
-    } ); 
+$(".card").on("click", function() {
+  var value = $(this).attr("id"); 
+
+  $("#project").html( contents[value] ); 
+  $("#project").show( 2000, "easeIn", function() {
+
   } ); 
+} ); 
 
   $('#project').on('click', '#close', function (event) {
-      $("#project").hide( 2000 , function() {
-        $(this).empty(); 
-      });
+    console.log(this)
+    $("#project").animate({ height: 0}, 2000)
   });
   
 }); 

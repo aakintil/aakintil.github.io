@@ -484,6 +484,10 @@ padding-right: 10px;
   margin-bottom: 50px;
 }
 
+#project h2 {
+  line-height: 40px;
+}
+
 #project .main {
   overflow: auto;
   height: 600px;
