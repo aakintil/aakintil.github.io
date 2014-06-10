@@ -506,18 +506,12 @@ display: block;
 }*/
 
 #project .opaque {
-/*  opacity: 1;*/
-
-}
-
-.opaque img {
-/*  opacity: 0;*/
-/*  transition: opacity .3s ease-in;*/
+  opacity: 1;
 }
 
 
 #project .opaque:hover {
-/*  opacity: 0.6;*/
+  opacity: 0.6;
 }
 
 #close {

@@ -13,15 +13,19 @@ var page = "";
 // Document ready 
 $(document).ready( function() {
 
-  $("#project").append( contents["notebook"]); 
+  // $("#project").hide()//append( contents["notebook"]); 
+  // or
+  TweenMax.to($('#project'), 1, {css:{alpha:0, display:''}});
   // $("img.lazy").lazyload();
-  $("#project img").unveil(200, function() {
-    $(this).load(function() {
-      this.style.opacity = 1;
-    });
-  });
+  // $("#project img").unveil(200, function() {
+  //   $(this).load(function() {
+  //     this.style.opacity = 1;
+  //   });
+  // });
+ 
 
-  // $("img.lazy").lazyload();
+    // $("img.lazy").lazyload({ effect: "fadeIn" });  
+  
 
   // slowly load and animate the page
   $("#nav").animate({ opacity: 1 }, 1900, function() {
@@ -46,15 +50,21 @@ $(document).ready( function() {
     var value = $(this).attr("id"); 
     var body = contents[value]
     // $("#project").html( ); 
-    
+
     $("#project").html( body ); 
-    $("#project").show( 2000 ); 
-  } ); 
+    TweenMax.to($('#project'), 0.5, {css: { display:'block' }, 
+    onComplete: function(){ TweenMax.to($('#project'), 1, {css: { alpha: 1 } } ) }
+  }); 
+
+} ); 
 
 
-  $('#project').on('click', function () {
-    $(this).fadeTo(0)
-  });
+// 
+$('#project').on('click', "#close", function () {
+  console.log("close"); 
+  TweenMax.to($('#project'), 3, { css:{ scaleY:0 }, reversed: true } );
+  // $("#project").empty(); 
+});
 
 }); 
 
