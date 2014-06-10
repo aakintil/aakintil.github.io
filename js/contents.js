@@ -542,13 +542,11 @@ contents = {
     <span id='close' class='fui-cross'></span>                \
     <div id='glance' class='column_12'>                       \
       <div class='row margin-bottom'>                         \
-        <div id='summary-left' class='column_9'>              \
+        <div id='summary-left' class='column_12'>              \
           <h2> Notebook </h2>                             \
+           <img src='images/icons/other-projects.png' />     \
           <h5> assorted concepts, smaller projects, thoughts, practices and ideas. click on the images to checkout books, websites, and other assorted bits of extra information. </h5>                             \
-        </div>                          \
-        <div id='snapshot' class='column_3'>                                                  \
-          <img src='images/icons/other-projects.png' />                                  \
-        </div>                                                                                \
+        </div>                                                                                       \
         <!-- .row.margin-bottom -->                                                           \
       </div>                                                                                  \
                                                                                               \

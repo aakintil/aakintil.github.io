@@ -585,6 +585,26 @@ display: block;
   margin-bottom: 20px;
 }
 
+#notebook #glance {
+  height: 570px;
+}
+
+#notebook #summary-left img {
+  top: -100px;
+  position: relative;
+  left: -10px;
+}
+
+#notebook #summary-left h5 {
+  margin-top: -180px;
+  line-height: 27px;
+}
+
+#notebook #process > .row {
+  border-top: 2px solid #e7e8e8;
+  padding-top: 50px;
+}
+
 
 /*---------------------------
 About Page
@@ -662,6 +682,13 @@ Media Queries
 }
 
 @media only screen and (max-width: 767px) {
+  #project h5 {
+    margin-bottom: 0;
+  }
+  #snapshot {
+    margin-top: -100px;
+    padding-top: 0;
+  }
   #name {
     height: 100px;
     padding: 0 15px;
