@@ -544,7 +544,7 @@ contents = {
       <div class='row margin-bottom'>                         \
         <div id='summary-left' class='column_12'>              \
           <h2> Notebook </h2>                             \
-           <img src='images/icons/other-projects.png' />     \
+           <img class='lazy' src='images/icons/other-projects.png' />     \
           <h5> assorted concepts, smaller projects, thoughts, practices and ideas. click on the images to checkout books, websites, and other assorted bits of extra information. </h5>                             \
         </div>                                                                                       \
         <!-- .row.margin-bottom -->                                                           \
@@ -566,7 +566,7 @@ This was a course project where we were tasked with choosing an organism, resear
             \
             <div class='column_6 img-container'>                                        \
             <a class='opaque' target='_blank' href='downloads/biologic.pdf'> \
-            <img src='images/biologic/presentation.jpg' alt='' />                                  \
+            <img class='lazy' src='images/notebook/presentation.jpg' alt='' />                                  \
             </a> \
             </div>                                                           \
           </div>                                                                        \
@@ -580,7 +580,7 @@ This was a course project where we were tasked with designing a hexagonal wall p
           \
           <div class='column_6 img-container'>                                        \
           <a class='opaque' target='_blank' href='downloads/hex-tiles.pdf'> \
-          <img src='images/idm/hex-tiles/hex3.gif' alt='' />                                  \
+          <img src='images/notebook/hex3.gif' alt='' />                                  \
           </a>     \
           </div>                                                                                                                                    \
           </div> \
@@ -592,7 +592,7 @@ This was a course project where we were tasked with designing a hexagonal wall p
             </div>                                                                                 \
             <div class='column_6 img-container'>  \
             <a class='opaque' target='_blank' href='downloads/waffle-canopy.pdf'> \
-            <img src='images/idm/waffle-canopy/assembly-top.png' />  \
+            <img src='images/notebook/assembly-top.png' />  \
             </a> \
             </div>                   \
           </div>                                                                                   \                                                                       \
@@ -604,7 +604,7 @@ This was a course project where we were tasked with designing a hexagonal wall p
             </div>                                                                                 \
             <div class='column_6 img-container'>  \
             <a class='opaque' target='_blank' href='http://www.aderinsola.com/HRI-Assignment01'> \
-            <img class='custom-height' src='images/hri/robot-main.png' />  \
+            <img class='custom-height' src='images/notebook/robot-main.png' />  \
             </a> \
             </div>                   \
           </div>                                                                                   \
@@ -617,7 +617,7 @@ This was a course project where we were tasked with designing a hexagonal wall p
             </div>                                                                                 \
             <div class='column_6 img-container'>  \
             <a class='opaque' target='_blank' href='downloads/tea-booklet.pdf'> \
-            <img class='custom-height' src='images/cdf/tea.jpg' />  \
+            <img class='custom-height' src='images/notebook/tea.jpg' />  \
             </a> \
             </div>                   \
           </div>                                                                                   \

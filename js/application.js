@@ -12,9 +12,17 @@ var page = "";
 
 // Document ready 
 $(document).ready( function() {
-  $("#project").hide() //html( contents["notebook"]); 
 
-  
+  $("#project").append( contents["notebook"]); 
+  // $("img.lazy").lazyload();
+  $("#project img").unveil(200, function() {
+    $(this).load(function() {
+      this.style.opacity = 1;
+    });
+  });
+
+  // $("img.lazy").lazyload();
+
   // slowly load and animate the page
   $("#nav").animate({ opacity: 1 }, 1900, function() {
     $("#content").animate({ opacity: 1 }, 1500, function() {
@@ -38,7 +46,9 @@ $(document).ready( function() {
     var value = $(this).attr("id"); 
     var body = contents[value]
     // $("#project").html( ); 
-    $("#project").html( body ).show( 2000 ); 
+    
+    $("#project").html( body ); 
+    $("#project").show( 2000 ); 
   } ); 
 
 
