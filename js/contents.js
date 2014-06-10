@@ -544,8 +544,8 @@ contents = {
       <div class='row margin-bottom'>                         \
         <div id='summary-left' class='column_9'>              \
           <h2> Notebook </h2>                             \
-          <h5> assorted concepts, smaller projects, thoughts, practices and ideas </h5>                             \
-        </div>      \                                                                              \
+          <h5> assorted concepts, smaller projects, thoughts, practices and ideas. click on the images to checkout books, websites, and other assorted bits of extra information. </h5>                             \
+        </div>                          \
         <div id='snapshot' class='column_3'>                                                  \
           <img src='images/icons/other-projects.png' />                                  \
         </div>                                                                                \
@@ -567,10 +567,10 @@ This was a course project where we were tasked with choosing an organism, resear
             </div>         \
             \
             <div class='column_6 img-container'>                                        \
-            <a class='opaque' target='_blank' href='http://vimeo.com/97637176'> \
+            <a class='opaque' target='_blank' href='downloads/biologic.pdf'> \
             <img src='images/biologic/presentation.jpg' alt='' />                                  \
             </a> \
-            </div> \                                                                    \
+            </div>                                                           \
           </div>                                                                        \
           <div class='row'>  \
           <div class='column_6'>                                                           \
@@ -581,7 +581,9 @@ This was a course project where we were tasked with designing a hexagonal wall p
           </div>         \
           \
           <div class='column_6 img-container'>                                        \
+          <a class='opaque' target='_blank' href='downloads/hex-tiles.pdf'> \
           <img src='images/idm/hex-tiles/hex3.gif' alt='' />                                  \
+          </a>     \
           </div>                                                                                                                                    \
           </div> \
           <div class='row'>                                        \
@@ -591,7 +593,7 @@ This was a course project where we were tasked with designing a hexagonal wall p
               </p>                                                                                 \
             </div>                                                                                 \
             <div class='column_6 img-container'>  \
-            <a class='opaque' target='_blank' href='http://vimeo.com/97637176'> \
+            <a class='opaque' target='_blank' href='downloads/waffle-canopy.pdf'> \
             <img src='images/idm/waffle-canopy/assembly-top.png' />  \
             </a> \
             </div>                   \
@@ -603,7 +605,7 @@ This was a course project where we were tasked with designing a hexagonal wall p
               </p>                                                                                 \
             </div>                                                                                 \
             <div class='column_6 img-container'>  \
-            <a class='opaque' target='_blank' href='http://vimeo.com/97637176'> \
+            <a class='opaque' target='_blank' href='http://www.aderinsola.com/HRI-Assignment01'> \
             <img class='custom-height' src='images/hri/robot-main.png' />  \
             </a> \
             </div>                   \
@@ -612,11 +614,11 @@ This was a course project where we were tasked with designing a hexagonal wall p
           <div class='row'>                                        \
             <div class='column_6'>                                \
               <h4> Tea Booklet </h4>                              \
-              <p> This was my Communication Design Fundamentals final project. Our assignment was to create a booklet about anything we want. I decided to create a couple spreads about different teas from different areas. Some of the teas were borrowed from my roommate, while the others were given to me by the owners of Margaret's Fine Imports.   \
+              <p> This was my Communication Design Fundamentals final project. Our assignment was to create a booklet about anything we want. I decided to create a couple spreads about different teas from different areas. Some of the teas were borrowed from my roommate, while the others were given to me by the owners of Margaret's Fine Imports.  \
               </p>                                                                                 \
             </div>                                                                                 \
             <div class='column_6 img-container'>  \
-            <a class='opaque' target='_blank' href='http://vimeo.com/97637176'> \
+            <a class='opaque' target='_blank' href='downloads/tea-booklet.pdf'> \
             <img class='custom-height' src='images/cdf/tea.jpg' />  \
             </a> \
             </div>                   \
