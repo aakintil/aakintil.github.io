@@ -12,14 +12,9 @@ var page = "";
 
 // Document ready 
 $(document).ready( function() {
-  $("#project").html( contents["notebook"]); 
-  // hide the projects and move left for animation
-  // $("#project").hide(); 
-  // $("#project").children().css({ opacity: 0 }); 
-  // $("#project").children().each( function() {
-  //   $(this).css({ marginLeft: "-1000px" });  
-  // } )
+  $("#project").hide() //html( contents["notebook"]); 
 
+  
   // slowly load and animate the page
   $("#nav").animate({ opacity: 1 }, 1900, function() {
     $("#content").animate({ opacity: 1 }, 1500, function() {
@@ -38,22 +33,30 @@ $(document).ready( function() {
     $( this ).css({ border: "2px solid transparent" }); 
   }); 
 
-// console.log("the contents ", contents)
-$(".card").on("click", function() {
-  var value = $(this).attr("id"); 
-
-  $("#project").html( contents[value] ); 
-  $("#project").show( 2000, "easeIn", function() {
-
+  // console.log("the contents ", contents)
+  $(".card").on("click", function() {
+    var value = $(this).attr("id"); 
+    var body = contents[value]
+    // $("#project").html( ); 
+    $("#project").html( body ).show( 2000 ); 
   } ); 
-} ); 
 
-  $('#project').on('click', '#close', function (event) {
-    console.log(this)
-    $("#project").animate({ height: 0}, 2000)
+
+  $('#project').on('click', function () {
+    $(this).fadeTo(0)
   });
-  
+
 }); 
 
 
+// hide the projects and move left for animation
+// $("#project").hide(); 
+// $("#project").children().css({ opacity: 0 }); 
+// $("#project").children().each( function() {
+  //   $(this).css({ marginLeft: "-1000px" });  
+  // } )
 
+  // $('#project').on('click', '#close', function (event) {
+    //   console.log(this)
+    //   $("#project").fadeTo(0)
+    // });
