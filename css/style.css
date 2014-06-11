@@ -149,7 +149,7 @@ rgb: 10, 198, 242
 General 
 ---------------------------*/
 body {
-  font-family: "Oswald Light";
+  font-family: "Proxima Light";
   background-color: #fff;
   color: #75797c;
 }
@@ -196,7 +196,7 @@ a {
 /* buttons */
 
 .button.primary {
-  border: 2px solid #e7e8e8;
+  border: 2.5px solid #e7e8e8;
   font-size: 20px;
   font-weight: normal;
   line-height: 1.4;
@@ -206,7 +206,7 @@ a {
   transition: 0.25s linear;
   margin: 20px 0;
   width: 100%;
-  font-family: "Oswald Light";
+  font-family: "Promixa Regular";
 }
 
 .button a {
@@ -216,7 +216,7 @@ a {
 
 .button.primary:hover {
   color: white !important;
-  border: 2px solid transparent;
+  border: 2.5px solid transparent;
 }
 
 
@@ -264,14 +264,22 @@ Navigation
   /* add media query to here. so that there's no margin when it's small*/
   margin: 0px 15px; 
   height: 150px;
-  border-top: 2px solid #e7e8e8;
-  border-bottom: 2px solid #e7e8e8;
+  border-top: 2.5px solid #e7e8e8;
+  border-bottom: 2.5px solid #e7e8e8;
 }
 
 #name {
   color: #A9ACAE;
   height: 80px;
   text-align: center;
+}
+
+#name h4 {
+    font-family: "Proxima Semibold";
+}
+
+#name p {
+    font-family: "Proxima Regular";
 }
 
 #nav .row > div {
@@ -288,22 +296,22 @@ Navigation
   display: inline;
   margin-left: 20px;
   line-height: 150px;
-  border: 2px solid transparent;
+  border: 2.5px solid transparent;
   padding: 7.5px 20px;
 
 }
 
 
 #nav .work.active {
-  border: 2px solid #428cff;
+  border: 2.5px solid #428cff;
 }
 
 #nav .contact.active {
-  border: 2px solid #4ad6de;
+  border: 2.5px solid #4ad6de;
 }
 
 #nav .about.active {
-  border: 2px solid #613db5;
+  border: 2.5px solid #613db5;
 }
 
 
@@ -334,11 +342,9 @@ Navigation
   transition:  all .5s linear; 
 }
 
-#nav ul li {
-
-}
 
 #nav li a {
+  font-family: "Proxima Regular";
   color: #75797c;
 }
 
@@ -366,7 +372,7 @@ Showing All My Work
 
 
 #content .card {
-  border: 1px solid #e7e8e8;
+  border: 2.5px solid #e7e8e8;
   height: 275px;
   margin-bottom: 100px;
   text-align: center;
@@ -380,7 +386,7 @@ Showing All My Work
 }
 
 #content .header {
-  font-family: "Oswald Regular";
+  font-family: "Proxima Regular";
   height: 50px;
   color: #a9acae;
   position: relative;
@@ -396,8 +402,6 @@ Showing All My Work
 #content .card .img {
   height: 200px;
   /*  background-color: #c0c3c3;*/
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
 }
 
 #content img {
@@ -409,17 +413,10 @@ Showing All My Work
   padding: 25px;
 }
 
-#content .type {
-  margin-bottom: 10px;
-  font-family: "Oswald Regular";
-  font-size: 15px;
-  color: #A9ACAE;
-}
 
-#content .desc, 
 #about-body #content p {
   line-height: 20px;
-  font-family: "Crimson Text";
+  font-family: "Proxima Light";
   font-size: 15px;
 }
 
@@ -444,7 +441,7 @@ object:hover {
 }
 #content .card:hover {
   background-color: #8fbbff;
-  border: 1px solid #8fbbff;
+  border: 2.5px solid #8fbbff;
   cursor: pointer;
 
   -webkit-transition: all .5s linear; 
@@ -466,7 +463,7 @@ Footer
 ---------------------------*/
 #footer > .row > .nav-container {
   height: 150px;
-  border-top: 2px solid #e7e8e8;
+  border-top: 2.5px solid #e7e8e8;
   border-bottom: none;
   text-align: center;
   margin-right: 0 !important;
@@ -510,7 +507,7 @@ padding-right: 10px;
 
 #project > .row {
   margin-bottom: 60px;
-  border-bottom: 2px solid #e7e8e8;
+  border-bottom: 2.5px solid #e7e8e8;
 }
 
 #notebook #summary-left h2 {
@@ -523,6 +520,7 @@ padding-right: 10px;
 #project h3, 
 #project h4, 
 #project h5 {
+  font-family: "Proxima Regular";
   color: #428cff;
   margin-bottom: 50px;
 }
@@ -619,13 +617,13 @@ display: block;
 
 #project li, 
 #project p {
-  font-family: "Crimson Text";
+  font-family: "Proxima Regular";
   font-size: 16px;
   line-height: 23px;
 }
 
 #project .emphasis {
-  font-family: "Crimson Text Bold";
+  font-family: "Proxima Semibold";
   margin-bottom: -5px;
 }
 
@@ -649,7 +647,7 @@ display: block;
 }
 
 #notebook #process > .row {
-  border-top: 2px solid #e7e8e8;
+  border-top: 2.5px solid #e7e8e8;
   padding-top: 50px;
 }
 
