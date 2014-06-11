@@ -364,12 +364,14 @@
 	-webkit-animation: scaleDown .7s ease both;
 	-moz-animation: scaleDown .7s ease both;
 	animation: scaleDown .7s ease both;
+	height: 0;
 }
 
 .pt-page-scaleUp {
 	-webkit-animation: scaleUp 1s ease both;
 	-moz-animation: scaleUp 1s ease both;
 	animation: scaleUp 1s ease both;
+/*  height: au;*/
 }
 
 
@@ -389,6 +391,7 @@
 	-webkit-animation: scaleDownCenter .4s ease-in both;
 	-moz-animation: scaleDownCenter .4s ease-in both;
 	animation: scaleDownCenter .4s ease-in both;
+/*    height: 0;*/
 }
 
 .pt-page-scaleUpCenter {
@@ -402,13 +405,13 @@
 /* scale and fade */
 
 @-webkit-keyframes scaleDown {
-	to { opacity: 0; -webkit-transform: scale(.5); }
+	to { opacity: 0; -webkit-transform: scale(0); }
 }
 @-moz-keyframes scaleDown {
-	to { opacity: 0; -moz-transform: scale(.5); }
+	to { opacity: 0; -moz-transform: scale(0); }
 }
 @keyframes scaleDown {
-	to { opacity: 0; transform: scale(.5); }
+	to { opacity: 0; transform: scale(0); }
 }
 
 @-webkit-keyframes scaleUp {

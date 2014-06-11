@@ -473,7 +473,19 @@ Footer
 /*---------------------------
 Showing Individual Project
 ---------------------------*/
+#project {
+  overflow: hidden;
+}
 
+#project.open {
+  height: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transition: all 4s linear; 
+  -moz-transition:  all 4s linear; 
+  -ms-transition: all 4s linear; 
+  -o-transition: all 4s linear; 
+  transition:  all 4s linear;
+}
 
 #project .process {
   margin-top: 35px;
@@ -595,7 +607,9 @@ display: block;
 #process .opaque img {
   width: inherit;
 }
-
+#glance, #in-depth {
+  position: relative;
+}
 #project li, 
 #project p {
   font-family: "Proxima Regular";
