@@ -287,9 +287,9 @@ contents = {
           <div class='row'>                                                                   \
                                                                                               \
             <div class='column_12'>                                                           \
-              <h4> Process </h4>                                                             \
+              <h4> Mockups </h4>                                                             \
               <p>                                                                             \
-               \
+               Below are some of the pages I had the pleasure of wireframing and mocking up. I really enjoyed this job because although there was one main designer, we all made the final design and layout decisions as a team. If we were in a rush to get a page done, the team would leave the final decisions for myself and Rebecca Chen (who is an amazing designer). I learnt a lot about information architecture and minimal designs from Rebecca. A lot of my mockups were busy and included unnecessary information. I would show Rebecca my designs and she would either explain or show me what information was necessary and why. \
               </p>         \
             </div>         \
                            \

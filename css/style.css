@@ -164,8 +164,6 @@ h3,
 h4,
 h5,
 span, 
-.header, 
-.type,
 #nav li a, 
 #name, 
 #footer {
@@ -189,14 +187,14 @@ span,
 }
 
 a {
-  color: #75797c !important; 
+  color: #A9ACAE !important; 
   letter-spacing: 0.14em;
 }
 
 /* buttons */
 
 .button.primary {
-  border: 2.5px solid #e7e8e8;
+  border: 2.5px solid #d0d2d3;
   font-size: 20px;
   font-weight: normal;
   line-height: 1.4;
@@ -226,6 +224,7 @@ a {
 
 #project a {
   color: inherit !important;
+  font-family: "Proxima Regular";
 }
 
 #project .button.primary:hover {
@@ -264,8 +263,8 @@ Navigation
   /* add media query to here. so that there's no margin when it's small*/
   margin: 0px 15px; 
   height: 150px;
-  border-top: 2.5px solid #e7e8e8;
-  border-bottom: 2.5px solid #e7e8e8;
+  border-top: 2.5px solid #d0d2d3;
+  border-bottom: 2.5px solid #d0d2d3;
 }
 
 #name {
@@ -274,13 +273,14 @@ Navigation
   text-align: center;
 }
 
-#name h4 {
-    font-family: "Proxima Semibold";
-}
-
+#name h4, 
 #name p {
     font-family: "Proxima Regular";
 }
+
+/*#name p {
+    font-family: "Proxima Regular";
+}*/
 
 #nav .row > div {
   position: relative;
@@ -344,7 +344,7 @@ Navigation
 
 
 #nav li a {
-  font-family: "Proxima Regular";
+  font-family: "Proxima Semibold";
   color: #75797c;
 }
 
@@ -372,7 +372,7 @@ Showing All My Work
 
 
 #content .card {
-  border: 2.5px solid #e7e8e8;
+  border: 2.5px solid #d0d2d3;
   height: 275px;
   margin-bottom: 100px;
   text-align: center;
@@ -416,7 +416,7 @@ Showing All My Work
 
 #about-body #content p {
   line-height: 20px;
-  font-family: "Proxima Light";
+  font-family: "Proxima Regular";
   font-size: 15px;
 }
 
@@ -463,7 +463,7 @@ Footer
 ---------------------------*/
 #footer > .row > .nav-container {
   height: 150px;
-  border-top: 2.5px solid #e7e8e8;
+  border-top: 2.5px solid #d0d2d3;
   border-bottom: none;
   text-align: center;
   margin-right: 0 !important;
@@ -473,21 +473,7 @@ Footer
 /*---------------------------
 Showing Individual Project
 ---------------------------*/
-#project .sidebar, 
-#project .main {
-/*  border: 1px solid red;*/
-margin-top: 20px;
-padding-right: 10px;
-}
 
-#project .sidebar {
-/*  overflow: auto;*/
-}
-
-#project .sidebar div > p {
-  font-family: "Crimson Text";
-  line-height: 20px;
-}
 
 #project .process {
   margin-top: 35px;
@@ -507,7 +493,7 @@ padding-right: 10px;
 
 #project > .row {
   margin-bottom: 60px;
-  border-bottom: 2.5px solid #e7e8e8;
+  border-bottom: 2.5px solid #d0d2d3;
 }
 
 #notebook #summary-left h2 {
@@ -529,11 +515,6 @@ padding-right: 10px;
   line-height: 40px;
 }
 
-#project .main {
-  overflow: auto;
-  height: 600px;
-  border: 1px solid #e7e8e8;
-}
 
 #project .main img {
   width: 100%;
@@ -624,7 +605,6 @@ display: block;
 
 #project .emphasis {
   font-family: "Proxima Semibold";
-  margin-bottom: -5px;
 }
 
 #project .row ul {
@@ -647,7 +627,7 @@ display: block;
 }
 
 #notebook #process > .row {
-  border-top: 2.5px solid #e7e8e8;
+  border-top: 2.5px solid #d0d2d3;
   padding-top: 50px;
 }
 
@@ -661,7 +641,6 @@ About Page
 #about-body #content h3, 
 #about-body #content h4, 
 #about-body #content h5 {
-  text-transform: uppercase;
   color: #613db5;
   line-height: 24px;
   margin-bottom: 5px;
