@@ -13,15 +13,15 @@ var page = "";
 // Document ready 
 $(document).ready( function() {
 
-  // $("#project").hide()//append( contents["notebook"]); 
+  $("#project").slideToggle()//append( contents["notebook"]); 
   // or
   // alpha:0, display:''
-  TweenMax.to($('#project'), 0.2, { 
-    height: 0, 
-    opacity: 0
-    // className: "pt-page-scaleDown", 
-    // display: "none"
-    });
+  // TweenMax.to($('#project'), 0.2, { 
+  //   height: 0, 
+  //   opacity: 0
+  //   // className: "pt-page-scaleDown", 
+  //   // display: "none"
+  //   });
   // $("img.lazy").lazyload();
   // $("#project img").unveil(200, function() {
   //   $(this).load(function() {
@@ -58,18 +58,19 @@ $(document).ready( function() {
     // $("#project").html( ); 
 
     $("#project").html( body ); 
-    var h = $("#glance").height() + $("#in-depth").height(); 
-    var total_height = "+=" + (1.8*h) + "px";
-    console.log(total_height, " is the total height of the div" )
-    
+    autoHeight = $("#project").css('height', 'auto').outerHeight()+"px";
+    // var h = $("#glance").height() + $("#in-depth").height(); 
+    // var total_height = "+=" + $("#project").height() + "px";
+    console.log(autoHeight, " is the total height of the div" )
+    $("#project").slideToggle( 4000, "easeOutSine" );
     // if ($("#project").className != "open") {
-      TweenLite.to($("#project"), 2, { 
-        // className: "pt-page-scaleUp", 
-        height: total_height, 
-        opacity: 1,
-        // scaleY: 1,
-        ease: Quad.easeOut 
-        });
+      // TweenLite.to($("#project"), 2, { 
+      //   // className: "pt-page-scaleUp", 
+      //   height: autoHeight, 
+      //   opacity: 1,
+      //   // scaleY: 1,
+      //   ease: Quad.easeOut 
+      //   });
     // }
     // TweenMax.to($('#project'), 2, { height: incr,
     // onComplete: function(){ TweenMax.to($('#project'), 0.5, {css: { opacity: 1 } } ) }
@@ -81,14 +82,16 @@ $(document).ready( function() {
 // 
 $('#project').on('click', "#close", function () {
   console.log("close"); 
+   $("#project").fadeToggle( 3000, "easeOutBack", function() {
+   });
   // else {
-    TweenLite.to($("#project"), 1, {
-      // className: "pt-page-scaleDownCenter",
-      height: 0,
-      opacity: 0
-      // onComplete: function() { $("#project").css({height: 0, opacity: 0}) }
-      // ease: Quint.easeOut
-      });
+    // TweenLite.to($("#project"), 1, {
+    //   // className: "pt-page-scaleDownCenter",
+    //   height: 0,
+    //   opacity: 0
+    //   // onComplete: function() { $("#project").css({height: 0, opacity: 0}) }
+    //   // ease: Quint.easeOut
+    //   });
     
   // TweenMax.to($('#project'), 3, { scaleY: 1 } );
   // $("#project").empty(); 
