@@ -244,7 +244,7 @@ contents = {
                                                               \
           <ul>                                                \
             <li class='emphasis'> Blurb </li>                 \
-            <li> I worked for <a class='project-links' target='_blank' href='http://clickbrands.com/'>ClickBrands</a> as a Front-End Designer. It was my first real front-end gig and I bloody loved it! Initially, I got my feet wet with a project called <a class='project-links' target='_blank' href='http://www.apartmentlinks.com/'>Apartment Links</a>, but the bulk of our time and effort was spent revamping their old apartment ratings site to Apartment Reviews (.net). The best part was that because we had a small team, I not only did front-end tasks, but I designed mockups, helped with the user experience of the site, helped with their Ruby on Rails framework, and migrated the working front-end prototypes into the application. </li> \
+            <li> I worked for ClickBrands as a Front-End Designer. It was my first real front-end gig and I bloody loved it! Initially, I got my feet wet with a project called Apartment Links, but the bulk of our time and effort was spent revamping their old apartment ratings site to Apartment Reviews (.net). The best part was that because we had a small team, I not only did front-end tasks, but I designed mockups, helped with the user experience of the site, helped with their Ruby on Rails framework, and migrated the working front-end prototypes into the application. </li> \
           </ul>     \
                     \
         </div>      \

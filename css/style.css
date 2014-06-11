@@ -37,6 +37,49 @@
   font-style: bold;
 }
 
+@font-face {
+  font-family: "Proxima Black";
+  src: url("../fonts/proxima/Proxima Nova Black.otf");
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Proxima Bold";
+  src: url("../fonts/proxima/Proxima Nova Bold.otf");
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Proxima Extrabold";
+  src: url("../fonts/proxima/Proxima Nova Extrabold.otf");
+  font-style: bold;
+}
+
+
+@font-face {
+  font-family: "Proxima Semibold";
+  src: url("../fonts/proxima/Proxima Nova Semibold.otf");
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Proxima Regular";
+  src: url("../fonts/proxima/Proxima Nova Regular.otf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Proxima Light";
+  src: url("../fonts/proxima/Proxima Nova Light.otf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Proxima Thin";
+  src: url("../fonts/proxima/Proxima Nova Thin.otf");
+  font-style: normal;
+}
+
 
 /*FuturaStd-Book*/
 /*------------------------------------------------------------------

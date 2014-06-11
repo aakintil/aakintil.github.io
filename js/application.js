@@ -15,7 +15,8 @@ $(document).ready( function() {
 
   // $("#project").hide()//append( contents["notebook"]); 
   // or
-  TweenMax.to($('#project'), 1, {css:{alpha:0, display:''}});
+  // alpha:0, display:''
+  TweenMax.to($('#project'), 1, { css:{ height: "0", opacity: 0 } } );
   // $("img.lazy").lazyload();
   // $("#project img").unveil(200, function() {
   //   $(this).load(function() {
@@ -52,8 +53,11 @@ $(document).ready( function() {
     // $("#project").html( ); 
 
     $("#project").html( body ); 
-    TweenMax.to($('#project'), 0.5, {css: { display:'block' }, 
-    onComplete: function(){ TweenMax.to($('#project'), 1, {css: { alpha: 1 } } ) }
+    var h = $("#project").children().height()+1000; 
+    var incr = "+="+h; 
+    console.log(incr)
+    TweenMax.to($('#project'), 2, { height: incr,
+    onComplete: function(){ TweenMax.to($('#project'), 1, {css: { opacity: 1 } } ) }
   }); 
 
 } ); 
@@ -62,7 +66,7 @@ $(document).ready( function() {
 // 
 $('#project').on('click', "#close", function () {
   console.log("close"); 
-  TweenMax.to($('#project'), 3, { css:{ scaleY:0 }, reversed: true } );
+  // TweenMax.to($('#project'), 3, { scaleY: 1 } );
   // $("#project").empty(); 
 });
 
