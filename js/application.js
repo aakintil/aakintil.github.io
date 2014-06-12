@@ -12,8 +12,10 @@ var page = "";
 
 // Document ready 
 $(document).ready( function() {
-
-  $("#project").slideToggle()//append( contents["notebook"]); 
+  // 
+  // $("#project").velocity({
+  //   opacity: 0
+  // })//append( contents["notebook"]); 
   // or
   // alpha:0, display:''
   // TweenMax.to($('#project'), 0.2, { 
@@ -57,12 +59,13 @@ $(document).ready( function() {
     var body = contents[value]
     // $("#project").html( ); 
 
-    $("#project").html( body ); 
-    autoHeight = $("#project").css('height', 'auto').outerHeight()+"px";
+    // $("#project").html( body ); 
+    // autoHeight = $("#project").css('height', 'auto').outerHeight()+"px";
     // var h = $("#glance").height() + $("#in-depth").height(); 
     // var total_height = "+=" + $("#project").height() + "px";
-    console.log(autoHeight, " is the total height of the div" )
-    $("#project").slideToggle( 4000, "easeOutSine" );
+    // console.log(autoHeight, " is the total height of the div" )
+
+    // $("#project").slideToggle( 4000, "easeOutSine" );
     // if ($("#project").className != "open") {
       // TweenLite.to($("#project"), 2, { 
       //   // className: "pt-page-scaleUp", 
@@ -82,8 +85,8 @@ $(document).ready( function() {
 // 
 $('#project').on('click', "#close", function () {
   console.log("close"); 
-   $("#project").fadeToggle( 3000, "easeOutBack", function() {
-   });
+   // $("#project").fadeToggle( 3000, "easeOutBack", function() {
+   // });
   // else {
     // TweenLite.to($("#project"), 1, {
     //   // className: "pt-page-scaleDownCenter",
