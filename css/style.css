@@ -354,9 +354,6 @@ Navigation
 Showing All My Work
 ---------------------------*/
 
-#content .row {
-  margin-bottom: 50px;
-}
 
 #content .column_4.center {
   padding: 0px 37.5px;
@@ -489,6 +486,10 @@ Showing Individual Project
   position: relative;
 }
 
+#in-depth > .row {
+  padding-bottom: 0;
+}
+
 #project .container {
   padding-bottom: 0;
   padding-top: 30px;
@@ -512,7 +513,7 @@ Showing Individual Project
 #project h5 {
   font-family: "Proxima Regular";
   color: #428cff;
-  margin-bottom: 50px;
+  margin-bottom: 45px;
 }
 
 #project h2 {
@@ -566,9 +567,6 @@ display: block;
   list-style-type: none; 
 }
 
-#snapshot {
-  padding-top: 50px;
-}
 
 #project .emphasis {
   font-family: "Crimson Text";
