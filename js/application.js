@@ -27,6 +27,9 @@ $(document).ready( function() {
 });
 }
 
+var src = "animate fadeInLeft" ; 
+
+// $("#project").find("img").attr("class", src); 
 
 
 // different color hover effects for menu links
