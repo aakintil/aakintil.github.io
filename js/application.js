@@ -17,7 +17,7 @@ $(document).ready( function() {
   var footer = $("#footer"); 
   var project = $("#project"); 
 
-  if ($("body").attr("id", "home-body")) {
+  if ($("body").attr("id") === "home-body" ) {
   TweenLite.to(nav, 1.5, { opacity: 1, delay: 0.25, onComplete: function() {
     TweenLite.to(content, 1.5, { opacity: 1, delay: 0.25, onComplete: function() {
       TweenLite.to(footer, 1.5, { opacity: 1 } ); 
