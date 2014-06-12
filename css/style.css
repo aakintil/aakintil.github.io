@@ -375,7 +375,15 @@ Showing All My Work
   text-align: center;
   line-height: 20px;
   overflow: auto;
+}
 
+#content .card.active {
+  background-color: #8fbbff;
+  border: 2.5px solid #8fbbff;
+}
+
+#content .active .header {
+  color: white;
 }
 
 #content .card > div, 
