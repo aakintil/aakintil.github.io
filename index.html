@@ -48,24 +48,17 @@
   <script src='http://code.jquery.com/jquery-1.10.2.min.js'></script> 
   <script src='http://code.jquery.com/ui/1.10.4/jquery-ui.js'></script>
   <script src='js/modernizr.custom.js'></script>
-  <script src="js/lazyload.min.js"></script>
   <!-- Analytics -->
   <script type='text/javascript'>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-
-  // var _gaq = _gaq || [];
-  // _gaq.push(['_setAccount', 'UA-29643116-1']);
-  // _gaq.push(['_setDomainName', 'aderinsola.com']);
-  // _gaq.push(['_trackPageview']);
-  // 
-  // (function() 
-  // { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  // ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
-  // })();
-
-
+    ga('create', 'UA-29643116-1', 'aderinsola.com');
+    ga('send', 'pageview');
   </script>	
+  
   <script src='js/modernizr.custom.js'></script>
   <script src='https://cdn.jsdelivr.net/modernizr/2.7.0/modernizr.min.js'></script>
   <link rel='shortcut icon' href='images/main-favicon.ico' type='image/x-icon'>
@@ -111,9 +104,6 @@
 </section>
 
 
-<!-- <section id='project'>
-
-</section> -->
 <!-- Showing all Projects -->
 <section id='content'>
 
@@ -238,7 +228,7 @@
 <script src='js/greensock/TimelineMax.js'></script>
 <script src='js/greensock/TweenMax.js'></script>
 <script src='js/lazyload.min.js'></script>
-
+<!-- <script type='text/javascript' src='js/velocity.min.js'></script> -->
 <script type='text/javascript' src='js/tuktuk.js'></script>
 <script type='text/javascript' src='js/application.js'></script>
 

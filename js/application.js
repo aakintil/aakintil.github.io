@@ -12,38 +12,34 @@ var page = "";
 
 // Document ready 
 $(document).ready( function() {
+  var nav = $("#nav"); 
+  var content = $("#content"); 
+  var footer = $("#footer"); 
+  var project = $("#project"); 
 
-  // slowly load and animate the page
-  $("#nav").animate({ opacity: 1 }, 1900, function() {
-    $("#content").animate({ opacity: 1 }, 1500, function() {
-      $("#footer").animate({ opacity: 1 }, 1000)
-    })
-  });
-
-  // different color hover effects for menu links
-  $("#nav ul li").hover( function() {
-    var el = $(this).attr("class"); 
-    var border_color = "2px solid " + highlight[ el ];
-    $( this ).css({ border: border_color })  
-  }, 
-  function() {
-    if ( !$( this ).hasClass("active") )
-    $( this ).css({ border: "2px solid transparent" }); 
+  if ($("body").attr("id", "home-body")) {
+  TweenLite.to(nav, 1.5, { opacity: 1, delay: 0.25, onComplete: function() {
+    TweenLite.to(content, 1.5, { opacity: 1, delay: 0.25, onComplete: function() {
+      TweenLite.to(footer, 1.5, { opacity: 1 } ); 
+    }
   }); 
-
-  // console.log("the contents ", contents)
-  $(".card").on("click", function() {
-    var value = $(this).attr("id"); 
-    var body = contents[value]
-
-  } ); 
+}
+});
+}
 
 
-  // 
-  $('#project').on('click', "#close", function () {
-    console.log("close"); 
 
-  });
+// different color hover effects for menu links
+$("#nav ul li").hover( function() {
+  var el = $(this).attr("class"); 
+  var border_color = "2px solid " + highlight[ el ];
+  $( this ).css({ border: border_color })  
+}, 
+function() {
+  if ( !$( this ).hasClass("active") )
+  $( this ).css({ border: "2px solid transparent" }); 
+}); 
+
 
 }); 
 

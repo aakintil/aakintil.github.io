@@ -364,14 +364,12 @@
 	-webkit-animation: scaleDown .7s ease both;
 	-moz-animation: scaleDown .7s ease both;
 	animation: scaleDown .7s ease both;
-	height: 0;
 }
 
 .pt-page-scaleUp {
 	-webkit-animation: scaleUp 1s ease both;
 	-moz-animation: scaleUp 1s ease both;
 	animation: scaleUp 1s ease both;
-/*  height: au;*/
 }
 
 
@@ -391,7 +389,6 @@
 	-webkit-animation: scaleDownCenter .4s ease-in both;
 	-moz-animation: scaleDownCenter .4s ease-in both;
 	animation: scaleDownCenter .4s ease-in both;
-/*    height: 0;*/
 }
 
 .pt-page-scaleUpCenter {
