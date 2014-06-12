@@ -12,28 +12,6 @@ var page = "";
 
 // Document ready 
 $(document).ready( function() {
-  // 
-  // $("#project").velocity({
-  //   opacity: 0
-  // })//append( contents["notebook"]); 
-  // or
-  // alpha:0, display:''
-  // TweenMax.to($('#project'), 0.2, { 
-  //   height: 0, 
-  //   opacity: 0
-  //   // className: "pt-page-scaleDown", 
-  //   // display: "none"
-  //   });
-  // $("img.lazy").lazyload();
-  // $("#project img").unveil(200, function() {
-  //   $(this).load(function() {
-  //     this.style.opacity = 1;
-  //   });
-  // });
- 
-
-    // $("img.lazy").lazyload({ effect: "fadeIn" });  
-  
 
   // slowly load and animate the page
   $("#nav").animate({ opacity: 1 }, 1900, function() {
@@ -57,60 +35,16 @@ $(document).ready( function() {
   $(".card").on("click", function() {
     var value = $(this).attr("id"); 
     var body = contents[value]
-    // $("#project").html( ); 
 
-    // $("#project").html( body ); 
-    // autoHeight = $("#project").css('height', 'auto').outerHeight()+"px";
-    // var h = $("#glance").height() + $("#in-depth").height(); 
-    // var total_height = "+=" + $("#project").height() + "px";
-    // console.log(autoHeight, " is the total height of the div" )
-
-    // $("#project").slideToggle( 4000, "easeOutSine" );
-    // if ($("#project").className != "open") {
-      // TweenLite.to($("#project"), 2, { 
-      //   // className: "pt-page-scaleUp", 
-      //   height: autoHeight, 
-      //   opacity: 1,
-      //   // scaleY: 1,
-      //   ease: Quad.easeOut 
-      //   });
-    // }
-    // TweenMax.to($('#project'), 2, { height: incr,
-    // onComplete: function(){ TweenMax.to($('#project'), 0.5, {css: { opacity: 1 } } ) }
-  // }); 
-
-} ); 
+  } ); 
 
 
-// 
-$('#project').on('click', "#close", function () {
-  console.log("close"); 
-   // $("#project").fadeToggle( 3000, "easeOutBack", function() {
-   // });
-  // else {
-    // TweenLite.to($("#project"), 1, {
-    //   // className: "pt-page-scaleDownCenter",
-    //   height: 0,
-    //   opacity: 0
-    //   // onComplete: function() { $("#project").css({height: 0, opacity: 0}) }
-    //   // ease: Quint.easeOut
-    //   });
-    
-  // TweenMax.to($('#project'), 3, { scaleY: 1 } );
-  // $("#project").empty(); 
-});
+  // 
+  $('#project').on('click', "#close", function () {
+    console.log("close"); 
+
+  });
 
 }); 
 
 
-// hide the projects and move left for animation
-// $("#project").hide(); 
-// $("#project").children().css({ opacity: 0 }); 
-// $("#project").children().each( function() {
-  //   $(this).css({ marginLeft: "-1000px" });  
-  // } )
-
-  // $('#project').on('click', '#close', function (event) {
-    //   console.log(this)
-    //   $("#project").fadeTo(0)
-    // });
