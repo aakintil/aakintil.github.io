@@ -615,10 +615,6 @@ display: block;
   margin-bottom: 20px;
 }
 
-#notebook #glance {
-  height: 570px;
-}
-
 #notebook #summary-left img {
   top: -100px;
   position: relative;
@@ -662,6 +658,10 @@ About Page
 
 #about-body .email:hover a {
   color: #613db5 !important;
+}
+
+#about-body #content {
+  padding-bottom: 50px;
 }
 
 
