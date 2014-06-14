@@ -1,0 +1,825 @@
+/* font faces */
+
+@font-face {
+  font-family: "Oswald Light";
+  src: url("../fonts/Oswald-Light.otf");
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Oswald Regular";
+  src: url("../fonts/Oswald-Regular.otf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oswald Bold";
+  src: url("../fonts/Oswald-Bold.otf");
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Crimson Text";
+  src: url("../fonts/CrimsonText-Roman.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Crimson Text Semibold";
+  src: url("../fonts/CrimsonText-Semibold.ttf");
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Crimson Text Bold";
+  src: url("../fonts/CrimsonText-Bold.ttf");
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Proxima Black";
+  src: url("../fonts/proxima/Proxima Nova Black.otf");
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Proxima Bold";
+  src: url("../fonts/proxima/Proxima Nova Bold.otf");
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Proxima Extrabold";
+  src: url("../fonts/proxima/Proxima Nova Extrabold.otf");
+  font-style: bold;
+}
+
+
+@font-face {
+  font-family: "Proxima Semibold";
+  src: url("../fonts/proxima/Proxima Nova Semibold.otf");
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Proxima Regular";
+  src: url("../fonts/proxima/Proxima Nova Regular.otf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Proxima Light";
+  src: url("../fonts/proxima/Proxima Nova Light.otf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Proxima Thin";
+  src: url("../fonts/proxima/Proxima Nova Thin.otf");
+  font-style: normal;
+}
+
+
+/*FuturaStd-Book*/
+/*------------------------------------------------------------------
+[Table of contents]
+
+
+1. General
+2. Home Navigation / #header
+3. Main Navigation / #main 
+4. Project Page
+
+
+10. Media Queries 
+
+
+4. Content / #content
+5. Left column / #leftcolumn
+6. Right column / #rightcolumn
+7. Sidebar / #sidebar
+8. RSS / #rss
+9. Search / #search
+10. Boxes / .box
+11. Sideblog / #sideblog
+12. Advertisements / .ads
+13. Footer / #footer
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+Color Pallette
+
+Triadic Logo
+-- purple --
+hex: #613db5, 
+rgb: 52, 73, 94
+
+
+-- light blue --
+hex: #4ad6de,
+change 
+rgb: 117, 224, 249
+
+
+-- dark blue --
+hex: #428cff, 
+change
+rgb: 10, 198, 242
+
+-- super light grey --
+#e7e8e8
+
+-- slightly darker grey -- 
+#cdcfcf
+
+-- text grey --
+#75797c
+
+-- card header grey --
+#a9acae
+
+-- another grey --
+#c0c3c3
+
+-------------------------------------------------------------------*/
+
+
+/*---------------------------
+General 
+---------------------------*/
+body {
+  font-family: "Proxima Light";
+  background-color: #fff;
+  color: #75797c;
+}
+
+body > section {
+  position: relative;
+}
+
+#home-body > section {
+  opacity: 0;
+}
+
+h1, 
+h2, 
+h3, 
+h4,
+h5,
+span, 
+#nav li a, 
+#name, 
+#footer {
+  letter-spacing: 0.14em;
+}
+
+* {
+  -webkit-transition: all .25s linear; 
+  -moz-transition:  all .25s linear; 
+  -ms-transition: all .25s linear; 
+  -o-transition: all .25s linear; 
+  transition:  all .25s linear;
+}
+
+*:hover {
+  -webkit-transition: all .25s linear; 
+  -moz-transition:  all .25s linear; 
+  -ms-transition: all .25s linear; 
+  -o-transition: all .25s linear; 
+  transition:  all .25s linear;
+}
+
+a {
+  color: #A9ACAE !important; 
+  letter-spacing: 0.14em;
+}
+
+/* buttons */
+
+.button.primary {
+  border: 2.5px solid #d0d2d3;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.4;
+  padding: 10px 15px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-transition: 0.25s linear;
+  transition: 0.25s linear;
+  margin: 20px 0;
+  width: 100%;
+  font-family: "Promixa Regular";
+}
+
+.button a {
+  text-transform: lowercase;
+  font-size: 16px;
+}
+
+.button.primary:hover {
+  color: white !important;
+  border: 2.5px solid transparent;
+}
+
+
+#project .button.primary {
+  color: #428cff;
+}
+
+#project a {
+  color: inherit !important;
+  font-family: "Proxima Regular";
+}
+
+#project .button.primary:hover {
+  background-color: #428cff;
+
+}
+
+#about .button.primary {
+
+}
+
+#contact .button.primary {
+
+}
+
+/*---------------------------
+Navigation
+---------------------------*/
+
+#logo {
+  margin-top: 35px;
+  margin-left: 0;
+}
+
+#logo img {
+  width: auto;
+  height: 80px;
+}
+
+
+#nav {
+  margin: 50px 0px;
+}
+
+.nav-container {
+  /* add media query to here. so that there's no margin when it's small*/
+  margin: 0px 15px; 
+  height: 150px;
+  border-top: 2.5px solid #d0d2d3;
+  border-bottom: 2.5px solid #d0d2d3;
+}
+
+#name {
+  color: #A9ACAE;
+  height: 80px;
+  text-align: center;
+}
+
+#name h4, 
+#name p {
+  font-family: "Proxima Regular";
+}
+
+/*#name p {
+font-family: "Proxima Regular";
+}*/
+
+#nav .row > div {
+  position: relative;
+}
+
+
+#nav ul {
+  right: 0;
+  position: absolute;
+}
+
+#nav li {
+  display: inline;
+  margin-left: 20px;
+  line-height: 150px;
+  border: 2.5px solid transparent;
+  padding: 7.5px 20px;
+
+}
+
+
+#nav .work.active {
+  border: 2.5px solid #428cff;
+}
+
+#nav .contact.active {
+  border: 2.5px solid #4ad6de;
+}
+
+#nav .about.active {
+  border: 2.5px solid #613db5;
+}
+
+
+
+
+
+#name > h4 {
+  font-size: 1.4em !important;
+  margin-top: 20px;
+}
+
+#name > p, #footer p {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+#nav ul {
+/*  margin-top: 50px;*/
+}
+
+#nav ul li:hover {
+  cursor: pointer;
+
+  -webkit-transition: all .5s linear; 
+  -moz-transition:  all .5s linear; 
+  -ms-transition: all .5s linear; 
+  -o-transition: all .5s linear; 
+  transition:  all .5s linear; 
+}
+
+
+#nav li a {
+  font-family: "Proxima Semibold";
+  color: #75797c;
+}
+
+
+
+/*---------------------------
+Showing All My Work
+---------------------------*/
+
+
+#content .column_4.center {
+  padding: 0px 37.5px;
+}
+
+#content .column_4.left {
+  padding-right: 75px;
+}
+
+#content .column_4.right {
+  padding-left: 75px;
+}
+
+
+#content .card {
+  border: 2.5px solid #d0d2d3;
+  height: 275px;
+  margin-bottom: 100px;
+  text-align: center;
+  line-height: 20px;
+  overflow: auto;
+}
+
+#content .card.active {
+  background-color: #8fbbff;
+  border: 2.5px solid #8fbbff;
+}
+
+#content .active .header {
+  color: white;
+}
+
+#content .card > div, 
+#content .card p {
+}
+
+#content .header {
+  font-family: "Proxima Regular";
+  height: 50px;
+  color: #a9acae;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+#content .header p {
+  font-size: 18px;
+  position: relative;
+  margin-top: -7.5px;
+}
+
+#content .card .img {
+  height: 200px;
+  /*  background-color: #c0c3c3;*/
+}
+
+#content img {
+  height: inherit;
+}
+
+
+#content .card .header {
+  padding: 25px;
+}
+
+
+#about-body #content p {
+  line-height: 20px;
+  font-family: "Proxima Regular";
+  font-size: 15px;
+}
+
+
+.card object {
+  display: block;
+  height: inherit;
+  margin: 0 auto;
+}
+
+.card object {
+  color: red !important;
+}
+
+.card .img {
+  margin: 0 auto;
+}
+
+#content .img:hover, 
+object:hover {
+  cursor: pointer;
+}
+#content .card:hover {
+  background-color: #8fbbff;
+  border: 2.5px solid #8fbbff;
+  cursor: pointer;
+
+  -webkit-transition: all .5s linear; 
+  -moz-transition:  all .5s linear; 
+  -ms-transition: all .5s linear; 
+  -o-transition: all .5s linear; 
+  transition:  all .5s linear;
+}
+
+#content .card:hover p {
+  color: white;
+}
+
+/* might be able to delete */
+
+
+/*---------------------------
+Footer
+---------------------------*/
+#footer > .row > .nav-container {
+  height: 150px;
+  border-top: 2.5px solid #d0d2d3;
+  border-bottom: none;
+  text-align: center;
+  margin-right: 0 !important;
+}
+
+
+/*---------------------------
+Showing Individual Project
+---------------------------*/
+#project {
+/*  height: 1px;*/
+}
+
+
+
+#project .process {
+  margin-top: 35px;
+}
+
+#project .row {
+  padding: 80px 0;
+  padding-top: 0; 
+  position: relative;
+}
+
+#in-depth > .row {
+  padding-bottom: 0;
+}
+
+#project .container {
+  padding-bottom: 0;
+  padding-top: 30px;
+}
+
+
+#project > .row {
+  margin-bottom: 60px;
+  border-bottom: 2.5px solid #d0d2d3;
+}
+
+#notebook #summary-left h2 {
+  margin-bottom: 15px;
+}
+
+
+#project h1, 
+#project h2, 
+#project h3, 
+#project h4, 
+#project h5 {
+  font-family: "Proxima Regular";
+  color: #428cff;
+  margin-bottom: 45px;
+}
+
+#project h2 {
+  line-height: 40px;
+}
+
+
+#project .main img {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+/*#project .width-70 {
+width: 50% !important;
+margin: auto;
+display: block;
+}*/
+
+#project .opaque {
+  opacity: 1;
+}
+
+
+#project .opaque:hover {
+  opacity: 0.6;
+}
+
+#close {
+  position: absolute;
+  /* change if you change the padding top for the container row*/
+  top: 40px; 
+  font-size: 20px;
+  right: 0;
+  z-index: 1;
+  color: #75797c;
+}
+
+#close:hover {
+  cursor: pointer;
+}
+
+#snapshot img {
+  width: inherit;
+}
+
+#summary-middle {
+  padding-top: 85px;
+  padding-bottom: 150px;
+}
+
+#project ul li {
+  list-style-type: none; 
+}
+
+
+#project .emphasis {
+  font-family: "Crimson Text";
+  font-style: bold;
+}
+
+#process h4 {
+  margin-bottom: 25px;
+}
+
+#process > .row {
+/*  padding: 0;*/
+/*  margin*/
+}
+#process .img-container {
+  margin-top: 20px;
+}
+
+#process .middle {
+  padding-top: 50px;
+  position: relative;
+  margin-top: 50px;
+}
+
+#process .img-container > img, 
+#content .inherit-width > img, 
+#process .opaque, 
+#process .opaque img {
+  width: inherit;
+}
+#glance, #in-depth {
+  position: relative;
+}
+#project li, 
+#project p {
+  font-family: "Proxima Regular";
+  font-size: 16px;
+  line-height: 23px;
+}
+
+#project .emphasis {
+  font-family: "Proxima Semibold";
+}
+
+#project .row ul {
+  margin-bottom: 20px;
+}
+
+#notebook #summary-left img {
+  top: -100px;
+  position: relative;
+  left: -10px;
+}
+
+#notebook #summary-left h5 {
+  margin-top: -180px;
+  line-height: 27px;
+}
+
+#notebook #process > .row {
+  border-top: 2.5px solid #d0d2d3;
+  padding-top: 50px;
+}
+
+
+/*---------------------------
+About Page
+---------------------------*/
+
+#about-body #content h1, 
+#about-body #content h2, 
+#about-body #content h3, 
+#about-body #content h4, 
+#about-body #content h5 {
+  color: #613db5;
+  line-height: 24px;
+  margin-bottom: 5px;
+}
+
+#about-body h5 ~ p, 
+#about-body p > a {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+#about-body h5 ~ h5 {
+  margin-top: 20px;
+}
+
+#about-body .email:hover a {
+  color: #613db5 !important;
+}
+
+#about-body #content {
+  padding-bottom: 50px;
+}
+
+
+/*---------------------------
+Media Queries
+---------------------------*/
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1199px) { 
+
+  #content .column_4.center {
+    padding: 0px 18.75px;
+  }
+
+  #content .column_4.left {
+    padding-right: 37.5px;
+  }
+
+  #content .column_4.right {
+    padding-left: 37.5px;
+  }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  #content .column_4.center {
+    padding: 0px 9.375px;
+  }
+
+
+  #content .column_4.left {
+    padding-right: 18.75px;
+  }
+
+  #content .column_4.right {
+    padding-left: 18.75px;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #logo {
+    margin-left: -10px;
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+  #project h5 {
+    margin-bottom: 0;
+  }
+  #snapshot {
+    margin-top: -100px;
+    padding-top: 0;
+  }
+  #name {
+    height: 100px;
+    padding: 0 15px;
+  }
+
+  #name > h4 {
+    font-size: 1.4em !important;
+  }
+
+  #name > p {
+    line-height: 22px;
+  }
+
+
+  #content .column_4 {
+    padding: 0 15px !important;
+  }
+
+  #nav .nav-container {
+    height: 250px;
+  }
+
+  #nav .column_6 {
+    display: none;
+  }
+
+  #nav .column_3 {
+    text-align: center;
+  }
+
+  #nav .column_3 > ul {
+    left: 0;
+  }
+
+  #nav li {
+    font-size: 16.5px;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+
+  #name {
+    height: 130px;
+    padding: 0 15px;
+  }
+
+  #logo img {
+    height: 100px;
+  }
+
+  #nav .nav-container > div {
+    width: 100%;
+  }
+  #nav .nav-container {
+    height: 410px;
+  }
+
+  #nav li {
+    display: block;
+    margin: 0;
+    font-size: 16.5px;
+    margin: 10px;
+    line-height: 50px;
+  }
+
+}
+
+@media only screen and (max-width:1200px) {
+/*  #content .column_4.center {
+padding: 0px 18.75px;
+border: 5px solid red;
+}*/
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+
+}
+
+
+
+@media (max-width: 992px) {
+
+}
+
+
+@media (min-width: 1025px) {
+
+}
