@@ -199,7 +199,6 @@ a {
 
 .button.primary {
   border: 2.5px solid #d0d2d3;
-  font-size: 20px;
   font-weight: normal;
   line-height: 1.4;
   padding: 10px 15px;
@@ -208,13 +207,14 @@ a {
   transition: 0.25s linear;
   margin: 20px 0;
   width: 100%;
-  font-family: "Promixa Regular";
 }
 
+#summary-middle a , 
 .button a {
   text-transform: lowercase;
-  font-size: 16px;
+  font-size: 16px !important;
 }
+
 
 .button.primary:hover {
   color: white !important;
@@ -226,6 +226,7 @@ a {
   color: #428cff;
 }
 
+#summary-middle a, 
 #project a {
   color: inherit !important;
   font-family: "Proxima Regular";
