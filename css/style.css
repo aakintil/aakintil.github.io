@@ -776,7 +776,7 @@ Media Queries
 @media (max-width: 480px) {
 
   #name {
-    height: 130px;
+    height: 150px;
     padding: 0 15px;
   }
 
