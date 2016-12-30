@@ -1,5 +1,32 @@
-body {
-  background-color: #EAEAEA; 
-  color: #474344; 
+html {
+  /* This image will be displayed fullscreen */
+  background-image: url("../images/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* Ensure the html element always takes up the full height of the browser window */
+  min-height: 100%;
+  /* The Magic */
+  background-size: cover;
 }
 
+body {
+  /* Workaround for some mobile browsers */
+  min-height: 100%;
+  color: white;
+}
+
+.container-fluid {
+  padding: 32px !important;
+  position: absolute;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#cta,
+#content,
+#countdown {
+  margin-bottom: 64px;
+}
