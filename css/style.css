@@ -208,7 +208,9 @@ text-align: right;
 }
 
 #citations > p {
-  font-size: 10px;
+  font-size: 8px;
   font-family: "Light";
   letter-spacing: 0.2px;
+  margin: 0;
+  opacity: 0.5;
 }
