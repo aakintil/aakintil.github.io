@@ -124,22 +124,28 @@ body {
   letter-spacing: 0.5px;
 }
 
-#cta > #links > a,
-#content > #offerings > #services > li {
-  display: inline-block;
-  list-style-type: none;
-}
-
-#cta > #links > a {
+#cta > .button {
   border: 2px solid white;
-  width: 150px;
   text-align: center;
-  margin: 16px 32px;
   padding: 8px;
   transition: all 0.3s ease;
 }
 
-#cta > #links > a > li,
+#cta > .button.col-md-2 {
+  margin: 16px 32px;
+}
+
+
+/*
+@media only screen and (max-width: 768px) {
+  #cta > .button.col-sm-12 {
+    margin: 16px 0;
+    background: red;
+  }
+}
+*/
+
+#cta > .button,
 #content > #offerings > #services > li {
   font-size: 16px;
   font-family: "Light";
@@ -147,10 +153,15 @@ body {
   text-decoration: none;
 }
 
-#cta > #links > a:hover {
+#cta > .button:hover {
   background: #53a7ea;
   transition: all 0.3s ease;
   text-decoration: none;
+  cursor: pointer;
+}
+
+#cta > .button > p {
+  margin: 0;
 }
 
 
@@ -158,6 +169,11 @@ body {
 
 #content > #offerings {
   margin-top: 8px;
+}
+
+#content > #offerings > #services > li {
+  display: inline-block;
+  list-style-type: none;
 }
 
 #content > #offerings > #services > li {
@@ -196,7 +212,8 @@ body {
 
 #content > #offerings > #services > li > .code {
   background: url("../images/icons/coding.png");
-  height: 60px;
+  height: 55px;
+  margin-top: 25px;
 }
 
 
@@ -206,7 +223,7 @@ body {
   display: inline-block;
 }
 
-.col-xs-12 {
+#countdown .col-md-2 {
   text-align: left;
 }
 
@@ -216,12 +233,14 @@ body {
 
 #countdown .count {
   font-size: 64px;
-  font-family: "Light"
+  font-family: "Light";
+  width: 80px;
 }
 
 #countdown .metric {
   font-size: 20px;
-  font-family: "Regular"
+  font-family: "Light";
+  letter-spacing: 0.5px;
 }
 
 #countdown .text {
@@ -229,6 +248,10 @@ body {
   font-family: "Light";
   letter-spacing: 2px;
   float: right;
+}
+
+#countdown .col-xs-12 {
+  text-align: center;
 }
 
 
@@ -243,7 +266,7 @@ body {
   font-size: 8px;
   font-family: "Light";
   letter-spacing: 0.2px;
-  display: inline-block; 
+  display: inline-block;
   margin: 0;
   margin-right: 16px;
   opacity: 0.5;

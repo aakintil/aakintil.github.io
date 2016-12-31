@@ -1,10 +1,11 @@
 $(document).ready(function () {
      console.log("ready");
-     $('body').countdown("2017/29/01", function (event) {
+     $('body').countdown("2017/01/30", function (event) {
           $(".days").text(event.strftime('%-n'));
-          $(".hrs").text(event.strftime('%-H'));
+          $(".hrs").text(event.strftime('%H'));
           $(".mins").text(event.strftime('%M'));
-          //          event.strftime('%W weeks %-d days %-H h %M min %S sec');
+          $(".secs").text(event.strftime('%S'));
+          // event.strftime('%W weeks %-d days %-H h %M min %S sec');
      });
      var overlay = $("#animation")
           , content = $(".container-fluid");
@@ -13,14 +14,14 @@ $(document).ready(function () {
           setTimeout(function () {
                overlay.addClass("animated fadeOut");
                animateText();
-          }, 550)
+          }, 350)
      };
 
      function animateText() {
           content.addClass("fadeInUp");
           setTimeout(function () {
                modifyOverlayCSS();
-          }, 550 );
+          }, 750);
      }
 
      function modifyOverlayCSS() {
