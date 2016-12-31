@@ -8,7 +8,7 @@ $(document).ready(function () {
           // event.strftime('%W weeks %-d days %-H h %M min %S sec');
      });
      var overlay = $("#animation")
-          , content = $(".container-fluid");
+          , content = $(".container-fluid .row");
 
      function hideOverlay() {
           setTimeout(function () {

@@ -75,7 +75,6 @@ body {
 .container-fluid {
   padding: 32px !important;
   position: absolute;
-  opacity: 0;
   width: 100%;
   /*  background: #2980b9;*/
   /* fallback for old browsers */
@@ -88,6 +87,7 @@ body {
 .row {
   margin-left: 0;
   margin-right: 0;
+  opacity: 0;
 }
 
 #cta,
