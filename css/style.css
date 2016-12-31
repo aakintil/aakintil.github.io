@@ -63,9 +63,19 @@ body {
   background-color: navy;
 }
 
+#animation {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: black;
+  z-index: 1;
+  position: absolute;
+}
+
 .container-fluid {
   padding: 32px !important;
   position: absolute;
+  opacity: 0;
   width: 100%;
   /*  background: #2980b9;*/
   /* fallback for old browsers */
@@ -81,9 +91,8 @@ body {
 }
 
 #cta,
-#content,
-#countdown {
-  margin-bottom: 64px;
+#content {
+  margin-bottom: 56px;
 }
 
 
@@ -111,17 +120,17 @@ body {
 #cta h5,
 #content h5 {
   font-family: "Light";
-  font-size: 24px;
+  font-size: 18px;
   letter-spacing: 0.5px;
 }
 
-#cta > #links > li,
+#cta > #links > a,
 #content > #offerings > #services > li {
   display: inline-block;
   list-style-type: none;
 }
 
-#cta > #links > li {
+#cta > #links > a {
   border: 2px solid white;
   width: 150px;
   text-align: center;
@@ -130,7 +139,7 @@ body {
   transition: all 0.3s ease;
 }
 
-#cta > #links > li > a,
+#cta > #links > a > li,
 #content > #offerings > #services > li {
   font-size: 16px;
   font-family: "Light";
@@ -138,12 +147,9 @@ body {
   text-decoration: none;
 }
 
-#cta > #links > li:hover {
+#cta > #links > a:hover {
   background: #53a7ea;
   transition: all 0.3s ease;
-}
-
-#cta > #links > li > a:hover {
   text-decoration: none;
 }
 
@@ -163,11 +169,34 @@ body {
 }
 
 #content > #offerings > #services > li > div {
-  width: 64px;
-  height: 64px;
-  border-radius: 32px;
-  margin: 10px auto;
-  background-color: white;
+  width: 68px;
+  height: 80px;
+  margin: 0 auto;
+  background-size: 100% !important;
+  background-repeat: no-repeat !important;
+  margin-bottom: 16px;
+}
+
+#content > #offerings > #services > li > .exd {
+  background: url("../images/icons/exd.png");
+}
+
+#content > #offerings > #services > li > .dr {
+  background: url("../images/icons/research.png");
+}
+
+#content > #offerings > #services > li > .proto {
+  background: url("../images/icons/prototyping.png");
+  width: 40px;
+}
+
+#content > #offerings > #services > li > .strat {
+  background: url("../images/icons/strategy.png");
+}
+
+#content > #offerings > #services > li > .code {
+  background: url("../images/icons/coding.png");
+  height: 60px;
 }
 
 
@@ -178,7 +207,11 @@ body {
 }
 
 .col-xs-12 {
-text-align: right;
+  text-align: left;
+}
+
+#countdown > .row > div {
+  padding: 0;
 }
 
 #countdown .count {
@@ -202,15 +235,16 @@ text-align: right;
 /* citations */
 
 #citations {
-  float: right;
   margin-right: 64px;
-  text-align: right;
+  text-align: left;
 }
 
 #citations > p {
   font-size: 8px;
   font-family: "Light";
   letter-spacing: 0.2px;
+  display: inline-block; 
   margin: 0;
+  margin-right: 16px;
   opacity: 0.5;
 }
