@@ -1,7 +1,9 @@
 $(document).ready(function () {
      console.log("ready");
-     $('body').countdown("2017/01/30", function (event) {
-          $(".days").text(event.strftime('%-n'));
+     var untilDate = new Date("2017/02/15");
+     console.log(untilDate.toDateString())
+     $('body').countdown("2017/02/07", function (event) {
+          $(".days").html(event.strftime('%D'));
           $(".hrs").text(event.strftime('%H'));
           $(".mins").text(event.strftime('%M'));
           $(".secs").text(event.strftime('%S'));

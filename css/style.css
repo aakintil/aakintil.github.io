@@ -87,6 +87,9 @@ body {
 .row {
   margin-left: 0;
   margin-right: 0;
+}
+
+.row.animated {
   opacity: 0;
 }
 
