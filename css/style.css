@@ -40,27 +40,25 @@
   font-style: normal;
 }
 
-.full {
-  /* This image will be displayed fullscreen */
-  /*  background-image: url("../images/bg.jpg");*/
-  background-repeat: no-repeat;
-  background-position: center center;
-  /* Ensure the html element always takes up the full height of the browser window */
-  /*  min-height: 100%;*/
-  /* The Magic */
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  /*  width: 50%;*/
-  background-size: cover;
-  background: url("../images/bg7.jpg") no-repeat center center fixed;
-}
-
 body {
   /* Workaround for some mobile browsers */
   min-height: 100%;
   color: white;
-  background-color: navy;
+  /*  background-color: navy;*/
+}
+
+.gradient {
+  transition: all 0.45s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #5f2c82;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #5f2c82, #49a09d);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #5f2c82, #49a09d);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #animation {
