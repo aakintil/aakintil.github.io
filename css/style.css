@@ -41,45 +41,18 @@
 }
 
 body {
-  /* Workaround for some mobile browsers */
-  min-height: 100%;
-  color: white;
-  /*  background-color: navy;*/
-}
-
-.gradient {
-  transition: all 0.45s;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #5f2c82;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #5f2c82, #49a09d);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #5f2c82, #49a09d);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-#animation {
-  width: 100%;
-  height: 100%;
   background-color: black;
-  color: black;
-  z-index: 1;
-  position: absolute;
+}
+
+img {
+  width: 100%;
+  height: 100%;
 }
 
 .container-fluid {
-  padding: 32px !important;
-  position: absolute;
+  position: relative;
   width: 100%;
-  /*  background: #2980b9;*/
-  /* fallback for old browsers */
-  /*  background: -webkit-linear-gradient(to left, #2980b9, #2c3e50);*/
-  /* Chrome 10-25, Safari 5.1-6 */
-  /*  background: linear-gradient(to left, #2980b9, #2c3e50);*/
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 48px 56px;
 }
 
 .row {
@@ -88,16 +61,15 @@ body {
 }
 
 .row.animated {
-  opacity: 0;
-}
-
-#cta,
-#content {
-  margin-bottom: 56px;
+  opacity: 1;
 }
 
 
 /* cta */
+
+#cta {
+  color: white;
+}
 
 #cta h1 {
   font-family: "Bold";
@@ -133,13 +105,8 @@ body {
 }
 
 #cta > .button.col-md-2 {
-  margin: 16px 32px;
-}
-
-@media only screen and (max-width: 992px) {
-  .container-fluid {
-    min-height: 2320px;
-  }
+  margin: 16px 0;
+  margin-right: 32px;
 }
 
 #cta > .button,
@@ -157,7 +124,7 @@ body {
   transition: all 0.3s ease;
   text-decoration: none;
   cursor: pointer;
-  color: #5f2c82;
+  color: black;
 }
 
 #cta > .button > p {
