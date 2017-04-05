@@ -1,0 +1,86 @@
+/*
+    # Paths
+*/
+
+$path-images                     	: "../img";
+$path-img                     		: $path-images;
+$path-image-dir                     : $path-images;
+$path-fonts 						: "../fonts/";
+$fa-font-path 						: $path-fonts;
+$icon-font-path 					: $path-fonts;
+
+/*
+	# Colors
+*/
+
+/*
+    ## Generic Colors
+*/
+
+$color-gray-darkest                 : darken( white, 95% );
+$color-gray-darker                  : darken( white, 80% );
+$color-gray-dark                    : darken( white, 69.8% );
+$color-gray                         : darken( white, 50% );
+$color-gray-medium                 	: darken( white, 40% );
+$color-gray-light                   : darken( white, 32% );
+$color-gray-lighter                 : darken( white, 20% );
+$color-gray-lightest                : darken( white, 5% );
+
+
+/*
+    ## Brand Colors
+*/
+
+$color-blue 						: blue;
+$color-red 							: red;
+
+
+/*
+	## Computed Colors
+*/
+
+$color-primary                      : $color-blue;
+$color-secondary                    : $color-red;
+
+$color-body-bg 						: white;
+$color-text 						: $color-gray;
+$color-text-muted					: $color-gray-lighter;
+$color-text-dark					: $color-gray-darker;
+$color-headings 					: $color-gray-darker;
+
+
+$color-success						: green;
+$color-info							: blue;
+$color-warning						: yellow;
+$color-danger						: red;
+
+
+/*
+	## Timing
+*/
+
+
+
+/*
+	# Typography
+*/
+
+$font-size-base						: 14px;
+$font-size-large					: 18px;
+$font-size-small					: 11px;
+
+$font-size-h1						: floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2						: floor(($font-size-base * 2.15)); // ~30px
+$font-size-h3						: ceil(($font-size-base * 1.7)); // ~24px
+$font-size-h4						: ceil(($font-size-base * 1.25)); // ~18px
+$font-size-h5 						: $font-size-base !default;
+$font-size-h6 						: $font-size-small;
+
+
+$font-family-sans 					: "Arial", sans-serif;
+$font-family-serif 					: "Georgia", sans-serif;
+
+$font-family-title					: join( "", $font-family-sans );
+$font-family-base					: $font-family-sans;
+$font-family-btn					: $font-family-sans;
+$font-family-heading				: $font-family-title;
