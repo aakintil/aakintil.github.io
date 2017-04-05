@@ -13,7 +13,7 @@ window.Controller = Backbone.Marionette.Object.extend( {
 	handleRouteIndex : function( routeData ) {
 
 		// Clear the region
-		this.containerView.main.empty();
+		this.containerView.content.empty();
 		// Init view
 		// var view = new window.View();
 		// Show  view

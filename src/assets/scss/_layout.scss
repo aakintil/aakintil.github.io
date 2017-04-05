@@ -1,14 +1,16 @@
 /*
 	# Vars
 */
-
+$componentHeight-base	: 8px; 
+$componentHeight-xl 	: $componentHeight-base * 24; 
 
 /*
     # Blocks
 */
 
-.l-header
-{}
+.layout--header {
+	height: $componentHeight-xl; 
+}
 
 .l-main
 {}
