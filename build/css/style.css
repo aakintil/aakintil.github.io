@@ -4151,22 +4151,25 @@ ul.styled {
 /*
     # Blocks
 */
+html,
+body,
+.layout--content {
+  height: 100%; }
+
 .layout--header {
   height: 192px; }
 
 .layout--content {
   display: flex;
-  flex-direction: column;
-  height: 100vh; }
+  flex-direction: column; }
 
 .content--top {
   flex: 1; }
 
 .content--bottom {
-  flex: 0; }
-
-.layout--footer {
-  height: 192px; }
+  flex: 0;
+  height: 200px;
+  background: red; }
 
 /*
 	# Vars

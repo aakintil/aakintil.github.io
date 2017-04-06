@@ -9,6 +9,12 @@ $componentHeight-xl: $componentHeight-base * 24;
     # Blocks
 */
 
+html, 
+body, 
+.layout--content {
+	height: 100%;
+}
+
 .layout--header {
 	height: $componentHeight-xl;
 }
@@ -16,7 +22,6 @@ $componentHeight-xl: $componentHeight-base * 24;
 .layout--content {
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
 }
 
 .content--top {
@@ -25,8 +30,6 @@ $componentHeight-xl: $componentHeight-base * 24;
 
 .content--bottom {
 	flex: 0; 
-}
-
-.layout--footer {
-	height: $componentHeight-xl;
+	height: 200px;
+	background: red;
 }

@@ -2,24 +2,32 @@
 	# Defines the view for the main layout
 */
 
-window.MainLayout = Backbone.Marionette.LayoutView.extend( {
+window.MainLayout = Backbone.Marionette.LayoutView.extend({
 
 	el: "body",
-	
+
 	template: JST["views/main/main"],
 
 	regions: {
-		"header" : ".layout--header",
-		"content" : ".layout--content",
+		"header": ".layout--header",
+		"content": ".layout--content",
 	},
 
-	initialize: function( options ) {},
+	initialize: function (options) {},
 
 	/*
 		# View 
 	*/
 
-	onRender: function() {
+	onRender: function () {
+		
+		// use this as hook for animation 
+		// when the main layout renders, render the header & content
+		var content = new window.ContentLayout();
+		var header = new window.HeaderLayout(); 
+		
+		header.render();
+		content.render();
 
 	},
 

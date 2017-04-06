@@ -62,7 +62,7 @@ window.Controller = Backbone.Marionette.Object.extend( {
 	handleRouteIndex : function( routeData ) {
 
 		// Clear the region
-		this.containerView.content.empty();
+//		this.containerView.content.empty();
 		// Init view
 		// var view = new window.View();
 		// Show  view
@@ -143,15 +143,16 @@ window.Model = Backbone.Model.extend( {
 	# Defines the view for the main layout
 */
 
-window.MainLayout = Backbone.Marionette.LayoutView.extend( {
+window.HeaderLayout = Backbone.Marionette.LayoutView.extend( {
 
-	el: "body",
+	el: ".header__container",
 	
-	template: JST["views/main/main"],
+	template: JST["views/header/header"],
 
 	regions: {
-		"header" : ".layout--header",
-		"content" : ".layout--content",
+		"menu" : ".header__menu",
+		"logo" : ".header__logo",
+		"navbar" : ".header__navbar",
 	},
 
 	initialize: function( options ) {},
@@ -161,6 +162,52 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend( {
 	*/
 
 	onRender: function() {
+		console.log( "content rendering ", this.regions )
+	},
+
+	/*
+		# Events
+	*/
+
+	events: {
+		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
+	},
+
+	/*
+		# Methods
+	*/
+
+});
+/*
+	# Defines the view for the main layout
+*/
+
+window.MainLayout = Backbone.Marionette.LayoutView.extend({
+
+	el: "body",
+
+	template: JST["views/main/main"],
+
+	regions: {
+		"header": ".layout--header",
+		"content": ".layout--content",
+	},
+
+	initialize: function (options) {},
+
+	/*
+		# View 
+	*/
+
+	onRender: function () {
+		
+		// use this as hook for animation 
+		// when the main layout renders, render the header & content
+		var content = new window.ContentLayout();
+		var header = new window.HeaderLayout(); 
+		
+		header.render();
+		content.render();
 
 	},
 
@@ -172,6 +219,69 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend( {
 		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
 	},
 
+	/*
+		# Methods
+	*/
+
+});
+/*
+	# Defines the view for the main layout
+*/
+
+window.ContentLayout = Backbone.Marionette.LayoutView.extend({
+
+	el: ".layout--content",
+
+	template: JST["views/content/content"],
+
+	regions: {
+		"mainContent": ".content--top",
+		"supportingContent": ".content--bottom",
+	},
+
+	initialize: function (options) {},
+
+	/*
+		# View 
+	*/
+
+	onRender: function () {
+		console.log( "wfeafda ", this.supportingContent.$el );
+		
+		// apparently you're supposed to call this first? investigate
+		// http://stackoverflow.com/questions/10946392/hiding-a-view-in-region-manager-when-another-view-is-shown
+		// HACK
+		this.supportingContent._ensureElement();
+		this.supportingContent.$el.hide();
+		
+		var _this = this;
+		setTimeout( function() {
+			_this.supportingContent.$el.show(); 
+		}, 2000 )
+	},
+
+	/*
+		# Events
+	*/
+
+	events: {
+		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
+	},
+
+	// "click .toggleSupportingContent" : "toggleSupportingContent"
+
+	/* toggleSupportingContent: {
+		on click, 
+		- increase the body, html, .layout--content height by 2 or the height of the expanded div. 
+		- change the flex grow property of the top and bottom divs
+		should work
+			1. make element an element again 
+			2. increase the height
+			3. reveal the element
+	}
+*/
+	// there needs to be an event where 
+	// -- TODO -- "on button click, the supportingContent container is visible and grows"
 	/*
 		# Methods
 	*/
@@ -267,3 +377,4 @@ window.ViewPage = Backbone.Marionette.ItemView.extend( {
 	*/
 
 });
+
