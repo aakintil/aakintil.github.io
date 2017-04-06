@@ -1,22 +1,32 @@
 /*
 	# Vars
 */
-$componentHeight-base	: 8px; 
-$componentHeight-xl 	: $componentHeight-base * 24; 
+
+$componentHeight-base: 8px;
+$componentHeight-xl: $componentHeight-base * 24;
 
 /*
     # Blocks
 */
 
 .layout--header {
-	height: $componentHeight-xl; 
+	height: $componentHeight-xl;
 }
 
-.l-main
-{}
+.layout--content {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
 
-.l-content
-{}
+.content--top {
+	flex: 1; 
+}
 
-.l-sidebar
-{}
+.content--bottom {
+	flex: 0; 
+}
+
+.layout--footer {
+	height: $componentHeight-xl;
+}

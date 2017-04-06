@@ -4154,6 +4154,20 @@ ul.styled {
 .layout--header {
   height: 192px; }
 
+.layout--content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; }
+
+.content--top {
+  flex: 1; }
+
+.content--bottom {
+  flex: 0; }
+
+.layout--footer {
+  height: 192px; }
+
 /*
 	# Vars
 */
