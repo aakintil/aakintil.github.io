@@ -10,10 +10,7 @@ $componentHeight-xl: $componentHeight-base * 24;
     # Blocks
 */
 
-
-$color--bgMain 		: black; 
-
-
+$color--bgMain: black;
 html,
 body,
 .layout--content {
@@ -29,7 +26,7 @@ body {
 
 .layout--header {
 	//	height: $componentHeight-xl;
-	background: grey;
+	background: $color--bgMain;
 	order: 1;
 	flex-shrink: 0;
 	flex-basis: $componentHeight-xl;

@@ -6,8 +6,18 @@
 }
 
 .header__navbar {
-  display: flex; 
+  display: flex;
   flex-direction: row;
-  justify-content: space-around; 
+  justify-content: space-around;
   padding: 0px 240px;
+  height: 182px;
+}
+
+.header__logo {
+  display: flex;
+  justify-content: center;
+  font-size: 80px;
+  letter-spacing: 16px;
+  align-items: flex-end;
+  height: 182px;
 }
