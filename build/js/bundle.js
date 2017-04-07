@@ -143,26 +143,36 @@ window.Model = Backbone.Model.extend( {
 	# Defines the view for the main layout
 */
 
-window.HeaderLayout = Backbone.Marionette.LayoutView.extend( {
+window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
-	el: ".header__container",
-	
-	template: JST["views/header/header"],
+	el: ".layout--content",
+
+	template: JST["views/content/content"],
 
 	regions: {
-		"menu" : ".header__menu",
-		"logo" : ".header__logo",
-		"navbar" : ".header__navbar",
+		"mainContent": ".content--top",
+		"supportingContent": ".content--bottom",
 	},
 
-	initialize: function( options ) {},
+	initialize: function (options) {},
 
 	/*
 		# View 
 	*/
 
-	onRender: function() {
-		console.log( "content rendering ", this.regions )
+	onRender: function () {
+		console.log("wfeafda ", this.supportingContent.$el);
+
+		// apparently you're supposed to call this first? investigate
+		// http://stackoverflow.com/questions/10946392/hiding-a-view-in-region-manager-when-another-view-is-shown
+		// HACK
+		this.supportingContent._ensureElement();
+		this.supportingContent.$el.hide();
+
+		//		var _this = this;
+		//		setTimeout( function() {
+		//			_this.supportingContent.$el.show(); 
+		//		}, 2000 )
 	},
 
 	/*
@@ -173,6 +183,20 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend( {
 		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
 	},
 
+	// "click .toggleSupportingContent" : "toggleSupportingContent"
+
+	/* toggleSupportingContent: {
+		on click, 
+		- increase the body, html, .layout--content height by 2 or the height of the expanded div. 
+		- change the flex grow property of the top and bottom divs
+		should work
+			1. make element an element again 
+			2. increase the height
+			3. reveal the element
+	}
+*/
+	// there needs to be an event where 
+	// -- TODO -- "on button click, the supportingContent container is visible and grows"
 	/*
 		# Methods
 	*/
@@ -228,36 +252,26 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 	# Defines the view for the main layout
 */
 
-window.ContentLayout = Backbone.Marionette.LayoutView.extend({
+window.HeaderLayout = Backbone.Marionette.LayoutView.extend( {
 
-	el: ".layout--content",
-
-	template: JST["views/content/content"],
+	el: ".header__container",
+	
+	template: JST["views/header/header"],
 
 	regions: {
-		"mainContent": ".content--top",
-		"supportingContent": ".content--bottom",
+		"menu" : ".header__menu",
+		"logo" : ".header__logo",
+		"navbar" : ".header__navbar",
 	},
 
-	initialize: function (options) {},
+	initialize: function( options ) {},
 
 	/*
 		# View 
 	*/
 
-	onRender: function () {
-		console.log( "wfeafda ", this.supportingContent.$el );
-		
-		// apparently you're supposed to call this first? investigate
-		// http://stackoverflow.com/questions/10946392/hiding-a-view-in-region-manager-when-another-view-is-shown
-		// HACK
-		this.supportingContent._ensureElement();
-		this.supportingContent.$el.hide();
-		
-		var _this = this;
-		setTimeout( function() {
-			_this.supportingContent.$el.show(); 
-		}, 2000 )
+	onRender: function() {
+		console.log( "content rendering ", this.regions )
 	},
 
 	/*
@@ -268,20 +282,6 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
 	},
 
-	// "click .toggleSupportingContent" : "toggleSupportingContent"
-
-	/* toggleSupportingContent: {
-		on click, 
-		- increase the body, html, .layout--content height by 2 or the height of the expanded div. 
-		- change the flex grow property of the top and bottom divs
-		should work
-			1. make element an element again 
-			2. increase the height
-			3. reveal the element
-	}
-*/
-	// there needs to be an event where 
-	// -- TODO -- "on button click, the supportingContent container is visible and grows"
 	/*
 		# Methods
 	*/
@@ -350,6 +350,8 @@ window.ViewCompositeView = Backbone.Marionette.CompositeView.extend(
 	*/
 
 });
+
+
 /*
 	# Defines the view for 
 */
@@ -377,4 +379,3 @@ window.ViewPage = Backbone.Marionette.ItemView.extend( {
 	*/
 
 });
-

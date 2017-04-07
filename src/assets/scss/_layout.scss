@@ -4,32 +4,56 @@
 
 $componentHeight-base: 8px;
 $componentHeight-xl: $componentHeight-base * 24;
+//http://stackoverflow.com/questions/14962468/flexbox-and-vertical-scroll-in-a-full-height-app-using-newer-flexbox-api
 
 /*
     # Blocks
 */
 
-html, 
-body, 
+
+$color--bgMain 		: black; 
+
+
+html,
+body,
 .layout--content {
 	height: 100%;
+	background: $color--bgMain;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 .layout--header {
-	height: $componentHeight-xl;
+	//	height: $componentHeight-xl;
+	background: grey;
+	order: 1;
+	flex-shrink: 0;
+	flex-basis: $componentHeight-xl;
 }
 
 .layout--content {
+	order: 2;
+	overflow-y: scroll;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	border: 1px solid white;
 }
 
 .content--top {
-	flex: 1; 
+	order: 1;
+	flex-basis: 1000px;
+	height: 500px;
+	flex: 1;
 }
 
 .content--bottom {
-	flex: 0; 
-	height: 200px;
+	//	flex: 0;
+	order: 2;
+	flex-shrink: 0;
+	height: 600px;
 	background: red;
 }

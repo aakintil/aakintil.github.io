@@ -20,18 +20,18 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	onRender: function () {
-		console.log( "wfeafda ", this.supportingContent.$el );
-		
+		console.log("wfeafda ", this.supportingContent.$el);
+
 		// apparently you're supposed to call this first? investigate
 		// http://stackoverflow.com/questions/10946392/hiding-a-view-in-region-manager-when-another-view-is-shown
 		// HACK
 		this.supportingContent._ensureElement();
 		this.supportingContent.$el.hide();
-		
-		var _this = this;
-		setTimeout( function() {
-			_this.supportingContent.$el.show(); 
-		}, 2000 )
+
+		//		var _this = this;
+		//		setTimeout( function() {
+		//			_this.supportingContent.$el.show(); 
+		//		}, 2000 )
 	},
 
 	/*

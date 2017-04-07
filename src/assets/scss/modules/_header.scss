@@ -1,0 +1,13 @@
+.header__container {
+  background: black;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+}
+
+.header__navbar {
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-around; 
+  padding: 0px 240px;
+}

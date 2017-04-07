@@ -2,7 +2,7 @@ this.JST = {"views/content/content": function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="content--top col-sm-12 pad--none">\n  content top\n</div>\n\n<div class="content--bottom col-sm-12 pad--none">\n  content bottom\n</div>';
+__p += '<div class="content--top col-sm-12 pad--none">\n  content top\n</div>\n\n<div class="content--bottom col-sm-12 pad--none hidden">\n  content bottom\n</div>';
 
 }
 return __p
@@ -11,7 +11,7 @@ return __p
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="header__menu">\n\n</div>\n\n\n<div class="header__logo">\n\n</div>\n\n\n<div class="header__navbar">\n\n</div>';
+__p += '<div class="header__menu">\n  <p class="menu--title"> Menu</p>\n</div>\n\n\n<div class="header__logo">\n  ADERINSOLA\n</div>\n\n\n<div class="header__navbar">\n <div class="navbar--links">\n   <p> about </p>\n </div>\n <div class="navbar--links">\n   <p>process</p>\n </div>\n <div class="navbar--links">\n   <p>contact</p>\n </div>\n <div class="navbar--links">\n   <p>claron</p>\n </div>\n <div class="navbar--links">\n   <p>helios</p>\n </div>\n <div class="navbar--links">\n   <p>freespira</p>\n </div>\n <div class="navbar--links">\n   <p>gridmi</p>\n </div>\n <div class="navbar--links">\n   <p>photos</p>\n </div>\n <div class="navbar--links">\n   <p>toffee</p>\n </div> \n</div>';
 
 }
 return __p
