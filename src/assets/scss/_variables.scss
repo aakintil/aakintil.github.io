@@ -1,0 +1,18 @@
+/*
+    # Base variables
+*/
+
+// components
+$componentHeight-base: 8px;
+
+// color
+$color--black            : #000000;
+$color--white            : #ffffff;
+
+// text / font
+$text--letterSpacing     : 1px; 
+
+/*
+    # Component size variables
+*/
+$componentHeight-xl: $componentHeight-base * 24;

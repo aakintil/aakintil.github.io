@@ -4140,6 +4140,12 @@ code {
 	# Mixins
 */
 /*
+    # Base variables
+*/
+/*
+    # Component size variables
+*/
+/*
 	# Vars
 */
 /*
@@ -4230,10 +4236,10 @@ body {
   background: red; }
 
 .header__container {
-  background: black;
-  color: white;
+  background: #000000;
+  color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: 2.5px; }
+  letter-spacing: 1.5px; }
 
 .header__navbar {
   display: flex;
@@ -4269,6 +4275,12 @@ body {
 
 .bg__work-color {
   background: #FB564B; }
+
+.bg__process-color {
+  background: #2AD2F8; }
+
+.bg__projects-color {
+  background: #FFC100; }
 
 .header__menu > p {
   font-size: 14px;

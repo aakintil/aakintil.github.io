@@ -1,8 +1,8 @@
 .header__container {
-  background: black;
-  color: white;
+  background: $color--black;
+  color: $color--white;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
+  letter-spacing: $text--letterSpacing * 1.5;
 }
 
 .header__navbar {
@@ -44,6 +44,14 @@
 
 .bg__work-color {
   background: #FB564B;
+}
+
+.bg__process-color {
+  background: #2AD2F8;
+}
+
+.bg__projects-color {
+  background: #FFC100;
 }
 
 .header__menu > p {
