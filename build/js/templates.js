@@ -11,7 +11,7 @@ return __p
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<!--\n<div class="header__menu">\n  <p class="menu--title"> Menu</p>\n</div>\n-->\n\n\n<div class="header__logo">\n  <p>ADERINSOLA</p>\n</div>\n\n\n<div class="header__navbar">\n <div class="navbar--links">\n   <p> about </p>\n </div>\n <div class="navbar--links">\n   <p>process</p>\n </div>\n <div class="navbar--links">\n   <p>contact</p>\n </div>\n <div class="navbar--links">\n   <p>claron</p>\n </div>\n <div class="navbar--links">\n   <p>helios</p>\n </div>\n <div class="navbar--links">\n   <p>freespira</p>\n </div>\n <div class="navbar--links">\n   <p>gridmi</p>\n </div>\n <div class="navbar--links">\n   <p>photos</p>\n </div>\n <div class="navbar--links">\n   <p>toffee</p>\n </div> \n</div>';
+__p += '<div class="header__menu bg__work-color">\n  <p class="menu--title"> Menu</p>\n</div>\n\n\n<div class="header__logo">\n  <p>ADERINSOLA</p>\n</div>\n\n\n<div class="header__navbar">\n <div class="navbar--links">\n   <p> about </p>\n </div>\n <div class="navbar--links">\n   <p>process</p>\n </div>\n <div class="navbar--links">\n   <p>contact</p>\n </div>\n <div class="navbar--links">\n   <p>claron</p>\n </div>\n <div class="navbar--links">\n   <p>helios</p>\n </div>\n <div class="navbar--links">\n   <p>freespira</p>\n </div>\n <div class="navbar--links">\n   <p>gridmi</p>\n </div>\n <div class="navbar--links">\n   <p>photos</p>\n </div>\n <div class="navbar--links">\n   <p>toffee</p>\n </div> \n</div>';
 
 }
 return __p
