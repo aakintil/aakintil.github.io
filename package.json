@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start" : "gulp",
+    "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -21,6 +21,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.1",
     "jquery": "^2.2.3",
+    "megatype": "^1.1.2",
     "merge-stream": "^1.0.0",
     "underscore": "^1.8.3"
   }

@@ -2,44 +2,40 @@
 	#
 */
 
-var gulp 		= require("gulp");
-var concat      = require("gulp-concat");
-var merge       = require("merge-stream");
-var jst         = require("gulp-jst-concat");
-var rename 		= require("gulp-rename");
-var sass 		= require("gulp-sass");
-var bsync 		= require("browser-sync");
+var gulp = require("gulp");
+var concat = require("gulp-concat");
+var merge = require("merge-stream");
+var jst = require("gulp-jst-concat");
+var rename = require("gulp-rename");
+var sass = require("gulp-sass");
+var bsync = require("browser-sync");
 
 /*
 	# Define main gulp tasks
 */
 
-gulp.task("default", [ "copy", "jst", "js", "sass", "server"] );
-gulp.task("build", [ "copy", "jst", "js", "sass"] );
+gulp.task("default", ["copy", "jst", "js", "sass", "styles", "server"]);
+gulp.task("build", ["copy", "jst", "js", "sass", "styles"]);
 
 /*
     ## Copy over files
 */
 
-gulp.task( "copy", function() {
+gulp.task("copy", function () {
 
     // Copy over stuff
-    var html = gulp.src( ["src/index.html"] )
-                    .pipe( gulp.dest("build/") )
-                    ;
+    var html = gulp.src(["src/index.html"])
+        .pipe(gulp.dest("build/"));
 
-    var fonts = gulp.src( ["src/assets/fonts/**/"] )
-                    .pipe( gulp.dest("build/fonts") )
-                    ;
+    var fonts = gulp.src(["src/assets/fonts/**/"])
+        .pipe(gulp.dest("build/fonts"));
 
-    var js = gulp.src( ["src/assets/js/**/"] )
-                    .pipe( gulp.dest("build/js") )
-                    ;
+    var js = gulp.src(["src/assets/js/**/"])
+        .pipe(gulp.dest("build/js"));
 
-    var img = gulp.src( ["src/assets/img/**/"] )
-                    .pipe( gulp.dest("build/img") )
-                    ;
-    var merged = merge( html, fonts);
+    var img = gulp.src(["src/assets/img/**/"])
+        .pipe(gulp.dest("build/img"));
+    var merged = merge(html, fonts);
     merged.add(js);
     merged.add(img);
 
@@ -53,40 +49,36 @@ gulp.task( "copy", function() {
     ## Bundle the JS
 */
 
-gulp.task('js', function() {
+gulp.task('js', function () {
 
     // Compile
-    return  gulp.src(
-                    [   
+    return gulp.src(
+                    [
                         'src/app/**/*.js',
                     ]
-                )
-                .pipe( concat('bundle.js') )
-                .pipe( gulp.dest( 'build/js/' ) )
-                ;
+        )
+        .pipe(concat('bundle.js'))
+        .pipe(gulp.dest('build/js/'));
 });
-gulp.task('js-watch', ['copy','js'], bsync.reload);
+gulp.task('js-watch', ['copy', 'js'], bsync.reload);
 
 
 /*
     ## Compile tempaltes
 */
 
-gulp.task('jst', function() {
+gulp.task('jst', function () {
 
     // Compile
-    return  gulp.src(
-                    [   
+    return gulp.src(
+                    [
                         'src/app/**/*.html',
                     ]
-                )
-                .pipe( jst( "templates.js" , 
-                            {
-                                renameKeys: ['^.*app/(.*).html$', '$1']
-                            }
-                        ) )
-                .pipe( gulp.dest( 'build/js/' ) )
-                ;
+        )
+        .pipe(jst("templates.js", {
+            renameKeys: ['^.*app/(.*).html$', '$1']
+        }))
+        .pipe(gulp.dest('build/js/'));
 });
 gulp.task('jst-watch', ['jst'], bsync.reload);
 
@@ -95,38 +87,50 @@ gulp.task('jst-watch', ['jst'], bsync.reload);
     ## Compile the SASS into a single CSS file
 */
 
-gulp.task('sass', function() {
+gulp.task('sass', function () {
 
     // Compile
-    return  gulp.src('src/assets/scss/index.scss')
-                .pipe( sass().on( 'error', sass.logError ) )
-                // .pipe( autoprefixer() )
-                .pipe( rename('style.css') )
-                .pipe( gulp.dest( 'build/css/' ) )
-                .pipe( bsync.stream() )
-                ;
+    return gulp.src('src/assets/scss/index.scss')
+        .pipe(sass().on('error', sass.logError))
+        // .pipe( autoprefixer() )
+        .pipe(rename('style.css'))
+        .pipe(gulp.dest('build/css/'))
+        .pipe(bsync.stream());
 });
 
 /*
     ## Development web server and file watcher
 */
 
-gulp.task("server", function() {
 
-	bsync.init( {
+gulp.task('styles', () => {
+    return gulp.src("app / styles / screen.scss")
+        .pipe(sass({
+            outputStyle: 'expanded',
+            precision: 6,
+            includePaths: [
+                './node_modules/megatype'
+            ]
+        }))
+        .pipe(gulp.dest('build'));
+});
+
+gulp.task("server", function () {
+
+    bsync.init({
         server: './build',
         open: false
     });
 
     // Watch files
-    gulp.watch( 'src/app/*.js', ['js-watch'] );
-    gulp.watch( 'src/app/**/*.js', ['js-watch'] );
-    gulp.watch( 'src/app/**/*.html', ['jst-watch'] );
-    gulp.watch( 'src/assets/scss/**/*.scss', ['sass'] );
-    gulp.watch( [   'src/assets/js/**/*.js',
+    gulp.watch('src/app/*.js', ['js-watch']);
+    gulp.watch('src/app/**/*.js', ['js-watch']);
+    gulp.watch('src/app/**/*.html', ['jst-watch']);
+    gulp.watch('src/assets/scss/**/*.scss', ['sass']);
+    gulp.watch(['src/assets/js/**/*.js',
                     'src/assets/js/**/*.json'
-                ], ["js-watch"] )
+                ], ["js-watch"])
 
-    gulp.watch( 'src/**/*.html' ).on( 'change', bsync.reload );
+    gulp.watch('src/**/*.html').on('change', bsync.reload);
 
 });

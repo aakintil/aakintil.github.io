@@ -1,0 +1,29 @@
+@import "megatype";
+@import "config";
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: font-family-of($sans);
+}
+
+@include megatype;
+
+.container {
+    @include set-container;
+    margin: 0 auto;
+}
+
+.paragraph {
+    @include typeset($sans, 16px, 24px, $leader: 1, $trailer: 2);
+
+    // we can apply a single breakpoint, starting with breakpoint key: 1
+    @include min-width(1) {
+        @include typeset($sans, 16px, 24px, $leader: 1, $trailer: 2);
+    }
+
+    // or set several keys at once
+    @include min-width(2 3 4) {
+        @include typeset($sans, 18px, 2, $leader: 1, $trailer: 3);
+    }
+}

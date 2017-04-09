@@ -1,0 +1,69 @@
+// enable responsive baseline & type scaling.
+// increases root font size from each breakpoint, starting from the size specified in the rootsizes below
+$baseline-scaling: false;
+
+// enable formal baseline grid
+// snaps all type to the baseline grid
+$baseline-snap: true;
+
+// map for flexible retrieval of breakpoint info
+$breakpoint-map: (
+    0: (
+        start:      0px,
+        max:        420px,
+        rootsize:   12px
+    ),
+    1: (
+        start:      480px,
+        max:        560px,
+        rootsize:   14px
+    ),
+    2: (
+        start:      768px,
+        max:        840px,
+        rootsize:   16px
+    ),
+    3: (
+        start:      980px,
+        max:        1080px,
+        rootsize:   18px
+    ),
+    4: (
+        start:      1280px,
+        max:        1440px,
+        rootsize:   20px
+    )
+);
+
+// Set cap height to set to the baseline.
+// Here are some cap-height sizes to get you started:
+// Georgia: 0.66, Times / Times New Roman: 0.65, Palatino: 0.52
+// Lucida Grande: 0.72, Helvetica: 0.65, Helvetica Neue: 0.71, Verdana: 0.76, Tahoma: 0.76
+$sans: (
+    font-family: '"Helvetica Neue", Arial, sans-serif',
+    regular: normal,
+    bold: bold,
+    cap-height: 0.71
+) !default;
+
+$serif: (
+    font-family: 'Georgia, serif',
+    regular: normal,
+    bold: bold,
+    cap-height: 0.69
+) !default;
+
+$monospace: (
+    font-family: 'Menlo, Courier, monospace',
+    regular: 400,
+    cap-height: 0.68
+) !default;
+
+// debug baseline grid
+$debug-grid: true;
+// debug typeset elements, their cap height, and baseline
+$debug-type: true;
+// show some information about the current breakpoint and it's config
+$debug-breakpoints: true;
+
+$debug-allow: true;
