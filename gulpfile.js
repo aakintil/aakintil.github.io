@@ -14,8 +14,8 @@ var bsync = require("browser-sync");
 	# Define main gulp tasks
 */
 
-gulp.task("default", ["copy", "jst", "js", "sass", "styles", "server"]);
-gulp.task("build", ["copy", "jst", "js", "sass", "styles"]);
+gulp.task("default", ["copy", "jst", "js", "sass", "server"]);
+gulp.task("build", ["copy", "jst", "js", "sass"]);
 
 /*
     ## Copy over files
@@ -101,19 +101,6 @@ gulp.task('sass', function () {
 /*
     ## Development web server and file watcher
 */
-
-
-gulp.task('styles', () => {
-    return gulp.src("app / styles / screen.scss")
-        .pipe(sass({
-            outputStyle: 'expanded',
-            precision: 6,
-            includePaths: [
-                './node_modules/megatype'
-            ]
-        }))
-        .pipe(gulp.dest('build'));
-});
 
 gulp.task("server", function () {
 
