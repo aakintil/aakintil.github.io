@@ -43,15 +43,6 @@ __p += '<div class="">\n\tItem\n</div>';
 }
 return __p
 },
-"views/content/mainContent/mainContent": function(obj) {
-obj || (obj = {});
-var __t, __p = '', __e = _.escape;
-with (obj) {
-__p += '';
-
-}
-return __p
-},
 "views/content/supportingContent/supportingContent": function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
@@ -66,6 +57,15 @@ obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
 __p += '<div class="container">\n\tPage\n</div>';
+
+}
+return __p
+},
+"views/content/mainContent/mainContent": function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '';
 
 }
 return __p

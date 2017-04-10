@@ -351,7 +351,6 @@ window.ViewCompositeView = Backbone.Marionette.CompositeView.extend(
 
 });
 
-
 /*
 	# Defines the view for 
 */

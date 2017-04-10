@@ -29,13 +29,8 @@
 }
 
 .header__logo > p {
-//  line-height: 132px;
+  line-height: 132px;
   margin: 0;
-  color: red; 
-  // Set font-family
-  font-family-of:($sans);
-  // Set type settings
-  @include typeset($font: $sans, $fontsize: 56px, $lineheight: 56px, $leader: 2, $trailer: 2rem);
 }
 
 .header__menu {
