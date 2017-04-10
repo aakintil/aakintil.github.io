@@ -4221,7 +4221,7 @@ body {
   overflow-y: scroll;
   display: flex;
   flex-direction: row;
-  border: 1px solid white; }
+  position: relative; }
 
 .content--top {
   order: 1;
@@ -4288,6 +4288,32 @@ body {
   font-family: 'gt-reg';
   margin-top: 18px;
   color: black; }
+
+.content--top div {
+  color: white; }
+
+.content--top .row {
+  justify-content: flex-end;
+  height: 100%; }
+
+.content--top .background-color {
+  background: red;
+  height: 100%;
+  width: 75%;
+  position: absolute; }
+
+.content--top .pitch {
+  z-index: 1; }
+
+.content--top .slideshow,
+.content--top .pitch {
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid white; }
+
+.content--top,
+.content--top .row {
+  position: relative; }
 
 /*
 	# Vars

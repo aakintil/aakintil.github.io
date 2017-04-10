@@ -34,7 +34,7 @@ body {
 	overflow-y: scroll;
 	display: flex;
 	flex-direction: row;
-	border: 1px solid white;
+	position: relative;
 }
 
 .content--top {
