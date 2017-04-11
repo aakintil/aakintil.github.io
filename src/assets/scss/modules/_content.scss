@@ -1,19 +1,21 @@
 .content--top {
+ height: inherit;
  div {
   color: white;
  }
 }
 
 .content--top .row {
- justify-content: flex-end;
- height: 100%;
+ justify-content: space-evenly;
+ height: inherit;
 }
 
 .content--top .background-color {
  background: red;
- height: 100%;
+ height: inherit;
  width: 75%;
  position: absolute;
+ right: 0; 
 }
 
 .content--top .pitch {
@@ -22,9 +24,15 @@
 
 .content--top .slideshow,
 .content--top .pitch {
+ display: flex;
  z-index: 1;
- background: rgba( 255, 255, 255, 0.5); 
- border: 1px solid white;
+ // background: rgba( 255, 255, 255, 0.5);
+ // border: 1px solid white;
+}
+
+.content--top .pitch {
+ flex-direction: row;
+ flex-wrap: wrap;
 }
 
 .content--top,

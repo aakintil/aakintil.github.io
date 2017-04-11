@@ -4220,7 +4220,7 @@ body {
   order: 2;
   overflow-y: scroll;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: relative; }
 
 .content--top {
@@ -4289,27 +4289,33 @@ body {
   margin-top: 18px;
   color: black; }
 
-.content--top div {
-  color: white; }
+.content--top {
+  height: inherit; }
+  .content--top div {
+    color: white; }
 
 .content--top .row {
-  justify-content: flex-end;
-  height: 100%; }
+  justify-content: space-evenly;
+  height: inherit; }
 
 .content--top .background-color {
   background: red;
-  height: 100%;
+  height: inherit;
   width: 75%;
-  position: absolute; }
+  position: absolute;
+  right: 0; }
 
 .content--top .pitch {
   z-index: 1; }
 
 .content--top .slideshow,
 .content--top .pitch {
-  z-index: 1;
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid white; }
+  display: flex;
+  z-index: 1; }
+
+.content--top .pitch {
+  flex-direction: row;
+  flex-wrap: wrap; }
 
 .content--top,
 .content--top .row {

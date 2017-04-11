@@ -33,8 +33,8 @@ gulp.task("copy", function () {
     var js = gulp.src(["src/assets/js/**/"])
         .pipe(gulp.dest("build/js"));
 
-    var img = gulp.src(["src/assets/img/**/"])
-        .pipe(gulp.dest("build/img"));
+    var img = gulp.src(["src/assets/images/**/"])
+        .pipe(gulp.dest("build/images"));
     var merged = merge(html, fonts);
     merged.add(js);
     merged.add(img);
