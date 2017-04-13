@@ -2,7 +2,7 @@ this.JST = {"views/header/header": function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="header__menu bg__projects-color">\n  <p class="menu--title"> Menu</p>\n</div>\n\n\n<div class="header__logo">\n  <p>ADERINSOLA</p>\n</div>\n\n\n<div class="header__navbar">\n  <div class="navbar--links">\n    <p> about </p>\n  </div>\n  <div class="navbar--links">\n    <p>process</p>\n  </div>\n  <div class="navbar--links">\n    <p>contact</p>\n  </div>\n  <div class="navbar--links">\n    <p>claron</p>\n  </div>\n  <div class="navbar--links">\n    <p>helios</p>\n  </div>\n  <div class="navbar--links">\n    <p>freespira</p>\n  </div>\n  <div class="navbar--links">\n    <p>gridmi</p>\n  </div>\n  <div class="navbar--links">\n    <p>photos</p>\n  </div>\n  <div class="navbar--links">\n    <p>toffee</p>\n  </div>\n</div>';
+__p += '<div class="header__menu bg__projects-color">\n  <p class="menu--title"> Menu</p>\n</div>\n\n\n<div class="header__logo col-xs-12">\n  <p>ADERINSOLA</p>\n</div>\n\n\n<div class="header__navbar col-xs-12">\n  <div class="navbar--links">\n    <p> about </p>\n  </div>\n  <div class="navbar--links">\n    <p>process</p>\n  </div>\n  <div class="navbar--links">\n    <p>contact</p>\n  </div>\n  <div class="navbar--links">\n    <p>claron</p>\n  </div>\n  <div class="navbar--links">\n    <p>helios</p>\n  </div>\n  <div class="navbar--links">\n    <p>freespira</p>\n  </div>\n  <div class="navbar--links">\n    <p>gridmi</p>\n  </div>\n  <div class="navbar--links">\n    <p>photos</p>\n  </div>\n  <div class="navbar--links">\n    <p>toffee</p>\n  </div>\n</div>';
 
 }
 return __p
@@ -43,7 +43,7 @@ __p += '<div class="">\n\tItem\n</div>';
 }
 return __p
 },
-"views/content/mainContent/mainContent": function(obj) {
+"views/content/supportingContent/supportingContent": function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
@@ -52,7 +52,7 @@ __p += '';
 }
 return __p
 },
-"views/content/supportingContent/supportingContent": function(obj) {
+"views/content/mainContent/mainContent": function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
