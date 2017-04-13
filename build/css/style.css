@@ -4258,7 +4258,8 @@ body {
 
 .navbar--links > p {
   font-size: 18px;
-  font-family: 'gt-reg'; }
+  font-family: 'gt-reg';
+  letter-spacing: 2.5px; }
 
 .header__logo {
   display: flex;
@@ -4304,9 +4305,13 @@ body {
   .content--top div {
     color: white; }
 
-.content--top .row {
+.content--top > .row {
   justify-content: space-evenly;
   height: inherit; }
+
+.content--top,
+.content--top > .row {
+  position: relative; }
 
 .content--top .background-color {
   background: red;
@@ -4327,9 +4332,40 @@ body {
   flex-direction: row;
   flex-wrap: wrap; }
 
-.content--top,
-.content--top .row {
-  position: relative; }
+.content--top .slideshow {
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.image--container {
+  min-height: 1104px;
+  height: 90%; }
+
+.image {
+  background: url("../images/claron.png");
+  background-size: 100%;
+  height: 100%;
+  background-repeat: no-repeat; }
+
+.title {
+  font-size: 56px;
+  font-family: 'gt-thin'; }
+
+.callout {
+  font-size: 88px;
+  font-family: 'gt-ultraBold';
+  text-transform: uppercase;
+  line-height: 106px;
+  color: white; }
+
+.description {
+  font-size: 24px;
+  font-family: 'gt-reg';
+  line-height: 40px; }
+
+.skills {
+  font-size: 16px;
+  font-family: 'gt-light';
+  text-transform: capitalize; }
 
 /*
 	# Vars
