@@ -4302,8 +4302,12 @@ body {
 
 .content--top {
   height: inherit; }
-  .content--top div {
-    color: white; }
+
+.title--container,
+.callout--container,
+.description--container,
+.skills--container {
+  color: white; }
 
 .content--top > .row {
   justify-content: space-evenly;
@@ -4366,6 +4370,21 @@ body {
   font-size: 16px;
   font-family: 'gt-light';
   text-transform: capitalize; }
+
+.behind-the-scenes {
+  background: white;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-family: 'gt-bold';
+  font-size: 18px;
+  padding-top: 4px; }
+
+.btn--primaryRed {
+  color: red; }
 
 /*
 	# Vars
