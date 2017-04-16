@@ -2,7 +2,7 @@
 	# Vars
 */
 
-$size-pad 			: 20px;
+$size-pad 			: 24px;
 
 /*
 	# Padding
@@ -21,9 +21,9 @@ $size-pad 			: 20px;
 // Double padding
 
 .pad-2 				{ padding: $size-pad * 2; }
-.pad--top-2 			{ padding-top: $size-pad * 2; }
+.pad--top-2 		{ padding-top: $size-pad * 2; }
 .pad--bottom-2 		{ padding-bottom: $size-pad * 2; }
-.pad--left-2 			{ padding-left: $size-pad * 2; }
+.pad--left-2 		{ padding-left: $size-pad * 2; }
 .pad--right-2 		{ padding-right: $size-pad * 2; }
 .pad--v-2			{ padding-top: $size-pad * 2; 	padding-bottom: $size-pad * 2; }
 .pad--h-2			{ padding-left: $size-pad * 2; 	padding-right: $size-pad * 2; }
@@ -39,15 +39,57 @@ $size-pad 			: 20px;
 .pad--h-h			{ padding-left: $size-pad / 2; 	padding-right: $size-pad / 2; }
 
 .pad--none			{ padding: 0 !important; }
-.pad--none-v		{ padding-top: 0 !important; padding-bottom: 0 !important; }
-.pad--none-h		{ padding-left: 0 !important; padding-right: 0 !important; }
+.pad--none-v		{ padding-top: 0 !important; 	padding-bottom: 0 !important; }
+.pad--none-h		{ padding-left: 0 !important; 	padding-right: 0 !important; }
+
 
 
 // Margins
 // -------------------------
-.marg--none {
-  margin: 0 !important;
-}
+
+// Full margin
+.marg 				{ margin: $size-pad; }
+.marg--top 			{ margin-top: $size-pad; }
+.marg--bottom 		{ margin-bottom: $size-pad; }
+.marg--left 		{ margin-left: $size-pad; }
+.marg--right 		{ margin-right: $size-pad; }
+.marg--v			{ margin-top: $size-pad; 		margin-bottom: $size-pad; }
+.marg--h			{ margin-left: $size-pad;		margin-right: $size-pad; }
+
+// Double margin
+.marg-2 			{ margin: $size-pad * 2; }
+.marg--top-2 		{ margin-top: $size-pad * 2; }
+.marg--bottom-2 	{ margin-bottom: $size-pad * 2; }
+.marg--left-2 		{ margin-left: $size-pad * 2; }
+.marg--right-2 		{ margin-right: $size-pad * 2; }
+.marg--v-2			{ margin-top: $size-pad * 2; 	margin-bottom: $size-pad * 2; }
+.marg--h-2			{ margin-left: $size-pad * 2; 	margin-right: $size-pad * 2; }
+
+// Quadruple margin
+.marg-4 			{ margin: $size-pad * 4; }
+.marg--top-4 		{ margin-top: $size-pad * 4; }
+.marg--bottom-4 	{ margin-bottom: $size-pad * 4; }
+.marg--left-4 		{ margin-left: $size-pad * 4; }
+.marg--right-4 		{ margin-right: $size-pad * 4; }
+.marg--v-4			{ margin-top: $size-pad * 4; 	margin-bottom: $size-pad * 4; }
+.marg--h-4			{ margin-left: $size-pad * 4; 	margin-right: $size-pad * 4; }
+
+// 6* margin
+.marg--top-6 		{ margin-top: $size-pad * 6; }
+
+// Half margin
+.marg-h 			{ margin: $size-pad / 2; }
+.marg--top-h 		{ margin-top: $size-pad / 2; }
+.marg--bottom-h 	{ margin-bottom: $size-pad / 2; }
+.marg--left-h 		{ margin-left: $size-pad / 2; }
+.marg--right-h 		{ margin-right: $size-pad / 2; }
+.marg--v-h			{ margin-top: $size-pad / 2; 	margin-bottom: $size-pad / 2; }
+.marg--h-h			{ margin-left: $size-pad / 2; 	margin-right: $size-pad / 2; }
+
+// No margin
+.marg--none			{ margin: 0 !important; }
+.marg--none-v		{ margin-top: 0 !important; 	margin-bottom: 0 !important; }
+.marg--none-h		{ margin-left: 0 !important; 	margin-right: 0 !important; }
 
 /*
 	# Colors
@@ -121,4 +163,11 @@ $size-pad 			: 20px;
 	{
 		#{$key} : $value;
 	}
+}
+
+
+// Adds rem to font-sizes
+@mixin font-size($sizeValue) {
+  font-size: $sizeValue + px;
+  font-size: $sizeValue + rem;
 }

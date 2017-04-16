@@ -2,99 +2,112 @@
 	# Vars
 */
 
+
 /*
 	# Main
 */
 
-*
-{
+* {
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 }
 
-html
-{}
+html {}
 
-body
-{}
+html {
+	font-size: 1px; // for rem font sizes
+}
+
+body {}
 
 
 /*
     # Headings
 */
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6
-{
-	font-family : $font-family-heading;
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-family: $font-family-heading;
 	color: $color-headings;
-
 	font-weight: bold;
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3
-{
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
 	font-weight: normal;
 	font-size: 48px;
 }
 
-h4, .h4,
-h5, .h5,
-h6, .h6
-{}
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {}
 
-h1, .h1
-{}
+h1,
+.h1 {}
 
-h2, .h2
-{}
+h2,
+.h2 {}
 
-h3, .h3
-{}
+h3,
+.h3 {}
 
-h4, .h4
-{}
+h4,
+.h4 {}
 
-h5, .h5
-{}
+h5,
+.h5 {}
 
-h6, .h6
-{}
+h6,
+.h6 {}
+
 
 /*
 	# 
 */
-a
-{
+
+a {
 	cursor: pointer;
 }
 
 a,
-a:hover
-{
+a:hover {
 	// transition: color $dur-link-transition;
 }
+
 
 /*
     # Lists
 */
 
-ul
-{
+ul {
 	padding-left: 0;
 	margin-bottom: 0;
 	list-style-type: none;
 }
 
-ul.styled
-{
+ul.styled {
 	padding-left: 1.25em;
 	list-style-type: disc;
+}
+
+p {
+	margin: 0;
 }

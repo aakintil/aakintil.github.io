@@ -1,3 +1,13 @@
+$color-white: white;
+$color-projectRed: red;
+$blockHeight-1104: $baseBlockSize * 138;
+$lineHeight-106: 106px;
+$lineHeight-40: 40px;
+
+$btnHeight: $baseBlockSize * 6; 
+$btnLtrSpacing: $baseFontSize / 3.2 + px; 
+
+$titleLtrSpacing: $baseFontSize/4 + px; 
 .content--top {
  height: inherit;
 }
@@ -6,7 +16,7 @@
 .callout--container,
 .description--container,
 .skills--container {
- color: white;
+ color: $color-white;
 }
 
 .content--top > .row {
@@ -20,7 +30,7 @@
 }
 
 .content--top .background-color {
- background: red;
+ background: $color-projectRed;
  height: inherit;
  width: 75%;
  position: absolute;
@@ -35,8 +45,6 @@
 .content--top .pitch {
  display: flex;
  z-index: 1;
- // background: rgba( 255, 255, 255, 0.5);
- // border: 1px solid white;
 }
 
 .content--top .pitch {
@@ -50,7 +58,7 @@
 }
 
 .image--container {
- min-height: 1104px;
+ min-height: $blockHeight-1104;
  height: 90%;
 }
 
@@ -62,50 +70,51 @@
 }
 
 .title {
- font-size: 56px;
+ @include font-size($fontSize-56);
  font-family: 'gt-thin';
+ letter-spacing: $titleLtrSpacing;
 }
 
 .title--underline {
- background: white; 
- height: 8px; 
- border-radius: 8px; 
+ background: white;
+ height: $baseBlockSize;
+ border-radius: 8px;
 }
 
-
 .callout {
- font-size: 88px;
+ @include font-size($fontSize-88);
  font-family: 'gt-ultraBold';
  text-transform: uppercase;
- line-height: 106px;
- color: white;
+ line-height: $lineHeight-106;
+ color: $color-white;
 }
 
 .description {
- font-size: 24px;
- font-family: 'gt-reg';
- line-height: 40px;
+ @include font-size($fontSize-24);
+ font-family: 'gt-light';
+ letter-spacing: 0.5px;
+ line-height: $lineHeight-40;
 }
 
 .skills {
- font-size: 16px;
+ @include font-size($fontSize-16);
  font-family: 'gt-light';
  text-transform: capitalize;
 }
 
 .behind-the-scenes {
  background: white;
- height: 48px;
+ height: $btnHeight;
  display: flex;
  justify-content: center;
  align-items: center;
  text-transform: uppercase;
- letter-spacing: 2.5px;
- font-family: 'gt-bold'; 
- font-size: 18px; 
- padding-top: 4px; 
+ letter-spacing: $btnLtrSpacing;
+ font-family: 'gt-bold';
+ @include font-size($fontSize-18);
+ padding-top: $baseBlockSize / 2;
 }
 
 .btn--primaryRed {
- color: red;
+ color: $color-projectRed;
 }

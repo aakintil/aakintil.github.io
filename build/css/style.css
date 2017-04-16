@@ -1,5 +1,11 @@
 @charset "UTF-8";
 /*
+    # Base variables
+*/
+/*
+    # Font variables
+*/
+/*
     # Paths
 */
 /*
@@ -3359,73 +3365,73 @@ template {
 	# Padding
 */
 .pad {
-  padding: 20px; }
+  padding: 24px; }
 
 .pad--top {
-  padding-top: 20px; }
+  padding-top: 24px; }
 
 .pad--bottom {
-  padding-bottom: 20px; }
+  padding-bottom: 24px; }
 
 .pad--left {
-  padding-left: 20px; }
+  padding-left: 24px; }
 
 .pad--right {
-  padding-right: 20px; }
+  padding-right: 24px; }
 
 .pad--v {
-  padding-top: 20px;
-  padding-bottom: 20px; }
+  padding-top: 24px;
+  padding-bottom: 24px; }
 
 .pad--h {
-  padding-left: 20px;
-  padding-right: 20px; }
+  padding-left: 24px;
+  padding-right: 24px; }
 
 .pad-2 {
-  padding: 40px; }
+  padding: 48px; }
 
 .pad--top-2 {
-  padding-top: 40px; }
+  padding-top: 48px; }
 
 .pad--bottom-2 {
-  padding-bottom: 40px; }
+  padding-bottom: 48px; }
 
 .pad--left-2 {
-  padding-left: 40px; }
+  padding-left: 48px; }
 
 .pad--right-2 {
-  padding-right: 40px; }
+  padding-right: 48px; }
 
 .pad--v-2 {
-  padding-top: 40px;
-  padding-bottom: 40px; }
+  padding-top: 48px;
+  padding-bottom: 48px; }
 
 .pad--h-2 {
-  padding-left: 40px;
-  padding-right: 40px; }
+  padding-left: 48px;
+  padding-right: 48px; }
 
 .pad-h {
-  padding: 10px; }
+  padding: 12px; }
 
 .pad--top-h {
-  padding-top: 10px; }
+  padding-top: 12px; }
 
 .pad--bottom-h {
-  padding-bottom: 10px; }
+  padding-bottom: 12px; }
 
 .pad--left-h {
-  padding-left: 10px; }
+  padding-left: 12px; }
 
 .pad--right-h {
-  padding-right: 10px; }
+  padding-right: 12px; }
 
 .pad--v-h {
-  padding-top: 10px;
-  padding-bottom: 10px; }
+  padding-top: 12px;
+  padding-bottom: 12px; }
 
 .pad--h-h {
-  padding-left: 10px;
-  padding-right: 10px; }
+  padding-left: 12px;
+  padding-right: 12px; }
 
 .pad--none {
   padding: 0 !important; }
@@ -3438,8 +3444,111 @@ template {
   padding-left: 0 !important;
   padding-right: 0 !important; }
 
+.marg {
+  margin: 24px; }
+
+.marg--top {
+  margin-top: 24px; }
+
+.marg--bottom {
+  margin-bottom: 24px; }
+
+.marg--left {
+  margin-left: 24px; }
+
+.marg--right {
+  margin-right: 24px; }
+
+.marg--v {
+  margin-top: 24px;
+  margin-bottom: 24px; }
+
+.marg--h {
+  margin-left: 24px;
+  margin-right: 24px; }
+
+.marg-2 {
+  margin: 48px; }
+
+.marg--top-2 {
+  margin-top: 48px; }
+
+.marg--bottom-2 {
+  margin-bottom: 48px; }
+
+.marg--left-2 {
+  margin-left: 48px; }
+
+.marg--right-2 {
+  margin-right: 48px; }
+
+.marg--v-2 {
+  margin-top: 48px;
+  margin-bottom: 48px; }
+
+.marg--h-2 {
+  margin-left: 48px;
+  margin-right: 48px; }
+
+.marg-4 {
+  margin: 96px; }
+
+.marg--top-4 {
+  margin-top: 96px; }
+
+.marg--bottom-4 {
+  margin-bottom: 96px; }
+
+.marg--left-4 {
+  margin-left: 96px; }
+
+.marg--right-4 {
+  margin-right: 96px; }
+
+.marg--v-4 {
+  margin-top: 96px;
+  margin-bottom: 96px; }
+
+.marg--h-4 {
+  margin-left: 96px;
+  margin-right: 96px; }
+
+.marg--top-6 {
+  margin-top: 144px; }
+
+.marg-h {
+  margin: 12px; }
+
+.marg--top-h {
+  margin-top: 12px; }
+
+.marg--bottom-h {
+  margin-bottom: 12px; }
+
+.marg--left-h {
+  margin-left: 12px; }
+
+.marg--right-h {
+  margin-right: 12px; }
+
+.marg--v-h {
+  margin-top: 12px;
+  margin-bottom: 12px; }
+
+.marg--h-h {
+  margin-left: 12px;
+  margin-right: 12px; }
+
 .marg--none {
   margin: 0 !important; }
+
+.marg--none-v {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important; }
+
+.marg--none-h {
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
 
 /*
 	# Colors
@@ -3529,22 +3638,34 @@ template {
   -moz-font-smoothing: antialiased;
   font-smoothing: antialiased; }
 
+html {
+  font-size: 1px; }
+
 /*
     # Headings
 */
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
   font-family: "", "Arial", sans-serif;
   color: #333333;
   font-weight: bold; }
 
-h1, .h1,
-h2, .h2,
-h3, .h3 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
   font-weight: normal;
   font-size: 48px; }
 
@@ -3565,6 +3686,9 @@ ul {
 ul.styled {
   padding-left: 1.25em;
   list-style-type: disc; }
+
+p {
+  margin: 0; }
 
 /*
 	# Vars
@@ -3725,7 +3849,9 @@ body {
 
 .title {
   font-size: 56px;
-  font-family: 'gt-thin'; }
+  font-size: 56rem;
+  font-family: 'gt-thin';
+  letter-spacing: 2px; }
 
 .title--underline {
   background: white;
@@ -3734,6 +3860,7 @@ body {
 
 .callout {
   font-size: 88px;
+  font-size: 88rem;
   font-family: 'gt-ultraBold';
   text-transform: uppercase;
   line-height: 106px;
@@ -3741,11 +3868,14 @@ body {
 
 .description {
   font-size: 24px;
-  font-family: 'gt-reg';
+  font-size: 24rem;
+  font-family: 'gt-light';
+  letter-spacing: 0.5px;
   line-height: 40px; }
 
 .skills {
   font-size: 16px;
+  font-size: 16rem;
   font-family: 'gt-light';
   text-transform: capitalize; }
 
@@ -3759,6 +3889,7 @@ body {
   letter-spacing: 2.5px;
   font-family: 'gt-bold';
   font-size: 18px;
+  font-size: 18rem;
   padding-top: 4px; }
 
 .btn--primaryRed {
