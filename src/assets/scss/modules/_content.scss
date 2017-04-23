@@ -1,13 +1,22 @@
+// --------------
+// VARIABLES 
+// --------------
+
+// colors
 $color-white: white;
 $color-projectRed: red;
+
+/// heights
 $blockHeight-1104: $baseBlockSize * 138;
 $lineHeight-106: 106px;
 $lineHeight-40: 40px;
-
 $btnHeight: $baseBlockSize * 6; 
-$btnLtrSpacing: $baseFontSize / 3.2 + px; 
 
+// text
+$btnLtrSpacing: $baseFontSize / 3.2 + px; 
 $titleLtrSpacing: $baseFontSize/4 + px; 
+
+
 .content--top {
  height: inherit;
 }
