@@ -1,18 +1,58 @@
 /*
-    # Base variables
+* === STYLEGUIDE VARIABLES ===
 */
 
-// components
-$componentHeight-base: 8px;
-
-// color
-$color--black            : #000000;
-$color--white            : #ffffff;
-
-// text / font
-$text--letterSpacing     : 1px; 
 
 /*
-    # Component size variables
+* — Base Styles —
 */
-$componentHeight-xl: $componentHeight-base * 24;
+$baseFontSize: 8; 
+$baseBlockSize: 8px; 
+
+/*
+* — Colors —
+*/
+// descriptive names
+$color-primaryWhite           : #FFFFFF;
+$color-primaryRed             : #FB564B; 
+$color-primaryBlue            : #2AD2F8; 
+$color-primaryYellow          : #FFC100; 
+$color-primaryBlack           : #000000; 
+$color-secondaryWhite         : rgba( 255, 255, 255, 0.77 );
+$color-secondaryRed           : #A03730; 
+$color-secondaryBlue          : #125767; 
+$color-secondaryYellow        : #A47C00; 
+$color-tertiaryWhite          : rgba( 255, 255, 255, 0.56 );
+$color-quaternaryWhite        : rgba( 255, 255, 255, 0.27 );
+     
+// functional names
+
+// - nav button
+$color-navButton              : $color-secondaryWhite; 
+$color-navButton-bio          : $color-primaryBlue;
+$color-navButton-works        : $color-primaryRed; 
+$color-navButton-projects     : $color-primaryYellow; 
+
+// - primary button 
+$color-primaryButton-bio          : $color-secondaryBlue;
+$color-primaryButton-works        : $color-secondaryRed; 
+$color-primaryButton-projects     : $color-secondaryYellow; 
+
+/*
+* — Text / Fonts —
+*/
+$text--letterSpacing          : 1px; 
+$font-header1                 : $baseFontSize * 11; // 88px 
+$font-header2                 : $baseFontSize * 8; // 64px 
+$font-header3                 : $baseFontSize * 7; // 56px 
+$font-header4                 : $baseFontSize * 3; // 24px 
+$font-header5                 : $baseFontSize * 2.25; // 18px 
+$font-copy                    : $baseFontSize * 3; // 24px 
+$font-caption                 : $baseFontSize * 2; // 16px 
+     
+$font-reg                     : 'geo-reg'; 
+$font-thin                    : 'geo-thin'; 
+$font-light                   : 'geo-light'; 
+$font-bold                    : 'geo-bold'; 
+$font-black                   : 'geo-black'; 
+

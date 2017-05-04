@@ -37,22 +37,14 @@ h4,
 h5,
 .h5,
 h6,
-.h6 {
-	font-family: $font-family-heading;
-	color: $color-headings;
-	font-weight: bold;
-}
+.h6 {}
 
 h1,
 .h1,
 h2,
 .h2,
 h3,
-.h3 {
-	font-weight: normal;
-	font-size: 48px;
-}
-
+.h3,
 h4,
 .h4,
 h5,
@@ -110,4 +102,50 @@ ul.styled {
 
 p {
 	margin: 0;
+}
+
+h1,
+h2,
+h4,
+h5 {
+	text-transform: uppercase;
+}
+
+h1 {
+	@include font-size($font-header1);
+	font-family: $font-black;
+}
+
+h2 {
+	@include font-size($font-header2);
+	letter-spacing: 48px;
+	font-family: $font-bold;
+}
+
+h3 {
+	@include font-size($font-header3);
+	letter-spacing: 2px;
+	font-family: $font-thin;
+}
+
+h4 {
+	@include font-size($font-header4);
+	letter-spacing: 5px;
+	font-family: $font-bold;
+}
+
+h5 {
+	@include font-size($font-header5);
+	letter-spacing: 2.5px;
+	font-family: $font-reg;
+}
+
+p {
+	@include font-size($font-copy);
+	font-family: $font-reg;
+}
+
+caption {
+	@include font-size($font-caption);
+	font-family: $font-light;
 }

@@ -1,12 +1,9 @@
-@import "vars";
-@import "../../../node_modules/font-awesome/scss/font-awesome";
-
-@import "normalize";
-@import "flexboxgrid";
-@import "fonts";
-@import "utils";
-@import "variables";
-@import "base";
-@import "layout";
-@import "modules";
-@import "state";
+@import "normalize"; // adding normalization 
+@import "flexboxgrid"; // adding flexbox grid layout
+@import "fonts"; // adding font imports 
+@import "utils"; // adding utilities
+@import "variables"; // adding custom variables
+@import "base"; // adding base styles - styleguide and such
+@import "layout"; // adding layout styles
+@import "modules"; // adding separate style modules
+@import "state"; // adding state styles

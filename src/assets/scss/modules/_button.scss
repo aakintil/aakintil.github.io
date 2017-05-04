@@ -1,0 +1,29 @@
+.navigation-button {
+     height: $baseBlockSize * 6; // 40px
+     min-width: $baseBlockSize * 15.625; // 125px 
+     background: $color-primaryBlack;
+     color: $color-navButton; // white 77% opacity;
+     &.bio {
+          color: $color-navButton-bio; // blue
+     }
+     &.works {
+          color: $color-navButton-works; // red
+     }
+     &.projects {
+          color: $color-navButton-projects; // yellow
+     }
+}
+
+.primary-button {
+     height: $baseBlockSize * 15; // 120px
+     background: $color-primaryWhite;
+     &.bio {
+          color: $color-primaryButton-bio;
+     }
+     &.works {
+          color: $color-primaryButton-works;
+     }
+     &.projects {
+          color: $color-primaryButton-projects;
+     }
+}

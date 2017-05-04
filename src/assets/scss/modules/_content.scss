@@ -79,7 +79,7 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 }
 
 .title {
- @include font-size($fontSize-56);
+// @include font-size($fontSize-56);
  font-family: 'gt-thin';
  letter-spacing: $titleLtrSpacing;
 }
@@ -91,7 +91,7 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 }
 
 .callout {
- @include font-size($fontSize-88);
+// @include font-size($fontSize-88);
  font-family: 'gt-ultraBold';
  text-transform: uppercase;
  line-height: $lineHeight-106;
@@ -99,14 +99,14 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 }
 
 .description {
- @include font-size($fontSize-24);
+// @include font-size($fontSize-24);
  font-family: 'gt-light';
  letter-spacing: 0.5px;
  line-height: $lineHeight-40;
 }
 
 .skills {
- @include font-size($fontSize-16);
+// @include font-size($fontSize-16);
  font-family: 'gt-light';
  text-transform: capitalize;
 }
@@ -120,7 +120,7 @@ $titleLtrSpacing: $baseFontSize/4 + px;
  text-transform: uppercase;
  letter-spacing: $btnLtrSpacing;
  font-family: 'gt-bold';
- @include font-size($fontSize-18);
+// @include font-size($fontSize-18);
  padding-top: $baseBlockSize / 2;
 }
 

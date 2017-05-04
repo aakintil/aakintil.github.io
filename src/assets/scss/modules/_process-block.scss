@@ -1,0 +1,30 @@
+.process-block {
+ height: $baseBlockSize * 103;
+ display: flex;
+ align-items: center;
+ &.left {}
+ &.right {}
+}
+
+.process-image-container {
+ height: $baseBlockSize * 64;
+ &.left {
+  align-self: flex-start;
+ }
+ &.right {
+  align-self: flex-end;
+ }
+}
+
+.process-copy-container {
+ padding: 0 0 0 64px;
+}
+
+.process-title {
+// font-size: $font-header4; 
+// font-family: $font-bold; 
+}
+
+.process-description {
+// font-size: $font-copy;
+}

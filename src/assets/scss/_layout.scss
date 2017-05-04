@@ -22,11 +22,10 @@ body {
 }
 
 .layout--header {
-	//	height: $componentHeight-xl;
 	background: $color--bgMain;
 	order: 1;
 	flex-shrink: 0;
-	flex-basis: $componentHeight-xl;
+	flex-basis: 192px;//$componentHeight-xl;
 }
 
 .layout--content {
