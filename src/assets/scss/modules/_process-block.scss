@@ -2,15 +2,18 @@
  height: $baseBlockSize * 103;
  display: flex;
  color: $color-primaryWhite;
- align-items: center;
+
+ z-index: 2;
+ 
  &.left {
-  background: blue;
  }
  &.right {}
 }
 
 .process-image-container {
- height: $baseBlockSize * 64;
+ height: $baseBlockSize * 64; //512px; 
+ background: gray; 
+
  &.left {
   align-self: flex-start;
  }
@@ -31,3 +34,6 @@
 .process-description {
  // font-size: $font-copy;
 }
+
+//696px
+//512px

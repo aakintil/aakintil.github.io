@@ -1325,6 +1325,20 @@ html {
 /*
     # Headings
 */
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin: 0; }
+
 /*
 	# 
 */
@@ -1613,12 +1627,11 @@ body {
   height: 824px;
   display: flex;
   color: #FFFFFF;
-  align-items: center; }
-  .process-block.left {
-    background: blue; }
+  z-index: 2; }
 
 .process-image-container {
-  height: 512px; }
+  height: 512px;
+  background: gray; }
   .process-image-container.left {
     align-self: flex-start; }
   .process-image-container.right {
