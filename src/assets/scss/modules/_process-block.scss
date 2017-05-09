@@ -1,8 +1,11 @@
 .process-block {
  height: $baseBlockSize * 103;
  display: flex;
+ color: $color-primaryWhite;
  align-items: center;
- &.left {}
+ &.left {
+  background: blue;
+ }
  &.right {}
 }
 
@@ -21,10 +24,10 @@
 }
 
 .process-title {
-// font-size: $font-header4; 
-// font-family: $font-bold; 
+ // font-size: $font-header4; 
+ // font-family: $font-bold; 
 }
 
 .process-description {
-// font-size: $font-copy;
+ // font-size: $font-copy;
 }

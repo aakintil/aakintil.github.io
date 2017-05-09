@@ -26,6 +26,7 @@ body {
 	order: 1;
 	flex-shrink: 0;
 	flex-basis: 192px;//$componentHeight-xl;
+	display: none;
 }
 
 .layout--content {

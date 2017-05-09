@@ -1412,7 +1412,8 @@ body {
   background: black;
   order: 1;
   flex-shrink: 0;
-  flex-basis: 192px; }
+  flex-basis: 192px;
+  display: none; }
 
 .layout--content {
   order: 2;
@@ -1611,7 +1612,10 @@ body {
 .process-block {
   height: 824px;
   display: flex;
+  color: #FFFFFF;
   align-items: center; }
+  .process-block.left {
+    background: blue; }
 
 .process-image-container {
   height: 512px; }
