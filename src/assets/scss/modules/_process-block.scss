@@ -1,19 +1,21 @@
 .process-block {
- height: $baseBlockSize * 103;
+ height: $baseBlockSize * 103; // 824px
  display: flex;
+ padding: 0;
+ padding-top: 150px;
  color: $color-primaryWhite;
-
  z-index: 2;
- 
  &.left {
+   background: rgba(0, 0, 0, 0.5);
  }
- &.right {}
+ &.right {
+   background: purple;
+ }
 }
 
 .process-image-container {
  height: $baseBlockSize * 64; //512px; 
- background: gray; 
-
+ border: 1px solid grey;
  &.left {
   align-self: flex-start;
  }
@@ -29,6 +31,7 @@
 .process-title {
  // font-size: $font-header4; 
  // font-family: $font-bold; 
+ margin-bottom: 80px;
 }
 
 .process-description {

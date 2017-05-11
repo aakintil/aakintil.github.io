@@ -1320,7 +1320,7 @@ template {
   font-smoothing: antialiased; }
 
 html {
-  font-size: 1px; }
+  font-size: 0.75px; }
 
 /*
     # Headings
@@ -1381,7 +1381,7 @@ h3 {
   font-size: 56px;
   font-size: 56rem;
   letter-spacing: 2px;
-  font-family: "geo-thin"; }
+  font-family: "geo-light"; }
 
 h4 {
   font-size: 24px;
@@ -1398,7 +1398,8 @@ h5 {
 p {
   font-size: 24px;
   font-size: 24rem;
-  font-family: "geo-reg"; }
+  font-family: "geo-reg";
+  line-height: 40px; }
 
 caption {
   font-size: 16px;
@@ -1564,12 +1565,11 @@ body {
   background-repeat: no-repeat; }
 
 .title {
-  font-family: 'gt-thin';
   letter-spacing: 2px; }
 
 .title--underline {
   background: white;
-  height: 8px;
+  height: 4px;
   border-radius: 8px; }
 
 .callout {
@@ -1626,12 +1626,18 @@ body {
 .process-block {
   height: 824px;
   display: flex;
+  padding: 0;
+  padding-top: 150px;
   color: #FFFFFF;
   z-index: 2; }
+  .process-block.left {
+    background: rgba(0, 0, 0, 0.5); }
+  .process-block.right {
+    background: purple; }
 
 .process-image-container {
   height: 512px;
-  background: gray; }
+  border: 1px solid grey; }
   .process-image-container.left {
     align-self: flex-start; }
   .process-image-container.right {
@@ -1639,6 +1645,9 @@ body {
 
 .process-copy-container {
   padding: 0 0 0 64px; }
+
+.process-title {
+  margin-bottom: 80px; }
 
 /*
 	# Vars

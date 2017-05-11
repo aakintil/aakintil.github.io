@@ -80,13 +80,13 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 
 .title {
 // @include font-size($fontSize-56);
- font-family: 'gt-thin';
+// font-family: 'gt-thin';
  letter-spacing: $titleLtrSpacing;
 }
 
 .title--underline {
  background: white;
- height: $baseBlockSize;
+ height: $baseBlockSize / 2;
  border-radius: 8px;
 }
 
