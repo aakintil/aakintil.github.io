@@ -26,7 +26,8 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		// http://stackoverflow.com/questions/10946392/hiding-a-view-in-region-manager-when-another-view-is-shown
 		// HACK
 		this.supportingContent._ensureElement();
-		this.supportingContent.$el.hide();
+		// to hide the bottom area
+		// this.supportingContent.$el.hide();
 
 		//		var _this = this;
 		//		setTimeout( function() {

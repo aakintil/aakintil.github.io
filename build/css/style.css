@@ -1320,7 +1320,16 @@ template {
   font-smoothing: antialiased; }
 
 html {
-  font-size: 0.75px; }
+  font-size: 0.75px;
+  height: 100%; }
+
+html,
+body {
+  margin: 0; }
+
+body {
+  height: 100%;
+  overflow: hidden; }
 
 /*
     # Headings
@@ -1415,37 +1424,37 @@ caption {
 html,
 body,
 .layout--content {
-  height: 100%;
   background: black; }
 
 body {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh; }
+  flex-direction: column; }
 
 .layout--header {
   background: black;
   order: 1;
-  flex-shrink: 0;
   flex-basis: 192px;
-  display: none; }
+  display: flex;
+  width: 100%;
+  z-index: 1000; }
 
 .layout--content {
   order: 2;
-  overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  position: relative; }
+  position: relative;
+  flex: 1;
+  overflow-y: visible; }
 
 .content--top {
   order: 1;
   flex-basis: 1000px;
-  height: 500px;
-  flex: 1; }
+  height: inherit;
+  flex: 1 0 auto; }
 
 .content--bottom {
   order: 2;
-  flex-shrink: 0;
+  flex: none;
   height: 600px;
   background: red; }
 
@@ -1454,10 +1463,11 @@ body {
   color: #FFFFFF;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  height: 368px;
+  height: 276px;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  overflow: hidden; }
 
 .header__navbar {
   display: flex;
@@ -1533,7 +1543,7 @@ body {
 
 .content--top .background-color {
   background: red;
-  height: inherit;
+  height: 100%;
   width: 75%;
   position: absolute;
   right: 0; }

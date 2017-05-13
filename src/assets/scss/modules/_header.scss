@@ -3,10 +3,11 @@
   color: $color-primaryWhite;
   text-transform: uppercase;
   letter-spacing: $text--letterSpacing * 1.5;
-  height: 368px;
+  height: 276px; // 368px * .75 ( or the font size percentage)
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .header__navbar {
@@ -20,7 +21,6 @@
 
 .navbar--links {
   padding: 0 8px;
-
 }
 
 .navbar--links > p {

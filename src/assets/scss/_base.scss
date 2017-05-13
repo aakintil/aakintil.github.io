@@ -17,10 +17,17 @@ html {}
 
 html {
 	font-size: 0.75px; // for rem font sizes
+	height: 100%;
+}
+
+html,
+body {
+	margin: 0;
 }
 
 body {
-	
+	height: 100%;
+	overflow: hidden;
 }
 
 
