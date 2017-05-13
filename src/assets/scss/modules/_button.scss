@@ -15,7 +15,8 @@
 }
 
 .primary-button {
-     height: $baseBlockSize * 15; // 120px
+     height: $baseBlockSize * 6; // 120px
+     margin: 0 100px; 
      background: $color-primaryWhite;
      &.bio {
           color: $color-primaryButton-bio;
@@ -26,4 +27,10 @@
      &.projects {
           color: $color-primaryButton-projects;
      }
+}
+
+.primary-button > p {
+     font-family: $font-bold; 
+     @include font-size($font-button); // 24px
+     letter-spacing: 2.25px;
 }

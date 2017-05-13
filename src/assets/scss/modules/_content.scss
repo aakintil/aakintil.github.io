@@ -18,8 +18,21 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 
 
 .content--top {
- height: inherit;
- display: flex;
+	order: 1;
+	flex-basis: 1000px;
+	height: inherit;
+  display: flex;
+	//	flex: 1;
+	// testing fix
+	flex: 1 0 auto;
+}
+
+.content--bottom {
+	//	flex: 0;
+	order: 2;
+	//	flex-shrink: 0;
+	flex: none;
+	//	height: 600px;
 }
 
 .title--container,
