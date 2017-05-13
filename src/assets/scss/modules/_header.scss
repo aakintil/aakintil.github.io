@@ -31,19 +31,20 @@
 
 .header__logo {
   display: flex;
-  font-family: 'gt-bold';
   justify-content: center;
   font-size: 80px;
   letter-spacing: 16px;
   height: 120px;
   position: absolute;
   opacity: 0.27;
+  align-items: center;
 }
 
-.header__logo > p {
-  line-height: 132px;
-  margin: 0;
-}
+//.header__logo > p {
+//  line-height: 132px;
+//  margin: 0;
+//  font-family: 'geo-reg';
+//}
 
 .header__menu {
   width: 53px;
