@@ -19,6 +19,7 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 
 .content--top {
  height: inherit;
+ display: flex;
 }
 
 .title--container,
@@ -68,6 +69,7 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 
 .image--container {
  min-height: $blockHeight-1104;
+ min-height: 1256px;
  height: 90%;
 }
 

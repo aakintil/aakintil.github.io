@@ -1430,6 +1430,11 @@ body {
   display: flex;
   flex-direction: column; }
 
+.page-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+
 .layout--header {
   background: black;
   order: 1;
@@ -1440,11 +1445,11 @@ body {
 
 .layout--content {
   order: 2;
-  display: flex;
-  flex-direction: column;
-  position: relative;
   flex: 1;
-  overflow-y: visible; }
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+  justify-content: center; }
 
 .content--top {
   order: 1;
@@ -1455,7 +1460,6 @@ body {
 .content--bottom {
   order: 2;
   flex: none;
-  height: 600px;
   background: red; }
 
 .header__container {
@@ -1525,7 +1529,8 @@ body {
   color: black; }
 
 .content--top {
-  height: inherit; }
+  height: inherit;
+  display: flex; }
 
 .title--container,
 .callout--container,
@@ -1566,6 +1571,7 @@ body {
 
 .image--container {
   min-height: 1104px;
+  min-height: 1256px;
   height: 90%; }
 
 .image {
