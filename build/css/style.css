@@ -1567,6 +1567,15 @@ body {
 .skills--container {
   color: white; }
 
+.skills--container.bio {
+  color: #125767; }
+
+.skills--container.works {
+  color: #A03730; }
+
+.skills--container.projects {
+  color: #A47C00; }
+
 .content--top > .row {
   justify-content: space-evenly;
   height: inherit; }

@@ -12,8 +12,6 @@ $btnHeight: $baseBlockSize * 6;
 // text
 $btnLtrSpacing: $baseFontSize / 3.2 + px;
 $titleLtrSpacing: $baseFontSize/4 + px;
-
-
 .content--top {
  order: 1;
  flex-basis: 1000px;
@@ -32,6 +30,18 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 .description--container,
 .skills--container {
  color: $color-white;
+}
+
+.skills--container {
+ &.bio {
+  color: $color-secondaryBlue;
+ }
+ &.works {
+  color: $color-secondaryRed;
+ } 
+ &.projects {
+  color: $color-secondaryYellow;
+ }
 }
 
 .content--top > .row {
