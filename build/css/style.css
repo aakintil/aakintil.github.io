@@ -1500,7 +1500,8 @@ body {
   justify-content: space-around;
   padding: 0px 56px;
   height: 96px;
-  align-items: center; }
+  align-items: center;
+  z-index: 2; }
 
 .navbar--links {
   padding: 0 8px; }
@@ -1518,7 +1519,8 @@ body {
   height: 120px;
   position: absolute;
   opacity: 0.27;
-  align-items: center; }
+  align-items: center;
+  z-index: 1; }
 
 .header__logo > h2 {
   color: red; }
@@ -1630,24 +1632,12 @@ body {
   font-family: 'gt-light';
   text-transform: capitalize; }
 
-.behind-the-scenes {
-  background: white;
-  height: 48px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  font-family: 'gt-bold';
-  padding-top: 4px; }
-
-.btn--primaryRed {
-  color: red; }
-
 .navigation-button {
   height: 48px;
-  min-width: 125px;
-  background: #000000;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
   color: rgba(255, 255, 255, 0.77); }
   .navigation-button.bio {
     color: #2AD2F8; }
@@ -1658,7 +1648,6 @@ body {
 
 .primary-button {
   height: 48px;
-  margin: 0 100px;
   background: #FFFFFF; }
   .primary-button.bio {
     color: #125767; }
@@ -1672,6 +1661,22 @@ body {
   font-size: 24px;
   font-size: 24rem;
   letter-spacing: 2.25px; }
+
+.button:hover {
+  cursor: pointer; }
+
+.behind-the-scenes-button {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-family: 'gt-bold';
+  padding-top: 4px; }
+
+.btn--primaryRed {
+  color: red; }
 
 .process-block {
   height: 824px;

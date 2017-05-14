@@ -12,14 +12,12 @@ $color--bgMain: black;
 html,
 body,
 .layout--content {
-	//	height: auto;
 	background: $color--bgMain;
 }
 
 body {
 	display: flex;
 	flex-direction: column;
-	//	min-height: 100vh;
 }
 
 .page-container {
@@ -31,7 +29,6 @@ body {
 .layout--header {
 	background: $color--bgMain;
 	order: 1;
-	//	flex-shrink: 0;
 	flex-basis: 192px; //$componentHeight-xl;
 	display: flex;
 	width: 100%;
@@ -39,19 +36,8 @@ body {
 }
 
 .layout--content {
-//	padding: 1450px 0;
 	order: 2;
-	//	overflow: hidden;
-	//	display: flex;
-	//	flex-direction: column;
-	//	position: relative;
-	// testing fix
 	flex: 1;
-	//	overflow-y: visible;
-	//-- 
-	// --
-	// plunker fixed header test
-//	display: flex;
 	flex-direction: column;
 	flex: 1;
 	overflow-y: auto;

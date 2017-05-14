@@ -1,38 +1,30 @@
 // --------------
 // VARIABLES 
 // --------------
-
 // colors
 $color-white: white;
 $color-projectRed: red;
-
 /// heights
 $blockHeight-1104: $baseBlockSize * 138;
 $lineHeight-106: 106px;
 $lineHeight-40: 40px;
-$btnHeight: $baseBlockSize * 6; 
-
+$btnHeight: $baseBlockSize * 6;
 // text
-$btnLtrSpacing: $baseFontSize / 3.2 + px; 
-$titleLtrSpacing: $baseFontSize/4 + px; 
+$btnLtrSpacing: $baseFontSize / 3.2 + px;
+$titleLtrSpacing: $baseFontSize/4 + px;
 
 
 .content--top {
-	order: 1;
-	flex-basis: 1000px;
-	height: inherit;
-  display: flex;
-	//	flex: 1;
-	// testing fix
-	flex: 1 0 auto;
+ order: 1;
+ flex-basis: 1000px;
+ height: inherit;
+ display: flex;
+ flex: 1 0 auto;
 }
 
 .content--bottom {
-	//	flex: 0;
-	order: 2;
-	//	flex-shrink: 0;
-	flex: none;
-	//	height: 600px;
+ order: 2;
+ flex: none;
 }
 
 .title--container,
@@ -93,10 +85,7 @@ $titleLtrSpacing: $baseFontSize/4 + px;
  background-repeat: no-repeat;
 }
 
-
 .title {
-// @include font-size($fontSize-56);
-// font-family: 'gt-thin';
  letter-spacing: $titleLtrSpacing;
 }
 
@@ -107,7 +96,6 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 }
 
 .callout {
-// @include font-size($fontSize-88);
  font-family: 'gt-ultraBold';
  text-transform: uppercase;
  line-height: $lineHeight-106;
@@ -115,31 +103,12 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 }
 
 .description {
-// @include font-size($fontSize-24);
  font-family: 'gt-light';
  letter-spacing: 0.5px;
  line-height: $lineHeight-40;
 }
 
 .skills {
-// @include font-size($fontSize-16);
  font-family: 'gt-light';
  text-transform: capitalize;
-}
-
-.behind-the-scenes {
- background: white;
- height: $btnHeight;
- display: flex;
- justify-content: center;
- align-items: center;
- text-transform: uppercase;
- letter-spacing: $btnLtrSpacing;
- font-family: 'gt-bold';
-// @include font-size($fontSize-18);
- padding-top: $baseBlockSize / 2;
-}
-
-.btn--primaryRed {
- color: $color-projectRed;
 }

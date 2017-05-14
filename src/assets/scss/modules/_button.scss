@@ -1,7 +1,10 @@
 .navigation-button {
      height: $baseBlockSize * 6; // 40px
-     min-width: $baseBlockSize * 15.625; // 125px 
-     background: $color-primaryBlack;
+     flex: 1;
+     justify-content: center;
+     align-items: center;
+     display: flex;
+     //$color-primaryBlack;
      color: $color-navButton; // white 77% opacity;
      &.bio {
           color: $color-navButton-bio; // blue
@@ -16,7 +19,6 @@
 
 .primary-button {
      height: $baseBlockSize * 6; // 120px
-     margin: 0 100px; 
      background: $color-primaryWhite;
      &.bio {
           color: $color-primaryButton-bio;
@@ -30,7 +32,27 @@
 }
 
 .primary-button > p {
-     font-family: $font-bold; 
+     font-family: $font-bold;
      @include font-size($font-button); // 24px
      letter-spacing: 2.25px;
+}
+
+// for all buttons
+.button:hover {
+     cursor: pointer;
+}
+
+.behind-the-scenes-button {
+     background: white;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-transform: uppercase;
+     letter-spacing: $btnLtrSpacing;
+     font-family: 'gt-bold';
+     padding-top: $baseBlockSize / 2;
+}
+
+.btn--primaryRed {
+     color: $color-projectRed;
 }

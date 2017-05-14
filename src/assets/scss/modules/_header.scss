@@ -17,6 +17,7 @@
   padding: 0px 56px;
   height: 96px;
   align-items: center;
+  z-index: 2; 
 }
 
 .navbar--links {
@@ -38,17 +39,12 @@
   position: absolute;
   opacity: 0.27;
   align-items: center;
+  z-index: 1; 
 }
 
 .header__logo > h2 {
   color: red;
 }
-
-//.header__logo > p {
-//  line-height: 132px;
-//  margin: 0;
-//  font-family: 'geo-reg';
-//}
 
 .header__menu {
   width: 53px;
