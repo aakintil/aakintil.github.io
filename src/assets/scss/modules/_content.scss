@@ -38,7 +38,7 @@ $titleLtrSpacing: $baseFontSize/4 + px;
  }
  &.works {
   color: $color-secondaryRed;
- } 
+ }
  &.projects {
   color: $color-secondaryYellow;
  }
@@ -64,6 +64,7 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 
 .content--top .pitch {
  z-index: 1;
+ padding: 0 64px 0 64px;
 }
 
 .content--top .slideshow,
@@ -121,4 +122,8 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 .skills {
  font-family: 'gt-light';
  text-transform: capitalize;
+}
+
+.skill {
+ @include font-size($font-caption);
 }
