@@ -88,7 +88,7 @@ window.Controller = Backbone.Marionette.Object.extend({
 					// ------------------
 					// have to create a "page" data model, that has a type ['project', 'personal', 'work']
 					// ------------------
-
+					var pages = new window.Collection([], response.results);
 					// var pages = new window.ModelArticlesCollection([], response.results);
 					// Init view
 					//					var view = new window.ViewHome({
@@ -137,20 +137,20 @@ window.Router = Backbone.Marionette.AppRouter.extend( {
 	# Defines the collection for models
 */
 
-window.Collection = Backbone.Collection.extend(
-{
+window.Collection = Backbone.Collection.extend({
 	model: window.Model,
 
-	initialize: function( array )
-	{
+	initialize: function (array, PrismicDataArray) {
 		// 
+
+		console.log("calling the collection object", PrismicDataArray);
 	},
 
 	/*
 		#	Methods
 	*/
 
-	
+
 
 
 });

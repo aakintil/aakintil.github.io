@@ -7,20 +7,20 @@ __p += '<!-- short and sweet of it -->\n<div class="content--top col-xs-12 pad--
 }
 return __p
 },
-"views/header/header": function(obj) {
-obj || (obj = {});
-var __t, __p = '', __e = _.escape;
-with (obj) {
-__p += '<div class="header__menu bg__projects-color">\n  <p class="menu--title"> Menu</p>\n</div>\n\n\n<div class="header__logo col-xs-12">\n  <h2>ADERINSOLA</h2>\n</div>\n\n\n<div class="header__navbar col-xs-12">\n  <div class="button navigation-button">\n    <h5> about </h5>\n  </div>\n  <div class="button navigation-button">\n    <h5>process</h5>\n  </div>\n  <div class="button navigation-button">\n    <h5>contact</h5>\n  </div>\n  <div class="button navigation-button">\n    <h5>claron</h5>\n  </div>\n  <div class="button navigation-button">\n    <h5>helios</h5>\n  </div>\n  <div class="button navigation-button">\n    <h5>freespira</h5>\n  </div>\n  <div class="button navigation-button">\n    <h5>gridmi</h5>\n  </div>\n  <div class="button navigation-button">\n    <h5>photos</h5>\n  </div>\n  <div class="button navigation-button">\n    <h5>toffee</h5>\n  </div>\n</div>';
-
-}
-return __p
-},
 "views/main/main": function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
 __p += '<div class="page-container">\n\t<!-- Header -->\n\t<div class="layout--header row marg--none">\n\t\t<div class="header__container col-xs-12 pad--none">\n\n\t\t</div>\n\t</div>\n\t<!-- / Header -->\n\n\t<!-- Main Content -->\n\t<div class="layout--content marg--none">\n\n\t</div>\n\t<!-- / Main Content -->\n</div>';
+
+}
+return __p
+},
+"views/header/header": function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '<div class="header__menu bg__projects-color">\n  <p class="menu--title"> Menu</p>\n</div>\n\n\n<div class="header__logo col-xs-12">\n  <h2>ADERINSOLA</h2>\n</div>\n\n\n<div class="header__navbar col-xs-12">\n  <div class="button navigation-button">\n    <h5> about </h5>\n  </div>\n  <div class="button navigation-button">\n    <h5>process</h5>\n  </div>\n  <div class="button navigation-button">\n    <h5>contact</h5>\n  </div>\n  <div class="button navigation-button">\n    <h5>claron</h5>\n  </div>\n  <div class="button navigation-button">\n    <h5>helios</h5>\n  </div>\n  <div class="button navigation-button">\n    <h5>freespira</h5>\n  </div>\n  <div class="button navigation-button">\n    <h5>gridmi</h5>\n  </div>\n  <div class="button navigation-button">\n    <h5>photos</h5>\n  </div>\n  <div class="button navigation-button">\n    <h5>toffee</h5>\n  </div>\n</div>';
 
 }
 return __p
