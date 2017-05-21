@@ -138,17 +138,26 @@ window.Router = Backbone.Marionette.AppRouter.extend( {
 */
 
 window.Collection = Backbone.Collection.extend({
-	model: window.Model,
+    model: window.Model,
 
-	initialize: function (array, PrismicDataArray) {
-		// 
+    initialize: function (array, PrismicDataArray) {
+        // 
+        this.prismicDataArray = PrismicDataArray;
 
-		console.log("calling the collection object", PrismicDataArray);
-	},
+        // For each Document
+        _.each(PrismicDataArray, function (document) {
+            // Create a new Document Model
+            var a = new window.PageModel({}, document);
 
-	/*
-		#	Methods
-	*/
+            // Add it to this collection
+            array.push(a);
+
+        }.bind(this));
+    },
+
+    /*
+    	#	Methods
+    */
 
 
 
@@ -159,18 +168,18 @@ window.Collection = Backbone.Collection.extend({
 */
 
 // CREATE A PAGE MODEL THAT INHERITS MOST OF THE PRISMIC INFO
-window.Model = Backbone.Model.extend( {
+window.PageModel = Backbone.Model.extend({
 
-	initialize: function( data )
-	{
+	initialize: function ({}, modelObject) {
 		// 
+		console.log("getting prismic page data", modelObject);
 	},
 
 	/*
 		#	Methods
 	*/
 
-	
+
 
 });
 /*
@@ -322,6 +331,8 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 });
+
+
 /*
 	# Defines the view that 
 */
@@ -385,8 +396,6 @@ window.ViewCompositeView = Backbone.Marionette.CompositeView.extend(
 	*/
 
 });
-
-
 /*
 	# Defines the view for 
 */

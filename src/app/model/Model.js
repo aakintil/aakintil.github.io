@@ -3,17 +3,17 @@
 */
 
 // CREATE A PAGE MODEL THAT INHERITS MOST OF THE PRISMIC INFO
-window.Model = Backbone.Model.extend( {
+window.PageModel = Backbone.Model.extend({
 
-	initialize: function( data )
-	{
+	initialize: function ({}, modelObject) {
 		// 
+		console.log("getting prismic page data", modelObject);
 	},
 
 	/*
 		#	Methods
 	*/
 
-	
+
 
 });
