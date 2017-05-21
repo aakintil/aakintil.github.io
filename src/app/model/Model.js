@@ -5,10 +5,119 @@
 // CREATE A PAGE MODEL THAT INHERITS MOST OF THE PRISMIC INFO
 window.PageModel = Backbone.Model.extend({
 
-	initialize: function ({}, modelObject) {
-		// 
-		console.log("getting prismic page data", modelObject);
+	defaults: {
+		"title": "",
+		"header": "",
+		"brief": "",
+		"skills": "",
+		"hero-images": {
+			"hero-image-1": {
+				"url": "/img/default-image.jpg",
+				"caption": null
+			},
+			"hero-image-2": {
+				"url": "/img/default-image.jpg",
+				"caption": null
+			},
+			"hero-image-3": {
+				"url": "/img/default-image.jpg",
+				"caption": null
+			}
+		},
+		"process-block": {
+			"process-image": {
+				"url": "/img/default-image.jpg",
+				"caption": null
+			},
+			"process-type": "",
+			"process-title": "",
+			"process-copy": ""
+		},
+		"url": "",
 	},
+
+	initialize: function ({}, PrismicDocument) {
+		this.document = PrismicDocument;
+		this.createModelSchema(this.document);
+	},
+
+	createModelSchema(PrismicDocument) {
+		// Set the ID
+		this.set("document_id", PrismicDocument.id);
+
+		// setting the title
+		this.set("title", PrismicDocument.id);
+		this.set("url", "/#page/" + Document.id);
+
+		// Get the title
+//		if (Document.get("article.title"))
+//			this.set("title", Document.get("article.title").asText());
+
+
+		console.log("in here \n", PrismicDocument['data']['project-pages.title'].value[0].text); 
+			/*
+		// Set the url to this Article
+		this.set("url", "/#article/" + Document.id);
+
+		// Get the title
+		if (Document.get("article.title"))
+			this.set("title", Document.get("article.title").asText());
+
+		// Create an array of Prismic ImageView objects
+		var images;
+		if (Document.fragments["article.images"]) {
+			images = Document.fragments["article.images"].toArray().map(function (image) {
+				// Get the image
+				var img = image.getFirstImage().main;
+				// Add the caption if it exists
+				img.caption = (image.fragments["caption"]) ? image.fragments["caption"].asText() : null;
+				return img;
+			});
+		} else {
+			// TODO: Handle if no images
+			images = [{
+				"url": "/img/default-image.jpg",
+				"caption": null
+			}];
+		}
+		this.set("images", images);
+
+		// Get the body
+		if (Document.get("article.body"))
+			this.set("body", Document.get("article.body").asHtml());
+
+		// Get the blurb
+		if (Document.get("article.blurb")) {
+			// Use the blurb field
+			this.set("blurb", Document.get("article.blurb").asText());
+		} else if (Document.get("article.body")) {
+			// Create a blurb by truncating the body
+			this.set("blurb", Document.get("article.body").asText());
+		}
+		// Truncate the blurb
+		var truncLength = 100;
+		var blurb = this.get("blurb");
+		var blurbTruncated = (blurb.length > truncLength) ? blurb.substring(0, truncLength) + "..." : blurb;
+		this.set("blurb", blurbTruncated);
+
+
+		// Get the author
+		if (Document.get("article.article_author"))
+			this.set("author", Document.get("article.article_author").asText());
+
+		// Get the submitter
+		if (Document.get("article.submitter"))
+			this.set("submitter", Document.get("article.submitter").asText());
+
+		// Set the publication date
+		var date = new moment(Document.lastPublicationDate);
+		this.set("date", date.format("YYYY.MM.DD"));
+
+		// Set the tags
+		this.set("tags", Document.tags);
+*/
+	},
+
 
 	/*
 		#	Methods

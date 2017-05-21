@@ -24,16 +24,15 @@ window.Controller = Backbone.Marionette.Object.extend({
 	// getter functions
 
 	getContentFromPrismic: function () {
-		console.log("getting content from prismic \n", Prismic);
+		//		console.log("getting content from prismic \n", Prismic);
 
 		Prismic.api(this.prismicURL, function (error, api) {
-			console.log("made an api call");
 			api.query("", {}, function (error, response) {
 				// Log error
 				if (error) console.log("Prismic error: ", error);
 				else {
-					console.log("Prismic success, fetching data...", response)
-						// Create the model from the Prismic response
+					// console.log("Prismic success, fetching data...", response)
+					// Create the model from the Prismic response
 
 					// TODO 
 					// ------------------

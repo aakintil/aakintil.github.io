@@ -3,14 +3,14 @@
 */
 
 window.Collection = Backbone.Collection.extend({
-    model: window.Model,
+    model: window.PageModel,
 
     initialize: function (array, PrismicDataArray) {
         // 
         this.prismicDataArray = PrismicDataArray;
 
         // For each Document
-        _.each(PrismicDataArray, function (document) {
+        _.each( this.prismicDataArray, function (document) {
             // Create a new Document Model
             var a = new window.PageModel({}, document);
 
