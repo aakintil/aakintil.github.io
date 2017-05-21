@@ -87,6 +87,7 @@ window.Controller = Backbone.Marionette.Object.extend({
 					// ------------------
 					// have to create a "page" data model, that has a type ['project', 'personal', 'work']
 					// ------------------
+					console.log( response )
 					var pages = new window.Collection([], response.results);
 					// var pages = new window.ModelArticlesCollection([], response.results);
 					// Init view
@@ -143,8 +144,10 @@ window.Collection = Backbone.Collection.extend({
         // 
         this.prismicDataArray = PrismicDataArray;
 
+        console.log('------------- \n', PrismicDataArray, '\n------------- \n');
+//        console.log('------------- \n', PrismicDataArray.getStructuredText('project-pages.title').asHtml(), '\n------------- \n');
         // For each Document
-        _.each( this.prismicDataArray, function (document) {
+        _.each(this.prismicDataArray, function (document) {
             // Create a new Document Model
             var a = new window.PageModel({}, document);
 
@@ -202,7 +205,7 @@ window.PageModel = Backbone.Model.extend({
 
 	initialize: function ({}, PrismicDocument) {
 		this.document = PrismicDocument;
-		this.createModelSchema(this.document);
+		this.createModelSchema(PrismicDocument);
 	},
 
 	createModelSchema(PrismicDocument) {
@@ -214,12 +217,16 @@ window.PageModel = Backbone.Model.extend({
 		this.set("url", "/#page/" + Document.id);
 
 		// Get the title
-//		if (Document.get("article.title"))
-//			this.set("title", Document.get("article.title").asText());
+		//		if (Document.get("article.title"))
+		//			this.set("title", Document.get("article.title").asText());
 
+		// PrismicDocument.fragments['project-pages.brief'].asHtml() works
 
-		console.log("in here \n", PrismicDocument['data']['project-pages.title'].value[0].text); 
-			/*
+		//		console.log("trying \n", PrismicDocument.getStructuredText('project-pages.title').asHtml());
+		console.log("trying \n", PrismicDocument.get('project-pages.title').asHtml());
+		//		console.log("in here \n", Prismic.get('Document')); 
+		//		console.log("in here \n", PrismicDocument['data']['project-pages.title'].value[0].text); 
+		/*
 		// Set the url to this Article
 		this.set("url", "/#article/" + Document.id);
 

@@ -38,7 +38,7 @@ window.PageModel = Backbone.Model.extend({
 
 	initialize: function ({}, PrismicDocument) {
 		this.document = PrismicDocument;
-		this.createModelSchema(this.document);
+		this.createModelSchema(PrismicDocument);
 	},
 
 	createModelSchema(PrismicDocument) {
@@ -50,12 +50,16 @@ window.PageModel = Backbone.Model.extend({
 		this.set("url", "/#page/" + Document.id);
 
 		// Get the title
-//		if (Document.get("article.title"))
-//			this.set("title", Document.get("article.title").asText());
+		//		if (Document.get("article.title"))
+		//			this.set("title", Document.get("article.title").asText());
 
+		// PrismicDocument.fragments['project-pages.brief'].asHtml() works
 
-		console.log("in here \n", PrismicDocument['data']['project-pages.title'].value[0].text); 
-			/*
+		//		console.log("trying \n", PrismicDocument.getStructuredText('project-pages.title').asHtml());
+		console.log("trying \n", PrismicDocument.get('project-pages.title').asHtml());
+		//		console.log("in here \n", Prismic.get('Document')); 
+		//		console.log("in here \n", PrismicDocument['data']['project-pages.title'].value[0].text); 
+		/*
 		// Set the url to this Article
 		this.set("url", "/#article/" + Document.id);
 

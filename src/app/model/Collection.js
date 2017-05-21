@@ -9,8 +9,10 @@ window.Collection = Backbone.Collection.extend({
         // 
         this.prismicDataArray = PrismicDataArray;
 
+        console.log('------------- \n', PrismicDataArray, '\n------------- \n');
+//        console.log('------------- \n', PrismicDataArray.getStructuredText('project-pages.title').asHtml(), '\n------------- \n');
         // For each Document
-        _.each( this.prismicDataArray, function (document) {
+        _.each(this.prismicDataArray, function (document) {
             // Create a new Document Model
             var a = new window.PageModel({}, document);
 
