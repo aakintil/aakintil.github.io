@@ -316,12 +316,16 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 	template: JST["views/content/content"],
 
 	regions: {
-		"mainContent": ".content--top",
+		"mainContent": ".content-top-container",
 		"supportingContent": ".content--bottom",
 	},
 
 	initialize: function (options) {
 		this.pagesCollection = options.pages;
+		this.contentView = new window.ViewPage({
+			'model': this.pagesCollection.models[0],
+			'collection': this.pagesCollection.prismicDataArray
+		});
 	},
 
 	/*
@@ -334,14 +338,9 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		// http://stackoverflow.com/questions/10946392/hiding-a-view-in-region-manager-when-another-view-is-shown
 		// HACK
 		this.supportingContent._ensureElement();
-				console.log( this.pagesCollection )
-		var p = new window.ViewPage({
-			'model': this.pagesCollection.models[0],
-			'collection': this.pagesCollection.prismicDataArray
-		});
-		this.regionManager._regions.mainContent.show(p)
-		// to hide the bottom area
-		// this.supportingContent.$el.hide();
+		this.regionManager._regions.mainContent.show(this.contentView)
+			// to hide the bottom area
+			// this.supportingContent.$el.hide();
 
 		//		var _this = this;
 		//		setTimeout( function() {
@@ -457,6 +456,8 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 });
+
+
 /*
 	# Defines the view that 
 */
@@ -520,17 +521,15 @@ window.ViewCompositeView = Backbone.Marionette.CompositeView.extend(
 	*/
 
 });
-
-
 /*
 	# Defines the view for 
 */
 
-window.ViewPage = Backbone.Marionette.ItemView.extend( {
-	
+window.ViewPage = Backbone.Marionette.ItemView.extend({
+
 	template: JST["views/pages/page/page"],
 
-	initialize: function( options ) {
+	initialize: function (options) {
 
 	},
 
@@ -538,7 +537,20 @@ window.ViewPage = Backbone.Marionette.ItemView.extend( {
 		# View 
 	*/
 
-	onRender: function() {},
+	onRender: function () {
+		// Get rid of that pesky wrapping-div.
+		// Assumes 1 child element present in template.
+		this.$el = this.$el.children();
+		// Unwrap the element to prevent infinitely 
+		// nesting elements during re-render.
+		this.$el.unwrap();
+		this.setElement(this.$el);
+
+		//		var old = this.$el;
+		//		//		this.setElement('<div class="content--top"></div>');
+		////		console.log('old element \n', this.$el.context.innerHTML)
+		//		old.replaceWith(this.$el.context.innerHTML);
+	},
 
 	/*
 		# Events
