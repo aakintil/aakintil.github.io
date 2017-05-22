@@ -6,7 +6,9 @@ window.ViewPage = Backbone.Marionette.ItemView.extend( {
 	
 	template: JST["views/pages/page/page"],
 
-	initialize: function( options ) {},
+	initialize: function( options ) {
+
+	},
 
 	/*
 		# View 

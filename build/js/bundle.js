@@ -87,9 +87,16 @@ window.Controller = Backbone.Marionette.Object.extend({
 					// ------------------
 					// have to figure out how to render the content view from here
 					// ------------------
-					var pages = new window.Collection([], response.results);
+					
+					// create the pages collection with each page inside the object
+					var pages = new window.PagesCollection([], response.results);
+					
+					// create the content layout view. pass the pages object so content know's what each attribute is
+					var content = new window.ContentLayout({
+						'pages': pages
+					});
 
-					var content = new window.ContentLayout();
+					// let content render itself information 
 					content.render();
 					//
 					// var pages = new window.ModelArticlesCollection([], response.results);
@@ -137,35 +144,6 @@ window.Router = Backbone.Marionette.AppRouter.extend( {
 
 });
 /*
-	# Defines the collection for models
-*/
-
-window.Collection = Backbone.Collection.extend({
-    model: window.PageModel,
-
-    initialize: function (array, PrismicDataArray) {
-        // 
-        this.prismicDataArray = PrismicDataArray;
-        // For each Document
-        _.each(this.prismicDataArray, function (document) {
-            // Create a new Document Model
-            var a = new window.PageModel({}, document);
-
-            // Add it to this collection
-            array.push(a);
-
-        }.bind(this));
-    },
-
-    /*
-    	#	Methods
-    */
-
-
-
-
-});
-/*
 	# Defines the data model for
 */
 
@@ -210,12 +188,13 @@ window.PageModel = Backbone.Model.extend({
 
 	createModelSchema(PrismicDocument) {
 		// Set the ID
-		this.set("document_id", PrismicDocument.id);
+		console.log( this )
+		this.set("model_id", PrismicDocument.id);
 
 		// setting the title
 		this.set("title", PrismicDocument.get('project-pages.title').asHtml());
-		this.set("url", "/#page/" + Document.id);
-		console.log( this.attributes )
+		//		this.set("url", "/#page/" + Document.id);
+		//		console.log(this.attributes)
 		// Get the title
 		//		if (Document.get("article.title"))
 		//			this.set("title", Document.get("article.title").asText());
@@ -298,6 +277,35 @@ window.PageModel = Backbone.Model.extend({
 
 });
 /*
+	# Defines the collection for models
+*/
+
+window.PagesCollection = Backbone.Collection.extend({
+    model: window.PageModel,
+
+    initialize: function (array, PrismicDataArray) {
+        // 
+        this.prismicDataArray = PrismicDataArray;
+        // For each Document
+        _.each(this.prismicDataArray, function (document) {
+            // Create a new Document Model
+            var a = new window.PageModel({}, document);
+
+            // Add it to this collection
+            array.push(a);
+
+        }.bind(this));
+    },
+
+    /*
+    	#	Methods
+    */
+
+
+
+
+});
+/*
 	# Defines the view for the main layout
 */
 
@@ -313,6 +321,7 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 	},
 
 	initialize: function (options) {
+		this.pagesCollection = options.pages;
 	},
 
 	/*
@@ -325,6 +334,12 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		// http://stackoverflow.com/questions/10946392/hiding-a-view-in-region-manager-when-another-view-is-shown
 		// HACK
 		this.supportingContent._ensureElement();
+				console.log( this.pagesCollection )
+		var p = new window.ViewPage({
+			'model': this.pagesCollection.models[0],
+			'collection': this.pagesCollection.prismicDataArray
+		});
+		this.regionManager._regions.mainContent.show(p)
 		// to hide the bottom area
 		// this.supportingContent.$el.hide();
 
@@ -515,7 +530,9 @@ window.ViewPage = Backbone.Marionette.ItemView.extend( {
 	
 	template: JST["views/pages/page/page"],
 
-	initialize: function( options ) {},
+	initialize: function( options ) {
+
+	},
 
 	/*
 		# View 

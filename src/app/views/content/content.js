@@ -14,6 +14,7 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 	},
 
 	initialize: function (options) {
+		this.pagesCollection = options.pages;
 	},
 
 	/*
@@ -26,6 +27,12 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		// http://stackoverflow.com/questions/10946392/hiding-a-view-in-region-manager-when-another-view-is-shown
 		// HACK
 		this.supportingContent._ensureElement();
+				console.log( this.pagesCollection )
+		var p = new window.ViewPage({
+			'model': this.pagesCollection.models[0],
+			'collection': this.pagesCollection.prismicDataArray
+		});
+		this.regionManager._regions.mainContent.show(p)
 		// to hide the bottom area
 		// this.supportingContent.$el.hide();
 

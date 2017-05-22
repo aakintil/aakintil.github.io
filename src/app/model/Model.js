@@ -43,12 +43,13 @@ window.PageModel = Backbone.Model.extend({
 
 	createModelSchema(PrismicDocument) {
 		// Set the ID
-		this.set("document_id", PrismicDocument.id);
+		console.log( this )
+		this.set("model_id", PrismicDocument.id);
 
 		// setting the title
 		this.set("title", PrismicDocument.get('project-pages.title').asHtml());
-		this.set("url", "/#page/" + Document.id);
-		console.log( this.attributes )
+		//		this.set("url", "/#page/" + Document.id);
+		//		console.log(this.attributes)
 		// Get the title
 		//		if (Document.get("article.title"))
 		//			this.set("title", Document.get("article.title").asText());

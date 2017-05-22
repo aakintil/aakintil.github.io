@@ -2,7 +2,7 @@
 	# Defines the collection for models
 */
 
-window.Collection = Backbone.Collection.extend({
+window.PagesCollection = Backbone.Collection.extend({
     model: window.PageModel,
 
     initialize: function (array, PrismicDataArray) {
