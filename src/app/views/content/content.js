@@ -13,7 +13,8 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		"supportingContent": ".content--bottom",
 	},
 
-	initialize: function (options) {},
+	initialize: function (options) {
+	},
 
 	/*
 		# View 

@@ -85,10 +85,13 @@ window.Controller = Backbone.Marionette.Object.extend({
 
 					// TODO 
 					// ------------------
-					// have to create a "page" data model, that has a type ['project', 'personal', 'work']
+					// have to figure out how to render the content view from here
 					// ------------------
-					console.log( response )
 					var pages = new window.Collection([], response.results);
+
+					var content = new window.ContentLayout();
+					content.render();
+					//
 					// var pages = new window.ModelArticlesCollection([], response.results);
 					// Init view
 					//					var view = new window.ViewHome({
@@ -143,9 +146,6 @@ window.Collection = Backbone.Collection.extend({
     initialize: function (array, PrismicDataArray) {
         // 
         this.prismicDataArray = PrismicDataArray;
-
-        console.log('------------- \n', PrismicDataArray, '\n------------- \n');
-//        console.log('------------- \n', PrismicDataArray.getStructuredText('project-pages.title').asHtml(), '\n------------- \n');
         // For each Document
         _.each(this.prismicDataArray, function (document) {
             // Create a new Document Model
@@ -213,9 +213,9 @@ window.PageModel = Backbone.Model.extend({
 		this.set("document_id", PrismicDocument.id);
 
 		// setting the title
-		this.set("title", PrismicDocument.id);
+		this.set("title", PrismicDocument.get('project-pages.title').asHtml());
 		this.set("url", "/#page/" + Document.id);
-
+		console.log( this.attributes )
 		// Get the title
 		//		if (Document.get("article.title"))
 		//			this.set("title", Document.get("article.title").asText());
@@ -223,7 +223,7 @@ window.PageModel = Backbone.Model.extend({
 		// PrismicDocument.fragments['project-pages.brief'].asHtml() works
 
 		//		console.log("trying \n", PrismicDocument.getStructuredText('project-pages.title').asHtml());
-		console.log("trying \n", PrismicDocument.get('project-pages.title').asHtml());
+		//		console.log("trying \n", PrismicDocument.get('project-pages.title').asHtml());
 		//		console.log("in here \n", Prismic.get('Document')); 
 		//		console.log("in here \n", PrismicDocument['data']['project-pages.title'].value[0].text); 
 		/*
@@ -312,7 +312,8 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		"supportingContent": ".content--bottom",
 	},
 
-	initialize: function (options) {},
+	initialize: function (options) {
+	},
 
 	/*
 		# View 
@@ -424,12 +425,8 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 		
 		// use this as hook for animation 
 		// when the main layout renders, render the header & content
-		var content = new window.ContentLayout();
 		var header = new window.HeaderLayout(); 
-		
 		header.render();
-		content.render();
-
 	},
 
 	/*

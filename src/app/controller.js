@@ -36,10 +36,13 @@ window.Controller = Backbone.Marionette.Object.extend({
 
 					// TODO 
 					// ------------------
-					// have to create a "page" data model, that has a type ['project', 'personal', 'work']
+					// have to figure out how to render the content view from here
 					// ------------------
-					console.log( response )
 					var pages = new window.Collection([], response.results);
+
+					var content = new window.ContentLayout();
+					content.render();
+					//
 					// var pages = new window.ModelArticlesCollection([], response.results);
 					// Init view
 					//					var view = new window.ViewHome({

@@ -23,12 +23,8 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 		
 		// use this as hook for animation 
 		// when the main layout renders, render the header & content
-		var content = new window.ContentLayout();
 		var header = new window.HeaderLayout(); 
-		
 		header.render();
-		content.render();
-
 	},
 
 	/*
