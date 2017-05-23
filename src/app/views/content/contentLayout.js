@@ -6,7 +6,7 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 	el: ".layout--content",
 
-	template: JST["views/content/content"],
+	template: JST["views/content/contentLayout"],
 
 	regions: {
 		"mainContent": ".content-top-container",
@@ -15,7 +15,7 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 	initialize: function (options) {
 		this.pagesCollection = options.pages;
-		this.contentView = new window.ViewPage({
+		this.contentView = new window.PageView({
 			'model': this.pagesCollection.models[0],
 			'collection': this.pagesCollection.prismicDataArray
 		});

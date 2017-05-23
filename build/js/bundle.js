@@ -188,11 +188,18 @@ window.PageModel = Backbone.Model.extend({
 
 	createModelSchema(PrismicDocument) {
 		// Set the ID
-		console.log( this )
+		console.log( PrismicDocument.get('project-pages.description').asText() )
 		this.set("model_id", PrismicDocument.id);
 
 		// setting the title
-		this.set("title", PrismicDocument.get('project-pages.title').asHtml());
+		this.set("title", PrismicDocument.get('project-pages.title').asText());
+		
+		// setting the page callout
+		this.set("callout", PrismicDocument.get('project-pages.callout').asText());		
+		
+		// setting the page callout
+		this.set("description", PrismicDocument.get('project-pages.description').asText());
+		
 		//		this.set("url", "/#page/" + Document.id);
 		//		console.log(this.attributes)
 		// Get the title
@@ -309,11 +316,50 @@ window.PagesCollection = Backbone.Collection.extend({
 	# Defines the view for the main layout
 */
 
+window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
+
+	el: ".header__container",
+
+	template: JST["views/header/header"],
+
+	regions: {
+		"menu": ".header__menu",
+		"logo": ".header__logo",
+		"navbar": ".header__navbar",
+	},
+
+	initialize: function (options) {},
+
+	/*
+		# View 
+	*/
+
+	onRender: function () {
+		//		console.log( "content rendering ", this.regions )
+	},
+
+	/*
+		# Events
+	*/
+
+	events: {
+		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
+	},
+
+	/*
+		# Methods
+	*/
+
+});
+/*
+	# Defines the view for the main layout
+*/
+
 window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 	el: ".layout--content",
 
-	template: JST["views/content/content"],
+	template: JST["views/content/contentLayout"],
 
 	regions: {
 		"mainContent": ".content-top-container",
@@ -322,7 +368,7 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 	initialize: function (options) {
 		this.pagesCollection = options.pages;
-		this.contentView = new window.ViewPage({
+		this.contentView = new window.PageView({
 			'model': this.pagesCollection.models[0],
 			'collection': this.pagesCollection.prismicDataArray
 		});
@@ -379,45 +425,6 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 	# Defines the view for the main layout
 */
 
-window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
-
-	el: ".header__container",
-
-	template: JST["views/header/header"],
-
-	regions: {
-		"menu": ".header__menu",
-		"logo": ".header__logo",
-		"navbar": ".header__navbar",
-	},
-
-	initialize: function (options) {},
-
-	/*
-		# View 
-	*/
-
-	onRender: function () {
-		//		console.log( "content rendering ", this.regions )
-	},
-
-	/*
-		# Events
-	*/
-
-	events: {
-		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
-	},
-
-	/*
-		# Methods
-	*/
-
-});
-/*
-	# Defines the view for the main layout
-*/
-
 window.MainLayout = Backbone.Marionette.LayoutView.extend({
 
 	el: "body",
@@ -456,8 +463,6 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 });
-
-
 /*
 	# Defines the view that 
 */
@@ -521,11 +526,13 @@ window.ViewCompositeView = Backbone.Marionette.CompositeView.extend(
 	*/
 
 });
+
+
 /*
 	# Defines the view for 
 */
 
-window.ViewPage = Backbone.Marionette.ItemView.extend({
+window.PageView = Backbone.Marionette.ItemView.extend({
 
 	template: JST["views/pages/page/page"],
 

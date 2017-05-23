@@ -2,7 +2,7 @@
 	# Defines the view for 
 */
 
-window.ViewPage = Backbone.Marionette.ItemView.extend({
+window.PageView = Backbone.Marionette.ItemView.extend({
 
 	template: JST["views/pages/page/page"],
 
