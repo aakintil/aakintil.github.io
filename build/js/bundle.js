@@ -188,18 +188,24 @@ window.PageModel = Backbone.Model.extend({
 
 	createModelSchema(PrismicDocument) {
 		// Set the ID
-		console.log( PrismicDocument.get('project-pages.description').asText() )
+		console.log(PrismicDocument.get('project-pages.description').asText())
 		this.set("model_id", PrismicDocument.id);
 
 		// setting the title
 		this.set("title", PrismicDocument.get('project-pages.title').asText());
-		
+
 		// setting the page callout
-		this.set("callout", PrismicDocument.get('project-pages.callout').asText());		
-		
+		this.set("callout", PrismicDocument.get('project-pages.callout').asText());
+
 		// setting the page callout
 		this.set("description", PrismicDocument.get('project-pages.description').asText());
-		
+
+
+		// setting the skills section
+		let skillsArray = PrismicDocument.get('project-pages.skills').asText().split("\n");
+		this.set("skills", skillsArray);
+
+
 		//		this.set("url", "/#page/" + Document.id);
 		//		console.log(this.attributes)
 		// Get the title
@@ -316,45 +322,6 @@ window.PagesCollection = Backbone.Collection.extend({
 	# Defines the view for the main layout
 */
 
-window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
-
-	el: ".header__container",
-
-	template: JST["views/header/header"],
-
-	regions: {
-		"menu": ".header__menu",
-		"logo": ".header__logo",
-		"navbar": ".header__navbar",
-	},
-
-	initialize: function (options) {},
-
-	/*
-		# View 
-	*/
-
-	onRender: function () {
-		//		console.log( "content rendering ", this.regions )
-	},
-
-	/*
-		# Events
-	*/
-
-	events: {
-		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
-	},
-
-	/*
-		# Methods
-	*/
-
-});
-/*
-	# Defines the view for the main layout
-*/
-
 window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 	el: ".layout--content",
@@ -416,6 +383,45 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 */
 	// there needs to be an event where 
 	// -- TODO -- "on button click, the supportingContent container is visible and grows"
+	/*
+		# Methods
+	*/
+
+});
+/*
+	# Defines the view for the main layout
+*/
+
+window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
+
+	el: ".header__container",
+
+	template: JST["views/header/header"],
+
+	regions: {
+		"menu": ".header__menu",
+		"logo": ".header__logo",
+		"navbar": ".header__navbar",
+	},
+
+	initialize: function (options) {},
+
+	/*
+		# View 
+	*/
+
+	onRender: function () {
+		//		console.log( "content rendering ", this.regions )
+	},
+
+	/*
+		# Events
+	*/
+
+	events: {
+		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
+	},
+
 	/*
 		# Methods
 	*/

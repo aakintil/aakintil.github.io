@@ -122,6 +122,17 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 .skills {
  font-family: 'gt-light';
  text-transform: capitalize;
+ display: flex;
+}
+
+.skills:nth-child(2), 
+.skills:nth-child(5) {
+ justify-content: center;
+}
+
+.skills:nth-child(3), 
+.skills:nth-child(6) {
+ justify-content: flex-end;
 }
 
 .skill {
