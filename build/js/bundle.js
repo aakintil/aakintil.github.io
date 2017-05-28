@@ -330,15 +330,19 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 	regions: {
 		"mainContent": ".content-top-container",
-		"supportingContent": ".content--bottom",
+		"supportingContent": ".content-bottom-container",
 	},
 
 	initialize: function (options) {
 		this.pagesCollection = options.pages;
-		this.contentView = new window.PageView({
+		this.contentView = new window.ExecutiveSummaryView({
 			'model': this.pagesCollection.models[0],
 			'collection': this.pagesCollection.prismicDataArray
 		});
+		this.processView = new window.ProcessView({
+			'model': this.pagesCollection.models[0],
+			'collection': this.pagesCollection.prismicDataArray
+		})
 	},
 
 	/*
@@ -352,6 +356,7 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		// HACK
 		this.supportingContent._ensureElement();
 		this.regionManager._regions.mainContent.show(this.contentView)
+		this.regionManager._regions.supportingContent.show(this.processView)
 			// to hide the bottom area
 			// this.supportingContent.$el.hide();
 
@@ -532,47 +537,87 @@ window.ViewCompositeView = Backbone.Marionette.CompositeView.extend(
 	*/
 
 });
-
-
 /*
 	# Defines the view for 
 */
 
-window.PageView = Backbone.Marionette.ItemView.extend({
+window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
 
-	template: JST["views/pages/page/page"],
+  template: JST["views/content/executiveSummary/executiveSummary"],
 
-	initialize: function (options) {
+  initialize: function (options) {
 
-	},
+  },
 
-	/*
-		# View 
-	*/
+  /*
+  	# View 
+  */
 
-	onRender: function () {
-		// Get rid of that pesky wrapping-div.
-		// Assumes 1 child element present in template.
-		this.$el = this.$el.children();
-		// Unwrap the element to prevent infinitely 
-		// nesting elements during re-render.
-		this.$el.unwrap();
-		this.setElement(this.$el);
+  onRender: function () {
+    // Get rid of that pesky wrapping-div.
+    // Assumes 1 child element present in template.
+    this.$el = this.$el.children();
+    // Unwrap the element to prevent infinitely 
+    // nesting elements during re-render.
+    this.$el.unwrap();
+    this.setElement(this.$el);
 
-		//		var old = this.$el;
-		//		//		this.setElement('<div class="content--top"></div>');
-		////		console.log('old element \n', this.$el.context.innerHTML)
-		//		old.replaceWith(this.$el.context.innerHTML);
-	},
+    //		var old = this.$el;
+    //		//		this.setElement('<div class="content--top"></div>');
+    ////		console.log('old element \n', this.$el.context.innerHTML)
+    //		old.replaceWith(this.$el.context.innerHTML);
+  },
 
-	/*
-		# Events
-	*/
+  /*
+  	# Events
+  */
 
-	events: {},
+  events: {},
 
-	/*
-		# Methods
-	*/
+  /*
+  	# Methods
+  */
+
+});
+/*
+	# Defines the view for 
+*/
+
+window.ProcessView = Backbone.Marionette.ItemView.extend({
+
+  template: JST["views/content/process/process"],
+
+  initialize: function (options) {
+
+  },
+
+  /*
+  	# View 
+  */
+
+  onRender: function () {
+    // Get rid of that pesky wrapping-div.
+    // Assumes 1 child element present in template.
+    this.$el = this.$el.children();
+    // Unwrap the element to prevent infinitely 
+    // nesting elements during re-render.
+    this.$el.unwrap();
+    this.setElement(this.$el);
+
+    //		var old = this.$el;
+    //		//		this.setElement('<div class="content--top"></div>');
+    ////		console.log('old element \n', this.$el.context.innerHTML)
+    //		old.replaceWith(this.$el.context.innerHTML);
+  },
+
+  /*
+  	# Events
+  */
+
+  events: {},
+
+  /*
+  	# Methods
+  */
 
 });

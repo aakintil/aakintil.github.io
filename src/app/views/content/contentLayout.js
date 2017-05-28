@@ -10,15 +10,19 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 	regions: {
 		"mainContent": ".content-top-container",
-		"supportingContent": ".content--bottom",
+		"supportingContent": ".content-bottom-container",
 	},
 
 	initialize: function (options) {
 		this.pagesCollection = options.pages;
-		this.contentView = new window.PageView({
+		this.contentView = new window.ExecutiveSummaryView({
 			'model': this.pagesCollection.models[0],
 			'collection': this.pagesCollection.prismicDataArray
 		});
+		this.processView = new window.ProcessView({
+			'model': this.pagesCollection.models[0],
+			'collection': this.pagesCollection.prismicDataArray
+		})
 	},
 
 	/*
@@ -32,6 +36,7 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		// HACK
 		this.supportingContent._ensureElement();
 		this.regionManager._regions.mainContent.show(this.contentView)
+		this.regionManager._regions.supportingContent.show(this.processView)
 			// to hide the bottom area
 			// this.supportingContent.$el.hide();
 
