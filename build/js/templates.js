@@ -43,6 +43,20 @@ __p += '<div class="">\n\tItem\n</div>';
 }
 return __p
 },
+"views/content/process/process": function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+with (obj) {
+__p += '<div class="content--bottom col-xs-12 pad--none">\n\n  ';
+ _.each(process, function(processBlock) { ;
+__p += '\n    <div class="process-block col-xs-12 {{processBlock.type}}">\n      <div class="process-image-container col-xs-6">\n        <div class="process-image">\n\n        </div>\n      </div>\n      <!-- this one has padding -->\n      <div class="process-description col-xs-6 pad--h-2">\n        <h4 class="process-title">\n         Crafting the narrative\n       </h4>\n\n        <p class="process-copy">\n          Once we decided on leveraging a futuristic energy sharing economy, we began building a clear and simple user narrative.\n        </p>\n      </div>\n    </div>\n    ';
+ }); ;
+__p += '\n     \n     \n      <!-- page process-left component -->\n      <div class="process-block left col-xs-12">\n        <div class="process-image-container col-xs-6">\n          <div class="process-image">\n\n          </div>\n        </div>\n        <!-- this one has padding -->\n        <div class="process-description col-xs-6 pad--h-2">\n          <h4 class="process-title">\n         Crafting the narrative\n       </h4>\n\n          <p class="process-copy">\n            Once we decided on leveraging a futuristic energy sharing economy, we began building a clear and simple user narrative.\n          </p>\n        </div>\n      </div>\n\n      <!-- page process-right component -->\n      <div class="process-block right col-xs-12">\n        <!-- this one has padding -->\n        <div class="process-description col-xs-6 pad--h-2">\n          <h4 class="process-title">\n         Crafting the narrative\n       </h4>\n\n          <p class="process-copy">\n            Once we decided on leveraging a futuristic energy sharing economy, we began building a clear and simple user narrative.\n          </p>\n        </div>\n        <div class="process-image-container col-xs-6">\n          <div class="process-image">\n\n          </div>\n        </div>\n      </div>\n</div>';
+
+}
+return __p
+},
 "views/content/executiveSummary/executiveSummary": function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
@@ -61,15 +75,6 @@ __p += '\n\t\t\t\t<div class="col-xs-4 skills">\n\t\t\t\t\t<p class="skill">' +
 '</%></p>\n\t\t\t\t</div>\n\t\t\t';
  }); ;
 __p += '\n\t\t\t\n<!--\n\t\t\t\t<div class="col-xs-4 skills">\n\t\t\t\t\t<p class="skill">photography</p>\n\t\t\t\t</div>\n\t\t\t\t<div class="col-xs-4 skills">\n\t\t\t\t\t<p class="skill">branding</p>\n\t\t\t\t</div>\n\t\t\t\t<div class="col-xs-4 skills">\n\t\t\t\t\t<p class="skill">research</p>\n\t\t\t\t</div>\n-->\n\t\t\t</div>\n\n<!--\n<div class="row">\n\t<div class="col-xs-4 skills">\n\t\t<p class="skill">system architecture</p>\n\t</div>\n\t<div class="col-xs-4 skills">\n\t\t<p class="skill">interaction design</p>\n\t</div>\n\t<div class="col-xs-4 skills">\n\t\t<p class="skill">ui design</p>\n\t</div>\n</div>\n-->\n\t\t</div>\n\n\t</div>\n\n</div>';
-
-}
-return __p
-},
-"views/content/process/process": function(obj) {
-obj || (obj = {});
-var __t, __p = '', __e = _.escape;
-with (obj) {
-__p += '<div class="content--bottom col-xs-12 pad--none">\n  <!-- page process-left component -->\n  <div class="process-block left col-xs-12">\n    <div class="process-image-container col-xs-6">\n      <div class="process-image">\n\n      </div>\n    </div>\n    <!-- this one has padding -->\n    <div class="process-description col-xs-6 pad--h-2">\n      <h4 class="process-title">\n         Crafting the narrative\n       </h4>\n\n      <p class="process-copy">\n        Once we decided on leveraging a futuristic energy sharing economy, we began building a clear and simple user narrative.\n      </p>\n    </div>\n  </div>\n\n  <!-- page process-right component -->\n  <div class="process-block right col-xs-12">\n    <!-- this one has padding -->\n    <div class="process-description col-xs-6 pad--h-2">\n      <h4 class="process-title">\n         Crafting the narrative\n       </h4>\n\n      <p class="process-copy">\n        Once we decided on leveraging a futuristic energy sharing economy, we began building a clear and simple user narrative.\n      </p>\n    </div>\n    <div class="process-image-container col-xs-6">\n      <div class="process-image">\n\n      </div>\n    </div>\n  </div>\n</div>';
 
 }
 return __p

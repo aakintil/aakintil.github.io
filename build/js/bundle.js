@@ -205,6 +205,16 @@ window.PageModel = Backbone.Model.extend({
 		let skillsArray = PrismicDocument.get('project-pages.skills').asText().split("\n");
 		this.set("skills", skillsArray);
 
+		// setting the process section 
+		let processArray = '';
+		//		console.log(PrismicDocument.get('project-pages.process-block').value);
+		let processBlocks = PrismicDocument.get('project-pages.process-block').toArray().map(function (process) {
+			//			console.log(process);
+			return process.data;
+		})
+		this.set('process', processBlocks)
+
+		console.log(PrismicDocument.get('project-pages.process-block').toArray());
 
 		//		this.set("url", "/#page/" + Document.id);
 		//		console.log(this.attributes)
@@ -562,10 +572,11 @@ window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
     this.$el.unwrap();
     this.setElement(this.$el);
 
-    //		var old = this.$el;
-    //		//		this.setElement('<div class="content--top"></div>');
-    ////		console.log('old element \n', this.$el.context.innerHTML)
-    //		old.replaceWith(this.$el.context.innerHTML);
+//    console.log(this);
+      //		var old = this.$el;
+      //		//		this.setElement('<div class="content--top"></div>');
+      ////		console.log('old element \n', this.$el.context.innerHTML)
+      //		old.replaceWith(this.$el.context.innerHTML);
   },
 
   /*

@@ -60,6 +60,16 @@ window.PageModel = Backbone.Model.extend({
 		let skillsArray = PrismicDocument.get('project-pages.skills').asText().split("\n");
 		this.set("skills", skillsArray);
 
+		// setting the process section 
+		let processArray = '';
+		//		console.log(PrismicDocument.get('project-pages.process-block').value);
+		let processBlocks = PrismicDocument.get('project-pages.process-block').toArray().map(function (process) {
+			//			console.log(process);
+			return process.data;
+		})
+		this.set('process', processBlocks)
+
+		console.log(PrismicDocument.get('project-pages.process-block').toArray());
 
 		//		this.set("url", "/#page/" + Document.id);
 		//		console.log(this.attributes)
