@@ -38,10 +38,10 @@ window.Controller = Backbone.Marionette.Object.extend({
 					// ------------------
 					// have to figure out how to render the content view from here
 					// ------------------
-					
+
 					// create the pages collection with each page inside the object
 					var pages = new window.PagesCollection([], response.results);
-					
+
 					// create the content layout view. pass the pages object so content know's what each attribute is
 					var content = new window.ContentLayout({
 						'pages': pages
@@ -61,8 +61,11 @@ window.Controller = Backbone.Marionette.Object.extend({
 			});
 		});
 
-	}
+	},
 
+	renderPage: function (pageName) {
+		console.log('calling renderPage function');
+	},
 	// handleRouteSection : function( section_id ) {
 
 	// 	// Clear the region

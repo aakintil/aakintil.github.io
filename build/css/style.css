@@ -1427,8 +1427,8 @@ h3 {
 h4 {
   font-size: 24px;
   font-size: 24rem;
-  letter-spacing: 5px;
-  font-family: "geo-bold"; }
+  letter-spacing: 2px;
+  font-family: "geo-medium"; }
 
 h5 {
   font-size: 18px;
@@ -1439,7 +1439,7 @@ h5 {
 p {
   font-size: 24px;
   font-size: 24rem;
-  font-family: "geo-reg";
+  font-family: "geo-light";
   line-height: 40px; }
 
 caption {
@@ -1702,7 +1702,6 @@ body {
   color: red; }
 
 .process-block {
-  height: 824px;
   display: flex;
   padding: 0;
   padding-top: 150px;

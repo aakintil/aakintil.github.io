@@ -12,6 +12,7 @@ window.Router = Backbone.Marionette.AppRouter.extend( {
 
 	appRoutes: {
 		"(/)"								: "handleRouteIndex",
+		"(/):page"							: "renderPage"
 		// "section/:id" 					: "handleRouteSection",
 	}
 

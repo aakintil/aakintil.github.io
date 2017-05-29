@@ -29,11 +29,22 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	events: {
-		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
+		"click .navigation-button": "toggleNavigation",
 	},
 
 	/*
 		# Methods
 	*/
+
+	toggleNavigation: (event) => {
+		console.log("clicking \n", $(event.currentTarget).attr("id"));
+		// Prevent form from submitting
+		event.preventDefault();
+
+		// Get the input
+		var page = $(event.currentTarget).attr("id");
+		// Navigate to search page with input
+		window.location.hash = "#/" + page;
+	}
 
 });

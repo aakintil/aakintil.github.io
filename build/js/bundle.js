@@ -87,10 +87,10 @@ window.Controller = Backbone.Marionette.Object.extend({
 					// ------------------
 					// have to figure out how to render the content view from here
 					// ------------------
-					
+
 					// create the pages collection with each page inside the object
 					var pages = new window.PagesCollection([], response.results);
-					
+
 					// create the content layout view. pass the pages object so content know's what each attribute is
 					var content = new window.ContentLayout({
 						'pages': pages
@@ -110,8 +110,11 @@ window.Controller = Backbone.Marionette.Object.extend({
 			});
 		});
 
-	}
+	},
 
+	renderPage: function (pageName) {
+		console.log('calling renderPage function');
+	},
 	// handleRouteSection : function( section_id ) {
 
 	// 	// Clear the region
@@ -139,6 +142,7 @@ window.Router = Backbone.Marionette.AppRouter.extend( {
 
 	appRoutes: {
 		"(/)"								: "handleRouteIndex",
+		"(/):page"							: "renderPage"
 		// "section/:id" 					: "handleRouteSection",
 	}
 
@@ -450,12 +454,23 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	events: {
-		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
+		"click .navigation-button": "toggleNavigation",
 	},
 
 	/*
 		# Methods
 	*/
+
+	toggleNavigation: (event) => {
+		console.log("clicking \n", $(event.currentTarget).attr("id"));
+		// Prevent form from submitting
+		event.preventDefault();
+
+		// Get the input
+		var page = $(event.currentTarget).attr("id");
+		// Navigate to search page with input
+		window.location.hash = "#/" + page;
+	}
 
 });
 /*
@@ -494,6 +509,69 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 	events: {
 		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
 	},
+
+	/*
+		# Methods
+	*/
+
+});
+/*
+	# Defines the view that 
+*/
+
+window.ViewCompositeViewItem = Backbone.Marionette.ItemView.extend(
+{
+	className: "cv__item",
+	template: JST["views/common/compositeView/compositeView_item"],
+
+	initialize: function( options ) 
+	{
+		// 
+	},
+
+	/*
+		# View 
+	*/
+
+	onRender: function() {},
+
+	/*
+		# Events
+	*/
+
+	events: {},
+
+	/*
+		# Methods
+	*/
+
+});
+
+/*
+	# Defines the view that
+*/
+
+window.ViewCompositeView = Backbone.Marionette.CompositeView.extend(
+{
+	
+	template: JST["views/common/compositeView/compositeView"],
+	childView: window.ViewCompositeViewItem,
+	childViewContainer: ".cv__container",
+
+	initialize: function( options ) {},
+	/*
+		# View 
+	*/
+
+	onRender: function() {},
+
+	
+
+	/*
+		# Events
+	*/
+
+	events: {},
 
 	/*
 		# Methods
@@ -582,68 +660,5 @@ window.ProcessView = Backbone.Marionette.ItemView.extend({
   /*
   	# Methods
   */
-
-});
-/*
-	# Defines the view that 
-*/
-
-window.ViewCompositeViewItem = Backbone.Marionette.ItemView.extend(
-{
-	className: "cv__item",
-	template: JST["views/common/compositeView/compositeView_item"],
-
-	initialize: function( options ) 
-	{
-		// 
-	},
-
-	/*
-		# View 
-	*/
-
-	onRender: function() {},
-
-	/*
-		# Events
-	*/
-
-	events: {},
-
-	/*
-		# Methods
-	*/
-
-});
-
-/*
-	# Defines the view that
-*/
-
-window.ViewCompositeView = Backbone.Marionette.CompositeView.extend(
-{
-	
-	template: JST["views/common/compositeView/compositeView"],
-	childView: window.ViewCompositeViewItem,
-	childViewContainer: ".cv__container",
-
-	initialize: function( options ) {},
-	/*
-		# View 
-	*/
-
-	onRender: function() {},
-
-	
-
-	/*
-		# Events
-	*/
-
-	events: {},
-
-	/*
-		# Methods
-	*/
 
 });
