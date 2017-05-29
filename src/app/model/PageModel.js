@@ -42,27 +42,30 @@ window.PageModel = Backbone.Model.extend({
 	},
 
 	createModelSchema(PrismicDocument) {
+		// console.log(PrismicDocument) 
 		// Set the ID
-		//		console.log(PrismicDocument.get('project-pages.description').asText())
+		// console.log(PrismicDocument.get('project-pages.description').asText())
 		this.set("model_id", PrismicDocument.id);
 
 		// setting the title
-		this.set("title", PrismicDocument.get('project-pages.title').asText());
+		this.set("title", PrismicDocument.get('project-pages.title') === null ? '' : PrismicDocument.get('project-pages.title').asText());
 
 		// setting the page callout
-		this.set("callout", PrismicDocument.get('project-pages.callout').asText());
+		this.set("callout", PrismicDocument.get('project-pages.callout') === null ? '' : PrismicDocument.get('project-pages.callout').asText());
 
+		// TODO 
+		// --- this is an example of when you use this.defaults['something'] for values that should appear if prismic isn't working
 		// setting the page callout
-		this.set("description", PrismicDocument.get('project-pages.description').asText());
+		this.set("description", PrismicDocument.get('project-pages.description') === null ? '' : PrismicDocument.get('project-pages.description').asText());
 
 
 		// setting the skills section
-		let skillsArray = PrismicDocument.get('project-pages.skills').asText().split("\n");
+		let skillsArray = PrismicDocument.get('project-pages.skills') === null ? '' : PrismicDocument.get('project-pages.skills').asText().split("\n") || '';
 		this.set("skills", skillsArray);
 
 		// setting the process section 
 		// console.log(PrismicDocument.get('project-pages.process-block').value);
-		let processBlocks = PrismicDocument.get('project-pages.process-block').toArray().map(function (process) {
+		let processBlocks = PrismicDocument.get('project-pages.process-block') === null ? '' : PrismicDocument.get('project-pages.process-block').toArray().map(function (process) {
 			// store the original object
 			let p = process.data;
 
@@ -80,7 +83,7 @@ window.PageModel = Backbone.Model.extend({
 
 			// setting the type
 			newProcessObj.type = p['process-type'].value;
-			
+
 			return newProcessObj;
 		})
 		this.set('process', processBlocks)
