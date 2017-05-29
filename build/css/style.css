@@ -1711,11 +1711,13 @@ body {
 
 .process-image-container {
   height: 512px;
-  border: 1px solid grey; }
-  .process-image-container.left {
-    align-self: flex-start; }
-  .process-image-container.right {
-    align-self: flex-end; }
+  overflow: hidden; }
+
+.process-image-container > img {
+  width: 100%; }
+
+.process-block.left .process-image-container {
+  order: 1; }
 
 .process-copy-container {
   padding: 0 0 0 64px; }

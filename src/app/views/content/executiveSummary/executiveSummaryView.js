@@ -23,7 +23,6 @@ window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
     this.$el.unwrap();
     this.setElement(this.$el);
 
-//    console.log(this);
       //		var old = this.$el;
       //		//		this.setElement('<div class="content--top"></div>');
       ////		console.log('old element \n', this.$el.context.innerHTML)

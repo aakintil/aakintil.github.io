@@ -34,7 +34,7 @@ window.PageModel = Backbone.Model.extend({
 			"process-copy": ""
 		},
 		"url": "",
-	},
+	}, // come back to and reset. if there aren't any values, then give them custom defaults
 
 	initialize: function ({}, PrismicDocument) {
 		this.document = PrismicDocument;
@@ -43,7 +43,7 @@ window.PageModel = Backbone.Model.extend({
 
 	createModelSchema(PrismicDocument) {
 		// Set the ID
-		console.log(PrismicDocument.get('project-pages.description').asText())
+		//		console.log(PrismicDocument.get('project-pages.description').asText())
 		this.set("model_id", PrismicDocument.id);
 
 		// setting the title
@@ -61,15 +61,31 @@ window.PageModel = Backbone.Model.extend({
 		this.set("skills", skillsArray);
 
 		// setting the process section 
-		let processArray = '';
-		//		console.log(PrismicDocument.get('project-pages.process-block').value);
+		// console.log(PrismicDocument.get('project-pages.process-block').value);
 		let processBlocks = PrismicDocument.get('project-pages.process-block').toArray().map(function (process) {
-			//			console.log(process);
-			return process.data;
+			// store the original object
+			let p = process.data;
+
+			// new process obj
+			let newProcessObj = {};
+
+			// setting the copy 
+			newProcessObj.copy = p['process-copy'].value[0].text;
+
+			// setting the image 
+			newProcessObj.image = p['process-image'].value.main.url;
+
+			// setting the title
+			newProcessObj.title = p['process-title'].value[0].text;
+
+			// setting the type
+			newProcessObj.type = p['process-type'].value;
+			
+			return newProcessObj;
 		})
 		this.set('process', processBlocks)
 
-		console.log(PrismicDocument.get('project-pages.process-block').toArray());
+		//		console.log(PrismicDocument.get('project-pages.process-block').toArray());
 
 		//		this.set("url", "/#page/" + Document.id);
 		//		console.log(this.attributes)

@@ -5,22 +5,20 @@
  padding-top: 150px;
  color: $color-primaryWhite;
  z-index: 2;
- &.left {
-
- }
- &.right {
-
- }
 }
 
 .process-image-container {
  height: $baseBlockSize * 64; //512px; 
- border: 1px solid grey;
- &.left {
-  align-self: flex-start;
- }
- &.right {
-  align-self: flex-end;
+ overflow: hidden;
+}
+
+.process-image-container > img {
+ width: 100%;
+}
+
+.process-block.left {
+ .process-image-container {
+  order: 1;
  }
 }
 

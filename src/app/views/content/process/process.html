@@ -1,61 +1,21 @@
 <div class="content--bottom col-xs-12 pad--none">
 
   <% _.each(process, function(processBlock) { %>
-    <div class="process-block col-xs-12 {{processBlock.type}}">
+    <div class="process-block <%= processBlock.type %> col-xs-12">
       <div class="process-image-container col-xs-6">
-        <div class="process-image">
-
-        </div>
+        <img class="process-image" src="<%= processBlock.image %>" alt="">
       </div>
       <!-- this one has padding -->
       <div class="process-description col-xs-6 pad--h-2">
         <h4 class="process-title">
-         Crafting the narrative
+          <%= processBlock.title %>
        </h4>
 
         <p class="process-copy">
-          Once we decided on leveraging a futuristic energy sharing economy, we began building a clear and simple user narrative.
+          <%= processBlock.copy %>
         </p>
       </div>
     </div>
     <% }); %>
-     
-     
-      <!-- page process-left component -->
-      <div class="process-block left col-xs-12">
-        <div class="process-image-container col-xs-6">
-          <div class="process-image">
 
-          </div>
-        </div>
-        <!-- this one has padding -->
-        <div class="process-description col-xs-6 pad--h-2">
-          <h4 class="process-title">
-         Crafting the narrative
-       </h4>
-
-          <p class="process-copy">
-            Once we decided on leveraging a futuristic energy sharing economy, we began building a clear and simple user narrative.
-          </p>
-        </div>
-      </div>
-
-      <!-- page process-right component -->
-      <div class="process-block right col-xs-12">
-        <!-- this one has padding -->
-        <div class="process-description col-xs-6 pad--h-2">
-          <h4 class="process-title">
-         Crafting the narrative
-       </h4>
-
-          <p class="process-copy">
-            Once we decided on leveraging a futuristic energy sharing economy, we began building a clear and simple user narrative.
-          </p>
-        </div>
-        <div class="process-image-container col-xs-6">
-          <div class="process-image">
-
-          </div>
-        </div>
-      </div>
 </div>

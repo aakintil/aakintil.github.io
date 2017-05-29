@@ -179,7 +179,7 @@ window.PageModel = Backbone.Model.extend({
 			"process-copy": ""
 		},
 		"url": "",
-	},
+	}, // come back to and reset. if there aren't any values, then give them custom defaults
 
 	initialize: function ({}, PrismicDocument) {
 		this.document = PrismicDocument;
@@ -188,7 +188,7 @@ window.PageModel = Backbone.Model.extend({
 
 	createModelSchema(PrismicDocument) {
 		// Set the ID
-		console.log(PrismicDocument.get('project-pages.description').asText())
+		//		console.log(PrismicDocument.get('project-pages.description').asText())
 		this.set("model_id", PrismicDocument.id);
 
 		// setting the title
@@ -206,15 +206,31 @@ window.PageModel = Backbone.Model.extend({
 		this.set("skills", skillsArray);
 
 		// setting the process section 
-		let processArray = '';
-		//		console.log(PrismicDocument.get('project-pages.process-block').value);
+		// console.log(PrismicDocument.get('project-pages.process-block').value);
 		let processBlocks = PrismicDocument.get('project-pages.process-block').toArray().map(function (process) {
-			//			console.log(process);
-			return process.data;
+			// store the original object
+			let p = process.data;
+
+			// new process obj
+			let newProcessObj = {};
+
+			// setting the copy 
+			newProcessObj.copy = p['process-copy'].value[0].text;
+
+			// setting the image 
+			newProcessObj.image = p['process-image'].value.main.url;
+
+			// setting the title
+			newProcessObj.title = p['process-title'].value[0].text;
+
+			// setting the type
+			newProcessObj.type = p['process-type'].value;
+			
+			return newProcessObj;
 		})
 		this.set('process', processBlocks)
 
-		console.log(PrismicDocument.get('project-pages.process-block').toArray());
+		//		console.log(PrismicDocument.get('project-pages.process-block').toArray());
 
 		//		this.set("url", "/#page/" + Document.id);
 		//		console.log(this.attributes)
@@ -485,6 +501,90 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 
 });
 /*
+	# Defines the view for 
+*/
+
+window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
+
+  template: JST["views/content/executiveSummary/executiveSummary"],
+
+  initialize: function (options) {
+
+  },
+
+  /*
+  	# View 
+  */
+
+  onRender: function () {
+    // Get rid of that pesky wrapping-div.
+    // Assumes 1 child element present in template.
+    this.$el = this.$el.children();
+    // Unwrap the element to prevent infinitely 
+    // nesting elements during re-render.
+    this.$el.unwrap();
+    this.setElement(this.$el);
+
+      //		var old = this.$el;
+      //		//		this.setElement('<div class="content--top"></div>');
+      ////		console.log('old element \n', this.$el.context.innerHTML)
+      //		old.replaceWith(this.$el.context.innerHTML);
+  },
+
+  /*
+  	# Events
+  */
+
+  events: {},
+
+  /*
+  	# Methods
+  */
+
+});
+/*
+	# Defines the view for 
+*/
+
+window.ProcessView = Backbone.Marionette.ItemView.extend({
+
+  template: JST["views/content/process/process"],
+
+  initialize: function (options) {
+
+  },
+
+  /*
+  	# View 
+  */
+
+  onRender: function () {
+    // Get rid of that pesky wrapping-div.
+    // Assumes 1 child element present in template.
+    this.$el = this.$el.children();
+    // Unwrap the element to prevent infinitely 
+    // nesting elements during re-render.
+    this.$el.unwrap();
+    this.setElement(this.$el);
+
+    //		var old = this.$el;
+    //		//		this.setElement('<div class="content--top"></div>');
+    ////		console.log('old element \n', this.$el.context.innerHTML)
+    //		old.replaceWith(this.$el.context.innerHTML);
+  },
+
+  /*
+  	# Events
+  */
+
+  events: {},
+
+  /*
+  	# Methods
+  */
+
+});
+/*
 	# Defines the view that 
 */
 
@@ -545,90 +645,5 @@ window.ViewCompositeView = Backbone.Marionette.CompositeView.extend(
 	/*
 		# Methods
 	*/
-
-});
-/*
-	# Defines the view for 
-*/
-
-window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
-
-  template: JST["views/content/executiveSummary/executiveSummary"],
-
-  initialize: function (options) {
-
-  },
-
-  /*
-  	# View 
-  */
-
-  onRender: function () {
-    // Get rid of that pesky wrapping-div.
-    // Assumes 1 child element present in template.
-    this.$el = this.$el.children();
-    // Unwrap the element to prevent infinitely 
-    // nesting elements during re-render.
-    this.$el.unwrap();
-    this.setElement(this.$el);
-
-//    console.log(this);
-      //		var old = this.$el;
-      //		//		this.setElement('<div class="content--top"></div>');
-      ////		console.log('old element \n', this.$el.context.innerHTML)
-      //		old.replaceWith(this.$el.context.innerHTML);
-  },
-
-  /*
-  	# Events
-  */
-
-  events: {},
-
-  /*
-  	# Methods
-  */
-
-});
-/*
-	# Defines the view for 
-*/
-
-window.ProcessView = Backbone.Marionette.ItemView.extend({
-
-  template: JST["views/content/process/process"],
-
-  initialize: function (options) {
-
-  },
-
-  /*
-  	# View 
-  */
-
-  onRender: function () {
-    // Get rid of that pesky wrapping-div.
-    // Assumes 1 child element present in template.
-    this.$el = this.$el.children();
-    // Unwrap the element to prevent infinitely 
-    // nesting elements during re-render.
-    this.$el.unwrap();
-    this.setElement(this.$el);
-
-    //		var old = this.$el;
-    //		//		this.setElement('<div class="content--top"></div>');
-    ////		console.log('old element \n', this.$el.context.innerHTML)
-    //		old.replaceWith(this.$el.context.innerHTML);
-  },
-
-  /*
-  	# Events
-  */
-
-  events: {},
-
-  /*
-  	# Methods
-  */
 
 });
