@@ -14,7 +14,9 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 		"navbar": ".header__navbar",
 	},
 
-	initialize: function (options) {},
+	initialize: function (options) {
+//		console.log(this, "\n header.js")
+	},
 
 	/*
 		# View 
@@ -45,6 +47,8 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 		var page = $(event.currentTarget).attr("id");
 		// Navigate to search page with input
 		window.location.hash = "#/" + page;
+
+		console.log(this, " fdklsajfdksla;jfdksl;ajfds;")
 	}
 
 });

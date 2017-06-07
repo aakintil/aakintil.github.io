@@ -2,21 +2,21 @@
 	# Defines the object for the application
 */
 
-window.Application = Backbone.Marionette.Application.extend( {
+window.Application = Backbone.Marionette.Application.extend({
 
-	initialize: function( options ) {},
+  initialize: function (options) {},
 
-	start: function( options ) {
+  start: function (options) {
 
-		// Assign data
-		// window.DataModel = new window.ModelData( options.data );
+    // Assign data
+    // window.DataModel = new window.ModelData( options.data );
 
-		// Render the main view
-		this.rootView.render();
+    // Render the main view
+    this.rootView.render();
 
-		// Start the history keeping
-		Backbone.history.start();
-	}
+    // Start the history keeping
+    Backbone.history.start();
+  }
 
 });
 
@@ -27,26 +27,65 @@ window.Application = Backbone.Marionette.Application.extend( {
 // Init an app instance
 var App = new window.Application();
 
-$(document).ready( function() {
+$(document).ready(function () {
 
-	// Load Data
-	// $.getJSON( "./js/data.json").done( function( data ) {
+  // Load Data\
+  this.prismicURL = 'https://aderinsola.prismic.io/api';
+  Prismic.api(this.prismicURL, function (error, api) {
+    api.query("", {}, function (error, response) {
+      // Log error
+      if (error) console.log("Prismic error: ", error);
+      else {
+        // console.log("Prismic success, fetching data...", response)
+        // Create the model from the Prismic response
 
-		// Init the main view
-		App.rootView = new window.MainLayout();
+        // TODO 
+        // ------------------
+        // have to figure out how to render the content view from here
+        // ------------------
 
-		// Init router
-		var Controller = new window.Controller( { containerView: App.rootView } );
-		var Router = new window.Router( { controller: Controller, containerView: App.rootView } );
+        // create the pages collection with each page inside the object
+        var pages = new window.PagesCollection([], response.results);
 
-		// Start the app
-		// App.start( { "data": data } );
-		App.start( {} );
+        //					console.log(_this)
+        // _this.options.containerView.pages = pages;
+        //					 console.error(_this.containerView)
+        //
+        // var pages = new window.ModelArticlesCollection([], response.results);
+        // Init view
+        //					var view = new window.ViewHome({
+        //						"articles": articles
+        //					});
+        // Show  view
+        // _this.containerView.main.show(view);
+        //    });
 
-	// });
+
+        // Init the main view
+        App.rootView = new window.MainLayout({
+          pages: pages
+        });
+
+        // Init router
+        var Controller = new window.Controller({
+          containerView: App.rootView
+        });
+        var Router = new window.Router({
+          controller: Controller,
+          containerView: App.rootView
+        });
+
+        // Start the app
+        // App.start( { "data": data } );
+        App.start({
+          'pages': pages
+        });
+      }
+
+    });
+  });
 
 });
-
 /*
 	# Defines the controller for the main router
 */
@@ -54,10 +93,10 @@ $(document).ready( function() {
 window.Controller = Backbone.Marionette.Object.extend({
 
 	initialize: function (options) {
-
-		this.containerView = options.containerView;
-		this.prismicURL = 'https://aderinsola.prismic.io/api';
-		this.getContentFromPrismic();
+		console.log( options )
+		//		this.mainLayout = options.containerView;
+		//		this.prismicURL = 'https://aderinsola.prismic.io/api';
+		//		this.getContentFromPrismic();
 	},
 
 	handleRouteIndex: function (routeData) {
@@ -73,8 +112,7 @@ window.Controller = Backbone.Marionette.Object.extend({
 	// getter functions
 
 	getContentFromPrismic: function () {
-		//		console.log("getting content from prismic \n", Prismic);
-
+		var _this = this;
 		Prismic.api(this.prismicURL, function (error, api) {
 			api.query("", {}, function (error, response) {
 				// Log error
@@ -91,17 +129,9 @@ window.Controller = Backbone.Marionette.Object.extend({
 					// create the pages collection with each page inside the object
 					var pages = new window.PagesCollection([], response.results);
 
-					_.each(response.results, function (obj) {
-						console.log(obj.slug)
-					});
-
-					// create the content layout view. pass the pages object so content know's what each attribute is
-					var content = new window.ContentLayout({
-						'pages': pages
-					});
-
-					// let content render itself information 
-					content.render();
+					//					console.log(_this)
+					_this.options.containerView.pages = pages;
+					//					 console.error(_this.containerView)
 					//
 					// var pages = new window.ModelArticlesCollection([], response.results);
 					// Init view
@@ -451,7 +481,9 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 		"navbar": ".header__navbar",
 	},
 
-	initialize: function (options) {},
+	initialize: function (options) {
+//		console.log(this, "\n header.js")
+	},
 
 	/*
 		# View 
@@ -482,6 +514,8 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 		var page = $(event.currentTarget).attr("id");
 		// Navigate to search page with input
 		window.location.hash = "#/" + page;
+
+		console.log(this, " fdklsajfdksla;jfdksl;ajfds;")
 	}
 
 });
@@ -500,18 +534,30 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 		"content": ".layout--content",
 	},
 
-	initialize: function (options) {},
+	initialize: function (options) {
+		console.log('main layout this object ', this)
+		this.pages = options.pages;
+	},
 
 	/*
 		# View 
 	*/
 
 	onRender: function () {
-		
+
+		var header = new window.HeaderLayout({
+			'pages': this.pages
+		});
+		var content = new window.ContentLayout({
+			'pages': this.pages
+		});
+		header.render();
+		content.render();
+
 		// use this as hook for animation 
 		// when the main layout renders, render the header & content
-		var header = new window.HeaderLayout(); 
-		header.render();
+		//		var header = new window.HeaderLayout(); 
+		//		header.render();
 	},
 
 	/*
@@ -594,48 +640,6 @@ window.ViewCompositeView = Backbone.Marionette.CompositeView.extend(
 	# Defines the view for 
 */
 
-window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
-
-  template: JST["views/content/executiveSummary/executiveSummary"],
-
-  initialize: function (options) {
-
-  },
-
-  /*
-  	# View 
-  */
-
-  onRender: function () {
-    // Get rid of that pesky wrapping-div.
-    // Assumes 1 child element present in template.
-    this.$el = this.$el.children();
-    // Unwrap the element to prevent infinitely 
-    // nesting elements during re-render.
-    this.$el.unwrap();
-    this.setElement(this.$el);
-
-      //		var old = this.$el;
-      //		//		this.setElement('<div class="content--top"></div>');
-      ////		console.log('old element \n', this.$el.context.innerHTML)
-      //		old.replaceWith(this.$el.context.innerHTML);
-  },
-
-  /*
-  	# Events
-  */
-
-  events: {},
-
-  /*
-  	# Methods
-  */
-
-});
-/*
-	# Defines the view for 
-*/
-
 window.ProcessView = Backbone.Marionette.ItemView.extend({
 
   template: JST["views/content/process/process"],
@@ -661,6 +665,48 @@ window.ProcessView = Backbone.Marionette.ItemView.extend({
     //		//		this.setElement('<div class="content--top"></div>');
     ////		console.log('old element \n', this.$el.context.innerHTML)
     //		old.replaceWith(this.$el.context.innerHTML);
+  },
+
+  /*
+  	# Events
+  */
+
+  events: {},
+
+  /*
+  	# Methods
+  */
+
+});
+/*
+	# Defines the view for 
+*/
+
+window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
+
+  template: JST["views/content/executiveSummary/executiveSummary"],
+
+  initialize: function (options) {
+    console.log( "\n exec \n", options)
+  },
+
+  /*
+  	# View 
+  */
+
+  onRender: function () {
+    // Get rid of that pesky wrapping-div.
+    // Assumes 1 child element present in template.
+    this.$el = this.$el.children();
+    // Unwrap the element to prevent infinitely 
+    // nesting elements during re-render.
+    this.$el.unwrap();
+    this.setElement(this.$el);
+
+      //		var old = this.$el;
+      //		//		this.setElement('<div class="content--top"></div>');
+      ////		console.log('old element \n', this.$el.context.innerHTML)
+      //		old.replaceWith(this.$el.context.innerHTML);
   },
 
   /*
