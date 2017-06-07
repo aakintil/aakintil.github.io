@@ -15,16 +15,17 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 	initialize: function (options) {
 		this.pagesCollection = options.pages;
+		this.selectedModel = options.selectedModel;
 		let _pagesCollection = this.pagesCollection.models;
-		_.each(_pagesCollection, function (i) {
-			console.log(i.collection.prismicDataArray)
-		});
+		//		_.each(_pagesCollection, function (i) {
+		//			console.log(i.collection.prismicDataArray)
+		//		});
 		this.contentView = new window.ExecutiveSummaryView({
-			'model': this.pagesCollection.models[0],
+			'model': this.selectedModel,
 			'collection': this.pagesCollection.prismicDataArray
 		});
 		this.processView = new window.ProcessView({
-			'model': this.pagesCollection.models[0],
+			'model': this.selectedModel,
 			'collection': this.pagesCollection.prismicDataArray
 		})
 	},

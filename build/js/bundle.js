@@ -176,7 +176,7 @@ window.Router = Backbone.Marionette.AppRouter.extend( {
 
 	appRoutes: {
 		"(/)"								: "handleRouteIndex",
-		"(/):page"							: "renderPage"
+		//		"(/):page"					: "renderPage"
 		// "section/:id" 					: "handleRouteSection",
 	}
 
@@ -403,16 +403,17 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 	initialize: function (options) {
 		this.pagesCollection = options.pages;
+		this.selectedModel = options.selectedModel;
 		let _pagesCollection = this.pagesCollection.models;
-		_.each(_pagesCollection, function (i) {
-			console.log(i.collection.prismicDataArray)
-		});
+		//		_.each(_pagesCollection, function (i) {
+		//			console.log(i.collection.prismicDataArray)
+		//		});
 		this.contentView = new window.ExecutiveSummaryView({
-			'model': this.pagesCollection.models[0],
+			'model': this.selectedModel,
 			'collection': this.pagesCollection.prismicDataArray
 		});
 		this.processView = new window.ProcessView({
-			'model': this.pagesCollection.models[0],
+			'model': this.selectedModel,
 			'collection': this.pagesCollection.prismicDataArray
 		})
 	},
@@ -482,7 +483,7 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	},
 
 	initialize: function (options) {
-//		console.log(this, "\n header.js")
+		this.pages = this.options.pages;
 	},
 
 	/*
@@ -491,6 +492,13 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 
 	onRender: function () {
 		//		console.log( "content rendering ", this.regions )
+		var content = new window.ContentLayout({
+			'pages': this.pages,
+			'selectedModel': this.pages.models[0]
+		});
+		window.pages = this.pages;
+		window.content = content;
+		content.render();
 	},
 
 	/*
@@ -498,7 +506,7 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	events: {
-		"click .navigation-button": "toggleNavigation",
+		"click .navigation-button": 'toggleNavigation'
 	},
 
 	/*
@@ -506,16 +514,37 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	toggleNavigation: (event) => {
-		console.log("clicking \n", $(event.currentTarget).attr("id"));
+		//		console.log("clicking \n", $(event.currentTarget).attr("id"));
+
+		console.log("clicking \n", window.content);
+
+		var content = new window.ContentLayout({
+			'pages': window.pages,
+			'selectedModel': window.pages.models[1]
+		});
+		window.content = content;
+		var page = $(event.currentTarget).attr("id");
+		window.location.hash = "#/" + page;
+		content.render();
+		
+		// now we have to change the and get the window.pages.model that is associated with the clicked element. 
+		// write a helper function that does animation too
+		// function animate()
+		// function loadData()
+		// function redirect()
 		// Prevent form from submitting
-		event.preventDefault();
+		//		event.preventDefault();
 
 		// Get the input
-		var page = $(event.currentTarget).attr("id");
-		// Navigate to search page with input
-		window.location.hash = "#/" + page;
+		//		var page = $(event.currentTarget).attr("id");
 
-		console.log(this, " fdklsajfdksla;jfdksl;ajfds;")
+		//		_.each(this.pages.models, function (model) {
+		//				console.log("ooifjdklsa;fdsjaklf;asfdjsa")
+		//			})
+		// Navigate to search page with input
+		// window.location.hash = "#/" + page;
+
+		//		console.log(this, " fdklsajfdksla;jfdksl;ajfds;")
 	}
 
 });
@@ -535,7 +564,6 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 	},
 
 	initialize: function (options) {
-		console.log('main layout this object ', this)
 		this.pages = options.pages;
 	},
 
@@ -548,11 +576,7 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 		var header = new window.HeaderLayout({
 			'pages': this.pages
 		});
-		var content = new window.ContentLayout({
-			'pages': this.pages
-		});
 		header.render();
-		content.render();
 
 		// use this as hook for animation 
 		// when the main layout renders, render the header & content
@@ -640,6 +664,47 @@ window.ViewCompositeView = Backbone.Marionette.CompositeView.extend(
 	# Defines the view for 
 */
 
+window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
+
+  template: JST["views/content/executiveSummary/executiveSummary"],
+
+  initialize: function (options) {
+  },
+
+  /*
+  	# View 
+  */
+
+  onRender: function () {
+    // Get rid of that pesky wrapping-div.
+    // Assumes 1 child element present in template.
+    this.$el = this.$el.children();
+    // Unwrap the element to prevent infinitely 
+    // nesting elements during re-render.
+    this.$el.unwrap();
+    this.setElement(this.$el);
+
+      //		var old = this.$el;
+      //		//		this.setElement('<div class="content--top"></div>');
+      ////		console.log('old element \n', this.$el.context.innerHTML)
+      //		old.replaceWith(this.$el.context.innerHTML);
+  },
+
+  /*
+  	# Events
+  */
+
+  events: {},
+
+  /*
+  	# Methods
+  */
+
+});
+/*
+	# Defines the view for 
+*/
+
 window.ProcessView = Backbone.Marionette.ItemView.extend({
 
   template: JST["views/content/process/process"],
@@ -665,48 +730,6 @@ window.ProcessView = Backbone.Marionette.ItemView.extend({
     //		//		this.setElement('<div class="content--top"></div>');
     ////		console.log('old element \n', this.$el.context.innerHTML)
     //		old.replaceWith(this.$el.context.innerHTML);
-  },
-
-  /*
-  	# Events
-  */
-
-  events: {},
-
-  /*
-  	# Methods
-  */
-
-});
-/*
-	# Defines the view for 
-*/
-
-window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
-
-  template: JST["views/content/executiveSummary/executiveSummary"],
-
-  initialize: function (options) {
-    console.log( "\n exec \n", options)
-  },
-
-  /*
-  	# View 
-  */
-
-  onRender: function () {
-    // Get rid of that pesky wrapping-div.
-    // Assumes 1 child element present in template.
-    this.$el = this.$el.children();
-    // Unwrap the element to prevent infinitely 
-    // nesting elements during re-render.
-    this.$el.unwrap();
-    this.setElement(this.$el);
-
-      //		var old = this.$el;
-      //		//		this.setElement('<div class="content--top"></div>');
-      ////		console.log('old element \n', this.$el.context.innerHTML)
-      //		old.replaceWith(this.$el.context.innerHTML);
   },
 
   /*

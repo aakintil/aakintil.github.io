@@ -15,7 +15,7 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	},
 
 	initialize: function (options) {
-//		console.log(this, "\n header.js")
+		this.pages = this.options.pages;
 	},
 
 	/*
@@ -24,6 +24,13 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 
 	onRender: function () {
 		//		console.log( "content rendering ", this.regions )
+		var content = new window.ContentLayout({
+			'pages': this.pages,
+			'selectedModel': this.pages.models[0]
+		});
+		window.pages = this.pages;
+		window.content = content;
+		content.render();
 	},
 
 	/*
@@ -31,7 +38,7 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	events: {
-		"click .navigation-button": "toggleNavigation",
+		"click .navigation-button": 'toggleNavigation'
 	},
 
 	/*
@@ -39,16 +46,37 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	toggleNavigation: (event) => {
-		console.log("clicking \n", $(event.currentTarget).attr("id"));
+		//		console.log("clicking \n", $(event.currentTarget).attr("id"));
+
+		console.log("clicking \n", window.content);
+
+		var content = new window.ContentLayout({
+			'pages': window.pages,
+			'selectedModel': window.pages.models[1]
+		});
+		window.content = content;
+		var page = $(event.currentTarget).attr("id");
+		window.location.hash = "#/" + page;
+		content.render();
+		
+		// now we have to change the and get the window.pages.model that is associated with the clicked element. 
+		// write a helper function that does animation too
+		// function animate()
+		// function loadData()
+		// function redirect()
 		// Prevent form from submitting
-		event.preventDefault();
+		//		event.preventDefault();
 
 		// Get the input
-		var page = $(event.currentTarget).attr("id");
-		// Navigate to search page with input
-		window.location.hash = "#/" + page;
+		//		var page = $(event.currentTarget).attr("id");
 
-		console.log(this, " fdklsajfdksla;jfdksl;ajfds;")
+		//		_.each(this.pages.models, function (model) {
+		//				console.log("ooifjdklsa;fdsjaklf;asfdjsa")
+		//			})
+		// Navigate to search page with input
+		// window.location.hash = "#/" + page;
+
+		//		console.log(this, " fdklsajfdksla;jfdksl;ajfds;")
 	}
 
 });

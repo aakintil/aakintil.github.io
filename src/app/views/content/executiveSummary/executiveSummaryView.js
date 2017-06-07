@@ -7,7 +7,6 @@ window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
   template: JST["views/content/executiveSummary/executiveSummary"],
 
   initialize: function (options) {
-    console.log( "\n exec \n", options)
   },
 
   /*

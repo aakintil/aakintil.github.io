@@ -14,7 +14,6 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 	},
 
 	initialize: function (options) {
-		console.log('main layout this object ', this)
 		this.pages = options.pages;
 	},
 
@@ -27,11 +26,7 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 		var header = new window.HeaderLayout({
 			'pages': this.pages
 		});
-		var content = new window.ContentLayout({
-			'pages': this.pages
-		});
 		header.render();
-		content.render();
 
 		// use this as hook for animation 
 		// when the main layout renders, render the header & content
