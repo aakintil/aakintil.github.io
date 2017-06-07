@@ -15,6 +15,10 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 	initialize: function (options) {
 		this.pagesCollection = options.pages;
+		let _pagesCollection = this.pagesCollection.models;
+		_.each(_pagesCollection, function (i) {
+			console.log(i.collection.prismicDataArray)
+		});
 		this.contentView = new window.ExecutiveSummaryView({
 			'model': this.pagesCollection.models[0],
 			'collection': this.pagesCollection.prismicDataArray

@@ -76,7 +76,8 @@ window.PageModel = Backbone.Model.extend({
 			newProcessObj.copy = p['process-copy'].value[0].text;
 
 			// setting the image 
-			newProcessObj.image = p['process-image'].value.main.url;
+			// console.log( p )
+			newProcessObj.image = p['process-image'] === undefined ? '' : p['process-image'].value.main.url;
 
 			// setting the title
 			newProcessObj.title = p['process-title'].value[0].text;

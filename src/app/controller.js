@@ -42,6 +42,10 @@ window.Controller = Backbone.Marionette.Object.extend({
 					// create the pages collection with each page inside the object
 					var pages = new window.PagesCollection([], response.results);
 
+					_.each(response.results, function (obj) {
+						console.log(obj.slug)
+					});
+
 					// create the content layout view. pass the pages object so content know's what each attribute is
 					var content = new window.ContentLayout({
 						'pages': pages

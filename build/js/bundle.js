@@ -91,6 +91,10 @@ window.Controller = Backbone.Marionette.Object.extend({
 					// create the pages collection with each page inside the object
 					var pages = new window.PagesCollection([], response.results);
 
+					_.each(response.results, function (obj) {
+						console.log(obj.slug)
+					});
+
 					// create the content layout view. pass the pages object so content know's what each attribute is
 					var content = new window.ContentLayout({
 						'pages': pages
@@ -225,7 +229,8 @@ window.PageModel = Backbone.Model.extend({
 			newProcessObj.copy = p['process-copy'].value[0].text;
 
 			// setting the image 
-			newProcessObj.image = p['process-image'].value.main.url;
+			// console.log( p )
+			newProcessObj.image = p['process-image'] === undefined ? '' : p['process-image'].value.main.url;
 
 			// setting the title
 			newProcessObj.title = p['process-title'].value[0].text;
@@ -368,6 +373,10 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 	initialize: function (options) {
 		this.pagesCollection = options.pages;
+		let _pagesCollection = this.pagesCollection.models;
+		_.each(_pagesCollection, function (i) {
+			console.log(i.collection.prismicDataArray)
+		});
 		this.contentView = new window.ExecutiveSummaryView({
 			'model': this.pagesCollection.models[0],
 			'collection': this.pagesCollection.prismicDataArray
