@@ -1555,6 +1555,7 @@ body {
   flex-basis: 1000px;
   height: inherit;
   display: flex;
+  justify-content: flex-start;
   flex: 1 0 auto; }
 
 .content--bottom {
@@ -1566,9 +1567,6 @@ body {
 .description--container,
 .skills--container {
   color: white; }
-
-.title--container {
-  height: 100px; }
 
 .skills--container.bio {
   color: #125767; }

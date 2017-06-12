@@ -17,6 +17,7 @@ $titleLtrSpacing: $baseFontSize/4 + px;
  flex-basis: 1000px;
  height: inherit;
  display: flex;
+ justify-content: flex-start;
  flex: 1 0 auto;
 }
 
@@ -32,9 +33,15 @@ $titleLtrSpacing: $baseFontSize/4 + px;
  color: $color-white;
 }
 
-.title--container {
- height: 100px; 
-}
+//.callout--container {
+// display: flex;
+// justify-content: flex-start;
+// 
+// .callout {
+//  display: flex; 
+//  justify-content: flex-start;
+// }
+//}
 
 .skills--container {
  &.bio {
