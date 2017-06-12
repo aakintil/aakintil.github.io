@@ -46,11 +46,11 @@
      background: white;
      display: flex;
      justify-content: center;
-     align-items: center;
      text-transform: uppercase;
      letter-spacing: $btnLtrSpacing;
      font-family: 'gt-bold';
      padding-top: $baseBlockSize / 2;
+     align-items: flex-start;
 }
 
 .btn--primaryRed {

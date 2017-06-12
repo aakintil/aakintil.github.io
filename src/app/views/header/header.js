@@ -1,7 +1,10 @@
 /*
 	# Defines the view for the main layout
 */
-
+window.getSelectedModel = function () {
+	console.log(this.selectedModel)
+	return this.selectedModel.attributes.category;
+}
 window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 
 	el: ".header__container",
@@ -16,6 +19,7 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 
 	initialize: function (options) {
 		this.pages = this.options.pages;
+		window.selectedModel = this.pages.models[0];
 	},
 
 	/*
@@ -29,6 +33,7 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 		});
 		//		window.pages = this.pages;
 		//		window.content = content;
+		window.selectedModel = this.pages.models[0]
 		content.render();
 	},
 
@@ -85,11 +90,14 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 			'pages': bckbne.pages,
 			'selectedModel': mdl
 		});
+		window.selectedModel = mdl;
 		window.content = content;
 		content.render();
 
 
-
+		// need to write an event that passes data to the header but doesnn't fully re render it
+		
+		
 		// now we have to change the and get the window.pages.model that is associated with the clicked element. 
 		// write a helper function that does animation too
 		// function animate()

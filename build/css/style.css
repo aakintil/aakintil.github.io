@@ -1709,11 +1709,11 @@ body {
   background: white;
   display: flex;
   justify-content: center;
-  align-items: center;
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-family: 'gt-bold';
-  padding-top: 4px; }
+  padding-top: 4px;
+  align-items: flex-start; }
 
 .btn--primaryRed {
   color: red; }
