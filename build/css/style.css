@@ -1525,8 +1525,14 @@ body {
   align-items: center;
   z-index: 1; }
 
-.header__logo > h2 {
-  color: red; }
+.header__logo > h2.bio {
+  color: #2AD2F8; }
+
+.header__logo > h2.works {
+  color: #FB564B; }
+
+.header__logo > h2.projects {
+  color: #FFC100; }
 
 .header__menu {
   width: 53px;

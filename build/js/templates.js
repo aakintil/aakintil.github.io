@@ -9,14 +9,11 @@ return __p
 },
 "views/header/header": function(obj) {
 obj || (obj = {});
-var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
-function print() { __p += __j.call(arguments, '') }
+var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="header__menu bg__projects-color">\n  <p class="menu--title"> Menu</p>\n</div>\n\n<!--';
- console.log('what is \n', this.selectedModel.attributes.category) ;
-__p += '-->\n<div class="header__logo col-xs-12 ' +
-((__t = ( this.getSelectedModel() )) == null ? '' : __t) +
-'">\n  <h2>ADERINSOLA</h2>\n</div>\n\n\n<div class="header__navbar col-xs-12">\n  <div id="about" class="button navigation-button">\n    <h5> about </h5>\n  </div>\n  <div id="process" class="button navigation-button">\n    <h5>process</h5>\n  </div>\n  <div id="contact" class="button navigation-button">\n    <h5>contact</h5>\n  </div>\n  <div id="claron" class="button navigation-button">\n    <h5>claron</h5>\n  </div>\n  <div id="helios" class="button navigation-button">\n    <h5>helios</h5>\n  </div>\n  <div id="freespira" class="button navigation-button">\n    <h5>freespira</h5>\n  </div>\n  <div id="gridmi" class="button navigation-button">\n    <h5>gridmi</h5>\n  </div>\n  <div id="photos" class="button navigation-button">\n    <h5>photos</h5>\n  </div>\n  <div id="toffee" class="button navigation-button">\n    <h5>toffee</h5>\n  </div>\n</div>';
+__p += '<div class="header__menu bg__projects-color">\n  <p class="menu--title"> Menu</p>\n</div>\n\n<div class="header__logo col-xs-12">\n  <h2 class="' +
+((__t = ( this.selectedModel.attributes.category )) == null ? '' : __t) +
+'">ADERINSOLA</h2>\n</div>\n\n\n<div class="header__navbar col-xs-12">\n  <div id="about" class="button navigation-button">\n    <h5> about </h5>\n  </div>\n  <div id="process" class="button navigation-button">\n    <h5>process</h5>\n  </div>\n  <div id="contact" class="button navigation-button">\n    <h5>contact</h5>\n  </div>\n  <div id="claron" class="button navigation-button">\n    <h5>claron</h5>\n  </div>\n  <div id="helios" class="button navigation-button">\n    <h5>helios</h5>\n  </div>\n  <div id="freespira" class="button navigation-button">\n    <h5>freespira</h5>\n  </div>\n  <div id="gridmi" class="button navigation-button">\n    <h5>gridmi</h5>\n  </div>\n  <div id="photos" class="button navigation-button">\n    <h5>photos</h5>\n  </div>\n  <div id="toffee" class="button navigation-button">\n    <h5>toffee</h5>\n  </div>\n</div>';
 
 }
 return __p
