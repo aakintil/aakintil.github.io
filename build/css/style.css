@@ -1232,6 +1232,9 @@ Geomanist-Ultra-Webfont
 .marg--top-6 {
   margin-top: 144px; }
 
+.marg--bottom-6 {
+  margin-bottom: 144px; }
+
 .marg-h {
   margin: 12px; }
 
@@ -1607,8 +1610,10 @@ body {
   z-index: 1; }
 
 .content--top .pitch {
-  flex-direction: row;
-  flex-wrap: wrap; }
+  flex-direction: column;
+  height: 100%;
+  min-height: 1304px !important;
+  justify-content: space-between; }
 
 .content--top .slideshow {
   flex-direction: row;
@@ -1632,6 +1637,12 @@ body {
   background: white;
   height: 4px;
   border-radius: 8px; }
+  .title--underline.bio {
+    background: #125767; }
+  .title--underline.works {
+    background: #A03730; }
+  .title--underline.projects {
+    background: #A47C00; }
 
 .callout {
   font-family: 'gt-ultraBold';

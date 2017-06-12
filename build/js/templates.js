@@ -50,19 +50,27 @@ function print() { __p += __j.call(arguments, '') }
 with (obj) {
 __p += '<div class="content--top">\n\t<!-- page highlight color -->\n\t<div class="background-color ' +
 ((__t = ( category )) == null ? '' : __t) +
-' pad--none">\n\n\t</div>\n\n\t<!-- page slideshow -->\n\t<div class="slideshow col-xs-5 pad--none marg--top-6">\n\n\t\t<div class="col-xs-12 image--container">\n\t\t\t<div class="col-xs-12 image">\n\t\t\t</div>\n\t\t</div>\n\t\t<div class="col-xs-12">\n\t\t\t<div class="col-xs-10  col-xs-offset-1 button behind-the-scenes-button primary-button works">\n\t\t\t\t<p>behind the scenes</p>\n\t\t\t</div>\n\t\t</div>\n\n\t</div>\n\n\t<!-- page pitch / project description -->\n\t<div class="pitch col-xs-7 marg--top-6">\n\t\t<div class="col-xs-12 title--container">\n\t\t\t<h3>' +
+' pad--none">\n\n\t</div>\n\n\t<!-- page slideshow -->\n\t<div class="slideshow col-xs-5 pad--none marg--top-6">\n\n\t\t<div class="col-xs-12 image--container">\n\t\t\t<div class="col-xs-12 image">\n\t\t\t</div>\n\t\t</div>\n\t\t<div class="col-xs-12 marg--bottom-4">\n\t\t\t<div class="col-xs-10  col-xs-offset-1 button behind-the-scenes-button primary-button works">\n\t\t\t\t<p>behind the scenes</p>\n\t\t\t</div>\n\t\t</div>\n\n\t</div>\n\n\t<!-- page pitch / project description -->\n\t<div class="pitch col-xs-7 marg--top-6">\n\t\t<div class="col-xs-12 title--container">\n\t\t\t<h3>' +
 ((__t = ( title )) == null ? '' : __t) +
 '</%></h3>\n\t\t\t<div class="title--underline col-xs-1 marg--top-h"></div>\n\t\t</div>\n\n\t\t<div class="col-xs-12 callout--container">\n\t\t\t<!-- <h1 class="callout">providing clarity <br/>in crisis</h1>-->\n\t\t\t<h1 class="callout">' +
 ((__t = ( callout )) == null ? '' : __t) +
 '</%></h1>\n\t\t</div>\n\n\t\t<div class="col-xs-12 description--container">\n\t\t\t<p class="description">\n\t\t\t\t' +
 ((__t = ( description )) == null ? '' : __t) +
-'</%>\n\t\t\t</p>\n\t\t</div>\n\n\t\t<div class="col-xs-12 skills--container works">\n\t\t\t<div class="row">\n\t\t\t';
+'</%>\n\t\t\t</p>\n\t\t</div>\n\n';
+ if (skills) { ;
+__p += '\n\t\t<div class="col-xs-12 skills--container ' +
+((__t = ( category )) == null ? '' : __t) +
+'">\n\t\t\t<div class="row">\n\t\t\t\t<div class="title--underline ' +
+((__t = ( category )) == null ? '' : __t) +
+' col-xs-1 marg--top-h"></div>\n\t\t\t</div>\n\t\t\t<div class="row">\n\t\t\t';
  _.each(skills, function(skill) { ;
 __p += '\n\t\t\t\t<div class="col-xs-4 skills">\n\t\t\t\t\t<p class="skill">' +
 ((__t = ( skill)) == null ? '' : __t) +
 '</%></p>\n\t\t\t\t</div>\n\t\t\t';
  }); ;
-__p += '\n\t\t\t\n<!--\n\t\t\t\t<div class="col-xs-4 skills">\n\t\t\t\t\t<p class="skill">photography</p>\n\t\t\t\t</div>\n\t\t\t\t<div class="col-xs-4 skills">\n\t\t\t\t\t<p class="skill">branding</p>\n\t\t\t\t</div>\n\t\t\t\t<div class="col-xs-4 skills">\n\t\t\t\t\t<p class="skill">research</p>\n\t\t\t\t</div>\n-->\n\t\t\t</div>\n\n<!--\n<div class="row">\n\t<div class="col-xs-4 skills">\n\t\t<p class="skill">system architecture</p>\n\t</div>\n\t<div class="col-xs-4 skills">\n\t\t<p class="skill">interaction design</p>\n\t</div>\n\t<div class="col-xs-4 skills">\n\t\t<p class="skill">ui design</p>\n\t</div>\n</div>\n-->\n\t\t</div>\n\n\t</div>\n\n</div>';
+__p += '\n\t\t\t\n<!--\n\t\t\t\t<div class="col-xs-4 skills">\n\t\t\t\t\t<p class="skill">photography</p>\n\t\t\t\t</div>\n\t\t\t\t<div class="col-xs-4 skills">\n\t\t\t\t\t<p class="skill">branding</p>\n\t\t\t\t</div>\n\t\t\t\t<div class="col-xs-4 skills">\n\t\t\t\t\t<p class="skill">research</p>\n\t\t\t\t</div>\n-->\n\t\t\t</div>\n\t\t\t';
+ }; ;
+__p += '\n\n<!--\n<div class="row">\n\t<div class="col-xs-4 skills">\n\t\t<p class="skill">system architecture</p>\n\t</div>\n\t<div class="col-xs-4 skills">\n\t\t<p class="skill">interaction design</p>\n\t</div>\n\t<div class="col-xs-4 skills">\n\t\t<p class="skill">ui design</p>\n\t</div>\n</div>\n-->\n\t\t</div>\n\n\t</div>\n\n</div>';
 
 }
 return __p

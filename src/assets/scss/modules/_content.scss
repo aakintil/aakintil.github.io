@@ -42,7 +42,6 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 //  justify-content: flex-start;
 // }
 //}
-
 .skills--container {
  &.bio {
   color: $color-secondaryBlue;
@@ -93,8 +92,10 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 }
 
 .content--top .pitch {
- flex-direction: row;
- flex-wrap: wrap;
+ flex-direction: column;
+ height: 100%;
+ min-height: 1304px !important;
+ justify-content: space-between;
 }
 
 .content--top .slideshow {
@@ -123,6 +124,15 @@ $titleLtrSpacing: $baseFontSize/4 + px;
  background: white;
  height: $baseBlockSize / 2;
  border-radius: 8px;
+ &.bio {
+  background: $color-secondaryBlue;
+ }
+ &.works {
+  background: $color-secondaryRed;
+ }
+ &.projects {
+  background: $color-secondaryYellow;
+ }
 }
 
 .callout {
