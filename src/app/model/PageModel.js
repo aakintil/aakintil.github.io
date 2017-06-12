@@ -6,6 +6,7 @@
 window.PageModel = Backbone.Model.extend({
 
 	defaults: {
+		"category": "",
 		"title": "",
 		"header": "",
 		"brief": "",
@@ -36,7 +37,7 @@ window.PageModel = Backbone.Model.extend({
 		"url": "",
 	}, // come back to and reset. if there aren't any values, then give them custom defaults
 
-	initialize: function ({}, PrismicDocument) {
+	initialize: function (defaults, PrismicDocument) {
 		this.document = PrismicDocument;
 		this.createModelSchema(PrismicDocument);
 	},
@@ -46,6 +47,10 @@ window.PageModel = Backbone.Model.extend({
 		// Set the ID
 		// console.log(PrismicDocument.get('project-pages.description').asText())
 		this.set("model_id", PrismicDocument.id);
+
+		// Set the category
+		// console.log(PrismicDocument.get('project-pages.description').asText())
+		this.set("category",  PrismicDocument.get('project-pages.category').asText());
 
 		// setting the title
 		this.set("title", PrismicDocument.get('project-pages.title') === null ? '' : PrismicDocument.get('project-pages.title').asText());

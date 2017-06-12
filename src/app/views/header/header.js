@@ -23,14 +23,17 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	onRender: function () {
-		//		console.log( "content rendering ", this.regions )
 		var content = new window.ContentLayout({
 			'pages': this.pages,
 			'selectedModel': this.pages.models[0]
 		});
-		window.pages = this.pages;
-		window.content = content;
+		//		window.pages = this.pages;
+		//		window.content = content;
 		content.render();
+	},
+
+	findModel: function (pageTitle) {
+		console.log("find model");
 	},
 
 	/*
@@ -38,27 +41,55 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	events: {
-		"click .navigation-button": 'toggleNavigation'
+		"click .navigation-button": function (event) {
+			var _this = this;
+			this.toggleNavigation(event, _this)
+		},
+		//		"click .navigation-button": 'toggleNavigation'
 	},
 
+	//			"click .navigation-button": function () {  // have to create a function to pass the headerlayout variable into the events jquery function
+	//				var headerLayout = this;
+	//				this.toggleNavigation(headerLayout, event);
+	//			} //this.toggleNavigation(this.pages)
 	/*
 		# Methods
 	*/
 
-	toggleNavigation: (event) => {
+	toggleNavigation: (event, bckbne) => {
 		//		console.log("clicking \n", $(event.currentTarget).attr("id"));
+		//		console.log('cdaldlfjdskalfjdskl event \n ', event)
+		//		console.log("clicking \n", bckbne.trigger);
 
-		console.log("clicking \n", window.content);
 
+
+		//		this.vent.trigger("editMedication", this.model);
+
+		// working---
+		var pageTitle = $(event.currentTarget).attr("id");
+		window.location.hash = "#/" + pageTitle;
+
+		var pages = bckbne.pages.models;
+		var selectedPage = {};
+		_.each(pages, function (page) {
+			var slug = page.document.slug;
+			if (slug === pageTitle) {
+				selectedPage = page.document;
+			}
+		})
+
+		// get the selected model
+		//		findModel(pageTitle);
+		var mdl = new window.PageModel({}, selectedPage)
 		var content = new window.ContentLayout({
-			'pages': window.pages,
-			'selectedModel': window.pages.models[1]
+			'pages': bckbne.pages,
+			'selectedModel': mdl
 		});
 		window.content = content;
-		var page = $(event.currentTarget).attr("id");
-		window.location.hash = "#/" + page;
 		content.render();
-		
+
+
+
 		// now we have to change the and get the window.pages.model that is associated with the clicked element. 
 		// write a helper function that does animation too
 		// function animate()

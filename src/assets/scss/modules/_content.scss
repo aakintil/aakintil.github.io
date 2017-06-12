@@ -32,6 +32,10 @@ $titleLtrSpacing: $baseFontSize/4 + px;
  color: $color-white;
 }
 
+.title--container {
+ height: 100px; 
+}
+
 .skills--container {
  &.bio {
   color: $color-secondaryBlue;
@@ -55,11 +59,19 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 }
 
 .content--top .background-color {
- background: $color-projectRed;
  height: 100%;
  width: 75%;
  position: absolute;
  right: 0;
+ &.bio {
+  background: $color-primaryBlue;
+ }
+ &.works {
+  background: $color-primaryRed;
+ }
+ &.projects {
+  background: $color-primaryYellow;
+ }
 }
 
 .content--top .pitch {
@@ -125,12 +137,12 @@ $titleLtrSpacing: $baseFontSize/4 + px;
  display: flex;
 }
 
-.skills:nth-child(2), 
+.skills:nth-child(2),
 .skills:nth-child(5) {
  justify-content: center;
 }
 
-.skills:nth-child(3), 
+.skills:nth-child(3),
 .skills:nth-child(6) {
  justify-content: flex-end;
 }

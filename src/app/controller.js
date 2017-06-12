@@ -5,10 +5,10 @@
 window.Controller = Backbone.Marionette.Object.extend({
 
 	initialize: function (options) {
-		console.log( options )
-		//		this.mainLayout = options.containerView;
-		//		this.prismicURL = 'https://aderinsola.prismic.io/api';
-		//		this.getContentFromPrismic();
+		console.log(options)
+			//		this.mainLayout = options.containerView;
+			//		this.prismicURL = 'https://aderinsola.prismic.io/api';
+			//		this.getContentFromPrismic();
 	},
 
 	handleRouteIndex: function (routeData) {
@@ -59,7 +59,7 @@ window.Controller = Backbone.Marionette.Object.extend({
 	},
 
 	renderPage: function (pageName) {
-		console.log('calling renderPage function');
+		//		console.log('calling renderPage function');
 	},
 	// handleRouteSection : function( section_id ) {
 
