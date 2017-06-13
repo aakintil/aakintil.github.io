@@ -434,7 +434,7 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		// HACK
 		this.supportingContent._ensureElement();
 		this.regionManager._regions.mainContent.show(this.contentView)
-		this.regionManager._regions.supportingContent.show(this.processView)
+			//		this.regionManager._regions.supportingContent.show(this.processView)
 			// to hide the bottom area
 			// this.supportingContent.$el.hide();
 
@@ -449,8 +449,15 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	events: {
-		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
+		"click .behind-the-scenes-button": function (event) {
+			var _this = this;
+			this.showProcessSection(event, _this);
+		},
 	},
+
+	showProcessSection: function (event, _this) {
+		_this.regionManager._regions.supportingContent.show(_this.processView); 
+	}
 
 	// "click .toggleSupportingContent" : "toggleSupportingContent"
 
@@ -571,7 +578,7 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 		content.render();
 
 
-		// need to write an event that passes data to the header but doesnn't fully re render it
+		// need to write an event that passes data to the header but doesn't fully re render it
 
 
 		// now we have to change the and get the window.pages.model that is associated with the clicked element. 
@@ -579,19 +586,6 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 		// function animate()
 		// function loadData()
 		// function redirect()
-		// Prevent form from submitting
-		//		event.preventDefault();
-
-		// Get the input
-		//		var page = $(event.currentTarget).attr("id");
-
-		//		_.each(this.pages.models, function (model) {
-		//				console.log("ooifjdklsa;fdsjaklf;asfdjsa")
-		//			})
-		// Navigate to search page with input
-		// window.location.hash = "#/" + page;
-
-		//		console.log(this, " fdklsajfdksla;jfdksl;ajfds;")
 	}
 
 });

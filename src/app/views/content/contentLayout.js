@@ -41,7 +41,7 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		// HACK
 		this.supportingContent._ensureElement();
 		this.regionManager._regions.mainContent.show(this.contentView)
-		this.regionManager._regions.supportingContent.show(this.processView)
+			//		this.regionManager._regions.supportingContent.show(this.processView)
 			// to hide the bottom area
 			// this.supportingContent.$el.hide();
 
@@ -56,8 +56,15 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	events: {
-		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
+		"click .behind-the-scenes-button": function (event) {
+			var _this = this;
+			this.showProcessSection(event, _this);
+		},
 	},
+
+	showProcessSection: function (event, _this) {
+		_this.regionManager._regions.supportingContent.show(_this.processView); 
+	}
 
 	// "click .toggleSupportingContent" : "toggleSupportingContent"
 

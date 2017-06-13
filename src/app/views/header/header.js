@@ -98,7 +98,7 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 		content.render();
 
 
-		// need to write an event that passes data to the header but doesnn't fully re render it
+		// need to write an event that passes data to the header but doesn't fully re render it
 
 
 		// now we have to change the and get the window.pages.model that is associated with the clicked element. 
@@ -106,19 +106,6 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 		// function animate()
 		// function loadData()
 		// function redirect()
-		// Prevent form from submitting
-		//		event.preventDefault();
-
-		// Get the input
-		//		var page = $(event.currentTarget).attr("id");
-
-		//		_.each(this.pages.models, function (model) {
-		//				console.log("ooifjdklsa;fdsjaklf;asfdjsa")
-		//			})
-		// Navigate to search page with input
-		// window.location.hash = "#/" + page;
-
-		//		console.log(this, " fdklsajfdksla;jfdksl;ajfds;")
 	}
 
 });
