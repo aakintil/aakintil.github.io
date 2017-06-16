@@ -37,9 +37,16 @@ window.PageModel = Backbone.Model.extend({
 		"url": "",
 	}, // come back to and reset. if there aren't any values, then give them custom defaults
 
+	url: function () {
+		// Important! It's got to know where to send its REST calls. 
+		// In this case, POST to '/donuts' and PUT to '/donuts/:id'
+		return this.id ? '/page/' + this.id : '/page';
+	},
+
 	initialize: function (defaults, PrismicDocument) {
 		this.document = PrismicDocument;
 		this.createModelSchema(PrismicDocument);
+		console.log("initializing the model")
 	},
 
 	createModelSchema(PrismicDocument) {
@@ -50,7 +57,7 @@ window.PageModel = Backbone.Model.extend({
 
 		// Set the category
 		// console.log(PrismicDocument.get('project-pages.description').asText())
-		this.set("category",  PrismicDocument.get('project-pages.category').asText());
+		this.set("category", PrismicDocument.get('project-pages.category').asText());
 
 		// setting the title
 		this.set("title", PrismicDocument.get('project-pages.title') === null ? '' : PrismicDocument.get('project-pages.title').asText());
@@ -92,7 +99,7 @@ window.PageModel = Backbone.Model.extend({
 
 			return newProcessObj;
 		})
-		this.set('process', processBlocks)
+		this.set('process', processBlocks);
 
 		//		console.log(PrismicDocument.get('project-pages.process-block').toArray());
 

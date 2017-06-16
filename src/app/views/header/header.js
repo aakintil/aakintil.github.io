@@ -13,7 +13,13 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 		"navbar": ".header__navbar",
 	},
 
+	ui: {
+		redirect: '.navigation-button'
+	},
+
 	initialize: function (options) {
+		_.bindAll(this, "render");
+		console.log( this.model)
 		this.pages = this.options.pages;
 		window.selectedModel = this.pages.models[0];
 	},
@@ -42,10 +48,14 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	events: {
-		"click .navigation-button": function (event) {
-			var _this = this;
-			this.toggleNavigation(event, _this)
-		},
+		// WORKING ---- 
+		//		"click .navigation-button": function (event) {
+		//			var _this = this;
+		//			this.toggleNavigation(event, _this)
+		//		},
+		// --- 
+
+		'click @ui.redirect': 'handleRedirect',
 		//		"click .navigation-button": 'toggleNavigation'
 	},
 
@@ -56,6 +66,11 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	/*
 		# Methods
 	*/
+
+	handleRedirect: () => {
+		console.log("wtf ", this);
+		this.model.save();
+	},
 
 	toggleNavigation: (event, bckbne) => {
 		//		console.log("clicking \n", $(event.currentTarget).attr("id"));
@@ -79,24 +94,42 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 			}
 		})
 
+		// TODO 
+		// I DON'T THINK I'M SETTING THE MODEL CORRECTLY 
+
+		//		header.selectedModel.fetch({
+		//			success: function (model, response, options) {
+		//				// ...
+		//				console.log("fetched")
+		//			}
+		//		});
+
+		// WORKING -------- 1. 
 		// get the selected model
 		//		findModel(pageTitle);
-		var mdl = new window.PageModel({}, selectedPage)
-		var content = new window.ContentLayout({
-			'pages': bckbne.pages,
-			'selectedModel': mdl
-		});
+		var mdl = new window.PageModel({}, selectedPage);
+		console.log(bckbne)
+			//		var content = new window.ContentLayout({
+			//			'pages': bckbne.pages,
+			//			'selectedModel': mdl
+			//		});
+			//
+			//		var header = new window.HeaderLayout({
+			//			'pages': bckbne.pages,
+			//			'selectedModel': mdl
+			//		});
 
-		var header = new window.HeaderLayout({
-			'pages': bckbne.pages,
-			'selectedModel': mdl
-		});
-		window.selectedModel = mdl;
-		header.render();
+		//		window.selectedModel = mdl;
+		//		header.render();
+		//
+		//		window.content = content;
+		//		content.render();
+		// ------ 1. 
 
-		window.content = content;
-		content.render();
 
+		//		console.log("\n \n ==================== \n")
+		//		console.log(selectedPage)
+		//		console.log("\n ==================== \n \n")
 
 		// need to write an event that passes data to the header but doesn't fully re render it
 
