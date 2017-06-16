@@ -18,10 +18,8 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	},
 
 	initialize: function (options) {
-		_.bindAll(this, "render");
-		console.log( this.model)
 		this.pages = this.options.pages;
-		window.selectedModel = this.pages.models[0];
+		this.homePage = this.pages.models[1];
 	},
 
 	/*
@@ -29,13 +27,14 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	onRender: function () {
+		console.log(this.defaultPage);
 		var content = new window.ContentLayout({
 			'pages': this.pages,
-			'selectedModel': this.pages.models[0]
+			'selectedModel': this.homePage
 		});
 		//		window.pages = this.pages;
 		//		window.content = content;
-		window.selectedModel = this.pages.models[0]
+		//		window.selectedModel = this.pages.models[0]
 		content.render();
 	},
 
@@ -55,7 +54,7 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 		//		},
 		// --- 
 
-		'click @ui.redirect': 'handleRedirect',
+		//		'click @ui.redirect': 'handleRedirect',
 		//		"click .navigation-button": 'toggleNavigation'
 	},
 
@@ -66,11 +65,6 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	/*
 		# Methods
 	*/
-
-	handleRedirect: () => {
-		console.log("wtf ", this);
-		this.model.save();
-	},
 
 	toggleNavigation: (event, bckbne) => {
 		//		console.log("clicking \n", $(event.currentTarget).attr("id"));
