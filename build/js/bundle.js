@@ -93,10 +93,9 @@ $(document).ready(function () {
 window.Controller = Backbone.Marionette.Object.extend({
 
 	initialize: function (options) {
-		console.log(options)
-			//		this.mainLayout = options.containerView;
-			//		this.prismicURL = 'https://aderinsola.prismic.io/api';
-			//		this.getContentFromPrismic();
+		//		this.mainLayout = options.containerView;
+		//		this.prismicURL = 'https://aderinsola.prismic.io/api';
+		//		this.getContentFromPrismic();
 	},
 
 	handleRouteIndex: function (routeData) {
@@ -113,6 +112,7 @@ window.Controller = Backbone.Marionette.Object.extend({
 
 	getContentFromPrismic: function () {
 		var _this = this;
+		console.log("getting all th edata ");
 		Prismic.api(this.prismicURL, function (error, api) {
 			api.query("", {}, function (error, response) {
 				// Log error
@@ -129,7 +129,7 @@ window.Controller = Backbone.Marionette.Object.extend({
 					// create the pages collection with each page inside the object
 					var pages = new window.PagesCollection([], response.results);
 
-					//					console.log(_this)
+					console.log("getting all th edata ", _this.options.containerView)
 					_this.options.containerView.pages = pages;
 					//					 console.error(_this.containerView)
 					//
@@ -229,7 +229,6 @@ window.PageModel = Backbone.Model.extend({
 	initialize: function (defaults, PrismicDocument) {
 		this.document = PrismicDocument;
 		this.createModelSchema(PrismicDocument);
-		console.log("initializing the model")
 	},
 
 	createModelSchema(PrismicDocument) {
@@ -401,144 +400,6 @@ window.PagesCollection = Backbone.Collection.extend({
 /*
 	# Defines the view for the main layout
 */
-window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
-
-	el: ".header__container",
-
-	template: JST["views/header/header"],
-
-	regions: {
-		"menu": ".header__menu",
-		"logo": ".header__logo",
-		"navbar": ".header__navbar",
-	},
-
-	ui: {
-		redirect: '.navigation-button'
-	},
-
-	initialize: function (options) {
-		this.pages = this.options.pages;
-		this.homePage = this.pages.models[1];
-	},
-
-	/*
-		# View 
-	*/
-
-	onRender: function () {
-		console.log(this.defaultPage);
-		var content = new window.ContentLayout({
-			'pages': this.pages,
-			'selectedModel': this.homePage
-		});
-		//		window.pages = this.pages;
-		//		window.content = content;
-		//		window.selectedModel = this.pages.models[0]
-		content.render();
-	},
-
-	findModel: function (pageTitle) {
-		console.log("find model");
-	},
-
-	/*
-		# Events
-	*/
-
-	events: {
-		// WORKING ---- 
-		//		"click .navigation-button": function (event) {
-		//			var _this = this;
-		//			this.toggleNavigation(event, _this)
-		//		},
-		// --- 
-
-		//		'click @ui.redirect': 'handleRedirect',
-		//		"click .navigation-button": 'toggleNavigation'
-	},
-
-	//			"click .navigation-button": function () {  // have to create a function to pass the headerlayout variable into the events jquery function
-	//				var headerLayout = this;
-	//				this.toggleNavigation(headerLayout, event);
-	//			} //this.toggleNavigation(this.pages)
-	/*
-		# Methods
-	*/
-
-	toggleNavigation: (event, bckbne) => {
-		//		console.log("clicking \n", $(event.currentTarget).attr("id"));
-		//		console.log('cdaldlfjdskalfjdskl event \n ', event)
-		//		console.log("clicking \n", bckbne.trigger);
-
-
-
-		//		this.vent.trigger("editMedication", this.model);
-
-		// working---
-		var pageTitle = $(event.currentTarget).attr("id");
-		window.location.hash = "#/" + pageTitle;
-
-		var pages = bckbne.pages.models;
-		var selectedPage = {};
-		_.each(pages, function (page) {
-			var slug = page.document.slug;
-			if (slug === pageTitle) {
-				selectedPage = page.document;
-			}
-		})
-
-		// TODO 
-		// I DON'T THINK I'M SETTING THE MODEL CORRECTLY 
-
-		//		header.selectedModel.fetch({
-		//			success: function (model, response, options) {
-		//				// ...
-		//				console.log("fetched")
-		//			}
-		//		});
-
-		// WORKING -------- 1. 
-		// get the selected model
-		//		findModel(pageTitle);
-		var mdl = new window.PageModel({}, selectedPage);
-		console.log(bckbne)
-			//		var content = new window.ContentLayout({
-			//			'pages': bckbne.pages,
-			//			'selectedModel': mdl
-			//		});
-			//
-			//		var header = new window.HeaderLayout({
-			//			'pages': bckbne.pages,
-			//			'selectedModel': mdl
-			//		});
-
-		//		window.selectedModel = mdl;
-		//		header.render();
-		//
-		//		window.content = content;
-		//		content.render();
-		// ------ 1. 
-
-
-		//		console.log("\n \n ==================== \n")
-		//		console.log(selectedPage)
-		//		console.log("\n ==================== \n \n")
-
-		// need to write an event that passes data to the header but doesn't fully re render it
-
-
-		// now we have to change the and get the window.pages.model that is associated with the clicked element. 
-		// write a helper function that does animation too
-		// function animate()
-		// function loadData()
-		// function redirect()
-	}
-
-});
-/*
-	# Defines the view for the main layout
-*/
 
 window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
@@ -551,13 +412,23 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		"supportingContent": ".content-bottom-container",
 	},
 
+	updateView: function (newModel) {
+		//		this.supportingContent._ensureElement();
+		this.newContentView = new window.ExecutiveSummaryView({
+			'model': newModel,
+		});
+		//		this.remove();
+		//		this.unbind();
+
+		this.supportingContent._ensureElement();
+		this.regionManager._regions.mainContent.empty();
+		this.regionManager._regions.mainContent.show(this.newContentView)
+	},
 	initialize: function (options) {
 		this.pagesCollection = options.pages;
 		this.selectedModel = options.selectedModel;
 		let _pagesCollection = this.pagesCollection.models;
-		//		_.each(_pagesCollection, function (i) {
-		//			console.log(i.collection.prismicDataArray)
-		//		});
+
 		this.contentView = new window.ExecutiveSummaryView({
 			'model': this.selectedModel,
 			'collection': this.pagesCollection.prismicDataArray
@@ -577,9 +448,10 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		// apparently you're supposed to call this first? investigate
 		// http://stackoverflow.com/questions/10946392/hiding-a-view-in-region-manager-when-another-view-is-shown
 		// HACK
+		this.mainContent._ensureElement();
 		this.supportingContent._ensureElement();
 		this.regionManager._regions.mainContent.show(this.contentView)
-			//		this.regionManager._regions.supportingContent.show(this.processView)
+		this.regionManager._regions.supportingContent.show(this.processView)
 			// to hide the bottom area
 			// this.supportingContent.$el.hide();
 
@@ -601,7 +473,8 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 	},
 
 	showProcessSection: function (event, _this) {
-		_this.regionManager._regions.supportingContent.show(_this.processView); 
+		console.log("calling me \n ", _this.processView)
+		_this.regionManager._regions.supportingContent.show(_this.processView);
 	}
 
 	// "click .toggleSupportingContent" : "toggleSupportingContent"
@@ -673,6 +546,86 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 
 });
 /*
+	# Defines the view for the main layout
+*/
+window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
+
+	el: ".header__container",
+
+	template: JST["views/header/header"],
+
+	regions: {
+		"menu": ".header__menu",
+		"logo": ".header__logo",
+		"navbar": ".header__navbar",
+	},
+
+	ui: {
+		redirect: '.navigation-button'
+	},
+
+	initialize: function (options) {
+		this.pages = this.options.pages;
+		this.homePage = this.pages.models[1];
+	},
+
+	/*
+		# View 
+	*/
+
+	onRender: function () {
+		var content = new window.ContentLayout({
+			'pages': this.pages,
+			'selectedModel': this.homePage
+		});
+		this.contentView = content;
+		content.render();
+	},
+
+	/*
+		# Events
+	*/
+
+	events: {
+		"click .navigation-button": function (event) { // have to create a function to pass the headerlayout variable into the events jquery function
+			var headerLayout = this;
+			this.toggleNavigation(event, headerLayout);
+		},
+	},
+
+	/*
+		# Methods
+	*/
+
+	toggleNavigation: (event, bckbne) => {
+		var pageTitle = $(event.currentTarget).attr("id");
+		window.location.hash = "#/" + pageTitle;
+
+		var pages = bckbne.pages.models;
+		var selectedPage = {};
+		_.each(pages, function (page) {
+			var slug = page.document.slug;
+			if (slug === pageTitle) {
+				selectedPage = page;
+			}
+		});
+
+		bckbne.contentView.updateView(selectedPage);
+		// bckbne.contentView.$el.html(bckbne.contentView.template(bckbne.contentView.selectedPage));
+		
+		
+		// need to write an event that passes data to the header but doesn't fully re render it
+
+
+		// now we have to change the and get the window.pages.model that is associated with the clicked element. 
+		// write a helper function that does animation too
+		// function animate()
+		// function loadData()
+		// function redirect()
+	}
+
+});
+/*
 	# Defines the view that 
 */
 
@@ -739,47 +692,6 @@ window.ViewCompositeView = Backbone.Marionette.CompositeView.extend(
 	# Defines the view for 
 */
 
-window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
-
-  template: JST["views/content/executiveSummary/executiveSummary"],
-
-  initialize: function (options) {
-  },
-
-  /*
-  	# View 
-  */
-
-  onRender: function () {
-    // Get rid of that pesky wrapping-div.
-    // Assumes 1 child element present in template.
-    this.$el = this.$el.children();
-    // Unwrap the element to prevent infinitely 
-    // nesting elements during re-render.
-    this.$el.unwrap();
-    this.setElement(this.$el);
-
-      //		var old = this.$el;
-      //		//		this.setElement('<div class="content--top"></div>');
-      ////		console.log('old element \n', this.$el.context.innerHTML)
-      //		old.replaceWith(this.$el.context.innerHTML);
-  },
-
-  /*
-  	# Events
-  */
-
-  events: {},
-
-  /*
-  	# Methods
-  */
-
-});
-/*
-	# Defines the view for 
-*/
-
 window.ProcessView = Backbone.Marionette.ItemView.extend({
 
   template: JST["views/content/process/process"],
@@ -805,6 +717,47 @@ window.ProcessView = Backbone.Marionette.ItemView.extend({
     //		//		this.setElement('<div class="content--top"></div>');
     ////		console.log('old element \n', this.$el.context.innerHTML)
     //		old.replaceWith(this.$el.context.innerHTML);
+  },
+
+  /*
+  	# Events
+  */
+
+  events: {},
+
+  /*
+  	# Methods
+  */
+
+});
+/*
+	# Defines the view for 
+*/
+
+window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
+
+  template: JST["views/content/executiveSummary/executiveSummary"],
+
+  initialize: function (options) {
+  },
+
+  /*
+  	# View 
+  */
+
+  onRender: function () {
+    // Get rid of that pesky wrapping-div.
+    // Assumes 1 child element present in template.
+    this.$el = this.$el.children();
+    // Unwrap the element to prevent infinitely 
+    // nesting elements during re-render.
+    this.$el.unwrap();
+    this.setElement(this.$el);
+
+      //		var old = this.$el;
+      //		//		this.setElement('<div class="content--top"></div>');
+      ////		console.log('old element \n', this.$el.context.innerHTML)
+      //		old.replaceWith(this.$el.context.innerHTML);
   },
 
   /*

@@ -5,10 +5,9 @@
 window.Controller = Backbone.Marionette.Object.extend({
 
 	initialize: function (options) {
-		console.log(options)
-			//		this.mainLayout = options.containerView;
-			//		this.prismicURL = 'https://aderinsola.prismic.io/api';
-			//		this.getContentFromPrismic();
+		//		this.mainLayout = options.containerView;
+		//		this.prismicURL = 'https://aderinsola.prismic.io/api';
+		//		this.getContentFromPrismic();
 	},
 
 	handleRouteIndex: function (routeData) {
@@ -25,6 +24,7 @@ window.Controller = Backbone.Marionette.Object.extend({
 
 	getContentFromPrismic: function () {
 		var _this = this;
+		console.log("getting all th edata ");
 		Prismic.api(this.prismicURL, function (error, api) {
 			api.query("", {}, function (error, response) {
 				// Log error
@@ -41,7 +41,7 @@ window.Controller = Backbone.Marionette.Object.extend({
 					// create the pages collection with each page inside the object
 					var pages = new window.PagesCollection([], response.results);
 
-					//					console.log(_this)
+					console.log("getting all th edata ", _this.options.containerView)
 					_this.options.containerView.pages = pages;
 					//					 console.error(_this.containerView)
 					//

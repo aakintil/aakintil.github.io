@@ -13,13 +13,23 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		"supportingContent": ".content-bottom-container",
 	},
 
+	updateView: function (newModel) {
+		//		this.supportingContent._ensureElement();
+		this.newContentView = new window.ExecutiveSummaryView({
+			'model': newModel,
+		});
+		//		this.remove();
+		//		this.unbind();
+
+		this.supportingContent._ensureElement();
+		this.regionManager._regions.mainContent.empty();
+		this.regionManager._regions.mainContent.show(this.newContentView)
+	},
 	initialize: function (options) {
 		this.pagesCollection = options.pages;
 		this.selectedModel = options.selectedModel;
 		let _pagesCollection = this.pagesCollection.models;
-		//		_.each(_pagesCollection, function (i) {
-		//			console.log(i.collection.prismicDataArray)
-		//		});
+
 		this.contentView = new window.ExecutiveSummaryView({
 			'model': this.selectedModel,
 			'collection': this.pagesCollection.prismicDataArray
@@ -39,9 +49,10 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		// apparently you're supposed to call this first? investigate
 		// http://stackoverflow.com/questions/10946392/hiding-a-view-in-region-manager-when-another-view-is-shown
 		// HACK
+		this.mainContent._ensureElement();
 		this.supportingContent._ensureElement();
 		this.regionManager._regions.mainContent.show(this.contentView)
-			//		this.regionManager._regions.supportingContent.show(this.processView)
+		this.regionManager._regions.supportingContent.show(this.processView)
 			// to hide the bottom area
 			// this.supportingContent.$el.hide();
 
@@ -63,7 +74,8 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 	},
 
 	showProcessSection: function (event, _this) {
-		_this.regionManager._regions.supportingContent.show(_this.processView); 
+		console.log("calling me \n ", _this.processView)
+		_this.regionManager._regions.supportingContent.show(_this.processView);
 	}
 
 	// "click .toggleSupportingContent" : "toggleSupportingContent"
