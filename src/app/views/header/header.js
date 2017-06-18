@@ -18,7 +18,11 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	},
 
 	initialize: function (options) {
+		// store the pages variable
 		this.pages = this.options.pages;
+
+		// set the home page 
+		// TODO --> what happens if someone comes in with aderinsola.com/#/claron....then what?!
 		this.homePage = this.pages.models[1];
 	},
 
@@ -27,11 +31,16 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	onRender: function () {
+		// create a new content layout and pass the necessary parameters: model and collection
 		var content = new window.ContentLayout({
 			'pages': this.pages,
 			'selectedModel': this.homePage
 		});
+
+		// store the content view
 		this.contentView = content;
+
+		// render the content view
 		content.render();
 	},
 
@@ -40,9 +49,12 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	events: {
-		"click .navigation-button": function (event) { // have to create a function to pass the headerlayout variable into the events jquery function
+		// have to create a function to pass the headerlayout variable into the events jquery function
+		"click .navigation-button": function (event) {
 			var headerLayout = this;
 			this.toggleNavigation(event, headerLayout);
+			
+			// WHY DON'T WE MOVE TOGGLENAVIGATION into here?
 		},
 	},
 
@@ -51,25 +63,23 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	toggleNavigation: (event, bckbne) => {
+		// save the page title
 		var pageTitle = $(event.currentTarget).attr("id");
+		
+		// create a new url for it
 		window.location.hash = "#/" + pageTitle;
 
+		// loop through the backbone models and find which data is associated with the page click
 		var pages = bckbne.pages.models;
 		var selectedPage = {};
 		_.each(pages, function (page) {
 			var slug = page.document.slug;
 			if (slug === pageTitle) {
-				selectedPage = page;
+				selectedPage = page; // store the model based on the slug
 			}
 		});
 
 		bckbne.contentView.updateView(selectedPage);
-		// bckbne.contentView.$el.html(bckbne.contentView.template(bckbne.contentView.selectedPage));
-		
-		
-		// need to write an event that passes data to the header but doesn't fully re render it
-
-
 		// now we have to change the and get the window.pages.model that is associated with the clicked element. 
 		// write a helper function that does animation too
 		// function animate()

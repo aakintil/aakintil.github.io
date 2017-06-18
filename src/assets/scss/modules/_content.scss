@@ -98,6 +98,18 @@ $titleLtrSpacing: $baseFontSize/4 + px;
  justify-content: space-between;
 }
 
+// TODO 
+// the fix is so that we need to change the children's flex-basis value
+
+/*
+  flex-direction: column;
+  height: 100%;
+
+ .title--container, .callout--container, .description--container {
+   flex-basis: auto
+ } 
+ */
+
 .content--top .slideshow {
  flex-direction: row;
  flex-wrap: wrap;

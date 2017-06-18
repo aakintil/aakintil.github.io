@@ -1621,6 +1621,14 @@ body {
   min-height: 1304px !important;
   justify-content: space-between; }
 
+/*
+  flex-direction: column;
+  height: 100%;
+
+ .title--container, .callout--container, .description--container {
+   flex-basis: auto
+ } 
+ */
 .content--top .slideshow {
   flex-direction: row;
   flex-wrap: wrap; }

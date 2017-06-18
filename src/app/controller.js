@@ -5,13 +5,14 @@
 window.Controller = Backbone.Marionette.Object.extend({
 
 	initialize: function (options) {
+		// none of this is even getting rendered anymore
 		//		this.mainLayout = options.containerView;
 		//		this.prismicURL = 'https://aderinsola.prismic.io/api';
 		//		this.getContentFromPrismic();
 	},
 
 	handleRouteIndex: function (routeData) {
-
+		console.log("what")
 		// Clear the region
 		//		this.containerView.content.empty();
 		// Init view
