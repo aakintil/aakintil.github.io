@@ -28,6 +28,24 @@ __p += '<div class="page-container">\n\t<!-- Header -->\n\t<div class="layout--h
 }
 return __p
 },
+"views/common/compositeView/compositeView": function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '<div class="cv__container"></div>';
+
+}
+return __p
+},
+"views/common/compositeView/compositeView_item": function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '<div class="">\n\tItem\n</div>';
+
+}
+return __p
+},
 "views/content/executiveSummary/executiveSummary": function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
@@ -80,24 +98,6 @@ __p += '\n    <div class="process-block ' +
 '\n        </p>\n      </div>\n    </div>\n    ';
  }); ;
 __p += '\n\n</div>';
-
-}
-return __p
-},
-"views/common/compositeView/compositeView": function(obj) {
-obj || (obj = {});
-var __t, __p = '', __e = _.escape;
-with (obj) {
-__p += '<div class="cv__container"></div>';
-
-}
-return __p
-},
-"views/common/compositeView/compositeView_item": function(obj) {
-obj || (obj = {});
-var __t, __p = '', __e = _.escape;
-with (obj) {
-__p += '<div class="">\n\tItem\n</div>';
 
 }
 return __p

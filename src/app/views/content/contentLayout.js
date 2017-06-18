@@ -18,12 +18,17 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		this.newContentView = new window.ExecutiveSummaryView({
 			'model': newModel,
 		});
+		this.newProcessView = new window.ProcessView({
+			'model': newModel
+		});
 		//		this.remove();
 		//		this.unbind();
 
-		this.supportingContent._ensureElement();
+		//		this.supportingContent._ensureElement();
 		this.regionManager._regions.mainContent.empty();
-		this.regionManager._regions.mainContent.show(this.newContentView)
+		this.regionManager._regions.supportingContent.empty();
+		this.regionManager._regions.mainContent.show(this.newContentView);
+		//		console.log('fdsafdsa \n ', this.newProcessView); //this.regionManager._regions.supportingContent.currentView)
 	},
 	initialize: function (options) {
 		this.pagesCollection = options.pages;
@@ -68,14 +73,16 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 	events: {
 		"click .behind-the-scenes-button": function (event) {
-			var _this = this;
-			this.showProcessSection(event, _this);
+			//			var bckbne = this;
+			//			this.showProcessSection(event, bckbne);
+			//			this.regionManager._regions.supportingContent.currentView = this.newProcessView;
+			this.regionManager._regions.supportingContent.show(this.newProcessView);
 		},
 	},
 
-	showProcessSection: function (event, _this) {
-		console.log("calling me \n ", _this.processView)
-		_this.regionManager._regions.supportingContent.show(_this.processView);
+	showProcessSection: function (event, bckbne) {
+		console.log("\n\n calling me \n ", bckbne.regionManager._regions.supportingContent)
+		bckbne.regionManager._regions.supportingContent.show(bckbne.processView);
 	}
 
 	// "click .toggleSupportingContent" : "toggleSupportingContent"

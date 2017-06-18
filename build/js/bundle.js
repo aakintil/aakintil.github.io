@@ -417,12 +417,17 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 		this.newContentView = new window.ExecutiveSummaryView({
 			'model': newModel,
 		});
+		this.newProcessView = new window.ProcessView({
+			'model': newModel
+		});
 		//		this.remove();
 		//		this.unbind();
 
-		this.supportingContent._ensureElement();
+		//		this.supportingContent._ensureElement();
 		this.regionManager._regions.mainContent.empty();
-		this.regionManager._regions.mainContent.show(this.newContentView)
+		this.regionManager._regions.supportingContent.empty();
+		this.regionManager._regions.mainContent.show(this.newContentView);
+		//		console.log('fdsafdsa \n ', this.newProcessView); //this.regionManager._regions.supportingContent.currentView)
 	},
 	initialize: function (options) {
 		this.pagesCollection = options.pages;
@@ -467,14 +472,16 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 	events: {
 		"click .behind-the-scenes-button": function (event) {
-			var _this = this;
-			this.showProcessSection(event, _this);
+			//			var bckbne = this;
+			//			this.showProcessSection(event, bckbne);
+			//			this.regionManager._regions.supportingContent.currentView = this.newProcessView;
+			this.regionManager._regions.supportingContent.show(this.newProcessView);
 		},
 	},
 
-	showProcessSection: function (event, _this) {
-		console.log("calling me \n ", _this.processView)
-		_this.regionManager._regions.supportingContent.show(_this.processView);
+	showProcessSection: function (event, bckbne) {
+		console.log("\n\n calling me \n ", bckbne.regionManager._regions.supportingContent)
+		bckbne.regionManager._regions.supportingContent.show(bckbne.processView);
 	}
 
 	// "click .toggleSupportingContent" : "toggleSupportingContent"
@@ -692,6 +699,47 @@ window.ViewCompositeView = Backbone.Marionette.CompositeView.extend(
 	# Defines the view for 
 */
 
+window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
+
+  template: JST["views/content/executiveSummary/executiveSummary"],
+
+  initialize: function (options) {
+  },
+
+  /*
+  	# View 
+  */
+
+  onRender: function () {
+    // Get rid of that pesky wrapping-div.
+    // Assumes 1 child element present in template.
+    this.$el = this.$el.children();
+    // Unwrap the element to prevent infinitely 
+    // nesting elements during re-render.
+    this.$el.unwrap();
+    this.setElement(this.$el);
+
+      //		var old = this.$el;
+      //		//		this.setElement('<div class="content--top"></div>');
+      ////		console.log('old element \n', this.$el.context.innerHTML)
+      //		old.replaceWith(this.$el.context.innerHTML);
+  },
+
+  /*
+  	# Events
+  */
+
+  events: {},
+
+  /*
+  	# Methods
+  */
+
+});
+/*
+	# Defines the view for 
+*/
+
 window.ProcessView = Backbone.Marionette.ItemView.extend({
 
   template: JST["views/content/process/process"],
@@ -717,47 +765,6 @@ window.ProcessView = Backbone.Marionette.ItemView.extend({
     //		//		this.setElement('<div class="content--top"></div>');
     ////		console.log('old element \n', this.$el.context.innerHTML)
     //		old.replaceWith(this.$el.context.innerHTML);
-  },
-
-  /*
-  	# Events
-  */
-
-  events: {},
-
-  /*
-  	# Methods
-  */
-
-});
-/*
-	# Defines the view for 
-*/
-
-window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
-
-  template: JST["views/content/executiveSummary/executiveSummary"],
-
-  initialize: function (options) {
-  },
-
-  /*
-  	# View 
-  */
-
-  onRender: function () {
-    // Get rid of that pesky wrapping-div.
-    // Assumes 1 child element present in template.
-    this.$el = this.$el.children();
-    // Unwrap the element to prevent infinitely 
-    // nesting elements during re-render.
-    this.$el.unwrap();
-    this.setElement(this.$el);
-
-      //		var old = this.$el;
-      //		//		this.setElement('<div class="content--top"></div>');
-      ////		console.log('old element \n', this.$el.context.innerHTML)
-      //		old.replaceWith(this.$el.context.innerHTML);
   },
 
   /*
