@@ -23,7 +23,7 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 
 		// set the home page 
 		// TODO --> what happens if someone comes in with aderinsola.com/#/claron....then what?!
-		this.homePage = this.pages.models[1];
+		this.homePage = this.pages.models[8];
 	},
 
 	/*
