@@ -33,15 +33,34 @@ $titleLtrSpacing: $baseFontSize/4 + px;
  color: $color-white;
 }
 
-//.callout--container {
-// display: flex;
-// justify-content: flex-start;
-// 
-// .callout {
-//  display: flex; 
-//  justify-content: flex-start;
-// }
-//}
+.title--container {
+ // align-self: flex-start;
+ flex-basis: 20%;
+}
+
+.callout--container {
+ // align-self: center;
+ flex-basis: 20%;
+}
+
+.description--container {
+ flex-basis: 45%;
+}
+
+.skills--container {
+ // align-self: flex-end;
+ flex-basis: 10%;
+}
+
+.callout--container {
+ // display: flex;
+ // justify-content: flex-start;
+ // .callout {
+ //  display: flex;
+ //  justify-content: flex-start;
+ // }
+}
+
 .skills--container {
  &.bio {
   color: $color-secondaryBlue;
@@ -93,9 +112,11 @@ $titleLtrSpacing: $baseFontSize/4 + px;
 
 .content--top .pitch {
  flex-direction: column;
- height: 100%;
- min-height: 1304px !important;
- justify-content: space-between;
+ // height: 100%;
+ // min-height: 1304px !important;
+ // justify-content: space-between;
+ // flex-direction: row;
+ //  flex-wrap: wrap;
 }
 
 // TODO 
