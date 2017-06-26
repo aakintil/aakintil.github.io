@@ -78,13 +78,6 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 		// we always want to show the content view on render
 		this.regionManager._regions.mainContent.show(this.contentView)
-			// to hide the bottom area
-			// this.supportingContent.$el.hide();
-
-		//		var _this = this;
-		//		setTimeout( function() {
-		//			_this.supportingContent.$el.show(); 
-		//		}, 2000 )
 	},
 
 	/*

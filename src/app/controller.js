@@ -13,6 +13,8 @@ window.Controller = Backbone.Marionette.Object.extend({
 
 	handleRouteIndex: function (routeData) {
 		console.log("what")
+		// TODO 
+		// we have to come back here and set this up properly 
 		// Clear the region
 		//		this.containerView.content.empty();
 		// Init view

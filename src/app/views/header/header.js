@@ -22,8 +22,16 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 		this.pages = this.options.pages;
 
 		// set the home page 
+		// *********************
+		// we need to do this in the controller *******
+		// *********************
 		// TODO --> what happens if someone comes in with aderinsola.com/#/claron....then what?!
 		this.homePage = this.pages.models[8];
+
+		// testing out a bind all
+		//		console.log(this.render)
+		//		_.bindAll(this, this.render);
+		//		this.pages.models.bind('change', this.render);
 	},
 
 	/*
@@ -36,6 +44,9 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 			'pages': this.pages,
 			'selectedModel': this.homePage
 		});
+
+		// set the class to the appropriate background color for the navbar
+		this.$el.find('.header__logo h2').attr("class", content.selectedModel.attributes.category)
 
 		// store the content view
 		this.contentView = content;
@@ -53,8 +64,6 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 		"click .navigation-button": function (event) {
 			var headerLayout = this;
 			this.toggleNavigation(event, headerLayout);
-			
-			// WHY DON'T WE MOVE TOGGLENAVIGATION into here?
 		},
 	},
 
@@ -65,7 +74,7 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	toggleNavigation: (event, bckbne) => {
 		// save the page title
 		var pageTitle = $(event.currentTarget).attr("id");
-		
+
 		// create a new url for it
 		window.location.hash = "#/" + pageTitle;
 
@@ -80,6 +89,8 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 		});
 
 		bckbne.contentView.updateView(selectedPage);
+		console.log('\n on button press: ', selectedPage.attributes.category, '\n')
+		bckbne.$el.find('.header__logo h2').attr("class", selectedPage.attributes.category);
 		// now we have to change the and get the window.pages.model that is associated with the clicked element. 
 		// write a helper function that does animation too
 		// function animate()
