@@ -13,14 +13,14 @@ window.Controller = Backbone.Marionette.Object.extend({
 
 	handleRouteIndex: function (routeData) {
 		console.log("what")
-		// TODO 
-		// we have to come back here and set this up properly 
-		// Clear the region
-		//		this.containerView.content.empty();
-		// Init view
-		// var view = new window.View();
-		// Show  view
-		// this.containerView.main.show( view );
+			// TODO 
+			// we have to come back here and set this up properly 
+			// Clear the region
+			//		this.containerView.content.empty();
+			// Init view
+			// var view = new window.View();
+			// Show  view
+			// this.containerView.main.show( view );
 	},
 
 	// getter functions
@@ -31,8 +31,9 @@ window.Controller = Backbone.Marionette.Object.extend({
 		Prismic.api(this.prismicURL, function (error, api) {
 			api.query("", {}, function (error, response) {
 				// Log error
-				if (error) console.log("Prismic error: ", error);
-				else {
+				if (error) {
+					console.log("Prismic error: ", error);
+				} else {
 					// console.log("Prismic success, fetching data...", response)
 					// Create the model from the Prismic response
 
