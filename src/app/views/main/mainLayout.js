@@ -16,7 +16,7 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 	initialize: function (data) {
 
 		this.collection.each(function (page) {
-//			console.log((page))
+			//			console.log((page))
 		});
 		//		console.log('initializing the main layout view ', this.collection.get("about"))
 		//		this.pages = options.pages;

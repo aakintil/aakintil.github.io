@@ -2,6 +2,7 @@
 	# Defines the object for the application
 */
 
+
 window.Application = Backbone.Marionette.Application.extend({
 
   initialize: function (options) {},
@@ -147,44 +148,12 @@ $(document).ready(function () {
           // have to figure out how to render the content view from here
           // ------------------
 
+          var pages = response.results; 
           // create the pages collection with each page inside the object
-          var pages = new window.PagesCollection([], response.results);
-
-          //					console.log(_this)
-          // _this.options.containerView.pages = pages;
-          //					 console.error(_this.containerView)
-          //
-          // var pages = new window.ModelArticlesCollection([], response.results);
-          // Init view
-          //					var view = new window.ViewHome({
-          //						"articles": articles
-          //					});
-          // Show  view
-          // _this.containerView.main.show(view);
-          //    });
-
-
-          // Init the main view
-          App.rootView = new window.MainLayout({
-            pages: pages
-          });
-
-          // Init router
-          var Controller = new window.Controller({
-            containerView: App.rootView
-          });
-          var Router = new window.Router({
-            controller: Controller,
-            containerView: App.rootView
-          });
-
-          // Start the app
-          // App.start( { "data": data } );
-          App.start({
-            'pages': pages
-          });
+          var pagesCollection = new window.PagesCollection([], pages);
+          
+          App.start(pagesCollection);
         }
-
       });
     }
   });
@@ -491,17 +460,17 @@ window.PageModel = Backbone.Model.extend({
 window.PagesCollection = Backbone.Collection.extend({
     model: window.PageModel,
 
-    initialize: function (array, PrismicDataArray, localStore) {
-
+    initialize: function (array, PrismicDataArray) {
         this.prismicData = PrismicDataArray;
         // For each Document
         _.each(this.prismicData, function (page) {
             // Create a new Document Model
-            var a = new window.PageModel({}, page, localStore);
+            var a = new window.PageModel({}, page);
 
             // Add it to this collection
             array.push(a);
         }.bind(this));
+        
     },
 
     /*
@@ -750,7 +719,7 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 	initialize: function (data) {
 
 		this.collection.each(function (page) {
-//			console.log((page))
+			//			console.log((page))
 		});
 		//		console.log('initializing the main layout view ', this.collection.get("about"))
 		//		this.pages = options.pages;
@@ -782,47 +751,6 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 	/*
 		# Methods
 	*/
-
-});
-/*
-	# Defines the view for 
-*/
-
-window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
-
-  template: JST["views/content/executiveSummary/executiveSummary"],
-
-  initialize: function (options) {
-  },
-
-  /*
-  	# View 
-  */
-
-  onRender: function () {
-    // Get rid of that pesky wrapping-div.
-    // Assumes 1 child element present in template.
-    this.$el = this.$el.children();
-    // Unwrap the element to prevent infinitely 
-    // nesting elements during re-render.
-    this.$el.unwrap();
-    this.setElement(this.$el);
-
-      //		var old = this.$el;
-      //		//		this.setElement('<div class="content--top"></div>');
-      ////		console.log('old element \n', this.$el.context.innerHTML)
-      //		old.replaceWith(this.$el.context.innerHTML);
-  },
-
-  /*
-  	# Events
-  */
-
-  events: {},
-
-  /*
-  	# Methods
-  */
 
 });
 /*
@@ -886,6 +814,47 @@ window.ViewCompositeView = Backbone.Marionette.CompositeView.extend(
 	/*
 		# Methods
 	*/
+
+});
+/*
+	# Defines the view for 
+*/
+
+window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
+
+  template: JST["views/content/executiveSummary/executiveSummary"],
+
+  initialize: function (options) {
+  },
+
+  /*
+  	# View 
+  */
+
+  onRender: function () {
+    // Get rid of that pesky wrapping-div.
+    // Assumes 1 child element present in template.
+    this.$el = this.$el.children();
+    // Unwrap the element to prevent infinitely 
+    // nesting elements during re-render.
+    this.$el.unwrap();
+    this.setElement(this.$el);
+
+      //		var old = this.$el;
+      //		//		this.setElement('<div class="content--top"></div>');
+      ////		console.log('old element \n', this.$el.context.innerHTML)
+      //		old.replaceWith(this.$el.context.innerHTML);
+  },
+
+  /*
+  	# Events
+  */
+
+  events: {},
+
+  /*
+  	# Methods
+  */
 
 });
 /*

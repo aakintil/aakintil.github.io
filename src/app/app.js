@@ -2,6 +2,7 @@
 	# Defines the object for the application
 */
 
+
 window.Application = Backbone.Marionette.Application.extend({
 
   initialize: function (options) {},
@@ -147,44 +148,12 @@ $(document).ready(function () {
           // have to figure out how to render the content view from here
           // ------------------
 
+          var pages = response.results; 
           // create the pages collection with each page inside the object
-          var pages = new window.PagesCollection([], response.results);
-
-          //					console.log(_this)
-          // _this.options.containerView.pages = pages;
-          //					 console.error(_this.containerView)
-          //
-          // var pages = new window.ModelArticlesCollection([], response.results);
-          // Init view
-          //					var view = new window.ViewHome({
-          //						"articles": articles
-          //					});
-          // Show  view
-          // _this.containerView.main.show(view);
-          //    });
-
-
-          // Init the main view
-          App.rootView = new window.MainLayout({
-            pages: pages
-          });
-
-          // Init router
-          var Controller = new window.Controller({
-            containerView: App.rootView
-          });
-          var Router = new window.Router({
-            controller: Controller,
-            containerView: App.rootView
-          });
-
-          // Start the app
-          // App.start( { "data": data } );
-          App.start({
-            'pages': pages
-          });
+          var pagesCollection = new window.PagesCollection([], pages);
+          
+          App.start(pagesCollection);
         }
-
       });
     }
   });
