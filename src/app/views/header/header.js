@@ -2,7 +2,8 @@
 	# Defines the view for the main layout
 */
 window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
-
+// TODO 
+	// header layout might have to be a composite view and each 
 	el: ".header__container",
 
 	template: JST["views/header/header"],
