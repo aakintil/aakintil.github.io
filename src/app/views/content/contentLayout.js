@@ -44,24 +44,24 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 	// init call
 	initialize: function (options) {
-
-		// save the pages collection
-		this.pagesCollection = options.pages;
-
-		// save the selected model
-		this.selectedModel = options.selectedModel;
-
-		// create a new exec view with the model and collection ( we don't need the collection )
-		this.contentView = new window.ExecutiveSummaryView({
-			'model': this.selectedModel,
-			'collection': this.pagesCollection.prismicDataArray
-		});
-
-		// create a new process view with the model and collection ( we don't need the collection )
-		this.processView = new window.ProcessView({
-			'model': this.selectedModel,
-			'collection': this.pagesCollection.prismicDataArray
-		})
+		console.log(options)
+//		// save the pages collection
+//		this.pagesCollection = options.pages;
+//
+//		// save the selected model
+//		this.selectedModel = options.selectedModel;
+//
+//		// create a new exec view with the model and collection ( we don't need the collection )
+//		this.contentView = new window.ExecutiveSummaryView({
+//			'model': this.selectedModel,
+//			'collection': this.pagesCollection.prismicDataArray
+//		});
+//
+//		// create a new process view with the model and collection ( we don't need the collection )
+//		this.processView = new window.ProcessView({
+//			'model': this.selectedModel,
+//			'collection': this.pagesCollection.prismicDataArray
+//		})
 	},
 
 	/*

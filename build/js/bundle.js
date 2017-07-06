@@ -20,7 +20,6 @@ window.Application = Backbone.Marionette.Application.extend({
 
     var dataCollection = this.collection;
 
-    console.log('data collection obj \n', dataCollection);
     // setup the root view and initialize the main layout
     App.mainLayoutView = new window.MainLayout({
       data: this.data,
@@ -40,7 +39,7 @@ window.Application = Backbone.Marionette.Application.extend({
     });
 
     // render the main layout view
-//    this.mainLayoutView.render();
+    //    this.mainLayoutView.render();
 
     // Start the history keeping
     Backbone.history.start();
@@ -169,7 +168,7 @@ window.Controller = Backbone.Marionette.Object.extend({
 	},
 
 	handleRouteIndex: function (routeData) {
-		console.log("what");
+		console.log("index routing");
 		// TODO 
 		// we have to come back here and set this up properly 
 		// Clear the region
@@ -180,6 +179,11 @@ window.Controller = Backbone.Marionette.Object.extend({
 		// this.containerView.main.show( view );
 	},
 
+	renderPage: function (pageName) {
+		console.log('calling renderPage function');
+		// you have to set the model inside here...? 
+		console.log(this)
+	},
 	// getter functions
 
 	getContentFromPrismic: function () {
@@ -218,10 +222,6 @@ window.Controller = Backbone.Marionette.Object.extend({
 		});
 
 	},
-
-	renderPage: function (pageName) {
-		//		console.log('calling renderPage function');
-	},
 	// handleRouteSection : function( section_id ) {
 
 	// 	// Clear the region
@@ -249,8 +249,8 @@ window.Router = Backbone.Marionette.AppRouter.extend( {
 
 	appRoutes: {
 		"(/)"								: "handleRouteIndex",
-		//		"(/):page"					: "renderPage"
-		// "section/:id" 					: "handleRouteSection",
+		"(/):page"								: "renderPage"
+		// "section/:id" 						: "handleRouteSection",
 	}
 
 });
@@ -488,32 +488,22 @@ window.PagesCollection = Backbone.Collection.extend({
 
 
 window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
-// TODO 
+	// TODO 
 	// header layout might have to be a composite view and each 
 	el: ".header__container",
 
 	template: JST["views/header/header"],
 
-	regions: {
-		"menu": ".header__menu",
-		"logo": ".header__logo",
-		"navbar": ".header__navbar",
-	},
-
-	ui: {
-		redirect: '.navigation-button'
-	},
-
-	initialize: function (options) {
+	initialize: function (data) {
 		// store the pages variable
-		this.pages = this.options.pages;
+		this.activePage = this.collection.models[8];
 
 		// set the home page 
 		// *********************
 		// we need to do this in the controller *******
 		// *********************
 		// TODO --> what happens if someone comes in with aderinsola.com/#/claron....then what?!
-		this.homePage = this.pages.models[8];
+		//		this.homePage = this.pages.models[8];
 
 		// testing out a bind all
 		//		console.log(this.render)
@@ -527,19 +517,19 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 
 	onRender: function () {
 		// create a new content layout and pass the necessary parameters: model and collection
-		var content = new window.ContentLayout({
-			'pages': this.pages,
-			'selectedModel': this.homePage
-		});
-
-		// set the class to the appropriate background color for the navbar
-		this.$el.find('.header__logo h2').attr("class", content.selectedModel.attributes.category)
-
-		// store the content view
-		this.contentView = content;
-
-		// render the content view
-		content.render();
+		//		var content = new window.ContentLayout({
+		//			'pages': this.collection,
+		//			'selectedModel': this.activePage
+		//		});
+		//
+		//		// set the class to the appropriate background color for the navbar
+		//		this.$el.find('.header__logo h2').attr("class", content.selectedModel.attributes.category)
+		//
+		//		// store the content view
+		//		this.contentView = content;
+		//
+		//		// render the content view
+		//		content.render();
 	},
 
 	/*
@@ -590,6 +580,56 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 	# Defines the view for the main layout
 */
 
+window.MainLayout = Backbone.Marionette.LayoutView.extend({
+
+	el: "body",
+
+	template: JST["views/main/main"],
+
+	regions: {
+		"header": ".layout--header",
+		"content": ".layout--content",
+	},
+
+	initialize: function (data) {
+		this.model = data.model;
+		this.collection = data.collection;
+
+		var header = new window.HeaderLayout({
+			'model': this.model,
+			'collection': this.collection
+		});
+		//		header.render();
+	},
+
+	/*
+		# View 
+	*/
+
+	onRender: function () {
+		// use this as hook for animation 
+		// when the main layout renders, render the header & content
+		//		var header = new window.HeaderLayout(); 
+		//		header.render();
+	},
+
+	/*
+		# Events
+	*/
+
+	events: {
+		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
+	},
+
+	/*
+		# Methods
+	*/
+
+});
+/*
+	# Defines the view for the main layout
+*/
+
 window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 	el: ".layout--content",
@@ -632,24 +672,24 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 
 	// init call
 	initialize: function (options) {
-
-		// save the pages collection
-		this.pagesCollection = options.pages;
-
-		// save the selected model
-		this.selectedModel = options.selectedModel;
-
-		// create a new exec view with the model and collection ( we don't need the collection )
-		this.contentView = new window.ExecutiveSummaryView({
-			'model': this.selectedModel,
-			'collection': this.pagesCollection.prismicDataArray
-		});
-
-		// create a new process view with the model and collection ( we don't need the collection )
-		this.processView = new window.ProcessView({
-			'model': this.selectedModel,
-			'collection': this.pagesCollection.prismicDataArray
-		})
+		console.log(options)
+//		// save the pages collection
+//		this.pagesCollection = options.pages;
+//
+//		// save the selected model
+//		this.selectedModel = options.selectedModel;
+//
+//		// create a new exec view with the model and collection ( we don't need the collection )
+//		this.contentView = new window.ExecutiveSummaryView({
+//			'model': this.selectedModel,
+//			'collection': this.pagesCollection.prismicDataArray
+//		});
+//
+//		// create a new process view with the model and collection ( we don't need the collection )
+//		this.processView = new window.ProcessView({
+//			'model': this.selectedModel,
+//			'collection': this.pagesCollection.prismicDataArray
+//		})
 	},
 
 	/*
@@ -694,58 +734,6 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 	}
 	*/
 	
-	/*
-		# Methods
-	*/
-
-});
-/*
-	# Defines the view for the main layout
-*/
-
-window.MainLayout = Backbone.Marionette.LayoutView.extend({
-
-	el: "body",
-
-	template: JST["views/main/main"],
-
-	regions: {
-		"header": ".layout--header",
-		"content": ".layout--content",
-	},
-
-	initialize: function (data) {
-
-		this.collection.each(function (page) {
-			//			console.log((page))
-		});
-		//		console.log('initializing the main layout view ', this.collection.get("about"))
-		//		this.pages = options.pages;
-		//		var header = new window.HeaderLayout({
-		//			'pages': this.pages
-		//		});
-		//		header.render();
-	},
-
-	/*
-		# View 
-	*/
-
-	onRender: function () {
-		// use this as hook for animation 
-		// when the main layout renders, render the header & content
-		//		var header = new window.HeaderLayout(); 
-		//		header.render();
-	},
-
-	/*
-		# Events
-	*/
-
-	events: {
-		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
-	},
-
 	/*
 		# Methods
 	*/

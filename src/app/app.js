@@ -20,7 +20,6 @@ window.Application = Backbone.Marionette.Application.extend({
 
     var dataCollection = this.collection;
 
-    console.log('data collection obj \n', dataCollection);
     // setup the root view and initialize the main layout
     App.mainLayoutView = new window.MainLayout({
       data: this.data,
@@ -40,7 +39,7 @@ window.Application = Backbone.Marionette.Application.extend({
     });
 
     // render the main layout view
-//    this.mainLayoutView.render();
+    //    this.mainLayoutView.render();
 
     // Start the history keeping
     Backbone.history.start();

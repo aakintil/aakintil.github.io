@@ -12,7 +12,7 @@ window.Controller = Backbone.Marionette.Object.extend({
 	},
 
 	handleRouteIndex: function (routeData) {
-		console.log("what");
+		console.log("index routing");
 		// TODO 
 		// we have to come back here and set this up properly 
 		// Clear the region
@@ -23,6 +23,11 @@ window.Controller = Backbone.Marionette.Object.extend({
 		// this.containerView.main.show( view );
 	},
 
+	renderPage: function (pageName) {
+		console.log('calling renderPage function');
+		// you have to set the model inside here...? 
+		console.log(this)
+	},
 	// getter functions
 
 	getContentFromPrismic: function () {
@@ -60,10 +65,6 @@ window.Controller = Backbone.Marionette.Object.extend({
 			});
 		});
 
-	},
-
-	renderPage: function (pageName) {
-		//		console.log('calling renderPage function');
 	},
 	// handleRouteSection : function( section_id ) {
 

@@ -7,32 +7,22 @@
 
 
 window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
-// TODO 
+	// TODO 
 	// header layout might have to be a composite view and each 
 	el: ".header__container",
 
 	template: JST["views/header/header"],
 
-	regions: {
-		"menu": ".header__menu",
-		"logo": ".header__logo",
-		"navbar": ".header__navbar",
-	},
-
-	ui: {
-		redirect: '.navigation-button'
-	},
-
-	initialize: function (options) {
+	initialize: function (data) {
 		// store the pages variable
-		this.pages = this.options.pages;
+		this.activePage = this.collection.models[8];
 
 		// set the home page 
 		// *********************
 		// we need to do this in the controller *******
 		// *********************
 		// TODO --> what happens if someone comes in with aderinsola.com/#/claron....then what?!
-		this.homePage = this.pages.models[8];
+		//		this.homePage = this.pages.models[8];
 
 		// testing out a bind all
 		//		console.log(this.render)
@@ -46,19 +36,19 @@ window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 
 	onRender: function () {
 		// create a new content layout and pass the necessary parameters: model and collection
-		var content = new window.ContentLayout({
-			'pages': this.pages,
-			'selectedModel': this.homePage
-		});
-
-		// set the class to the appropriate background color for the navbar
-		this.$el.find('.header__logo h2').attr("class", content.selectedModel.attributes.category)
-
-		// store the content view
-		this.contentView = content;
-
-		// render the content view
-		content.render();
+		//		var content = new window.ContentLayout({
+		//			'pages': this.collection,
+		//			'selectedModel': this.activePage
+		//		});
+		//
+		//		// set the class to the appropriate background color for the navbar
+		//		this.$el.find('.header__logo h2').attr("class", content.selectedModel.attributes.category)
+		//
+		//		// store the content view
+		//		this.contentView = content;
+		//
+		//		// render the content view
+		//		content.render();
 	},
 
 	/*
