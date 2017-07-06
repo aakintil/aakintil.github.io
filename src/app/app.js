@@ -6,10 +6,11 @@ window.Application = Backbone.Marionette.Application.extend({
 
   initialize: function (options) {},
 
-  start: function (options) {
-
-    // Assign data
-    // window.DataModel = new window.ModelData( options.data );
+  start: function (data) {
+    this.data = data;
+    console.log('start function is called ', this.data)
+      // Assign data
+      // window.DataModel = new window.ModelData( options.data );
 
     // Render the main view
     this.rootView.render();
@@ -26,22 +27,48 @@ window.Application = Backbone.Marionette.Application.extend({
 
 // Init an app instance
 var App = new window.Application();
-
 $(document).ready(function () {
 
-  // Load Data\
+  // store the prismic io url
   this.prismicURL = 'https://aderinsola.prismic.io/api';
+
+  // make a call to prismic.io
   Prismic.api(this.prismicURL, function (error, api) {
-    if (error) {
+    if (error) { // we couldn't hit the prismic api
       console.log("there was an error connecting to prismic: \n ----------------------------- \n", error);
-      return;
-    } else {
+      var pages = {
+        'about': ['the about data'],
+        'process': ['the process data']
+      }
+
+      // setup the root view and initialize the main layout
+      App.rootView = new window.MainLayout();
+
+      // Init router
+      var Controller = new window.Controller({
+        containerView: App.rootView
+      });
+      var Router = new window.Router({
+        controller: Controller,
+        containerView: App.rootView
+      });
+
+      // Start the app
+      App.start(pages);
+    } else { // we successfully hit the prismic api
       console.log("successful call")
       api.query("", {}, function (error, response) {
         // Log error
         if (error) {
           console.log("Prismic error: ", error);
         } else {
+          // ------------------------------------------- ***************************
+          // ------------------------------------------- ***************************
+          // TODO 
+          // --------- REWRITE THIS ENTIRE SECTION AND MAKE CONSISTENT WITH THE TOP
+          // ------------------------------------------- ***************************
+          // ------------------------------------------- ***************************
+
           // console.log("Prismic success, fetching data...", response)
           // Create the model from the Prismic response
 
@@ -89,7 +116,6 @@ $(document).ready(function () {
         }
 
       });
-
     }
   });
 
