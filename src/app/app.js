@@ -17,9 +17,10 @@ window.Application = Backbone.Marionette.Application.extend({
     // window.DataModel = new window.ModelData( options.data );
     var localStore = true; // a catch so that we don't roll into the prismic way of organizing models
     this.collection = data;
-    console.log(data)
 
     var dataCollection = this.collection;
+
+    console.log('data collection obj \n', dataCollection);
     // setup the root view and initialize the main layout
     App.mainLayoutView = new window.MainLayout({
       data: this.data,
@@ -39,7 +40,7 @@ window.Application = Backbone.Marionette.Application.extend({
     });
 
     // render the main layout view
-    this.mainLayoutView.render();
+//    this.mainLayoutView.render();
 
     // Start the history keeping
     Backbone.history.start();
@@ -134,7 +135,6 @@ $(document).ready(function () {
       var pages = new window.PagesCollection([], localCollection);
       App.start(pages);
     } else { // we successfully hit the prismic api
-      console.log("successful call");
       api.query("", {}, function (error, response) {
         // Log error
         if (error) {

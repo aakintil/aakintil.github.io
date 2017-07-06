@@ -60,9 +60,8 @@ window.PageModel = Backbone.Model.extend({
 		//		this.set("header", page.header === null ? this.defaults.header : JSON.stringify(page.header));
 	},
 	createModelSchema(PrismicDocument) {
-		console.log(PrismicDocument)
-			// Set the ID
-			// console.log(PrismicDocument.get('project-pages.description').asText())
+		// Set the ID
+		// console.log(PrismicDocument.get('project-pages.description').asText())
 		this.set("model_id", PrismicDocument.id);
 
 		// Set the category

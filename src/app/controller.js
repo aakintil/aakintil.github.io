@@ -12,15 +12,15 @@ window.Controller = Backbone.Marionette.Object.extend({
 	},
 
 	handleRouteIndex: function (routeData) {
-		console.log("what")
-			// TODO 
-			// we have to come back here and set this up properly 
-			// Clear the region
-			//		this.containerView.content.empty();
-			// Init view
-			// var view = new window.View();
-			// Show  view
-			// this.containerView.main.show( view );
+		console.log("what");
+		// TODO 
+		// we have to come back here and set this up properly 
+		// Clear the region
+		//		this.containerView.content.empty();
+		// Init view
+		// var view = new window.View();
+		// Show  view
+		// this.containerView.main.show( view );
 	},
 
 	// getter functions
