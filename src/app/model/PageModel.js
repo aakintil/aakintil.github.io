@@ -3,6 +3,7 @@
 */
 
 // CREATE A PAGE MODEL THAT INHERITS MOST OF THE PRISMIC INFO
+
 window.PageModel = Backbone.Model.extend({
 
 	defaults: {
@@ -43,23 +44,25 @@ window.PageModel = Backbone.Model.extend({
 		return this.id ? '/page/' + this.id : '/page';
 	},
 
-	initialize: function (defaults, PrismicDocument, localStore) {
-		this.localStore = localStore;
+	initialize: function (defaults, PrismicDocument) {
 		this.document = PrismicDocument;
-		if (this.localStore) {
-			this.setLocalSchema(this.document)
-		} else this.createModelSchema(this.document);
+		if (localStorage.getItem('noInternet') === true) {
+			this.createLocalSchema(this.document)
+		} else {
+			this.createModelSchema(this.document);
+		}
 	},
 
-	setLocalSchema(page) {
-		this.set("category", page.category === null ? this.defaults.category : JSON.stringify(page.category)); 
-		this.set("title", page.title === null ? this.defaults.title :  JSON.stringify(page.title)); 
-		this.set("header", page.header === null ? this.defaults.header :  JSON.stringify(page.header)); 
+	createLocalSchema(page) {
+		console.log('calling the local schema creation cuz we dont have internet');
+		//		this.set("category", page.category === null ? this.defaults.category : JSON.stringify(page.category));
+		//		this.set("title", page.title === null ? this.defaults.title : JSON.stringify(page.title));
+		//		this.set("header", page.header === null ? this.defaults.header : JSON.stringify(page.header));
 	},
 	createModelSchema(PrismicDocument) {
-		// console.log(PrismicDocument) 
-		// Set the ID
-		// console.log(PrismicDocument.get('project-pages.description').asText())
+		console.log(PrismicDocument)
+			// Set the ID
+			// console.log(PrismicDocument.get('project-pages.description').asText())
 		this.set("model_id", PrismicDocument.id);
 
 		// Set the category

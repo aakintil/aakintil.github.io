@@ -5,7 +5,9 @@
 
 window.Application = Backbone.Marionette.Application.extend({
 
-  initialize: function (options) {},
+  initialize: function (options) {
+    localStorage.setItem('noInternet', false);
+  },
 
   start: function (data) {
     // store the incoming data
@@ -14,7 +16,8 @@ window.Application = Backbone.Marionette.Application.extend({
     // Assign the data
     // window.DataModel = new window.ModelData( options.data );
     var localStore = true; // a catch so that we don't roll into the prismic way of organizing models
-    this.collection = new window.PagesCollection([], this.data, localStore);
+    this.collection = data;
+    console.log(data)
 
     var dataCollection = this.collection;
     // setup the root view and initialize the main layout
@@ -58,7 +61,9 @@ $(document).ready(function () {
   // make a call to prismic.io
   Prismic.api(this.prismicURL, function (error, api) {
     if (error) { // we couldn't hit the prismic api
+      localStorage.setItem('noInternet', true);
       console.log("there was an error connecting to prismic: \n ----------------------------- \n", error);
+      /*
       var pages = {
         'about': {
           "category": "bio",
@@ -123,35 +128,26 @@ $(document).ready(function () {
           "url": "/process",
         },
       }
-
+      */
       // Start the app
+      var localCollection = JSON.parse(localStorage.collection);
+      var pages = new window.PagesCollection([], localCollection);
       App.start(pages);
     } else { // we successfully hit the prismic api
-      console.log("successful call")
+      console.log("successful call");
       api.query("", {}, function (error, response) {
         // Log error
         if (error) {
           console.log("Prismic error: ", error);
         } else {
-          // ------------------------------------------- ***************************
-          // ------------------------------------------- ***************************
-          // TODO 
-          // --------- REWRITE THIS ENTIRE SECTION AND MAKE CONSISTENT WITH THE TOP
-          // ------------------------------------------- ***************************
-          // ------------------------------------------- ***************************
-
-          // console.log("Prismic success, fetching data...", response)
-          // Create the model from the Prismic response
-
-          // TODO 
-          // ------------------
-          // have to figure out how to render the content view from here
-          // ------------------
-
-          var pages = response.results; 
+          var pages = response.results;
           // create the pages collection with each page inside the object
           var pagesCollection = new window.PagesCollection([], pages);
-          
+          localStorage.clear();
+          // create custom localStorage functions
+          localStorage.collection = JSON.stringify(pagesCollection);
+          // to show a collection JSON.parse(localStorage.collection);
+
           App.start(pagesCollection);
         }
       });
@@ -263,6 +259,7 @@ window.Router = Backbone.Marionette.AppRouter.extend( {
 */
 
 // CREATE A PAGE MODEL THAT INHERITS MOST OF THE PRISMIC INFO
+
 window.PageModel = Backbone.Model.extend({
 
 	defaults: {
@@ -303,23 +300,25 @@ window.PageModel = Backbone.Model.extend({
 		return this.id ? '/page/' + this.id : '/page';
 	},
 
-	initialize: function (defaults, PrismicDocument, localStore) {
-		this.localStore = localStore;
+	initialize: function (defaults, PrismicDocument) {
 		this.document = PrismicDocument;
-		if (this.localStore) {
-			this.setLocalSchema(this.document)
-		} else this.createModelSchema(this.document);
+		if (localStorage.getItem('noInternet') === true) {
+			this.createLocalSchema(this.document)
+		} else {
+			this.createModelSchema(this.document);
+		}
 	},
 
-	setLocalSchema(page) {
-		this.set("category", page.category === null ? this.defaults.category : JSON.stringify(page.category)); 
-		this.set("title", page.title === null ? this.defaults.title :  JSON.stringify(page.title)); 
-		this.set("header", page.header === null ? this.defaults.header :  JSON.stringify(page.header)); 
+	createLocalSchema(page) {
+		console.log('calling the local schema creation cuz we dont have internet');
+		//		this.set("category", page.category === null ? this.defaults.category : JSON.stringify(page.category));
+		//		this.set("title", page.title === null ? this.defaults.title : JSON.stringify(page.title));
+		//		this.set("header", page.header === null ? this.defaults.header : JSON.stringify(page.header));
 	},
 	createModelSchema(PrismicDocument) {
-		// console.log(PrismicDocument) 
-		// Set the ID
-		// console.log(PrismicDocument.get('project-pages.description').asText())
+		console.log(PrismicDocument)
+			// Set the ID
+			// console.log(PrismicDocument.get('project-pages.description').asText())
 		this.set("model_id", PrismicDocument.id);
 
 		// Set the category
