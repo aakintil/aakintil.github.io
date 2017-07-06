@@ -7,17 +7,20 @@ window.Application = Backbone.Marionette.Application.extend({
   initialize: function (options) {},
 
   start: function (data) {
+    // store the incoming data
     this.data = data;
-    console.log('start function is called ', this.data);
-    // Assign data
+
+    // Assign the data
     // window.DataModel = new window.ModelData( options.data );
-    this.collection = new window.PagesCollection([], this.data);
+    var localStore = true; // a catch so that we don't roll into the prismic way of organizing models
+    this.collection = new window.PagesCollection([], this.data, localStore);
 
-    console.log('fdafs ', this.collection.model.get('name'))
-
+    var dataCollection = this.collection;
     // setup the root view and initialize the main layout
     App.mainLayoutView = new window.MainLayout({
-      data: this.data
+      data: this.data,
+      model: window.PageModel,
+      collection: dataCollection
     });
 
     // initialize the controller
@@ -56,11 +59,68 @@ $(document).ready(function () {
     if (error) { // we couldn't hit the prismic api
       console.log("there was an error connecting to prismic: \n ----------------------------- \n", error);
       var pages = {
-        'about': { name:'about', data: ['the about data']},
-        'process': ['the process data'],
-        'contact': ['the contact data'],
-        'claron': ['the contact data'],
-        'gridmi': ['the contact data'],
+        'about': {
+          "category": "bio",
+          "title": "about",
+          "header": "about",
+          "brief": "this is the about section",
+          "skills": "",
+          "hero-images": {
+            "hero-image-1": {
+              "url": "/img/default-image.jpg",
+              "caption": null
+            },
+            "hero-image-2": {
+              "url": "/img/default-image.jpg",
+              "caption": null
+            },
+            "hero-image-3": {
+              "url": "/img/default-image.jpg",
+              "caption": null
+            }
+          },
+          "process-block": {
+            "process-image": {
+              "url": "/img/default-image.jpg",
+              "caption": null
+            },
+            "process-type": "left",
+            "process-title": "process 1",
+            "process-copy": "the copy for the process"
+          },
+          "url": "/about",
+        },
+        'process': {
+          "category": "bio",
+          "title": "process",
+          "header": "process",
+          "brief": "this is the process section",
+          "skills": "",
+          "hero-images": {
+            "hero-image-1": {
+              "url": "/img/default-image.jpg",
+              "caption": null
+            },
+            "hero-image-2": {
+              "url": "/img/default-image.jpg",
+              "caption": null
+            },
+            "hero-image-3": {
+              "url": "/img/default-image.jpg",
+              "caption": null
+            }
+          },
+          "process-block": {
+            "process-image": {
+              "url": "/img/default-image.jpg",
+              "caption": null
+            },
+            "process-type": "left",
+            "process-title": "process 2",
+            "process-copy": "the copy for the process section"
+          },
+          "url": "/process",
+        },
       }
 
       // Start the app
@@ -274,11 +334,19 @@ window.PageModel = Backbone.Model.extend({
 		return this.id ? '/page/' + this.id : '/page';
 	},
 
-	initialize: function (defaults, PrismicDocument) {
+	initialize: function (defaults, PrismicDocument, localStore) {
+		this.localStore = localStore;
 		this.document = PrismicDocument;
-		//this.createModelSchema(PrismicDocument);
+		if (this.localStore) {
+			this.setLocalSchema(this.document)
+		} else this.createModelSchema(this.document);
 	},
 
+	setLocalSchema(page) {
+		this.set("category", page.category === null ? this.defaults.category : JSON.stringify(page.category)); 
+		this.set("title", page.title === null ? this.defaults.title :  JSON.stringify(page.title)); 
+		this.set("header", page.header === null ? this.defaults.header :  JSON.stringify(page.header)); 
+	},
 	createModelSchema(PrismicDocument) {
 		// console.log(PrismicDocument) 
 		// Set the ID
@@ -423,16 +491,16 @@ window.PageModel = Backbone.Model.extend({
 window.PagesCollection = Backbone.Collection.extend({
     model: window.PageModel,
 
-    initialize: function (array, PrismicDataArray) {
-        this.prismicDataArray = PrismicDataArray;
+    initialize: function (array, PrismicDataArray, localStore) {
+
+        this.prismicData = PrismicDataArray;
         // For each Document
-        _.each(this.prismicDataArray, function (document) {
+        _.each(this.prismicData, function (page) {
             // Create a new Document Model
-            var a = new window.PageModel({}, document);
+            var a = new window.PageModel({}, page, localStore);
 
             // Add it to this collection
             array.push(a);
-
         }.bind(this));
     },
 
@@ -560,6 +628,11 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 /*
 	# Defines the view for the main layout
 */
+// -------------------------------------------
+// *********************************************
+// might have to turn this into a collectionView layout
+
+
 window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 // TODO 
 	// header layout might have to be a composite view and each 
@@ -675,12 +748,16 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 	},
 
 	initialize: function (data) {
-		console.log('initializing the main layout view ', data)
-			//		this.pages = options.pages;
-			//		var header = new window.HeaderLayout({
-			//			'pages': this.pages
-			//		});
-			//		header.render();
+
+		this.collection.each(function (page) {
+//			console.log((page))
+		});
+		//		console.log('initializing the main layout view ', this.collection.get("about"))
+		//		this.pages = options.pages;
+		//		var header = new window.HeaderLayout({
+		//			'pages': this.pages
+		//		});
+		//		header.render();
 	},
 
 	/*

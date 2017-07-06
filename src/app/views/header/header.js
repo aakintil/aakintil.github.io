@@ -1,6 +1,11 @@
 /*
 	# Defines the view for the main layout
 */
+// -------------------------------------------
+// *********************************************
+// might have to turn this into a collectionView layout
+
+
 window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
 // TODO 
 	// header layout might have to be a composite view and each 

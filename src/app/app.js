@@ -7,17 +7,20 @@ window.Application = Backbone.Marionette.Application.extend({
   initialize: function (options) {},
 
   start: function (data) {
+    // store the incoming data
     this.data = data;
-    console.log('start function is called ', this.data);
-    // Assign data
+
+    // Assign the data
     // window.DataModel = new window.ModelData( options.data );
-    this.collection = new window.PagesCollection([], this.data);
+    var localStore = true; // a catch so that we don't roll into the prismic way of organizing models
+    this.collection = new window.PagesCollection([], this.data, localStore);
 
-    console.log('fdafs ', this.collection.model.get('name'))
-
+    var dataCollection = this.collection;
     // setup the root view and initialize the main layout
     App.mainLayoutView = new window.MainLayout({
-      data: this.data
+      data: this.data,
+      model: window.PageModel,
+      collection: dataCollection
     });
 
     // initialize the controller
@@ -56,11 +59,68 @@ $(document).ready(function () {
     if (error) { // we couldn't hit the prismic api
       console.log("there was an error connecting to prismic: \n ----------------------------- \n", error);
       var pages = {
-        'about': { name:'about', data: ['the about data']},
-        'process': ['the process data'],
-        'contact': ['the contact data'],
-        'claron': ['the contact data'],
-        'gridmi': ['the contact data'],
+        'about': {
+          "category": "bio",
+          "title": "about",
+          "header": "about",
+          "brief": "this is the about section",
+          "skills": "",
+          "hero-images": {
+            "hero-image-1": {
+              "url": "/img/default-image.jpg",
+              "caption": null
+            },
+            "hero-image-2": {
+              "url": "/img/default-image.jpg",
+              "caption": null
+            },
+            "hero-image-3": {
+              "url": "/img/default-image.jpg",
+              "caption": null
+            }
+          },
+          "process-block": {
+            "process-image": {
+              "url": "/img/default-image.jpg",
+              "caption": null
+            },
+            "process-type": "left",
+            "process-title": "process 1",
+            "process-copy": "the copy for the process"
+          },
+          "url": "/about",
+        },
+        'process': {
+          "category": "bio",
+          "title": "process",
+          "header": "process",
+          "brief": "this is the process section",
+          "skills": "",
+          "hero-images": {
+            "hero-image-1": {
+              "url": "/img/default-image.jpg",
+              "caption": null
+            },
+            "hero-image-2": {
+              "url": "/img/default-image.jpg",
+              "caption": null
+            },
+            "hero-image-3": {
+              "url": "/img/default-image.jpg",
+              "caption": null
+            }
+          },
+          "process-block": {
+            "process-image": {
+              "url": "/img/default-image.jpg",
+              "caption": null
+            },
+            "process-type": "left",
+            "process-title": "process 2",
+            "process-copy": "the copy for the process section"
+          },
+          "url": "/process",
+        },
       }
 
       // Start the app

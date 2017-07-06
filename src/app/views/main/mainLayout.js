@@ -14,12 +14,16 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 	},
 
 	initialize: function (data) {
-		console.log('initializing the main layout view ', data)
-			//		this.pages = options.pages;
-			//		var header = new window.HeaderLayout({
-			//			'pages': this.pages
-			//		});
-			//		header.render();
+
+		this.collection.each(function (page) {
+//			console.log((page))
+		});
+		//		console.log('initializing the main layout view ', this.collection.get("about"))
+		//		this.pages = options.pages;
+		//		var header = new window.HeaderLayout({
+		//			'pages': this.pages
+		//		});
+		//		header.render();
 	},
 
 	/*

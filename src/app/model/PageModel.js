@@ -43,11 +43,19 @@ window.PageModel = Backbone.Model.extend({
 		return this.id ? '/page/' + this.id : '/page';
 	},
 
-	initialize: function (defaults, PrismicDocument) {
+	initialize: function (defaults, PrismicDocument, localStore) {
+		this.localStore = localStore;
 		this.document = PrismicDocument;
-		//this.createModelSchema(PrismicDocument);
+		if (this.localStore) {
+			this.setLocalSchema(this.document)
+		} else this.createModelSchema(this.document);
 	},
 
+	setLocalSchema(page) {
+		this.set("category", page.category === null ? this.defaults.category : JSON.stringify(page.category)); 
+		this.set("title", page.title === null ? this.defaults.title :  JSON.stringify(page.title)); 
+		this.set("header", page.header === null ? this.defaults.header :  JSON.stringify(page.header)); 
+	},
 	createModelSchema(PrismicDocument) {
 		// console.log(PrismicDocument) 
 		// Set the ID
