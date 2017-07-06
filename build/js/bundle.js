@@ -8,12 +8,31 @@ window.Application = Backbone.Marionette.Application.extend({
 
   start: function (data) {
     this.data = data;
-    console.log('start function is called ', this.data)
-      // Assign data
-      // window.DataModel = new window.ModelData( options.data );
+    console.log('start function is called ', this.data);
+    // Assign data
+    // window.DataModel = new window.ModelData( options.data );
+    this.collection = new window.PagesCollection([], this.data);
 
-    // Render the main view
-    this.rootView.render();
+    console.log('fdafs ', this.collection.model.get('name'))
+
+    // setup the root view and initialize the main layout
+    App.mainLayoutView = new window.MainLayout({
+      data: this.data
+    });
+
+    // initialize the controller
+    var Controller = new window.Controller({
+      containerView: App.mainLayoutView
+    });
+
+    // initialize the router
+    var Router = new window.Router({
+      controller: Controller,
+      containerView: App.mainLayoutView
+    });
+
+    // render the main layout view
+    this.mainLayoutView.render();
 
     // Start the history keeping
     Backbone.history.start();
@@ -37,21 +56,12 @@ $(document).ready(function () {
     if (error) { // we couldn't hit the prismic api
       console.log("there was an error connecting to prismic: \n ----------------------------- \n", error);
       var pages = {
-        'about': ['the about data'],
-        'process': ['the process data']
+        'about': { name:'about', data: ['the about data']},
+        'process': ['the process data'],
+        'contact': ['the contact data'],
+        'claron': ['the contact data'],
+        'gridmi': ['the contact data'],
       }
-
-      // setup the root view and initialize the main layout
-      App.rootView = new window.MainLayout();
-
-      // Init router
-      var Controller = new window.Controller({
-        containerView: App.rootView
-      });
-      var Router = new window.Router({
-        controller: Controller,
-        containerView: App.rootView
-      });
 
       // Start the app
       App.start(pages);
@@ -266,7 +276,7 @@ window.PageModel = Backbone.Model.extend({
 
 	initialize: function (defaults, PrismicDocument) {
 		this.document = PrismicDocument;
-		this.createModelSchema(PrismicDocument);
+		//this.createModelSchema(PrismicDocument);
 	},
 
 	createModelSchema(PrismicDocument) {
@@ -414,7 +424,6 @@ window.PagesCollection = Backbone.Collection.extend({
     model: window.PageModel,
 
     initialize: function (array, PrismicDataArray) {
-        // 
         this.prismicDataArray = PrismicDataArray;
         // For each Document
         _.each(this.prismicDataArray, function (document) {
@@ -665,12 +674,13 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 		"content": ".layout--content",
 	},
 
-	initialize: function (options) {
-		//		this.pages = options.pages;
-		//		var header = new window.HeaderLayout({
-		//			'pages': this.pages
-		//		});
-		//		header.render();
+	initialize: function (data) {
+		console.log('initializing the main layout view ', data)
+			//		this.pages = options.pages;
+			//		var header = new window.HeaderLayout({
+			//			'pages': this.pages
+			//		});
+			//		header.render();
 	},
 
 	/*
@@ -695,6 +705,47 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 	/*
 		# Methods
 	*/
+
+});
+/*
+	# Defines the view for 
+*/
+
+window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
+
+  template: JST["views/content/executiveSummary/executiveSummary"],
+
+  initialize: function (options) {
+  },
+
+  /*
+  	# View 
+  */
+
+  onRender: function () {
+    // Get rid of that pesky wrapping-div.
+    // Assumes 1 child element present in template.
+    this.$el = this.$el.children();
+    // Unwrap the element to prevent infinitely 
+    // nesting elements during re-render.
+    this.$el.unwrap();
+    this.setElement(this.$el);
+
+      //		var old = this.$el;
+      //		//		this.setElement('<div class="content--top"></div>');
+      ////		console.log('old element \n', this.$el.context.innerHTML)
+      //		old.replaceWith(this.$el.context.innerHTML);
+  },
+
+  /*
+  	# Events
+  */
+
+  events: {},
+
+  /*
+  	# Methods
+  */
 
 });
 /*
@@ -758,47 +809,6 @@ window.ViewCompositeView = Backbone.Marionette.CompositeView.extend(
 	/*
 		# Methods
 	*/
-
-});
-/*
-	# Defines the view for 
-*/
-
-window.ExecutiveSummaryView = Backbone.Marionette.ItemView.extend({
-
-  template: JST["views/content/executiveSummary/executiveSummary"],
-
-  initialize: function (options) {
-  },
-
-  /*
-  	# View 
-  */
-
-  onRender: function () {
-    // Get rid of that pesky wrapping-div.
-    // Assumes 1 child element present in template.
-    this.$el = this.$el.children();
-    // Unwrap the element to prevent infinitely 
-    // nesting elements during re-render.
-    this.$el.unwrap();
-    this.setElement(this.$el);
-
-      //		var old = this.$el;
-      //		//		this.setElement('<div class="content--top"></div>');
-      ////		console.log('old element \n', this.$el.context.innerHTML)
-      //		old.replaceWith(this.$el.context.innerHTML);
-  },
-
-  /*
-  	# Events
-  */
-
-  events: {},
-
-  /*
-  	# Methods
-  */
 
 });
 /*

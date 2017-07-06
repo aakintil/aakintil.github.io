@@ -6,7 +6,6 @@ window.PagesCollection = Backbone.Collection.extend({
     model: window.PageModel,
 
     initialize: function (array, PrismicDataArray) {
-        // 
         this.prismicDataArray = PrismicDataArray;
         // For each Document
         _.each(this.prismicDataArray, function (document) {

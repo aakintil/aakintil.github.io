@@ -8,12 +8,31 @@ window.Application = Backbone.Marionette.Application.extend({
 
   start: function (data) {
     this.data = data;
-    console.log('start function is called ', this.data)
-      // Assign data
-      // window.DataModel = new window.ModelData( options.data );
+    console.log('start function is called ', this.data);
+    // Assign data
+    // window.DataModel = new window.ModelData( options.data );
+    this.collection = new window.PagesCollection([], this.data);
 
-    // Render the main view
-    this.rootView.render();
+    console.log('fdafs ', this.collection.model.get('name'))
+
+    // setup the root view and initialize the main layout
+    App.mainLayoutView = new window.MainLayout({
+      data: this.data
+    });
+
+    // initialize the controller
+    var Controller = new window.Controller({
+      containerView: App.mainLayoutView
+    });
+
+    // initialize the router
+    var Router = new window.Router({
+      controller: Controller,
+      containerView: App.mainLayoutView
+    });
+
+    // render the main layout view
+    this.mainLayoutView.render();
 
     // Start the history keeping
     Backbone.history.start();
@@ -37,21 +56,12 @@ $(document).ready(function () {
     if (error) { // we couldn't hit the prismic api
       console.log("there was an error connecting to prismic: \n ----------------------------- \n", error);
       var pages = {
-        'about': ['the about data'],
-        'process': ['the process data']
+        'about': { name:'about', data: ['the about data']},
+        'process': ['the process data'],
+        'contact': ['the contact data'],
+        'claron': ['the contact data'],
+        'gridmi': ['the contact data'],
       }
-
-      // setup the root view and initialize the main layout
-      App.rootView = new window.MainLayout();
-
-      // Init router
-      var Controller = new window.Controller({
-        containerView: App.rootView
-      });
-      var Router = new window.Router({
-        controller: Controller,
-        containerView: App.rootView
-      });
 
       // Start the app
       App.start(pages);

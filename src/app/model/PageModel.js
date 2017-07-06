@@ -45,7 +45,7 @@ window.PageModel = Backbone.Model.extend({
 
 	initialize: function (defaults, PrismicDocument) {
 		this.document = PrismicDocument;
-		this.createModelSchema(PrismicDocument);
+		//this.createModelSchema(PrismicDocument);
 	},
 
 	createModelSchema(PrismicDocument) {
