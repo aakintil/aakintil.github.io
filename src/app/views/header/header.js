@@ -7,16 +7,24 @@
 
 var childView = Backbone.Marionette.View.extend({
 	template: JST["views/header/header"],
-	el: $('ul'),
 	model: window.PageModel,
-
+	tagName: 'div',
 	initialize: function (data) {
-		console.log('initializing child view ', data);
+		this.collection = data.collection; 
 	},
 
-	onRender: function () {
-		console.log("should be rendering")
-	}
+	render: function () {
+		console.log("rendering ", this.$el);
+		// this works for some reason
+		//		return this.$el.html(this.template(this.model.attributes));
+
+		//		this.$el.find('[data-view-placeholder-cid]').forEach(function (el) {
+		//			var cid = el.getAttribute('data-view-placeholder-cid'),
+		//				view = this.children[cid];
+		//			view.render();
+		//			$(el).replaceWith(view.el);
+		//		}, this);
+	},
 })
 
 window.HeaderLayout = Backbone.Marionette.CollectionView.extend({
@@ -24,7 +32,6 @@ window.HeaderLayout = Backbone.Marionette.CollectionView.extend({
 	// header layout might have to be a composite view and each 
 	el: ".header__container",
 	childView: childView,
-
 	initialize: function (data) {
 		// store the pages variable
 		this.activePage = this.collection.models[8];
