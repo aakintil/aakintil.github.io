@@ -5,18 +5,29 @@
 // *********************************************
 // might have to turn this into a collectionView layout
 
+var childView = Backbone.Marionette.View.extend({
+	template: JST["views/header/header"],
+	el: $('ul'),
+	model: window.PageModel,
 
-window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
+	initialize: function (data) {
+		console.log('initializing child view ', data);
+	},
+
+	onRender: function () {
+		console.log("should be rendering")
+	}
+})
+
+window.HeaderLayout = Backbone.Marionette.CollectionView.extend({
 	// TODO 
 	// header layout might have to be a composite view and each 
 	el: ".header__container",
-
-	template: JST["views/header/header"],
+	childView: childView,
 
 	initialize: function (data) {
 		// store the pages variable
 		this.activePage = this.collection.models[8];
-
 		// set the home page 
 		// *********************
 		// we need to do this in the controller *******

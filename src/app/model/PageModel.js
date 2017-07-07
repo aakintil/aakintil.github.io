@@ -46,18 +46,39 @@ window.PageModel = Backbone.Model.extend({
 
 	initialize: function (defaults, PrismicDocument) {
 		this.document = PrismicDocument;
-		if (localStorage.getItem('noInternet') === true) {
-			this.createLocalSchema(this.document)
+
+		if (localStorage.getItem('noInternet')) {
+			this.createSchemaFromLocalData(this.document)
 		} else {
 			this.createModelSchema(this.document);
 		}
 	},
 
-	createLocalSchema(page) {
-		console.log('calling the local schema creation cuz we dont have internet');
-		//		this.set("category", page.category === null ? this.defaults.category : JSON.stringify(page.category));
-		//		this.set("title", page.title === null ? this.defaults.title : JSON.stringify(page.title));
-		//		this.set("header", page.header === null ? this.defaults.header : JSON.stringify(page.header));
+	createSchemaFromLocalData(page) {
+		//		console.log('calling the local schema creation cuz we dont have internet');
+		// Set the ID
+		// console.log(PrismicDocument.get('project-pages.description').asText())
+		this.set("model_id", page.model_id);
+
+		// Set the category
+		this.set("category", page.category);
+
+		// setting the title
+		this.set("title", page.title);
+
+		// setting the page callout
+		this.set("callout", page.callout);
+
+		// TODO 
+		// --- this is an example of when you use this.defaults['something'] for values that should appear if prismic isn't working
+		// setting the page callout
+		this.set("description", page.description);
+
+		// setting the skills section
+		this.set("skills", page.skills);
+
+		// setting the process section 
+		this.set('process', page.process);
 	},
 	createModelSchema(PrismicDocument) {
 		// Set the ID
@@ -109,82 +130,6 @@ window.PageModel = Backbone.Model.extend({
 			return newProcessObj;
 		})
 		this.set('process', processBlocks);
-
-		//		console.log(PrismicDocument.get('project-pages.process-block').toArray());
-
-		//		this.set("url", "/#page/" + Document.id);
-		//		console.log(this.attributes)
-		// Get the title
-		//		if (Document.get("article.title"))
-		//			this.set("title", Document.get("article.title").asText());
-
-		// PrismicDocument.fragments['project-pages.brief'].asHtml() works
-
-		//		console.log("trying \n", PrismicDocument.getStructuredText('project-pages.title').asHtml());
-		//		console.log("trying \n", PrismicDocument.get('project-pages.title').asHtml());
-		//		console.log("in here \n", Prismic.get('Document')); 
-		//		console.log("in here \n", PrismicDocument['data']['project-pages.title'].value[0].text); 
-		/*
-		// Set the url to this Article
-		this.set("url", "/#article/" + Document.id);
-
-		// Get the title
-		if (Document.get("article.title"))
-			this.set("title", Document.get("article.title").asText());
-
-		// Create an array of Prismic ImageView objects
-		var images;
-		if (Document.fragments["article.images"]) {
-			images = Document.fragments["article.images"].toArray().map(function (image) {
-				// Get the image
-				var img = image.getFirstImage().main;
-				// Add the caption if it exists
-				img.caption = (image.fragments["caption"]) ? image.fragments["caption"].asText() : null;
-				return img;
-			});
-		} else {
-			// TODO: Handle if no images
-			images = [{
-				"url": "/img/default-image.jpg",
-				"caption": null
-			}];
-		}
-		this.set("images", images);
-
-		// Get the body
-		if (Document.get("article.body"))
-			this.set("body", Document.get("article.body").asHtml());
-
-		// Get the blurb
-		if (Document.get("article.blurb")) {
-			// Use the blurb field
-			this.set("blurb", Document.get("article.blurb").asText());
-		} else if (Document.get("article.body")) {
-			// Create a blurb by truncating the body
-			this.set("blurb", Document.get("article.body").asText());
-		}
-		// Truncate the blurb
-		var truncLength = 100;
-		var blurb = this.get("blurb");
-		var blurbTruncated = (blurb.length > truncLength) ? blurb.substring(0, truncLength) + "..." : blurb;
-		this.set("blurb", blurbTruncated);
-
-
-		// Get the author
-		if (Document.get("article.article_author"))
-			this.set("author", Document.get("article.article_author").asText());
-
-		// Get the submitter
-		if (Document.get("article.submitter"))
-			this.set("submitter", Document.get("article.submitter").asText());
-
-		// Set the publication date
-		var date = new moment(Document.lastPublicationDate);
-		this.set("date", date.format("YYYY.MM.DD"));
-
-		// Set the tags
-		this.set("tags", Document.tags);
-*/
 	},
 
 

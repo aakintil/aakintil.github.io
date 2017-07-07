@@ -14,8 +14,6 @@ window.Application = Backbone.Marionette.Application.extend({
     this.data = data;
 
     // Assign the data
-    // window.DataModel = new window.ModelData( options.data );
-    var localStore = true; // a catch so that we don't roll into the prismic way of organizing models
     this.collection = data;
 
     var dataCollection = this.collection;
@@ -23,7 +21,6 @@ window.Application = Backbone.Marionette.Application.extend({
     // setup the root view and initialize the main layout
     App.mainLayoutView = new window.MainLayout({
       data: this.data,
-      model: window.PageModel,
       collection: dataCollection
     });
 
@@ -37,10 +34,6 @@ window.Application = Backbone.Marionette.Application.extend({
       controller: Controller,
       containerView: App.mainLayoutView
     });
-
-    // render the main layout view
-    //    this.mainLayoutView.render();
-
     // Start the history keeping
     Backbone.history.start();
   }
@@ -63,74 +56,9 @@ $(document).ready(function () {
     if (error) { // we couldn't hit the prismic api
       localStorage.setItem('noInternet', true);
       console.log("there was an error connecting to prismic: \n ----------------------------- \n", error);
-      /*
-      var pages = {
-        'about': {
-          "category": "bio",
-          "title": "about",
-          "header": "about",
-          "brief": "this is the about section",
-          "skills": "",
-          "hero-images": {
-            "hero-image-1": {
-              "url": "/img/default-image.jpg",
-              "caption": null
-            },
-            "hero-image-2": {
-              "url": "/img/default-image.jpg",
-              "caption": null
-            },
-            "hero-image-3": {
-              "url": "/img/default-image.jpg",
-              "caption": null
-            }
-          },
-          "process-block": {
-            "process-image": {
-              "url": "/img/default-image.jpg",
-              "caption": null
-            },
-            "process-type": "left",
-            "process-title": "process 1",
-            "process-copy": "the copy for the process"
-          },
-          "url": "/about",
-        },
-        'process': {
-          "category": "bio",
-          "title": "process",
-          "header": "process",
-          "brief": "this is the process section",
-          "skills": "",
-          "hero-images": {
-            "hero-image-1": {
-              "url": "/img/default-image.jpg",
-              "caption": null
-            },
-            "hero-image-2": {
-              "url": "/img/default-image.jpg",
-              "caption": null
-            },
-            "hero-image-3": {
-              "url": "/img/default-image.jpg",
-              "caption": null
-            }
-          },
-          "process-block": {
-            "process-image": {
-              "url": "/img/default-image.jpg",
-              "caption": null
-            },
-            "process-type": "left",
-            "process-title": "process 2",
-            "process-copy": "the copy for the process section"
-          },
-          "url": "/process",
-        },
-      }
-      */
       // Start the app
-      var localCollection = JSON.parse(localStorage.collection);
+      //      var localCollection = JSON.parse(localStorage.collection);
+      var localCollection = JSON.parse(window.localData);
       var pages = new window.PagesCollection([], localCollection);
       App.start(pages);
     } else { // we successfully hit the prismic api
@@ -165,10 +93,19 @@ window.Controller = Backbone.Marionette.Object.extend({
 		//		this.mainLayout = options.containerView;
 		//		this.prismicURL = 'https://aderinsola.prismic.io/api';
 		//		this.getContentFromPrismic();
+		this.containerView = options.containerView;
 	},
 
 	handleRouteIndex: function (routeData) {
 		console.log("index routing");
+
+		this.containerView.render();
+
+		var headerView = new window.HeaderLayout({
+			'collection': this.containerView.collection
+		});
+		this.containerView.header.empty();
+		this.containerView.header.show(headerView);
 		// TODO 
 		// we have to come back here and set this up properly 
 		// Clear the region
@@ -182,7 +119,6 @@ window.Controller = Backbone.Marionette.Object.extend({
 	renderPage: function (pageName) {
 		console.log('calling renderPage function');
 		// you have to set the model inside here...? 
-		console.log(this)
 	},
 	// getter functions
 
@@ -302,18 +238,39 @@ window.PageModel = Backbone.Model.extend({
 
 	initialize: function (defaults, PrismicDocument) {
 		this.document = PrismicDocument;
-		if (localStorage.getItem('noInternet') === true) {
-			this.createLocalSchema(this.document)
+
+		if (localStorage.getItem('noInternet')) {
+			this.createSchemaFromLocalData(this.document)
 		} else {
 			this.createModelSchema(this.document);
 		}
 	},
 
-	createLocalSchema(page) {
-		console.log('calling the local schema creation cuz we dont have internet');
-		//		this.set("category", page.category === null ? this.defaults.category : JSON.stringify(page.category));
-		//		this.set("title", page.title === null ? this.defaults.title : JSON.stringify(page.title));
-		//		this.set("header", page.header === null ? this.defaults.header : JSON.stringify(page.header));
+	createSchemaFromLocalData(page) {
+		//		console.log('calling the local schema creation cuz we dont have internet');
+		// Set the ID
+		// console.log(PrismicDocument.get('project-pages.description').asText())
+		this.set("model_id", page.model_id);
+
+		// Set the category
+		this.set("category", page.category);
+
+		// setting the title
+		this.set("title", page.title);
+
+		// setting the page callout
+		this.set("callout", page.callout);
+
+		// TODO 
+		// --- this is an example of when you use this.defaults['something'] for values that should appear if prismic isn't working
+		// setting the page callout
+		this.set("description", page.description);
+
+		// setting the skills section
+		this.set("skills", page.skills);
+
+		// setting the process section 
+		this.set('process', page.process);
 	},
 	createModelSchema(PrismicDocument) {
 		// Set the ID
@@ -365,82 +322,6 @@ window.PageModel = Backbone.Model.extend({
 			return newProcessObj;
 		})
 		this.set('process', processBlocks);
-
-		//		console.log(PrismicDocument.get('project-pages.process-block').toArray());
-
-		//		this.set("url", "/#page/" + Document.id);
-		//		console.log(this.attributes)
-		// Get the title
-		//		if (Document.get("article.title"))
-		//			this.set("title", Document.get("article.title").asText());
-
-		// PrismicDocument.fragments['project-pages.brief'].asHtml() works
-
-		//		console.log("trying \n", PrismicDocument.getStructuredText('project-pages.title').asHtml());
-		//		console.log("trying \n", PrismicDocument.get('project-pages.title').asHtml());
-		//		console.log("in here \n", Prismic.get('Document')); 
-		//		console.log("in here \n", PrismicDocument['data']['project-pages.title'].value[0].text); 
-		/*
-		// Set the url to this Article
-		this.set("url", "/#article/" + Document.id);
-
-		// Get the title
-		if (Document.get("article.title"))
-			this.set("title", Document.get("article.title").asText());
-
-		// Create an array of Prismic ImageView objects
-		var images;
-		if (Document.fragments["article.images"]) {
-			images = Document.fragments["article.images"].toArray().map(function (image) {
-				// Get the image
-				var img = image.getFirstImage().main;
-				// Add the caption if it exists
-				img.caption = (image.fragments["caption"]) ? image.fragments["caption"].asText() : null;
-				return img;
-			});
-		} else {
-			// TODO: Handle if no images
-			images = [{
-				"url": "/img/default-image.jpg",
-				"caption": null
-			}];
-		}
-		this.set("images", images);
-
-		// Get the body
-		if (Document.get("article.body"))
-			this.set("body", Document.get("article.body").asHtml());
-
-		// Get the blurb
-		if (Document.get("article.blurb")) {
-			// Use the blurb field
-			this.set("blurb", Document.get("article.blurb").asText());
-		} else if (Document.get("article.body")) {
-			// Create a blurb by truncating the body
-			this.set("blurb", Document.get("article.body").asText());
-		}
-		// Truncate the blurb
-		var truncLength = 100;
-		var blurb = this.get("blurb");
-		var blurbTruncated = (blurb.length > truncLength) ? blurb.substring(0, truncLength) + "..." : blurb;
-		this.set("blurb", blurbTruncated);
-
-
-		// Get the author
-		if (Document.get("article.article_author"))
-			this.set("author", Document.get("article.article_author").asText());
-
-		// Get the submitter
-		if (Document.get("article.submitter"))
-			this.set("submitter", Document.get("article.submitter").asText());
-
-		// Set the publication date
-		var date = new moment(Document.lastPublicationDate);
-		this.set("date", date.format("YYYY.MM.DD"));
-
-		// Set the tags
-		this.set("tags", Document.tags);
-*/
 	},
 
 
@@ -477,153 +358,6 @@ window.PagesCollection = Backbone.Collection.extend({
 
 
 
-
-});
-/*
-	# Defines the view for the main layout
-*/
-// -------------------------------------------
-// *********************************************
-// might have to turn this into a collectionView layout
-
-
-window.HeaderLayout = Backbone.Marionette.LayoutView.extend({
-	// TODO 
-	// header layout might have to be a composite view and each 
-	el: ".header__container",
-
-	template: JST["views/header/header"],
-
-	initialize: function (data) {
-		// store the pages variable
-		this.activePage = this.collection.models[8];
-
-		// set the home page 
-		// *********************
-		// we need to do this in the controller *******
-		// *********************
-		// TODO --> what happens if someone comes in with aderinsola.com/#/claron....then what?!
-		//		this.homePage = this.pages.models[8];
-
-		// testing out a bind all
-		//		console.log(this.render)
-		//		_.bindAll(this, this.render);
-		//		this.pages.models.bind('change', this.render);
-	},
-
-	/*
-		# View 
-	*/
-
-	onRender: function () {
-		// create a new content layout and pass the necessary parameters: model and collection
-		//		var content = new window.ContentLayout({
-		//			'pages': this.collection,
-		//			'selectedModel': this.activePage
-		//		});
-		//
-		//		// set the class to the appropriate background color for the navbar
-		//		this.$el.find('.header__logo h2').attr("class", content.selectedModel.attributes.category)
-		//
-		//		// store the content view
-		//		this.contentView = content;
-		//
-		//		// render the content view
-		//		content.render();
-	},
-
-	/*
-		# Events
-	*/
-
-	events: {
-		// have to create a function to pass the headerlayout variable into the events jquery function
-		"click .navigation-button": function (event) {
-			var headerLayout = this;
-			this.toggleNavigation(event, headerLayout);
-		},
-	},
-
-	/*
-		# Methods
-	*/
-
-	toggleNavigation: (event, bckbne) => {
-		// save the page title
-		var pageTitle = $(event.currentTarget).attr("id");
-
-		// create a new url for it
-		window.location.hash = "#/" + pageTitle;
-
-		// loop through the backbone models and find which data is associated with the page click
-		var pages = bckbne.pages.models;
-		var selectedPage = {};
-		_.each(pages, function (page) {
-			var slug = page.document.slug;
-			if (slug === pageTitle) {
-				selectedPage = page; // store the model based on the slug
-			}
-		});
-
-		bckbne.contentView.updateView(selectedPage);
-		console.log('\n on button press: ', selectedPage.attributes.category, '\n')
-		bckbne.$el.find('.header__logo h2').attr("class", selectedPage.attributes.category);
-		// now we have to change the and get the window.pages.model that is associated with the clicked element. 
-		// write a helper function that does animation too
-		// function animate()
-		// function loadData()
-		// function redirect()
-	}
-
-});
-/*
-	# Defines the view for the main layout
-*/
-
-window.MainLayout = Backbone.Marionette.LayoutView.extend({
-
-	el: "body",
-
-	template: JST["views/main/main"],
-
-	regions: {
-		"header": ".layout--header",
-		"content": ".layout--content",
-	},
-
-	initialize: function (data) {
-		this.model = data.model;
-		this.collection = data.collection;
-
-		var header = new window.HeaderLayout({
-			'model': this.model,
-			'collection': this.collection
-		});
-		//		header.render();
-	},
-
-	/*
-		# View 
-	*/
-
-	onRender: function () {
-		// use this as hook for animation 
-		// when the main layout renders, render the header & content
-		//		var header = new window.HeaderLayout(); 
-		//		header.render();
-	},
-
-	/*
-		# Events
-	*/
-
-	events: {
-		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
-	},
-
-	/*
-		# Methods
-	*/
 
 });
 /*
@@ -734,6 +468,165 @@ window.ContentLayout = Backbone.Marionette.LayoutView.extend({
 	}
 	*/
 	
+	/*
+		# Methods
+	*/
+
+});
+/*
+	# Defines the view for the main layout
+*/
+// -------------------------------------------
+// *********************************************
+// might have to turn this into a collectionView layout
+
+var childView = Backbone.Marionette.View.extend({
+	template: JST["views/header/header"],
+	el: $('ul'),
+	model: window.PageModel,
+
+	initialize: function (data) {
+		console.log('initializing child view ', data);
+	},
+
+	onRender: function () {
+		console.log("should be rendering")
+	}
+})
+
+window.HeaderLayout = Backbone.Marionette.CollectionView.extend({
+	// TODO 
+	// header layout might have to be a composite view and each 
+	el: ".header__container",
+	childView: childView,
+
+	initialize: function (data) {
+		// store the pages variable
+		this.activePage = this.collection.models[8];
+		// set the home page 
+		// *********************
+		// we need to do this in the controller *******
+		// *********************
+		// TODO --> what happens if someone comes in with aderinsola.com/#/claron....then what?!
+		//		this.homePage = this.pages.models[8];
+
+		// testing out a bind all
+		//		console.log(this.render)
+		//		_.bindAll(this, this.render);
+		//		this.pages.models.bind('change', this.render);
+	},
+
+	/*
+		# View 
+	*/
+
+	onRender: function () {
+		// create a new content layout and pass the necessary parameters: model and collection
+		//		var content = new window.ContentLayout({
+		//			'pages': this.collection,
+		//			'selectedModel': this.activePage
+		//		});
+		//
+		//		// set the class to the appropriate background color for the navbar
+		//		this.$el.find('.header__logo h2').attr("class", content.selectedModel.attributes.category)
+		//
+		//		// store the content view
+		//		this.contentView = content;
+		//
+		//		// render the content view
+		//		content.render();
+	},
+
+	/*
+		# Events
+	*/
+
+	events: {
+		// have to create a function to pass the headerlayout variable into the events jquery function
+		"click .navigation-button": function (event) {
+			var headerLayout = this;
+			this.toggleNavigation(event, headerLayout);
+		},
+	},
+
+	/*
+		# Methods
+	*/
+
+	toggleNavigation: (event, bckbne) => {
+		// save the page title
+		var pageTitle = $(event.currentTarget).attr("id");
+
+		// create a new url for it
+		window.location.hash = "#/" + pageTitle;
+
+		// loop through the backbone models and find which data is associated with the page click
+		var pages = bckbne.pages.models;
+		var selectedPage = {};
+		_.each(pages, function (page) {
+			var slug = page.document.slug;
+			if (slug === pageTitle) {
+				selectedPage = page; // store the model based on the slug
+			}
+		});
+
+		bckbne.contentView.updateView(selectedPage);
+		console.log('\n on button press: ', selectedPage.attributes.category, '\n')
+		bckbne.$el.find('.header__logo h2').attr("class", selectedPage.attributes.category);
+		// now we have to change the and get the window.pages.model that is associated with the clicked element. 
+		// write a helper function that does animation too
+		// function animate()
+		// function loadData()
+		// function redirect()
+	}
+
+});
+/*
+	# Defines the view for the main layout
+*/
+
+window.MainLayout = Backbone.Marionette.LayoutView.extend({
+
+	el: "body",
+
+	template: JST["views/main/main"],
+
+	regions: {
+		"header": ".layout--header",
+		"content": ".layout--content",
+	},
+
+	initialize: function (data) {
+		console.log("main layout is initialized \n");
+		//		this.header.show();
+		//		this.model = data.model;
+		//		this.collection = data.collection;
+	},
+
+	/*
+		# View 
+	*/
+
+	onRender: function () {
+		//		console.log('is it not rendering ', this.header)
+		//		var headerView = new window.HeaderLayout({
+		//			'model': this.model,
+		//			'collection': this.collection
+		//		});
+		// use this as hook for animation 
+		// when the main layout renders, render the header & content
+		//		var header = new window.HeaderLayout(); 
+		//		header.render();
+	},
+
+	/*
+		# Events
+	*/
+
+	events: {
+		// "click .sideNav__item.-nav-tree" : "toggleNavTree",
+	},
+
 	/*
 		# Methods
 	*/

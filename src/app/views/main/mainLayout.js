@@ -14,14 +14,10 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 	},
 
 	initialize: function (data) {
-		this.model = data.model;
-		this.collection = data.collection;
-
-		var header = new window.HeaderLayout({
-			'model': this.model,
-			'collection': this.collection
-		});
-		//		header.render();
+		console.log("main layout is initialized \n");
+		//		this.header.show();
+		//		this.model = data.model;
+		//		this.collection = data.collection;
 	},
 
 	/*
@@ -29,6 +25,11 @@ window.MainLayout = Backbone.Marionette.LayoutView.extend({
 	*/
 
 	onRender: function () {
+		//		console.log('is it not rendering ', this.header)
+		//		var headerView = new window.HeaderLayout({
+		//			'model': this.model,
+		//			'collection': this.collection
+		//		});
 		// use this as hook for animation 
 		// when the main layout renders, render the header & content
 		//		var header = new window.HeaderLayout(); 

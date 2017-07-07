@@ -9,10 +9,19 @@ window.Controller = Backbone.Marionette.Object.extend({
 		//		this.mainLayout = options.containerView;
 		//		this.prismicURL = 'https://aderinsola.prismic.io/api';
 		//		this.getContentFromPrismic();
+		this.containerView = options.containerView;
 	},
 
 	handleRouteIndex: function (routeData) {
 		console.log("index routing");
+
+		this.containerView.render();
+
+		var headerView = new window.HeaderLayout({
+			'collection': this.containerView.collection
+		});
+		this.containerView.header.empty();
+		this.containerView.header.show(headerView);
 		// TODO 
 		// we have to come back here and set this up properly 
 		// Clear the region
@@ -26,7 +35,6 @@ window.Controller = Backbone.Marionette.Object.extend({
 	renderPage: function (pageName) {
 		console.log('calling renderPage function');
 		// you have to set the model inside here...? 
-		console.log(this)
 	},
 	// getter functions
 
